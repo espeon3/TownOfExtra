@@ -12,17 +12,17 @@ namespace TownOfExtra.Roles;
 public sealed class PoisonerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Poisoner";
-    public string RoleLongDescription => "Infect the ship with a deadly poison!";
-    public string RoleDescription => RoleLongDescription;
+    public string RoleDescription => "Infect the ship with a deadly poison!";
+    public string RoleLongDescription => RoleDescription;
     public Color RoleColor => TownOfExtraColours.PoisonerRoleColour;
-    public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
+    public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorKilling;
     public DoomableType DoomHintType => DoomableType.Fearmonger;
 
     public string GetAdvancedDescription()
     {
         return
-            "The Poisoner is a Neutral Killing role that wins by being the last killer alive. They can poison players, making their screen become progressively greener, before dying." +
+            "The Poisoner is an Impostor Killing role that can poison players, making their screen become green, before dying." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
