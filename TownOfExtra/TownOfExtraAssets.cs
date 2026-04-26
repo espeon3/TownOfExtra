@@ -5,6 +5,6 @@ namespace TownOfExtra;
 
 public static class TownOfExtraAssets
 {
-    public static readonly LoadableAsset<Sprite> PlayDeadButton =
-        new LoadableResourceAsset("PlayDead.Resources.PlayDeadButton.png");
+    public static LoadableAsset<Sprite> PoisonerRoleIcon =>
+        new LoadableResourceAsset("TownOfExtra.Resources.PoisonerRoleIcon.png");
 }
