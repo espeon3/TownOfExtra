@@ -12,13 +12,18 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class PoisonerPoisonButton : TownOfUsKillRoleButton<PoisonerRole, PlayerControl>, IKillButton
+public sealed class PoisonerPoisonButton : TownOfUsKillRoleButton<PoisonerRole, PlayerControl>, IKillButton, IDiseaseableButton
 {
     public override string Name => "Poison";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
     public override Color TextOutlineColor => TownOfExtraColours.PoisonerRoleColour;
     public override float Cooldown => OptionGroupSingleton<PoisonerRoleOptions>.Instance.PoisonCooldown;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.PoisonerRoleIcon;
+
+    public void SetDiseasedTimer(float multiplier)
+    {
+        SetTimer(Cooldown * multiplier);
+    }
 
     public override PlayerControl GetTarget()
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
+using TownOfExtra.Buttons;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
@@ -28,6 +29,7 @@ public sealed class PoisonerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverabl
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
+        UseVanillaKillButton = false,
         Icon = TownOfExtraAssets.PoisonerRoleIcon
     };
     
