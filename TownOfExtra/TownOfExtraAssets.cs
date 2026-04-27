@@ -12,6 +12,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.PoisonerRoleIcon.png");
     public static LoadableAsset<Sprite> FreezerRoleIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.FreezerRoleIcon.png");
+    public static LoadableAsset<Sprite> CannibalRoleIcon =>
+        new LoadableResourceAsset("TownOfExtra.Resources.CannibalRoleIcon.png");
     public static LoadableAsset<Sprite> HeavyWorkloadModifierIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.HeavyWorkloadModifierIcon.png");
 }

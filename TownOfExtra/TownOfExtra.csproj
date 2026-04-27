@@ -4,7 +4,6 @@
         <LangVersion>latest</LangVersion>
         <DebugType>embedded</DebugType>
 
-        <VersionPrefix>1.0.0</VersionPrefix>
         <Description>An addon to Town of Us: Mira including extra roles and features!</Description>
         <Authors>Mehzxzz</Authors>
 

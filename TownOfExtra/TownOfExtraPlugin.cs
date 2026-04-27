@@ -13,14 +13,14 @@ using TownOfUs.Modules.Localization;
 
 namespace TownOfExtra;
 
-[BepInAutoPlugin("me.mehzxzz.townOfExtra", "Town Of Extra")]
+[BepInPlugin(TownOfExtraPluginInfo.Id, TownOfExtraPluginInfo.Name, TownOfExtraPluginInfo.Version)]
 [BepInProcess("Among Us.exe")]
 [BepInDependency(ReactorPlugin.Id)]
 [BepInDependency(MiraApiPlugin.Id)]
 [ReactorModFlags(ModFlags.RequireOnAllClients)]
-public partial class TownOfExtraPlugin : BasePlugin, IMiraPlugin
+public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
 {
-    private Harmony Harmony { get; } = new(Id);
+    private Harmony Harmony { get; } = new(TownOfExtraPluginInfo.Id);
 
     public string OptionsTitleText => "Town Of Extra";
 
@@ -28,11 +28,12 @@ public partial class TownOfExtraPlugin : BasePlugin, IMiraPlugin
 
     public override void Load()
     {
-        ReactorCredits.Register("Town Of Extra", "1.0.0", false, ReactorCredits.AlwaysShow);
+        ReactorCredits.Register(TownOfExtraPluginInfo.Name, TownOfExtraPluginInfo.Version, false, ReactorCredits.AlwaysShow);
         MethodRpcAttribute.Register(Assembly.GetExecutingAssembly(), this);
         Harmony.PatchAll();
         
         TouLocale.TouLocalization.TryAdd(SupportedLangs.English, null);
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToPoisoned", "Poisoned");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToCannibalised", "Cannibalised");
     }
 }

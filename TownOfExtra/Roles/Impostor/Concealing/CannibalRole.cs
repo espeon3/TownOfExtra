@@ -7,28 +7,29 @@ using TownOfUs.Roles;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Roles.Impostor.Support;
+namespace TownOfExtra.Roles.Impostor.Concealing;
 
-public sealed class FreezerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class CannibalRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
-    public string RoleName => "Freezer";
-    public string RoleDescription => "Freeze the crew to stop them escaping!";
+    public string RoleName => "Cannibal";
+    public string RoleDescription => "Leave no traces of the crew!";
     public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => TownOfExtraColours.FreezerRoleColour;
+    public Color RoleColor => TownOfExtraColours.CannibalRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
-    public RoleAlignment RoleAlignment => RoleAlignment.ImpostorSupport;
-    public DoomableType DoomHintType => DoomableType.Trickster;
+    public RoleAlignment RoleAlignment => RoleAlignment.ImpostorConcealing;
+    public DoomableType DoomHintType => DoomableType.Death;
 
     public string GetAdvancedDescription()
     {
         return
-            "The Freezer is an Impostor Support role that can freeze all players, restricting their movement." +
+            "The Cannibal is an Impostor Concealing role that leaves no dead bodies when killing." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
-        Icon = TownOfExtraAssets.FreezerRoleIcon
+        UseVanillaKillButton = false,
+        Icon = TownOfExtraAssets.CannibalRoleIcon
     };
     
     [HideFromIl2Cpp]
@@ -38,7 +39,7 @@ public sealed class FreezerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable
         {
             return new List<CustomButtonWikiDescription>
             {
-                new("Freeze", "Freeze all players in place, stopping them from moving around.", TownOfExtraAssets.Placeholder)
+                new("Cannibalise", "Kill a player with no dead body left behind.", TownOfExtraAssets.Placeholder)
             };
         }
     }

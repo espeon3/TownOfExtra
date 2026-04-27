@@ -13,7 +13,7 @@ namespace TownOfExtra.Modifiers.Game.Crewmate.Passive;
 public class HeavyWorkloadModifier : TouGameModifier, IWikiDiscoverable
 {
     public override string ModifierName => "Heavy Workload";
-    public override ModifierFaction FactionType => ModifierFaction.Crewmate;
+    public override ModifierFaction FactionType => ModifierFaction.CrewmatePassive;
     public override string IntroInfo => "You have extra tasks to finish.";
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.HeavyWorkloadModifierIcon;
 
