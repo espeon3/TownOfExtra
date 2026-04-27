@@ -11,6 +11,7 @@
 A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod that adds new roles & modifiers to [Town of Us: Mira](https://github.com/AU-Avengers/TOU-Mira).
 
 -----------------------
+
 <p align="center">
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-killing"><img src="./Resources/Headers/ImpKilling.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-poisoner"><img width="10%" src="./Resources/PoisonerRoleIcon.png" /></a>
@@ -28,6 +29,18 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 [Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - Mod framework, api & inspiration\
 [Reactor](https://github.com/NuclearPowered/Reactor) - Dependency for the mod\
 [BepInEx](https://github.com/BepInEx) - For hooking game functions
+
+-----------------------
+
+# Releases
+
+**Disclaimer: The mod is *not* guaranteed to work on the latest versions of Among Us when the game updates.**
+
+**Note: Due to differing releases on PC and Android, any version that has an x in its version means that it works for that minor release for both platforms.**
+
+| Among Us        | Mod Version | Download Link                                                           |
+|-----------------|-------------|-------------------------------------------------------------------------|
+| 17.3.x          | 0.9.0       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.0)   |
 
 -----------------------
 # License
