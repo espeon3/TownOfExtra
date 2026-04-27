@@ -9,7 +9,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 -----------------------
 <p align="center">
   <img src="./Resources/ImpKilling.png" />
-  <img width="10%" src="./Resources/PoisonerRoleIcon.png" />
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#poisoner"><img width="10%" src="./Resources/PoisonerRoleIcon.png" /></a>
 </p>
 
 -----------------------
