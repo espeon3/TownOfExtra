@@ -45,7 +45,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 # Installation
 
 1. Ensure you have [Town of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) installed
-2. Build this project or download the [latest release](https://github.com/Mehzxzz/TownOfExtra/releases/tag/latest)
+2. Build this project or download the [latest release](https://github.com/Mehzxzz/TownOfExtra/releases/latest)
 3. Place the compiled DLL in your `BepInEx/plugins/` folder
 
 -----------------------
