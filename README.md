@@ -40,6 +40,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 
 | Among Us        | Mod Version | Download Link                                                           |
 |-----------------|-------------|-------------------------------------------------------------------------|
+| 17.3.x          | 0.9.1       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.1)   |
 | 17.3.x          | 0.9.0       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.0)   |
 
 -----------------------
