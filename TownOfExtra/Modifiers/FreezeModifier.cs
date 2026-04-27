@@ -1,0 +1,57 @@
+﻿using System.Collections;
+using MiraAPI.GameOptions;
+using MiraAPI.Modifiers.Types;
+using MiraAPI.Utilities;
+using MiraAPI.Utilities.Assets;
+using Reactor.Utilities;
+using TownOfExtra.Options;
+using TownOfUs.Utilities;
+using UnityEngine;
+
+namespace TownOfExtra.Modifiers;
+
+public class FreezeModifier : TimedModifier
+{
+    public override string ModifierName => "Frozen";
+    public override bool HideOnUi => false;
+    public override float Duration => OptionGroupSingleton<FreezerRoleOptions>.Instance.FreezeDuration;
+    public override bool AutoStart => true;
+    public override bool RemoveOnComplete => true;
+    public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.FreezerRoleIcon;
+
+    public override string GetDescription()
+    {
+        return $"You are frozen for {TimeRemaining:F1}s!";
+    }
+
+    public override void OnActivate()
+    {
+        if (!Player.AmOwner) return;
+        Player.moveable = false;
+        Player.MyPhysics.body.velocity = Vector2.zero;
+        Player.NetTransform.Halt();
+        Coroutines.Start(ResetInput());
+        
+        Coroutines.Start(MiscUtils.CoFlash(TownOfExtraColours.FreezerRoleColour, Duration));
+        var notif = Helpers.CreateAndShowNotification(
+            $"You have been {TownOfExtraColours.FreezerRoleColour.ToTextColor()}frozen</color>!",
+            Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.FreezerRoleIcon.LoadAsset());
+        notif.AdjustNotification();
+    }
+
+    private IEnumerator ResetInput()
+    {
+        yield return null;
+        Input.ResetInputAxes();
+    }
+
+    public override void OnDeactivate()
+    {
+        if (!Player.AmOwner) return;
+        Player.moveable = true;
+        var notif = Helpers.CreateAndShowNotification(
+            $"You have been {TownOfExtraColours.FreezerRoleColour.ToTextColor()}unfrozen</color>!",
+            Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.FreezerRoleIcon.LoadAsset());
+        notif.AdjustNotification();
+    }
+}

@@ -1,7 +1,7 @@
 ﻿using MiraAPI.GameOptions;
 using MiraAPI.GameOptions.Attributes;
 using MiraAPI.Utilities;
-using TownOfExtra.Roles;
+using TownOfExtra.Roles.Impostor.Killing;
 
 namespace TownOfExtra.Options;
 

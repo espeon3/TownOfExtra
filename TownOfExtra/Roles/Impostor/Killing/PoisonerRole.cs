@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
-using TownOfExtra.Buttons;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Roles;
+namespace TownOfExtra.Roles.Impostor.Killing;
 
 public sealed class PoisonerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
@@ -23,7 +22,7 @@ public sealed class PoisonerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverabl
     public string GetAdvancedDescription()
     {
         return
-            "The Poisoner is an Impostor Killing role that can poison players, making their screen become green, before dying." +
+            "The Poisoner is an Impostor Killing role that can poison players, making their screen become green, and making them die in a few seconds." +
             MiscUtils.AppendOptionsText(GetType());
     }
 

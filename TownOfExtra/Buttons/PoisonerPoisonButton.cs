@@ -5,7 +5,7 @@ using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Modifiers;
 using TownOfExtra.Options;
-using TownOfExtra.Roles;
+using TownOfExtra.Roles.Impostor.Killing;
 using TownOfUs.Buttons;
 using TownOfUs.Utilities;
 using UnityEngine;
