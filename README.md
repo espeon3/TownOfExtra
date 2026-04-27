@@ -12,7 +12,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#poisoner"><img width="10%" src="./Resources/PoisonerRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-support"><img src="./Resources/Headers/ImpSupport.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#freezer"><img width="10%" src="./Resources/FreezerRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#crew-mods"><img src="./Resources/Headers/CrewMods.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#crew-modifiers"><img src="./Resources/Headers/CrewMods.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#heavy-worker"><img width="10%" src="./Resources/HeavyWorkerModifierIcon.png" /></a>
 </p>
 
