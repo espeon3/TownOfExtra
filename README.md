@@ -43,8 +43,7 @@ some guy on the reactor discord - Fake body spawning code
 
 | Among Us        | Mod Version | Download Link                                                           |
 |-----------------|-------------|-------------------------------------------------------------------------|
-| 17.3.x          | 0.9.1       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.1)   |
-| 17.3.x          | 0.9.0       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.0)   |
+| 17.3.x          | 0.9.3       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.3)   |
 
 -----------------------
 
