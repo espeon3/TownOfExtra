@@ -43,6 +43,8 @@ public static class ReportDeadBodyPatch
 
                     if (player.IsRole<TricksterRole>() && player.IsLover())
                     {
+                        BodyManager.ClearFakeBodies(target);
+                        
                         Coroutines.Start(MiscUtils.CoFlash(Palette.ImpostorRed));
                         var othernotif = Helpers.CreateAndShowNotification(
                             $"You cannot report your lover's {TownOfExtraColours.TricksterRoleColour.ToTextColor()}fake bodies</color>!",
