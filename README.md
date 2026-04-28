@@ -30,7 +30,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 # Contributions & Credits
 
 [MiraAPI](https://github.com/All-Of-Us-Mods/MiraAPI) - Mod framework & api\
-[Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - Temporary trickster role icon, mod framework, api & inspiration\
+[Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - Trickster role icon, poisoner role & button icons, mod framework, api & inspiration\
 [Reactor](https://github.com/NuclearPowered/Reactor) - Dependency for the mod\
 [BepInEx](https://github.com/BepInEx) - For hooking game functions\
 some guy on the reactor discord - Fake body spawning function
