@@ -33,7 +33,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 [Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - Temporary trickster role icon, mod framework, api & inspiration\
 [Reactor](https://github.com/NuclearPowered/Reactor) - Dependency for the mod\
 [BepInEx](https://github.com/BepInEx) - For hooking game functions\
-some guy on the reactor discord - Fake body spawning code
+some guy on the reactor discord - Fake body spawning function
 
 -----------------------
 
@@ -43,8 +43,7 @@ some guy on the reactor discord - Fake body spawning code
 
 | Among Us        | Mod Version | Download Link                                                           |
 |-----------------|-------------|-------------------------------------------------------------------------|
-| 17.3.x          | 0.9.1       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.1)   |
-| 17.3.x          | 0.9.0       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.0)   |
+| 17.3.x          | 0.9.3       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.3)   |
 
 -----------------------
 
