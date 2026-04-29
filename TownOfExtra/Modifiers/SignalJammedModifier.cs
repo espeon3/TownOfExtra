@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Modifiers;
 
-public class SignalJammed : TimedModifier
+public class SignalJammedModifier : TimedModifier
 {
     public override string ModifierName => "Jammed";
     public override bool HideOnUi => false;
@@ -24,6 +24,6 @@ public class SignalJammed : TimedModifier
     public override void OnDeath(DeathReason reason)
     {
         if (!Player.AmOwner) return;
-        Player.RpcRemoveModifier<SignalJammed>();
+        Player.RpcRemoveModifier<SignalJammedModifier>();
     }
 }

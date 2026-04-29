@@ -28,7 +28,7 @@ public sealed class SignalJammerJamButton : TownOfUsRoleButton<SignalJammerRole>
         {
             if (player.Data.IsDead || player.Data.Role is HaunterRole or SpectreRole) continue;
 
-            player.RpcAddModifier<SignalJammed>();
+            player.RpcAddModifier<SignalJammedModifier>();
         }
     }
 

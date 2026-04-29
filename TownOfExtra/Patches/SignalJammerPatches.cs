@@ -14,7 +14,7 @@ public static class SjStartMeetingPatch
 {
     public static bool Prefix(PlayerControl __instance)
     {
-        if (__instance.AmOwner && __instance.HasModifier<SignalJammed>())
+        if (__instance.AmOwner && __instance.HasModifier<SignalJammedModifier>())
         {
             SignalJammerPatches.SendJammedWarning();
             return false;
@@ -28,7 +28,7 @@ public static class SjReportDeadBodyPatch
 {
     public static bool Prefix(PlayerControl __instance, NetworkedPlayerInfo target)
     {
-        if (__instance.AmOwner && __instance.HasModifier<SignalJammed>())
+        if (__instance.AmOwner && __instance.HasModifier<SignalJammedModifier>())
         {
             SignalJammerPatches.SendJammedWarning();
 
