@@ -18,7 +18,7 @@ public sealed class TricksterSampleButton : TownOfUsKillRoleButton<TricksterRole
     public override Color TextOutlineColor => TownOfExtraColours.TricksterRoleColour;
 
     public override float Cooldown => OptionGroupSingleton<TricksterRoleOptions>.Instance.SampleCooldown;
-    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.Placeholder;
+    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.TricksterSampleButton;
 
     public override PlayerControl GetTarget()
     {
@@ -44,7 +44,7 @@ public sealed class TricksterSampleButton : TownOfUsKillRoleButton<TricksterRole
 
         var notif = Helpers.CreateAndShowNotification(
             $"Sampled colour <color=#{colour.ToHtmlStringRGBA()}>{colourName}</color> from {Target.Data.PlayerName}!",
-            Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterRoleIcon.LoadAsset()
+            Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterSampleButton.LoadAsset()
         );
         notif.AdjustNotification();
     }

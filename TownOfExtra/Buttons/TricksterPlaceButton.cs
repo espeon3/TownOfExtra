@@ -18,7 +18,7 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
     public override Color TextOutlineColor => TownOfExtraColours.TricksterRoleColour;
     public override float Cooldown => OptionGroupSingleton<TricksterRoleOptions>.Instance.PlaceCooldown;
-    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.Placeholder;
+    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.TricksterPlaceButton;
     public static bool BodyPlaced;
     
     public static TricksterPlaceButton Instance;
@@ -57,7 +57,7 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
     
         Helpers.CreateAndShowNotification(
             $"Placed fake body with colour <color=#{colour.ToHtmlStringRGBA()}>{colourName}</color>!",
-            Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterRoleIcon.LoadAsset()
+            Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterPlaceButton.LoadAsset()
         ).AdjustNotification();
 
         PlayerControl trickster = GetTrickster();
@@ -87,7 +87,6 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
         }
     }
     
-    // thx to some guy on the reactor discord for this
     public static DeadBody CreateDeadBody(Vector3 position, byte colorId, byte bodyParentId, PlayerControl colorSource)
     {
         if (colorSource?.Data?.DefaultOutfit == null) return null;
