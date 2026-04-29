@@ -11,4 +11,6 @@ public sealed class CannibalRoleOptions : AbstractOptionGroup<CannibalRole>
     
     [ModdedNumberOption("Kill Cooldown", 7.5f, 120f, 2.5f, MiraNumberSuffixes.Seconds)]
     public float KillCooldown { get; set; } = 35f;
+    [ModdedToggleOption("Revive eaten players if cannibal dies")]
+    public bool ReviveIfDeadCannibal { get; set; } = false;
 }

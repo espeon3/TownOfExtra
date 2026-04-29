@@ -1,0 +1,65 @@
+﻿using MiraAPI.Events;
+using MiraAPI.Events.Vanilla.Gameplay;
+using MiraAPI.Events.Vanilla.Meeting;
+using MiraAPI.GameOptions;
+using TownOfExtra.Networking;
+using TownOfExtra.Options;
+using TownOfExtra.Roles.Impostor.Concealing;
+using TownOfUs;
+using TownOfUs.Modules;
+using TownOfUs.Networking;
+using UnityEngine;
+
+namespace TownOfExtra.Events;
+
+public class CannibalEvents
+{
+    [RegisterEvent]
+    public static void OnRoundStart(RoundStartEvent @event)
+    {
+        if (!AmongUsClient.Instance.AmHost) return;
+    
+        if (CannibalRole.EatenPlayers.Count == 0) return;
+        if (!OptionGroupSingleton<CannibalRoleOptions>.Instance.ReviveIfDeadCannibal) return;
+    
+        PlayerControl cannibal = GetCannibal();
+    
+        if (cannibal == null || !cannibal.Data.IsDead)
+        {
+            return;
+        }
+
+        foreach (byte victimId in CannibalRole.EatenPlayers)
+        {
+            PlayerControl victim = GameData.Instance.GetPlayerById(victimId)?.Object;
+        
+            if (victim == null) continue;
+
+            CannibalRpcs.RpcReviveCannibalVictims(PlayerControl.LocalPlayer, victimId);
+            CannibalRpcs.RpcNotifyCannibalDead(GameData.Instance.GetPlayerById(victimId));
+        }
+
+        CannibalRole.EatenPlayers.Clear();
+    }
+    
+    [RegisterEvent]
+    public static void OnMeetingStart(StartMeetingEvent @event)
+    {
+        if (!AmongUsClient.Instance.AmHost) return;
+
+        foreach (PlayerControl p in PlayerControl.AllPlayerControls)
+        {
+            if (p.Data.Role is CannibalRole)
+            {
+                CannibalRole.CannibalId = p.PlayerId;
+                return;
+            }
+        }
+    }
+
+    public static PlayerControl GetCannibal()
+    {
+        if (CannibalRole.CannibalId == null) return null;
+        return GameData.Instance.GetPlayerById(CannibalRole.CannibalId.Value)?.Object;
+    }
+}
