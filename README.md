@@ -49,9 +49,9 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 
 **Disclaimer: The mod is *not* guaranteed to work on the latest versions of Among Us when the game updates.**
 
-| Game Version             | Mod Version       | Download Link                                                               |
-|--------------------------|-------------------|-----------------------------------------------------------------------------|
-| 17.3 (2026.3.31)         | 0.9.0-indev       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/0.9.0-indev) |
+| Game Version             | Mod Version | Download Link                                                         |
+|--------------------------|-------------|-----------------------------------------------------------------------|
+| 17.3 (2026.3.31)         | 1.0.0       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.0.0) |
 
 -----------------------
 
