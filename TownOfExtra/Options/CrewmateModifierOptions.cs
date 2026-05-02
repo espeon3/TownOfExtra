@@ -16,29 +16,59 @@ public sealed class CrewmateModifierOptions : AbstractOptionGroup
     public override bool ShowInModifiersMenu => true;
     public override uint GroupPriority => 2;
 
+    /*----------------------
+         HEAVY WORKLOAD
+    ----------------------*/
+
     [ModdedNumberOption("Heavy Workload Amount", 0, 5)]
     public float HeavyWorkloadAmount { get; set; } = 0;
+
     public ModdedNumberOption HeavyWorkloadChance { get; } =
-        new("Heavy Workload Chance", 50f, 0, 100f, 10f, MiraNumberSuffixes.Percent)
+        new("Heavy Workload Chance", 50f, 0f, 100f, 10f, MiraNumberSuffixes.Percent)
         {
             Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadAmount > 0
         };
-    [ModdedNumberOption("Extra Common Tasks", 0, 2)]
-    public float HeavyWorkloadExtraCommonTasks { get; set; } = 1;
-    [ModdedNumberOption("Extra Long Tasks", 0, 2)]
-    public float HeavyWorkloadExtraLongTasks { get; set; } = 1;
-    [ModdedNumberOption("Extra Shots Tasks", 0, 3)]
-    public float HeavyWorkloadExtraShortTasks { get; set; } = 2;
-    
+
+    public ModdedNumberOption HeavyWorkloadExtraCommonTasks { get; } =
+        new("Extra Common Tasks", 1f, 0f, 2f, 1f, MiraNumberSuffixes.None)
+        {
+            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadAmount > 0
+        };
+
+    public ModdedNumberOption HeavyWorkloadExtraLongTasks { get; } =
+        new("Extra Long Tasks", 1f, 0f, 2f, 1f, MiraNumberSuffixes.None)
+        {
+            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadAmount > 0
+        };
+
+    public ModdedNumberOption HeavyWorkloadExtraShortTasks { get; } =
+        new("Extra Short Tasks", 2f, 0f, 3f, 1f, MiraNumberSuffixes.None)
+        {
+            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadAmount > 0
+        };
+
+    /*----------------------
+             ROUTINE
+    ----------------------*/
+
     [ModdedNumberOption("Routine Amount", 0, 5)]
     public float RoutineAmount { get; set; } = 0;
+
     public ModdedNumberOption RoutineChance { get; } =
-        new("Routine Chance", 50f, 0, 100f, 10f, MiraNumberSuffixes.Percent)
+        new("Routine Chance", 50f, 0f, 100f, 10f, MiraNumberSuffixes.Percent)
         {
             Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineAmount > 0
         };
-    [ModdedNumberOption("Speed Boost", 1.25f, 2f, 0.25f, MiraNumberSuffixes.Multiplier)]
-    public float RoutineSpeedBoost { get; set; } = 1.5f;
-    [ModdedNumberOption("Speed Boost Duration", 5f, 20f, 2.5f, MiraNumberSuffixes.Multiplier)]
-    public float RoutineSpeedBoostDuration { get; set; } = 5f;
+
+    public ModdedNumberOption RoutineSpeedBoost { get; } =
+        new("Speed Boost", 1.5f, 1.25f, 2f, 0.25f, MiraNumberSuffixes.Multiplier)
+        {
+            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineAmount > 0
+        };
+
+    public ModdedNumberOption RoutineSpeedBoostDuration { get; } =
+        new("Speed Boost Duration", 5f, 5f, 20f, 2.5f, MiraNumberSuffixes.Seconds)
+        {
+            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineAmount > 0
+        };
 }

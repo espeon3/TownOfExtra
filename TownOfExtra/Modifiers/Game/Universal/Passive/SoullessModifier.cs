@@ -1,0 +1,55 @@
+﻿using MiraAPI.GameOptions;
+using MiraAPI.Utilities.Assets;
+using TownOfExtra.Options;
+using TownOfUs;
+using TownOfUs.Assets;
+using TownOfUs.Interfaces;
+using TownOfUs.Modifiers.Game;
+using TownOfUs.Modules.Wiki;
+using TownOfUs.Roles.Crewmate;
+using TownOfUs.Roles.Neutral;
+using UnityEngine;
+
+namespace TownOfExtra.Modifiers.Game.Universal.Passive;
+
+public class SoullessModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier
+{
+    public override string ModifierName => "Soulless";
+    public override ModifierFaction FactionType => ModifierFaction.UniversalPassive;
+    public override string IntroInfo => "Your soul is harvested on death.";
+    public override LoadableAsset<Sprite> ModifierIcon => TouNeutAssets.ReapSprite;
+    public Color ModifierColor => TownOfUsColors.SoulCollector;
+    public override Color FreeplayFileColor => TownOfUsColors.SoulCollector;
+
+    public override string GetDescription()
+    {
+        return "Your soul is harvested on death.";
+    }
+
+    public string GetAdvancedDescription()
+    {
+        return "When you die, you will leave behind a soulless body, as if your soul was reaped by the soul collector.";
+    }
+
+    public override int GetAmountPerGame()
+    {
+        return (int)OptionGroupSingleton<UniversalModifierOptions>.Instance.SoullessAmount;
+    }
+
+    public override int GetAssignmentChance()
+    {
+        return OptionGroupSingleton<UniversalModifierOptions>.Instance.SoullessChance;
+    }
+
+    public override bool IsModifierValidOn(RoleBehaviour role)
+    {
+        if (!base.IsModifierValidOn(role) || role is HaunterRole || role is SpectreRole)
+            return false;
+
+        var player = role.Player;
+        if (player == null || player.Data == null || player.Data.IsDead)
+            return false;
+
+        return true;
+    }
+}

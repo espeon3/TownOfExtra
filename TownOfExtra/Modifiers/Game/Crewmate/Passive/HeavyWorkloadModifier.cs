@@ -20,9 +20,9 @@ public class HeavyWorkloadModifier : TouGameModifier, IWikiDiscoverable, IColore
     public Color ModifierColor => TownOfExtraColours.HeavyWorkloadModifierColour;
     public override Color FreeplayFileColor => TownOfExtraColours.HeavyWorkloadModifierColour;
 
-    public static float ExtraCommonTasks => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadExtraCommonTasks;
-    public static float ExtraLongTasks => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadExtraLongTasks;
-    public static float ExtraShortTasks => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadExtraShortTasks;
+    public static float ExtraCommonTasks => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadExtraCommonTasks.Value;
+    public static float ExtraLongTasks => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadExtraLongTasks.Value;
+    public static float ExtraShortTasks => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadExtraShortTasks.Value;
 
     public override string GetDescription()
     {
