@@ -4,7 +4,6 @@ using MiraAPI.Modifiers.Types;
 using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Options;
-using TownOfUs.Assets;
 using TownOfUs.Utilities;
 using UnityEngine;
 
@@ -14,12 +13,12 @@ public class RoutineSpeedModifier : TimedModifier
 {
     public override string ModifierName => "Speed Boost";
     public override bool HideOnUi => false;
-    public override float Duration => OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineSpeedBoostDuration;
+    public override float Duration => OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineSpeedBoostDuration.Value;
     public override bool AutoStart => true;
     public override bool RemoveOnComplete => true;
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.LightningIcon;
     
-    public static float SpeedBoost => OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineSpeedBoost;
+    public static float SpeedBoost => OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineSpeedBoost.Value;
     public float NormalSpeed;
 
     public override string GetDescription()
