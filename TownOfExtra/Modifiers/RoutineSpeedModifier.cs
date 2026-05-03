@@ -18,7 +18,6 @@ public class RoutineSpeedModifier : TimedModifier
     public override bool RemoveOnComplete => true;
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.LightningIcon;
     
-    public static float SpeedBoost => OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineSpeedBoost.Value;
     public float NormalSpeed;
 
     public override string GetDescription()
@@ -31,7 +30,7 @@ public class RoutineSpeedModifier : TimedModifier
         if (!Player.AmOwner) return;
         
         NormalSpeed = Player.MyPhysics.Speed;
-        Player.MyPhysics.Speed = NormalSpeed * SpeedBoost;
+        Player.MyPhysics.Speed = NormalSpeed * OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineSpeedBoost.Value;
         
         var notif = Helpers.CreateAndShowNotification(
             $"You have gained a {Palette.CrewmateBlue.ToTextColor()}speed boost</color>!",

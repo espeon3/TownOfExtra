@@ -13,6 +13,12 @@ public class ShorterCdModifier : BaseModifier
 
     public override string GetDescription()
     {
-        return "Your kill cooldown is shorter.";
+        return "Your kill cooldown will be shorter after your next kill.";
+    }
+    
+    public override void OnDeath(DeathReason reason)
+    {
+        if (!Player.AmOwner) return;
+        Player.RpcRemoveModifier<ShorterCdModifier>();
     }
 }

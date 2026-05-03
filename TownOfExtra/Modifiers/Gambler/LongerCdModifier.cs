@@ -13,6 +13,12 @@ public class LongerCdModifier : BaseModifier
 
     public override string GetDescription()
     {
-        return "Your kill cooldown is longer.";
+        return "Your kill cooldown will be longer after your next kill.";
+    }
+    
+    public override void OnDeath(DeathReason reason)
+    {
+        if (!Player.AmOwner) return;
+        Player.RpcRemoveModifier<LongerCdModifier>();
     }
 }

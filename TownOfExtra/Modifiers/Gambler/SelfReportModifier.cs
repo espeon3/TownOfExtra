@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Gambler;
 
-public class NoAbilityModifier : BaseModifier
+public class SelfReportModifier : BaseModifier
 {
     public override string ModifierName => "Gambler Ability";
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.GamblerRoleIcon;
@@ -13,12 +13,12 @@ public class NoAbilityModifier : BaseModifier
 
     public override string GetDescription()
     {
-        return "You do not have an ability.";
+        return "You will self report your next kill's body.";
     }
     
     public override void OnDeath(DeathReason reason)
     {
         if (!Player.AmOwner) return;
-        Player.RpcRemoveModifier<NoAbilityModifier>();
+        Player.RpcRemoveModifier<SelfReportModifier>();
     }
 }

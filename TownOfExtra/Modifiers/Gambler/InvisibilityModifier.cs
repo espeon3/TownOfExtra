@@ -1,10 +1,12 @@
-﻿using MiraAPI.Modifiers;
+﻿using MiraAPI.GameOptions;
+using MiraAPI.Modifiers;
 using MiraAPI.Utilities.Assets;
+using TownOfExtra.Options.Roles;
 using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Gambler;
 
-public class NoAbilityModifier : BaseModifier
+public class InvisibilityModifier : BaseModifier
 {
     public override string ModifierName => "Gambler Ability";
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.GamblerRoleIcon;
@@ -13,12 +15,12 @@ public class NoAbilityModifier : BaseModifier
 
     public override string GetDescription()
     {
-        return "You do not have an ability.";
+        return $"After your next kill, you will become invisible for {OptionGroupSingleton<GamblerRoleOptions>.Instance.InvisibilityDuration.Value} seconds.";
     }
     
     public override void OnDeath(DeathReason reason)
     {
         if (!Player.AmOwner) return;
-        Player.RpcRemoveModifier<NoAbilityModifier>();
+        Player.RpcRemoveModifier<InvisibilityModifier>();
     }
 }
