@@ -10,6 +10,7 @@ using Reactor;
 using Reactor.Networking;
 using Reactor.Networking.Attributes;
 using Reactor.Utilities;
+using TownOfExtra.Patches;
 using TownOfUs.Modules.Localization;
 
 namespace TownOfExtra;
@@ -33,6 +34,7 @@ public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
         ReactorCredits.Register(TownOfExtraPluginInfo.Name, TownOfExtraPluginInfo.Version, TownOfExtraPluginInfo.IsPreRelease, ReactorCredits.AlwaysShow);
         MethodRpcAttribute.Register(Assembly.GetExecutingAssembly(), this);
         Harmony.PatchAll();
+        ModNewsFetcher.CheckForNews();
         
         Logger = Log;
         

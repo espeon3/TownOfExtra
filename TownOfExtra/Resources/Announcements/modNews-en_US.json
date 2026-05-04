@@ -1,0 +1,61 @@
+﻿{
+  "News": [
+    {
+      "Date": "2026-04-29T15:26:00Z",
+      "Number": "1000",
+      "ShortTitle": "TownOfExtra v1.0.0",
+      "Title": "Initial Release",
+      "SubTitle": "The initial release!",
+      "Text": [
+        "\r<b>TownOfExtra has updated to v1.0.0</b>",
+        "\n\nThank you for playing the mod!",
+        "\n\n★ <link=https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.0.0>TownOfExtra v1.0.0 Download</link> ★ <link=https://github.com/Mehzxzz/TownOfExtra/wiki>Role/Modifier Info</link> ★"
+      ]
+    },
+    {
+      "Date": "2026-04-29T19:11:00Z",
+      "Number": "1001",
+      "ShortTitle": "TownOfExtra v1.0.1",
+      "Title": "A small hotfix",
+      "SubTitle": "Squashing them pesky bugs!",
+      "Text": [
+        "\r<b>TownOfExtra has updated to v1.0.1</b>",
+        "\n\nThank you for playing the mod!",
+        "\n\n★ <link=https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.0.1>TownOfExtra v1.0.1 Download</link> ★ <link=https://github.com/Mehzxzz/TownOfExtra/wiki>Role/Modifier Info</link> ★"
+      ]
+    },
+    {
+      "Date": "2026-05-02T23:34:00Z",
+      "Number": "1002",
+      "ShortTitle": "TownOfExtra v1.0.2",
+      "Title": "The reaper is here!",
+      "SubTitle": "",
+      "Text": [
+        "\r<b>TownOfExtra has updated to v1.0.2</b>",
+        "\n\nThank you for playing the mod!",
+        "\n\n★ <link=https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.0.2>TownOfExtra v1.0.2 Download</link> ★ <link=https://github.com/Mehzxzz/TownOfExtra/wiki>Role/Modifier Info</link> ★",
+        
+        "\n\n\r<size=105%>New Modifiers:</size>",
+        "\n- New Universal modifier has been added: Soulless."
+      ]
+    },
+    {
+      "Date": "2026-05-03T23:19:00Z",
+      "Number": "1003",
+      "ShortTitle": "TownOfExtra v1.0.3",
+      "Title": "Lets go gambling!",
+      "SubTitle": "Aw, dang it :(",
+      "Text": [
+        "\r<b>TownOfExtra has updated to v1.0.3</b>",
+        "\n\nThank you for playing the mod!",
+        "\n\n★ <link=https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.0.3>TownOfExtra v1.0.3 Download</link> ★ <link=https://github.com/Mehzxzz/TownOfExtra/wiki>Role/Modifier Info</link> ★",
+
+        "\n\n\r<size=105%>New Roles:</size>",
+        "\n- New Impostor Support role has been added: Gambler.",
+
+        "\n\n\r<size=105%>Additions:</size>",
+        "\n- Added these news updates here, hi :)"
+      ]
+    }
+  ]
+}
