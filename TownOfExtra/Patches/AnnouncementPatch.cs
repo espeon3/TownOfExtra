@@ -53,7 +53,7 @@ public class AnnouncementPatch
 
 public static class ModNewsFetcher
 {
-    private static string _newsUrl = "https://raw.githubusercontent.com/you/yourmod/main/MyMod/Resources/Announcements/modNews-en_US.json";
+    private static string _newsUrl = "https://raw.githubusercontent.com/Mehzxzz/TownOfExtra/refs/heads/master/TownOfExtra/Resources/Announcements/modNews-en_US.json";
     private static bool _downloaded;
 
     public static void CheckForNews()
