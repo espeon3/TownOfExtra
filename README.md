@@ -22,7 +22,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-cannibal"><img width="10%" src="./TownOfExtra/Resources/CannibalRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-signal-jammer"><img width="10%" src="./TownOfExtra/Resources/SignalJammerRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-power"><img src="./Resources/Headers/ImpPower.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-eraser"><img width="10%" src="./RTownOfExtra/esources/EraserRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-eraser"><img width="10%" src="./RTownOfExtra/Resources/EraserRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-evil"><img src="./Resources/Headers/NeutEvil.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-trickster"><img width="10%" src="./TownOfExtra/Resources/TricksterRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-evil"><img src="./Resources/Headers/NeutOutlier.png" /></a>
