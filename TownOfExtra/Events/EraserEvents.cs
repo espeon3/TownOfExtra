@@ -14,7 +14,7 @@ namespace TownOfExtra.Events;
 public class EraserEvents
 {
     [RegisterEvent]
-    public static void RoundStartEventHandler(RoundStartEvent @event)
+    public static void RoundStartEventHandler(RoundStartEvent e)
     {
         foreach (var p in PlayerControl.AllPlayerControls)
         {

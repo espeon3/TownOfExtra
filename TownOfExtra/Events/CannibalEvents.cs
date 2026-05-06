@@ -11,7 +11,7 @@ namespace TownOfExtra.Events;
 public class CannibalEvents
 {
     [RegisterEvent]
-    public static void OnRoundStart(RoundStartEvent @event)
+    public static void OnRoundStart(RoundStartEvent e)
     {
         if (!AmongUsClient.Instance.AmHost) return;
     
@@ -39,7 +39,7 @@ public class CannibalEvents
     }
     
     [RegisterEvent]
-    public static void OnMeetingStart(StartMeetingEvent @event)
+    public static void OnMeetingStart(StartMeetingEvent e)
     {
         if (!AmongUsClient.Instance.AmHost) return;
 

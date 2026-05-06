@@ -24,6 +24,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.EraserRoleIcon.png");
     public static LoadableAsset<Sprite> SwitcherRoleIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.SwitcherRoleIcon.png");
+    public static LoadableAsset<Sprite> TaggerRoleIcon =>
+        new LoadableResourceAsset("TownOfExtra.Resources.TaggerRoleIcon.png");
     public static LoadableAsset<Sprite> HeavyWorkloadModifierIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.HeavyWorkloadModifierIcon.png");
     public static LoadableAsset<Sprite> RoutineModifierIcon =>
@@ -43,9 +45,10 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.TricksterPlaceButton.png");
     public static LoadableAsset<Sprite> EraserEraseButton =>
         new LoadableResourceAsset("TownOfExtra.Resources.EraserEraseButton.png");
-    
     public static LoadableAsset<Sprite> SwitcherSwitchButton =>
         new LoadableResourceAsset("TownOfExtra.Resources.SwitcherSwitchButton.png");
+    public static LoadableAsset<Sprite> TaggerMarkButton =>
+        new LoadableResourceAsset("TownOfExtra.Resources.TaggerMarkButton.png");
     
     public static LoadableAsset<Sprite> LightningIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.LightningIcon.png");

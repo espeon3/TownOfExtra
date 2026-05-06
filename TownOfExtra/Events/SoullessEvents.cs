@@ -13,10 +13,10 @@ public static class SoulLessEvents
     private static readonly HashSet<byte> SoullessKills = new();
     
     [RegisterEvent]
-    public static void BeforeMurderEventHandler(BeforeMurderEvent @event)
+    public static void BeforeMurderEventHandler(BeforeMurderEvent e)
     {
-        var target = @event.Target;
-        var source = @event.Source;
+        var target = e.Target;
+        var source = e.Source;
 
         if (SoullessKills.Contains(target.PlayerId))
         {
@@ -26,7 +26,7 @@ public static class SoulLessEvents
 
         if (target.HasModifier<SoullessModifier>() && !MeetingHud.Instance)
         {
-            @event.Cancel();
+            e.Cancel();
 
             SoullessKills.Add(target.PlayerId);
             source.RpcCustomMurder(target, MeetingCheck.OutsideMeeting, createDeadBody: false);
@@ -34,9 +34,9 @@ public static class SoulLessEvents
     }
     
     [RegisterEvent]
-    public static void AfterMurderEventHandler(AfterMurderEvent @event)
+    public static void AfterMurderEventHandler(AfterMurderEvent e)
     {
-        var target = @event.Target;
+        var target = e.Target;
 
         if (target.HasModifier<SoullessModifier>() && !MeetingHud.Instance)
         {

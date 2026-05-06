@@ -3,6 +3,7 @@ using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Options.Roles;
+using TownOfUs.Utilities;
 using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Gambler;
@@ -26,7 +27,7 @@ public class TeleportBackModifier : BaseModifier
         var killPosition = target.transform.position;
         if (killer == null || killer.Data.IsDead) yield break;
 
-        killer.transform.position = killPosition;
+        killer.RpcSetPos(killPosition);
     }
     
     public override void OnDeath(DeathReason reason)

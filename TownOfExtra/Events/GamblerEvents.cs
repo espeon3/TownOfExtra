@@ -20,30 +20,30 @@ namespace TownOfExtra.Events
         private static bool _isProcessing;
 
         [RegisterEvent(50)]
-        public static void BeforeMurderEventHandler(BeforeMurderEvent @event)
+        public static void BeforeMurderEventHandler(BeforeMurderEvent e)
         {
-            var target = @event.Target;
-            var source = @event.Source;
+            var target = e.Target;
+            var source = e.Source;
 
             if (_isProcessing) return;
 
             if (source.HasModifier<NoBodyModifier>() && !MeetingHud.Instance)
             {
                 _isProcessing = true;
-                @event.Cancel();
+                e.Cancel();
                 source.RpcCustomMurder(target, MeetingCheck.OutsideMeeting, createDeadBody: false);
                 _isProcessing = false;
             }
         }
 
         [RegisterEvent(50)]
-        public static void AfterMurderEventHandler(AfterMurderEvent @event)
+        public static void AfterMurderEventHandler(AfterMurderEvent e)
         {
             if (!AmongUsClient.Instance.AmHost || MeetingHud.Instance) return;
 
             var options = OptionGroupSingleton<GamblerRoleOptions>.Instance;
-            var killer = @event.Source;
-            var victim = @event.Target;
+            var killer = e.Source;
+            var victim = e.Target;
 
             if (killer == null) return;
 
@@ -71,7 +71,7 @@ namespace TownOfExtra.Events
             {
                 if (killer.HasModifier<RotBodyModifier>())
                 {
-                    Coroutines.Start(RotBodyModifier.StartRotting(@event.Target, killer));
+                    Coroutines.Start(RotBodyModifier.StartRotting(e.Target, killer));
                 }
             }
 
@@ -102,6 +102,14 @@ namespace TownOfExtra.Events
                 }
             }
 
+            if (options.TeleportBackEnabled)
+            {
+                if (killer.HasModifier<TeleportBackModifier>())
+                {
+                    Coroutines.Start(TeleportBackModifier.StartDelay(victim, killer, options.TeleportBackDelay.Value));
+                }
+            }
+
             if (options.InvisibilityEnabled)
             {
                 if (killer.HasModifier<InvisibilityModifier>())
@@ -121,7 +129,7 @@ namespace TownOfExtra.Events
         }
 
         [RegisterEvent]
-        public static void GameEndEventHandler(GameEndEvent @event)
+        public static void GameEndEventHandler(GameEndEvent e)
         {
             GamblerRole.LastEffects.Clear();
         }

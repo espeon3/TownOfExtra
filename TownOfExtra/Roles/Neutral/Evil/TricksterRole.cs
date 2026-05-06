@@ -5,6 +5,7 @@ using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
+using TownOfUs.Interfaces;
 using TownOfUs.Modules.Localization;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
@@ -14,7 +15,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Neutral.Evil;
 
-public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, IUnlovable
 {
     public string RoleName => "Trickster";
     public string RoleDescription => "Trick the crewmates!";
@@ -23,6 +24,7 @@ public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfU
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
     public DoomableType DoomHintType => DoomableType.Death;
+    public bool IsUnlovable => true;
 
     public static int SampledColourId;
     public static List<DeadBody> SpawnedBodies = new List<DeadBody>();
