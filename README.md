@@ -15,6 +15,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 <p align="center">
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-killing"><img src="./Resources/Headers/ImpKilling.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-poisoner"><img width="10%" src="./TownOfExtra/Resources/PoisonerRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-tagger"><img width="10%" src="./TownOfExtra/Resources/TaggerRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-support"><img src="./Resources/Headers/ImpSupport.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-freezer"><img width="10%" src="./TownOfExtra/Resources/FreezerRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-gambler"><img width="10%" src="./TownOfExtra/Resources/GamblerRoleIcon.png" /></a>
@@ -60,7 +61,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 
 | Game Version             | Mod Version | Download Link                                                         |
 |--------------------------|-------------|-----------------------------------------------------------------------|
-| 17.3 (2026.3.31)         | 1.0.4       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.0.4) |
+| 17.3 (2026.3.31)         | 1.0.5       | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.0.5) |
 
 -----------------------
 
