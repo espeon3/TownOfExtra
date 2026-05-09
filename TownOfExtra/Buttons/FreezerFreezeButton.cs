@@ -16,7 +16,7 @@ public sealed class FreezerFreezeButton : TownOfUsRoleButton<FreezerRole>
 {
     public override string Name => "Freeze";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
-    public override Color TextOutlineColor => TownOfExtraColours.FreezerRoleColour;
+    public override Color TextOutlineColor => Palette.ImpostorRed;
     public override float Cooldown => OptionGroupSingleton<FreezerRoleOptions>.Instance.FreezeCooldown;
     public override float EffectDuration => OptionGroupSingleton<FreezerRoleOptions>.Instance.FreezeDuration;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.FreezerFreezeButton;

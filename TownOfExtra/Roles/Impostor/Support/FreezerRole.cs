@@ -14,7 +14,7 @@ public sealed class FreezerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable
     public string RoleName => "Freezer";
     public string RoleDescription => "Freeze the crew to stop them escaping!";
     public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => TownOfExtraColours.FreezerRoleColour;
+    public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorSupport;
     public DoomableType DoomHintType => DoomableType.Trickster;

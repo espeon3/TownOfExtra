@@ -14,7 +14,7 @@ public sealed class PoisonerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverabl
     public string RoleName => "Poisoner";
     public string RoleDescription => "Infect the ship with a deadly poison!";
     public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => TownOfExtraColours.PoisonerRoleColour;
+    public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorKilling;
     public DoomableType DoomHintType => DoomableType.Fearmonger;

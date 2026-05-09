@@ -18,7 +18,7 @@ public sealed class CannibalRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverabl
     public string RoleName => "Cannibal";
     public string RoleDescription => "Leave no traces of the crew!";
     public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => TownOfExtraColours.CannibalRoleColour;
+    public Color RoleColor => TownOfExtraColours.CannibalColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorConcealing;
     public DoomableType DoomHintType => DoomableType.Death;
@@ -56,7 +56,7 @@ public sealed class CannibalRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverabl
     {
         Coroutines.Start(MiscUtils.CoFlash(TownOfUsColors.Medic));
         var notif = Helpers.CreateAndShowNotification(
-            $"You have been {TownOfUsColors.Medic.ToTextColor()}revived</color> as the {TownOfExtraColours.CannibalRoleColour.ToTextColor()}cannibal</color> has {Palette.ImpostorRed.ToTextColor()}died</color>!",
+            $"You have been {TownOfUsColors.Medic.ToTextColor()}revived</color> as the {TownOfExtraColours.CannibalColour.ToTextColor()}cannibal</color> has {Palette.ImpostorRed.ToTextColor()}died</color>!",
             Color.white, new Vector3(0f, 1f, -20f), spr: TouCrewAssets.MedicSprite.LoadAsset());
         notif.AdjustNotification();
     }

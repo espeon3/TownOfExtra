@@ -22,7 +22,7 @@ public sealed class PoisonerPoisonButton : TownOfUsKillRoleButton<PoisonerRole, 
 {
     public override string Name => "Poison";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
-    public override Color TextOutlineColor => TownOfExtraColours.PoisonerRoleColour;
+    public override Color TextOutlineColor => Palette.ImpostorRed;
     public override float Cooldown => OptionGroupSingleton<PoisonerRoleOptions>.Instance.PoisonCooldown;
     public static float Delay => OptionGroupSingleton<PoisonerRoleOptions>.Instance.PoisonDelay;
     public static float Length => OptionGroupSingleton<PoisonerRoleOptions>.Instance.PoisonLength;
@@ -61,7 +61,7 @@ public sealed class PoisonerPoisonButton : TownOfUsKillRoleButton<PoisonerRole, 
         OverrideName("Applying Poison...");
         
         var notif = Helpers.CreateAndShowNotification(
-            $"Applying {TownOfExtraColours.PoisonerRoleColour.ToTextColor()}poison</color> to {Target.Data.PlayerName}...",
+            $"Applying {TownOfExtraColours.PoisonColour.ToTextColor()}poison</color> to {Target.Data.PlayerName}...",
             Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.PoisonerPoisonButton.LoadAsset());
         notif.AdjustNotification();
 
@@ -75,7 +75,7 @@ public sealed class PoisonerPoisonButton : TownOfUsKillRoleButton<PoisonerRole, 
             target.RpcAddModifier<PoisonedModifier>(PlayerControl.LocalPlayer);
 
             var pnotif = Helpers.CreateAndShowNotification(
-                $"You poisoned {TownOfExtraColours.PoisonerRoleColour.ToTextColor()}{targetName}</color>!",
+                $"You poisoned {TownOfExtraColours.PoisonColour.ToTextColor()}{targetName}</color>!",
                 Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.PoisonerPoisonButton.LoadAsset());
             pnotif.AdjustNotification();
 

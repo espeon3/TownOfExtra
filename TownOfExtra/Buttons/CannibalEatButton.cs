@@ -18,7 +18,7 @@ public sealed class CannibalEatButton : TownOfUsKillRoleButton<CannibalRole, Pla
 {
     public override string Name => "Eat";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
-    public override Color TextOutlineColor => TownOfExtraColours.CannibalRoleColour;
+    public override Color TextOutlineColor => TownOfExtraColours.CannibalColour;
     public override float Cooldown => OptionGroupSingleton<CannibalRoleOptions>.Instance.KillCooldown;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.CannibalEatButton;
 

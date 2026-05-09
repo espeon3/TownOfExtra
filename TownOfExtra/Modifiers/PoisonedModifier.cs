@@ -26,9 +26,9 @@ public sealed class PoisonedModifier(PlayerControl poisoner) : TimedModifier
     {
         if (Player != PlayerControl.LocalPlayer) return;
         
-        Coroutines.Start(MiscUtils.CoFlash(TownOfExtraColours.PoisonerRoleColour, Duration));
+        Coroutines.Start(MiscUtils.CoFlash(TownOfExtraColours.PoisonColour, Duration));
         var notif = Helpers.CreateAndShowNotification(
-            $"You have been {TownOfExtraColours.PoisonerRoleColour.ToTextColor()}poisoned</color>!",
+            $"You have been {TownOfExtraColours.PoisonColour.ToTextColor()}poisoned</color>!",
             Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.PoisonerRoleIcon.LoadAsset());
         notif.AdjustNotification();
     }
@@ -48,7 +48,7 @@ public sealed class PoisonedModifier(PlayerControl poisoner) : TimedModifier
         if (Player == PlayerControl.LocalPlayer)
         {
             var notif = Helpers.CreateAndShowNotification(
-                $"You have been {TownOfExtraColours.PoisonerRoleColour.ToTextColor()}poisoned</color> to {Palette.ImpostorRed.ToTextColor()}death</color>!",
+                $"You have been {TownOfExtraColours.PoisonColour.ToTextColor()}poisoned</color> to {Palette.ImpostorRed.ToTextColor()}death</color>!",
                 Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.PoisonerPoisonButton.LoadAsset());
             notif.AdjustNotification();
         }
@@ -56,7 +56,7 @@ public sealed class PoisonedModifier(PlayerControl poisoner) : TimedModifier
         if (poisoner == PlayerControl.LocalPlayer)
         {
             var poisonerNotif = Helpers.CreateAndShowNotification(
-                $"Your {TownOfExtraColours.PoisonerRoleColour.ToTextColor()}poison</color> has {Palette.ImpostorRed.ToTextColor()}killed</color> {Player.Data.PlayerName}!",
+                $"Your {TownOfExtraColours.PoisonColour.ToTextColor()}poison</color> has {Palette.ImpostorRed.ToTextColor()}killed</color> {Player.Data.PlayerName}!",
                 Color.white, new Vector3(0f, 1.8f, -20f), spr: TownOfExtraAssets.PoisonerPoisonButton.LoadAsset());
             poisonerNotif.AdjustNotification();
         }
