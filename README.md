@@ -52,6 +52,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 - Signal jammer role icon & button (recoloured/edited)
 - Trickster role icon (recoloured)
 - Soulless modifier icon
+- Cannibal role icon
 
 -----------------------
 
