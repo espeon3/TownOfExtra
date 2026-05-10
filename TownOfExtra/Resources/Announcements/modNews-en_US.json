@@ -95,18 +95,23 @@
       ]
     },
     {
-      "Date": "2026-05-08T18:00:00Z",
+      "Date": "2026-05-10T10:24:00Z",
       "Number": "10006",
-      "ShortTitle": "TownOfExtra v1.0.6",
-      "Title": "TownOfExtra v1.0.6",
+      "ShortTitle": "TownOfExtra v1.1.0",
+      "Title": "TownOfExtra v1.1.0",
       "SubTitle": "",
       "Text": [
-        "\r<b>TownOfExtra has updated to v1.0.6</b>",
+        "\r<b>TownOfExtra has updated to v1.1.0</b>",
         "\n\nThank you for playing the mod!",
-        "\n\n★ <link=https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.0.6>TownOfExtra v1.0.6 Download</link> ★ <link=https://github.com/Mehzxzz/TownOfExtra/wiki>Role/Modifier Info</link> ★",
+        "\n\n★ <link=https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.1.0>TownOfExtra v1.1.0 Download</link> ★ <link=https://github.com/Mehzxzz/TownOfExtra/wiki>Role/Modifier Info</link> ★",
+
+        "\n\n\r<size=105%>Changes:</size>",
+        "\n- Changed almost every role/button icon",
+        "\n- Most impostor roles now use the default colour",
+        "\n- Cleaned up the code",
 
         "\n\n\r<size=105%>New Modifiers:</size>",
-        "\n- New Crewmate Passive modifier has been added: Fragile."
+        "\n- A new Crewmate Passive modifier has been added: Fragile."
       ]
     }
   ]
