@@ -1,13 +1,14 @@
-﻿using HarmonyLib;
+﻿using MiraAPI.Events;
+using MiraAPI.Events.Vanilla.Meeting;
 using MiraAPI.Modifiers;
 using TownOfExtra.Modifiers;
 
-namespace TownOfExtra.Patches;
+namespace TownOfExtra.Events;
 
-[HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.Start))]
-public class PnMeetingHudStartPatch
+public class PoisonerEvents
 {
-    public static void Postfix()
+    [RegisterEvent]
+    public static void MeetingStartEvent(StartMeetingEvent e)
     {
         foreach (PlayerControl p in PlayerControl.AllPlayerControls)
         {
