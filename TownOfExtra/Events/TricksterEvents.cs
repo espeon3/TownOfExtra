@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
-using HarmonyLib;
 using System.Linq;
+using MiraAPI.Events;
+using MiraAPI.Events.Vanilla.Gameplay;
+using MiraAPI.Events.Vanilla.Meeting;
 using MiraAPI.GameOptions;
 using MiraAPI.Utilities;
 using Reactor.Utilities;
@@ -11,35 +13,36 @@ using TownOfExtra.Roles.Neutral.Evil;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Patches;
+namespace TownOfExtra.Events;
 
-[HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.ReportDeadBody))]
-public static class TsReportDeadBodyPatch
+public class TricksterEvents
 {
-    public static bool Prefix(PlayerControl __instance, NetworkedPlayerInfo target)
+    [RegisterEvent]
+    public static void ReportDeadBodyEventHandler(ReportBodyEvent e)
     {
-        if (__instance.Data.IsDead) return false;
-        
+        if (e.Reporter.Data.IsDead) return;
+        if (e.Target == null || e.Body == null) return;
+
         TricksterRole.SpawnedBodies.RemoveAll(b => b == null);
         bool isFake = TricksterRole.SpawnedBodies.Any(b =>
-            b.ParentId == target.PlayerId
+            b.ParentId == e.Target.PlayerId
         );
 
         if (isFake)
         {
-            if (__instance.IsRole<TricksterRole>())
+            if (e.Reporter.IsRole<TricksterRole>())
             {
-                BodyManager.ClearFakeBodies(target);
+                BodyManager.ClearFakeBodies(e.Target);
                 
                 Coroutines.Start(MiscUtils.CoFlash(Palette.ImpostorRed));
                 var othernotif = Helpers.CreateAndShowNotification(
                     $"You cannot report your own {TownOfExtraColours.TricksterRoleColour.ToTextColor()}fake bodies</color>!",
                     Palette.ImpostorRed, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterRoleIcon.LoadAsset());
                 othernotif.AdjustNotification();
-                return false;
+                e.Cancel();
             }
 
-            if (__instance.IsLover())
+            if (e.Reporter.IsLover())
             {
                 foreach (var player in PlayerControl.AllPlayerControls)
                 {
@@ -47,14 +50,14 @@ public static class TsReportDeadBodyPatch
 
                     if (player.IsRole<TricksterRole>() && player.IsLover())
                     {
-                        BodyManager.ClearFakeBodies(target);
+                        BodyManager.ClearFakeBodies(e.Target);
                         
                         Coroutines.Start(MiscUtils.CoFlash(Palette.ImpostorRed));
                         var othernotif = Helpers.CreateAndShowNotification(
                             $"You cannot report your lover's {TownOfExtraColours.TricksterRoleColour.ToTextColor()}fake bodies</color>!",
                             Palette.ImpostorRed, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterRoleIcon.LoadAsset());
                         othernotif.AdjustNotification();
-                        return false;
+                        e.Cancel();
                     }
                 }
             }
@@ -67,38 +70,28 @@ public static class TsReportDeadBodyPatch
                 Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterRoleIcon.LoadAsset());
             notif.AdjustNotification();
 
-            BodyManager.ClearFakeBodies(target);
+            BodyManager.ClearFakeBodies(e.Target);
 
-            return false;
+            e.Cancel();
         }
-
-        return true;
     }
-}
 
-[HarmonyPatch(typeof(GameManager), nameof(GameManager.StartGame))]
-public static class TsStartGamePatch
-{
-    public static bool Prefix()
+    [RegisterEvent]
+    public static void StartGameEventHandler(IntroBeginEvent e)
     {
         TricksterRole.FakeBodiesReported = 0;
         TricksterRole.SpawnedBodies = new List<DeadBody>();
         TricksterRole.SampledColourId = 0;
         TricksterRole.HasSampledColour = false;
         TricksterPlaceButton.BodyPlaced = false;
-        return true;
     }
-}
 
-[HarmonyPatch(typeof(MeetingHud), nameof(MeetingHud.Start))]
-public static class TsMeetingHudStartPatch
-{
-    public static bool Prefix()
+    [RegisterEvent]
+    public static void MeetingStartEventHandler(StartMeetingEvent e)
     {
         TricksterRole.SpawnedBodies = new List<DeadBody>();
         TricksterRole.SampledColourId = 0;
         TricksterRole.HasSampledColour = false;
-        return true;
     }
 }
 
