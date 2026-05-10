@@ -12,12 +12,12 @@ namespace TownOfExtra.Events;
 
 public class EraserEvents
 {
-    [RegisterEvent]
+    [RegisterEvent(100)]
     public static void RoundStartEventHandler(RoundStartEvent e)
     {
         foreach (var p in PlayerControl.AllPlayerControls)
         {
-            if (p.HasModifier<ErasedModifier>() && p.Data.IsDead)
+            if (p.HasModifier<ErasedModifier>() && !p.Data.IsDead)
             {
                 if (PlayerControl.LocalPlayer == p)
                 {
@@ -28,6 +28,7 @@ public class EraserEvents
                     notif.AdjustNotification();
                 }
                 p.RpcSetRole(RoleTypes.Crewmate);
+                p.RpcRemoveModifier<ErasedModifier>();
             }
         }
     }

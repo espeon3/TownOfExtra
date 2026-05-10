@@ -45,11 +45,9 @@ public class TricksterRpcs
     }
     
     [MethodRpc((uint)TownOfExtraRpcs.PlaceFakeBody)]
-    public static void RpcPlaceFakeBody(PlayerControl sender, Vector3 position, byte colorId, byte parentId)
+    public static void RpcPlaceFakeBody(PlayerControl sender, byte colorId, byte parentId)
     {
-        var player = PlayerControl.LocalPlayer;
-
-        var body = TricksterPlaceButton.CreateDeadBody(position, colorId, parentId, player);
+        var body = TricksterPlaceButton.CreateDeadBody(sender.transform.position, colorId, parentId, sender);
         if (body != null)
         {
             TricksterRole.SpawnedBodies.Add(body);

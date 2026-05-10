@@ -39,6 +39,7 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
         if (BodyPlaced)
         {
             BodyPlaced = false;
+            Timer = OptionGroupSingleton<TricksterRoleOptions>.Instance.PlaceCooldown;
     
             if (TricksterRole.SpawnedBodies.Count > 0)
             {
@@ -50,6 +51,7 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
             }
             return;
         }
+        BodyPlaced = true;
 
         var colourName = Palette.GetColorName(TricksterRole.SampledColourId);
         var colour = Palette.PlayerColors[TricksterRole.SampledColourId];
@@ -61,8 +63,7 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
 
         PlayerControl trickster = GetTrickster();
         if (trickster == null) return;
-        TricksterRpcs.RpcPlaceFakeBody(PlayerControl.LocalPlayer, trickster.transform.position, (byte)TricksterRole.SampledColourId, trickster.PlayerId);
-        BodyPlaced = true;
+        TricksterRpcs.RpcPlaceFakeBody(trickster, (byte)TricksterRole.SampledColourId, trickster.PlayerId);
     }
 
     protected override void FixedUpdate(PlayerControl playerControl)

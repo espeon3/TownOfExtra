@@ -13,34 +13,35 @@ namespace TownOfExtra.Events;
 
 public class SwitcherEvents
 {
-    [RegisterEvent]
+    [RegisterEvent(101)]
     public static void RoundStartEventHandler(RoundStartEvent e)
     {
         var switcher = GetSwitcher();
 
         foreach (var p in PlayerControl.AllPlayerControls)
         {
-            if (switcher == null || p == null || p.Data.IsDead || switcher.Data.IsDead)
-            {
-                if (switcher != null && PlayerControl.LocalPlayer == switcher)
-                {
-                    Coroutines.Start(MiscUtils.CoFlash(TownOfExtraColours.SwitcherRoleColour));
-                    var notif = Helpers.CreateAndShowNotification(
-                        $"Your {TownOfExtraColours.SwitcherRoleColour.ToTextColor()}switcher</color> target is no longer alive!",
-                        Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.SwitcherRoleIcon.LoadAsset());
-                    notif.AdjustNotification();
-                }
-                SwitcherSwitchButton.ButtonDisabled = false;
-                return;
-            }
-
             if (p.HasModifier<SwitchedModifier>())
             {
+                if (switcher == null || p == null || p.Data.IsDead || switcher.Data.IsDead)
+                {
+                    if (switcher != null && PlayerControl.LocalPlayer == switcher)
+                    {
+                        Coroutines.Start(MiscUtils.CoFlash(TownOfExtraColours.SwitcherRoleColour));
+                        var notif = Helpers.CreateAndShowNotification(
+                            $"Your {TownOfExtraColours.SwitcherRoleColour.ToTextColor()}switcher</color> target is no longer alive!",
+                            Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.SwitcherRoleIcon.LoadAsset());
+                        notif.AdjustNotification();
+                    }
+                    SwitcherSwitchButton.ButtonDisabled = false;
+                    continue;
+                }
+                
                 var pRole = p.Data.Role.Role;
                 var switcherRole = switcher.Data.Role.Role;
 
                 p.RpcSetRole(switcherRole);
                 switcher.RpcSetRole(pRole);
+                p.RpcRemoveModifier<SwitchedModifier>();
 
                 if (PlayerControl.LocalPlayer == p)
                 {
@@ -58,6 +59,7 @@ public class SwitcherEvents
                         Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.SwitcherRoleIcon.LoadAsset());
                     notif.AdjustNotification();
                 }
+                SwitcherSwitchButton.ButtonDisabled = false;
             }
         }
     }
