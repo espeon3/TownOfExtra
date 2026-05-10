@@ -36,8 +36,6 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 </p>
 
 -----------------------
-> [!IMPORTANT]
-> As I am new to mod developing, some features of the mod have used AI within them. I plan to recode these parts in future when I have more experience. Thank you for using the mod!
 # Contributions & Credits
 
 [MiraAPI](https://github.com/All-Of-Us-Mods/MiraAPI) - Mod framework & api\
