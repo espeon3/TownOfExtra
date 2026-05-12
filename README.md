@@ -36,20 +36,22 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 </p>
 
 -----------------------
+
 ## Wiki:
 - [Roles](https://github.com/Mehzxzz/TownOfExtra/wiki/Roles)
 - [Modifiers](https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers)
 
 -----------------------
+
 # Contributions & Credits
 
 [MiraAPI](https://github.com/All-Of-Us-Mods/MiraAPI) - Mod framework & api\
-[Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - Mod framework, api, inspiration & assets\
+[Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - Mod framework, api, inspiration & some assets\
 [Reactor](https://github.com/NuclearPowered/Reactor) - Dependency for the mod\
 [BepInEx](https://github.com/BepInEx) - For hooking game functions
 
 # Asset Credits
-- Thank you to [@AtonyGit](https://github.com/AtonyGit) for most role icons from [Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira)!
+- Thank you to [@AtonyGit](https://github.com/AtonyGit) for most role, modifier & button icons from [Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira)!
 
 -----------------------
 
