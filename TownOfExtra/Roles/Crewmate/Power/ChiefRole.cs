@@ -12,17 +12,17 @@ namespace TownOfExtra.Roles.Crewmate.Power;
 public sealed class ChiefRole : CrewmateRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Chief";
-    public string RoleDescription => "Recruit players into sheriffs!";
+    public string RoleDescription => "Recruit players and shoot <color=#FF0000>evildoers</color>";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => TownOfExtraColours.ChiefRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Crewmate;
     public RoleAlignment RoleAlignment => RoleAlignment.CrewmatePower;
-    public DoomableType DoomHintType => DoomableType.Relentless;
+    public DoomableType DoomHintType => DoomableType.Hunter;
     
     public string GetAdvancedDescription()
     {
         return
-            "The Chief is a Crewmate Power role that can recruit players, causing them to become a sheriff!" +
+            "The Chief is a Crewmate Power who successes role that can recruit players, converting them into sheriffs, aswell as being able to shoot players with a limited amount of shots, killing and revealing their roles." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
