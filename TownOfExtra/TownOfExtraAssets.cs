@@ -55,6 +55,10 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.SwitcherSwitchButton.png");
     public static LoadableAsset<Sprite> TaggerMarkButton =>
         new LoadableResourceAsset("TownOfExtra.Resources.TaggerMarkButton.png");
+    public static LoadableAsset<Sprite> ChiefRecruitButton =>
+        new LoadableResourceAsset("TownOfExtra.Resources.ChiefRecruitButton.png");
+    public static LoadableAsset<Sprite> ChiefShootButton =>
+        new LoadableResourceAsset("TownOfExtra.Resources.ChiefShootButton.png");
     
     public static LoadableAsset<Sprite> LightningIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.LightningIcon.png");

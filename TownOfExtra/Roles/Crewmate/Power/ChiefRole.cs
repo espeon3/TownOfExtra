@@ -39,7 +39,8 @@ public sealed class ChiefRole : CrewmateRole, ITownOfUsRole, IWikiDiscoverable, 
         {
             return new List<CustomButtonWikiDescription>
             {
-                new("Recruit", "Recruit a player, turning them into a sheriff.", TownOfExtraAssets.Placeholder)
+                new("Recruit", "Recruit a player, turning them into a sheriff.", TownOfExtraAssets.ChiefRecruitButton),
+                new("Shoot", "Shoot a player, killing them. You will be notified of the killed player's role.", TownOfExtraAssets.ChiefShootButton)
             };
         }
     }

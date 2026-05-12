@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Reflection;
+using TownOfUs;
+using UnityEngine;
 
 namespace TownOfExtra;
 
@@ -15,4 +17,18 @@ public class TownOfExtraColours
     public static Color HeavyWorkloadModifierColour => new Color(216 / 255f, 108 / 255f, 2 / 255f);
     public static Color FragileModifierColour => new Color(71 / 255f, 102 / 255f, 125 / 255f);
     //public static Color ModifierColour => new Color( / 255f, / 255f, / 255f);
+    
+    public static Color GetTownOfExtraRoleColour(string name)
+    {
+        var pInfo = typeof(TownOfExtraColours).GetProperty(name, BindingFlags.Public | BindingFlags.Static);
+
+        if (pInfo == null)
+        {
+            return TownOfUsColors.Impostor;
+        }
+
+        var colour = (Color)pInfo.GetValue(null)!;
+
+        return colour;
+    }
 }

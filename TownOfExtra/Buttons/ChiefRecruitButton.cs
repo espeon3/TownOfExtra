@@ -25,7 +25,7 @@ public sealed class ChiefRecruitButton : TownOfUsKillRoleButton<ChiefRole, Playe
     public override float EffectDuration => AllowActive ? 3f : 0f;
     public override bool IsEffectCancellable() => true;
 
-    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.Placeholder;
+    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.ChiefRecruitButton;
     public override int MaxUses => (int)OptionGroupSingleton<ChiefRoleOptions>.Instance.RecruitUses;
     public PlayerControl Recruit;
     public bool NoCd;
