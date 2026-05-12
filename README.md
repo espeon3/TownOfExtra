@@ -3,7 +3,7 @@
 > This mod requires Town of Us: Mira to be installed and is NOT for console versions of Among Us.
  
 <div align="center">
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki"><img src="./Resources/Banners/TownOfExtraBanner.png" alt="Town of Extra"/></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Banners/TownOfExtraBanner.png" alt="Town of Extra"/></a>
   <p>Town Of Extra</p>
 </div>
 <br/>
@@ -13,31 +13,33 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 -----------------------
 
 <p align="center">
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-killing"><img src="./Resources/Headers/ImpKilling.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-poisoner"><img width="10%" src="./TownOfExtra/Resources/PoisonerRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-tagger"><img width="10%" src="./TownOfExtra/Resources/TaggerRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-support"><img src="./Resources/Headers/ImpSupport.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-freezer"><img width="10%" src="./TownOfExtra/Resources/FreezerRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-gambler"><img width="10%" src="./TownOfExtra/Resources/GamblerRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-concealing"><img src="./Resources/Headers/ImpConcealing.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-cannibal"><img width="10%" src="./TownOfExtra/Resources/CannibalRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-signal-jammer"><img width="10%" src="./TownOfExtra/Resources/SignalJammerRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-power"><img src="./Resources/Headers/ImpPower.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-eraser"><img width="10%" src="./TownOfExtra/Resources/EraserRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-evil"><img src="./Resources/Headers/NeutEvil.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-trickster"><img width="10%" src="./TownOfExtra/Resources/TricksterRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-evil"><img src="./Resources/Headers/NeutOutlier.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-switcher"><img width="10%" src="./TownOfExtra/Resources/SwitcherRoleIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#crew-modifiers"><img src="./Resources/Headers/CrewMods.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-heavy-workload"><img width="10%" src="./TownOfExtra/Resources/HeavyWorkloadModifierIcon.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-routine"><img width="10%" src="./TownOfExtra/Resources/RoutineModifierIcon.png" /></a>
- <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#universal-modifiers"><img src="./Resources/Headers/UniMods.png" /></a>
-  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-soulless"><img width="10%" src="./TownOfExtra/Resources/SoullessModifierIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-killing"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpKilling.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-poisoner"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/PoisonerRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-tagger"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/TaggerRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-support"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpSupport.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-freezer"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/FreezerRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-gambler"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/GamblerRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-concealing"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpConcealing.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-cannibal"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/CannibalRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-signal-jammer"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/SignalJammerRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#impostor-power"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpPower.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-eraser"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/EraserRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-evil"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NeutEvil.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-trickster"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/TricksterRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-evil"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NeutOutlier.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-switcher"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/SwitcherRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#crew-modifiers"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/CrewMods.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-heavy-workload"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/HeavyWorkloadModifierIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-routine"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/RoutineModifierIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-fragile"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/FragileModifierIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#universal-modifiers"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/UniMods.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-soulless"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/SoullessModifierIcon.png" /></a>
 </p>
 
 -----------------------
 
-## Wiki:
+# Wiki Contents
+- [Home](https://github.com/Mehzxzz/TownOfExtra/wiki)
 - [Roles](https://github.com/Mehzxzz/TownOfExtra/wiki/Roles)
 - [Modifiers](https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers)
 
