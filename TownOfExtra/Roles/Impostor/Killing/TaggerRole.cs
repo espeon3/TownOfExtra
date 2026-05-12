@@ -16,7 +16,7 @@ namespace TownOfExtra.Roles.Impostor.Killing;
 public sealed class TaggerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Tagger";
-    public string RoleDescription => "Mark and kill the crew!";
+    public string RoleDescription => "Mark and eliminate all your foes";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;

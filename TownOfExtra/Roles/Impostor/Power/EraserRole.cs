@@ -12,7 +12,7 @@ namespace TownOfExtra.Roles.Impostor.Power;
 public sealed class EraserRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Eraser";
-    public string RoleDescription => "Take away their roles!";
+    public string RoleDescription => "Erase the roles of others";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;

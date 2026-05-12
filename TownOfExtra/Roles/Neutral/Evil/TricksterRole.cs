@@ -18,7 +18,7 @@ namespace TownOfExtra.Roles.Neutral.Evil;
 public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, IUnlovable
 {
     public string RoleName => "Trickster";
-    public string RoleDescription => "Trick the crewmates!";
+    public string RoleDescription => "Spawn fake bodies to trick the crew";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => TownOfExtraColours.TricksterRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;

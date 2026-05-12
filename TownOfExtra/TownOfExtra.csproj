@@ -7,9 +7,7 @@
         <Description>An addon to Town of Us: Mira including extra roles and features!</Description>
         <Authors>Mehzxzz</Authors>
 
-        <AmongUs>C:\Program Files (x86)\Steam\steamapps\common\Among Us\Mods</AmongUs>
-        <AmongUsPlugins>$(AmongUs)\AULauncher\BepInEx\plugins</AmongUsPlugins>
-        <AmongUsTestPlugins>$(AmongUs)\AULaunchers\BepInEx\plugins</AmongUsTestPlugins>
+        <AuProfile>C:\Users\REDACTED\AppData\Roaming\dev.allofus.starlight\profiles\town-of-extra-dev-1778529331446</AuProfile>
 
         <GenerateDependencyFile>false</GenerateDependencyFile>
     </PropertyGroup>
@@ -29,14 +27,7 @@
         <EmbeddedResource Include="Resources\**\*" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Compile Remove="Roles\Crewmate\Protective\BodyguardRole.cs" />
-    </ItemGroup>
-
     <Target Name="CopyToPlugins" AfterTargets="Build">
-        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(AmongUsPlugins)" />
-    </Target>
-    <Target Name="CopyToTestPlugins" AfterTargets="Build">
-        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(AmongUsTestPlugins)" />
+        <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(AuProfile)\BepInEx\plugins" />
     </Target>
 </Project>

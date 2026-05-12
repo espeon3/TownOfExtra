@@ -12,7 +12,7 @@ namespace TownOfExtra.Roles.Impostor.Concealing;
 public sealed class SignalJammerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Signal Jammer";
-    public string RoleDescription => "Jam signals to inconvenience the crew!";
+    public string RoleDescription => "Jam signals to block communication";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;

@@ -16,7 +16,7 @@ namespace TownOfExtra.Roles.Impostor.Support;
 public sealed class GamblerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Gambler";
-    public string RoleDescription => "Get random buffs/nerfs!";
+    public string RoleDescription => "Kill players for random effects";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;

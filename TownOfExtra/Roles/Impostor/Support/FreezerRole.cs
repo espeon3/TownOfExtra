@@ -12,7 +12,7 @@ namespace TownOfExtra.Roles.Impostor.Support;
 public sealed class FreezerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Freezer";
-    public string RoleDescription => "Freeze the crew to stop them escaping!";
+    public string RoleDescription => "Freeze the crew to stop them from escaping";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
