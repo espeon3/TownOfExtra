@@ -36,6 +36,11 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 </p>
 
 -----------------------
+## Wiki:
+- [Roles](https://github.com/Mehzxzz/TownOfExtra/wiki/Roles)
+- [Modifiers](https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers)
+
+-----------------------
 # Contributions & Credits
 
 [MiraAPI](https://github.com/All-Of-Us-Mods/MiraAPI) - Mod framework & api\
