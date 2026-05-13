@@ -56,7 +56,8 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 [BepInEx](https://github.com/BepInEx) - For hooking game functions
 
 # Asset Credits
-- Thank you to [@AtonyGit](https://github.com/AtonyGit) for most role, modifier & button icons from [Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira)!
+- Most role, modifier & button icons, some are edited - [@AtonyGit](https://github.com/AtonyGit) from [Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira)
+- Vinculator role icon & idea - az0th_19 (on discord)
 
 -----------------------
 
