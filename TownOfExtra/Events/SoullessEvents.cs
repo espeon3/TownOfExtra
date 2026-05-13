@@ -15,6 +15,8 @@ public static class SoulLessEvents
     [RegisterEvent]
     public static void BeforeMurderEventHandler(BeforeMurderEvent e)
     {
+        if (!AmongUsClient.Instance.AmHost) return;
+        
         var target = e.Target;
         var source = e.Source;
 
