@@ -35,6 +35,12 @@ public sealed class VinculatorChainButton : TownOfUsRoleButton<VinculatorRole>, 
         bool zeroUses = UsesLeft <= 0 && MaxUses != 0;
         return Timer <= 0 && !zeroUses;
     }
+    
+    public override void ClickHandler()
+    {
+        if (!CanClick()) return;
+        OnClick();
+    }
 
     protected override void OnClick()
     {
@@ -78,6 +84,13 @@ public sealed class VinculatorChainButton : TownOfUsRoleButton<VinculatorRole>, 
                         
                         plr.RpcAddModifier<LinkedModifier>(plr2);
                         plr2.RpcAddModifier<LinkedModifier>(plr);
+                        
+                        SetTimer(Cooldown);
+                        if (MaxUses != 0)
+                        {
+                            UsesLeft--;
+                            Button?.SetUsesRemaining(UsesLeft);
+                        }
                     }
                 );
                 foreach (var panel in player2Menu.potentialVictims)
