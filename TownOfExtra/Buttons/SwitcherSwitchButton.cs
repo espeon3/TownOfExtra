@@ -1,5 +1,4 @@
-﻿using MiraAPI.GameOptions;
-using MiraAPI.Keybinds;
+﻿using MiraAPI.Keybinds;
 using MiraAPI.Modifiers;
 using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
@@ -7,11 +6,7 @@ using Reactor.Utilities;
 using TownOfExtra.Modifiers;
 using TownOfExtra.Roles.Neutral.Outlier;
 using TownOfUs.Buttons;
-using TownOfUs.Options;
-using TownOfUs.Options.Maps;
-using TownOfUs.Options.Modifiers.Alliance;
 using TownOfUs.Utilities;
-using TownOfUs.Utilities.Appearances;
 using UnityEngine;
 
 namespace TownOfExtra.Buttons;

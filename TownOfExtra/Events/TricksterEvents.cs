@@ -89,6 +89,7 @@ public class TricksterEvents
                 $"Something about that body felt {TownOfExtraColours.TricksterRoleColour.ToTextColor()}wrong</color>...",
                 Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterRoleIcon.LoadAsset());
             notif.AdjustNotification();
+            TricksterRpcs.RpcNotifyTrickster();
 
             BodyManager.ClearFakeBodies(e.Target);
 

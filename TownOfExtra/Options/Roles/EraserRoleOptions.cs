@@ -11,6 +11,6 @@ public sealed class EraserRoleOptions : AbstractOptionGroup<EraserRole>
     
     [ModdedNumberOption("Erase Cooldown", 10f, 300f, 2.5f, MiraNumberSuffixes.Seconds)]
     public float EraseCooldown { get; set; } = 40f;
-    [ModdedNumberOption("Erase Uses", 0f, 30f, 1f, zeroInfinity:true)]
+    [ModdedNumberOption("Erase Uses", 0f, 30f, zeroInfinity:true)]
     public float EraseUses { get; set; } = 3f;
 }

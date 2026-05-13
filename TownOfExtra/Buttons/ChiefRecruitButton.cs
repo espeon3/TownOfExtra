@@ -1,5 +1,4 @@
-﻿using AmongUs.GameOptions;
-using MiraAPI.GameOptions;
+﻿using MiraAPI.GameOptions;
 using MiraAPI.Keybinds;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
@@ -29,16 +28,20 @@ public sealed class ChiefRecruitButton : TownOfUsKillRoleButton<ChiefRole, Playe
     public override int MaxUses => (int)OptionGroupSingleton<ChiefRoleOptions>.Instance.RecruitUses;
     public PlayerControl Recruit;
     public bool NoCd;
-    public bool Clickable = true;
     public bool AllowActive = true;
 
     public override bool CanClick()
     {
-        return Clickable && GetTarget() != null && Timer <= 0;
+        return GetTarget() != null && Timer <= 0;
     }
 
     public override PlayerControl GetTarget()
     {
+        if (Recruit != null)
+        {
+            return null;
+        }
+        
         if (!OptionGroupSingleton<ChiefRoleOptions>.Instance.CanRecruitLoverTeammate && PlayerControl.LocalPlayer.IsLover())
         {
             return PlayerControl.LocalPlayer.GetClosestLivingPlayer(true, Distance, false,
@@ -95,12 +98,10 @@ public sealed class ChiefRecruitButton : TownOfUsKillRoleButton<ChiefRole, Playe
         if (Recruit != null)
         {
             OverrideName("Recruiting...");
-            Clickable = false;
         }
         else
         {
             OverrideName("Recruit");
-            Clickable = true;
         }
     }
 

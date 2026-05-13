@@ -8,6 +8,8 @@ public static class TownOfExtraAssets
     public static LoadableAsset<Sprite> Placeholder =>
         new LoadableResourceAsset("TownOfExtra.Resources.Placeholder.png");
     
+    
+    
     public static LoadableAsset<Sprite> PoisonerRoleIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.PoisonerRoleIcon.png");
     public static LoadableAsset<Sprite> FreezerRoleIcon =>
@@ -28,6 +30,11 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.TaggerRoleIcon.png");
     public static LoadableAsset<Sprite> ChiefRoleIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.ChiefRoleIcon.png");
+    public static LoadableAsset<Sprite> VinculatorRoleIcon =>
+        new LoadableResourceAsset("TownOfExtra.Resources.VinculatorRoleIcon.png");
+    
+    
+    
     public static LoadableAsset<Sprite> PoisonedModifierIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.PoisonedModifierIcon.png");
     public static LoadableAsset<Sprite> HeavyWorkloadModifierIcon =>
@@ -38,6 +45,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.RoutineModifierIcon.png");
     public static LoadableAsset<Sprite> FragileModifierIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.FragileModifierIcon.png");
+    
+    
     
     public static LoadableAsset<Sprite> PoisonerPoisonButton =>
         new LoadableResourceAsset("TownOfExtra.Resources.PoisonerPoisonButton.png");
@@ -59,6 +68,12 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.ChiefRecruitButton.png");
     public static LoadableAsset<Sprite> ChiefShootButton =>
         new LoadableResourceAsset("TownOfExtra.Resources.ChiefShootButton.png");
+    public static LoadableAsset<Sprite> VinculatorChainButton =>
+        new LoadableResourceAsset("TownOfExtra.Resources.VinculatorChainButton.png");
+    public static LoadableAsset<Sprite> VinculatorEmpowerButton =>
+        new LoadableResourceAsset("TownOfExtra.Resources.VinculatorEmpowerButton.png");
+    
+    
     
     public static LoadableAsset<Sprite> LightningIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.LightningIcon.png");

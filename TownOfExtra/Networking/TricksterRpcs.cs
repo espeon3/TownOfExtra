@@ -16,8 +16,17 @@ namespace TownOfExtra.Networking;
 public class TricksterRpcs
 {
     [MethodRpc((uint)TownOfExtraRpcs.NotifyTrickster)]
-    public static void RpcNotifyTrickster(PlayerControl targetPlayer)
+    public static void RpcNotifyTrickster()
     {
+        PlayerControl targetPlayer = null;
+        foreach (var p in PlayerControl.AllPlayerControls)
+        {
+            if (p.GetTownOfUsRole() is TricksterRole)
+            {
+                targetPlayer = p;
+            }
+        }
+        
         if (targetPlayer == null) return;
 
         if (PlayerControl.LocalPlayer == targetPlayer)

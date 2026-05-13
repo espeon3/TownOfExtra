@@ -2,7 +2,6 @@
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Options;
 using TownOfUs;
-using TownOfUs.Assets;
 using TownOfUs.Interfaces;
 using TownOfUs.Modifiers.Game;
 using TownOfUs.Modules.Wiki;

@@ -9,4 +9,5 @@ public enum TownOfExtraRpcs : uint
     ReviveCannibalVictims = 504,
     TriggerFragileModifier = 505,
     ChiefNotifiyRecruited = 506,
+    VinculatorNotifyTeam = 507,
 }
