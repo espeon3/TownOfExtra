@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
@@ -55,10 +56,10 @@ public sealed class GamblerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable
     
     public static readonly Dictionary<byte, int> LastEffects = new();
 
-    public static IEnumerator ApplyRandomGambleEffect(PlayerControl player)
+    public static IEnumerator ApplyRandomGambleEffect(PlayerControl player, Action<string> onMessage)
     {
         yield return new WaitForSeconds(0.01f);
-    
+
         var options = OptionGroupSingleton<GamblerRoleOptions>.Instance;
         var validEffects = new List<int>();
 
@@ -74,10 +75,13 @@ public sealed class GamblerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable
         if (validEffects.Count == 0)
         {
             player.RpcAddModifier<NoAbilityModifier>();
+            onMessage?.Invoke("ERROR - No gamble effects available.");
             yield break;
         }
 
-        if (!options.TwiceInARow && validEffects.Count > 1 && LastEffects.TryGetValue(player.PlayerId, out var last))
+        if (!options.TwiceInARow &&
+            validEffects.Count > 1 &&
+            LastEffects.TryGetValue(player.PlayerId, out var last))
         {
             validEffects.Remove(last);
         }
@@ -85,16 +89,53 @@ public sealed class GamblerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable
         int choice = validEffects[System.Random.Shared.Next(validEffects.Count)];
         LastEffects[player.PlayerId] = choice;
 
+        string msg = "";
+
         switch (choice)
         {
-            case 0: player.RpcAddModifier<NoAbilityModifier>(); break;
-            case 1: player.RpcAddModifier<LongerCdModifier>(); break;
-            case 2: player.RpcAddModifier<ShorterCdModifier>(); break;
-            case 3: player.RpcAddModifier<RotBodyModifier>(); break;
-            case 4: player.RpcAddModifier<TeleportBackModifier>(); break;
-            case 5: player.RpcAddModifier<NoBodyModifier>(); break;
-            case 6: player.RpcAddModifier<SelfReportModifier>(); break;
-            case 7: player.RpcAddModifier<InvisibilityModifier>(); break;
+            case 0:
+                player.RpcAddModifier<NoAbilityModifier>();
+                msg = $"Upon your next kill, {Palette.ImpostorRed.ToTextColor()}nothing will happen</color>";
+                break;
+
+            case 1:
+                player.RpcAddModifier<LongerCdModifier>();
+                msg = $"Upon your next kill, you will have a {Palette.ImpostorRed.ToTextColor()}Longer Cooldown</color>";
+                break;
+
+            case 2:
+                player.RpcAddModifier<ShorterCdModifier>();
+                msg = $"Upon your next kill, you will have a {Palette.ImpostorRed.ToTextColor()}Shorter Cooldown</color>";
+                break;
+
+            case 3:
+                player.RpcAddModifier<RotBodyModifier>();
+                msg =
+                    $"Your next kill's body will {Palette.ImpostorRed.ToTextColor()}dissolve in {OptionGroupSingleton<GamblerRoleOptions>.Instance.ViperBodyDissolveDuration.Value} seconds</color>";
+                break;
+
+            case 4:
+                player.RpcAddModifier<TeleportBackModifier>();
+                msg =
+                    $"You will {Palette.ImpostorRed.ToTextColor()}teleport back to your next kill after {OptionGroupSingleton<GamblerRoleOptions>.Instance.TeleportBackDelay.Value} seconds</color>";
+                break;
+
+            case 5:
+                player.RpcAddModifier<NoBodyModifier>();
+                msg = $"Your next kill will {Palette.ImpostorRed.ToTextColor()}not spawn a dead body</color>";
+                break;
+
+            case 6:
+                player.RpcAddModifier<SelfReportModifier>();
+                msg = $"You will {Palette.ImpostorRed.ToTextColor()}self report</color> your next kill's body";
+                break;
+
+            case 7:
+                player.RpcAddModifier<InvisibilityModifier>();
+                msg = $"You will {Palette.ImpostorRed.ToTextColor()}become invisible</color> for {OptionGroupSingleton<GamblerRoleOptions>.Instance.InvisibilityDuration.Value} seconds after your next kill";
+                break;
         }
+
+        onMessage?.Invoke(msg);
     }
 }

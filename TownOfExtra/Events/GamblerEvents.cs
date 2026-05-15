@@ -6,6 +6,7 @@ using MiraAPI.Networking;
 using MiraAPI.Utilities;
 using Reactor.Utilities;
 using TownOfExtra.Modifiers.Gambler;
+using TownOfExtra.Networking;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Impostor.Support;
 using TownOfUs;
@@ -123,7 +124,9 @@ namespace TownOfExtra.Events
                 if (p.Data.Role is GamblerRole)
                 {
                     GamblerRole.ClearGambleEffect(p);
-                    Coroutines.Start(GamblerRole.ApplyRandomGambleEffect(p));
+                    Coroutines.Start(GamblerRole.ApplyRandomGambleEffect(p, msg =>
+                        GamblerRpcs.RpcNotifyEffect(p, msg)
+                    ));
                 }
             }
         }
