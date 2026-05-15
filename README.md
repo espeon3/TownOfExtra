@@ -69,7 +69,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 
 | Game Version             | Mod Version | Tou: Mira Version | Download Link                                                         |
 |--------------------------|-------------|-------------------|-----------------------------------------------------------------------|
-| 17.3 (2026.3.31)         | 1.1.4       | 1.6.0+            | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.1.4) |
+| 17.3 (2026.3.31)         | 1.1.4       | 1.6.2             | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.1.4) |
 
 -----------------------
 
