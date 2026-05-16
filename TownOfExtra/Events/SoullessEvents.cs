@@ -6,6 +6,7 @@ using MiraAPI.Networking;
 using TownOfExtra.Modifiers.Game.Universal.Passive;
 using TownOfUs.Modifiers;
 using TownOfUs.Modules;
+using TownOfUs.Networking;
 
 namespace TownOfExtra.Events;
 
@@ -23,7 +24,7 @@ public static class SoullessEvents
         if (target.HasModifier<BaseShieldModifier>()) return;
         
         NeedFakePlayer.Add(target, true);
-        e.Source.RpcCustomMurder(target, createDeadBody: false);
+        e.Source.RpcSpecialMurder(target, createDeadBody: false);
         target.RpcRemoveModifier<SoullessModifier>();
         e.Cancel();
     }

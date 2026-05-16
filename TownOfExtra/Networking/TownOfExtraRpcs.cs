@@ -12,5 +12,7 @@ public enum TownOfExtraRpcs : uint
     VinculatorNotifyTeam = 507,
     VultureCleanBody = 508,
     VultureChangeToAmne = 509,
-    GamblerNotifyEffect = 510,
+    GamblerNotifyEffect = 511,
+    VultureCheckWin = 512,
+    VultureCountIncrement = 513,
 }

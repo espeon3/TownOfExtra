@@ -28,12 +28,6 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
         return (BodyPlaced || TricksterRole.HasSampledColour) && Timer <= 0;
     }
 
-    public override void ClickHandler()
-    {
-        if (!CanUse()) return;
-        OnClick();
-    }
-
     protected override void OnClick()
     {
         if (BodyPlaced)

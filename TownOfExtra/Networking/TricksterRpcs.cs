@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using MiraAPI.GameEnd;
 using MiraAPI.GameOptions;
 using MiraAPI.Hud;
+using MiraAPI.Roles;
 using MiraAPI.Utilities;
 using Reactor.Networking.Attributes;
 using Reactor.Utilities;
@@ -19,14 +21,13 @@ public class TricksterRpcs
     [MethodRpc((uint)TownOfExtraRpcs.NotifyTrickster)]
     public static void RpcNotifyTrickster(PlayerControl sender)
     {
-        if (PlayerControl.LocalPlayer.GetTownOfUsRole() is not TricksterRole) return;
         PlayerControl p = PlayerControl.LocalPlayer;
         if (p == null) return;
 
         TricksterRole.FakeBodiesReported++;
         TricksterPlaceButton.BodyPlaced = false;
 
-        if (PlayerControl.LocalPlayer == p)
+        if (PlayerControl.LocalPlayer.GetTownOfUsRole() is TricksterRole)
         {
             Coroutines.Start(MiscUtils.CoFlash(TownOfExtraColours.TricksterRoleColour));
 
@@ -42,14 +43,17 @@ public class TricksterRpcs
             CustomButtonSingleton<TricksterPlaceButton>.Instance.Timer = OptionGroupSingleton<TricksterRoleOptions>.Instance.PlaceCooldown;
             
             notif.AdjustNotification();
-
-            if (reports == reportsNeeded)
+        }
+        
+        if (AmongUsClient.Instance.AmHost)
+        {
+            List<NetworkedPlayerInfo> winners = new List<NetworkedPlayerInfo>();
+            foreach (var trickster in CustomRoleUtils.GetActiveRolesOfType<TricksterRole>().Where(t => t.WinConditionMet()))
             {
-                List<NetworkedPlayerInfo> winners = new List<NetworkedPlayerInfo>();
-                winners.Add(PlayerControl.LocalPlayer.Data);
-                CustomGameOver.Trigger<NeutralGameOver>(winners);
-
+                winners.Add(trickster.Player.Data);
             }
+
+            CustomGameOver.Trigger<NeutralGameOver>(winners);
         }
     }
 
