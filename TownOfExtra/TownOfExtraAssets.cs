@@ -49,6 +49,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.RoutineModifierIcon.png");
     public static LoadableAsset<Sprite> FragileModifierIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.FragileModifierIcon.png");
+    public static LoadableAsset<Sprite> HolographerRoleIcon =>
+        new LoadableResourceAsset("TownOfExtra.Resources.HolographerRoleIcon.png");
     
     
     
@@ -89,6 +91,4 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.ConjurerRockSprite.png");
     public static LoadableAsset<Sprite> ConjurerRockSpriteFallen =>
         new LoadableResourceAsset("TownOfExtra.Resources.ConjurerRockSpriteFallen.png");
-    public static LoadableAsset<Sprite> HolographerPreviewSprite =>
-        new LoadableResourceAsset("TownOfExtra.Resources.HolographerPreviewSprite.png");
 }

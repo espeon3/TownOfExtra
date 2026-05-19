@@ -6,6 +6,7 @@ using MiraAPI.Keybinds;
 using MiraAPI.Utilities.Assets;
 using Reactor.Utilities;
 using TownOfExtra.Modules;
+using TownOfExtra.Networking;
 using TownOfExtra.Options.Roles;
 using TownOfUs.Buttons;
 using UnityEngine;
@@ -130,9 +131,8 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
                 if (Input.touchCount == 1)
                 {
                     stwp.z = 0f;
-
-                    var fakePlayer = new FakePlayer(target, stwp);
-                    Coroutines.Start(DestroyFakePlayer(fakePlayer));
+                    
+                    HolographerRpcs.RpcSpawnFakePlayer(target, stwp);
                     
                     ExitPlacingMode();
                     
@@ -181,8 +181,7 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
                 {
                     stwp.z = 0f;
 
-                    var fakePlayer = new FakePlayer(target, stwp);
-                    Coroutines.Start(DestroyFakePlayer(fakePlayer));
+                    HolographerRpcs.RpcSpawnFakePlayer(target, stwp);
                     
                     ExitPlacingMode();
                     
@@ -220,14 +219,6 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
             _preview.Destroy();
             _preview = null;
         }
-    }
-    
-    private static IEnumerator DestroyFakePlayer(FakePlayer fakePlayer)
-    {
-        float duration = OptionGroupSingleton<HolographerRoleOptions>.Instance.HologramDuration;
-        yield return new WaitForSeconds(duration);
-
-        if (fakePlayer != null) fakePlayer.Destroy();
     }
     
     public override void OnEffectEnd()

@@ -34,7 +34,7 @@ public sealed class HolographerRole : ImpostorRole, ITownOfUsRole, IWikiDiscover
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
-        Icon = TownOfExtraAssets.Placeholder
+        Icon = TownOfExtraAssets.HolographerRoleIcon
     };
     
     [HideFromIl2Cpp]

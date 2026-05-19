@@ -14,4 +14,5 @@ public enum TownOfExtraRpcs : uint
     VultureChangeToAmne = 509,
     GamblerNotifyEffect = 510,
     ConjurerPlaceRock = 511,
+    HolographerSyncFakePlayer = 512,
 }
