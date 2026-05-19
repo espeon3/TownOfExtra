@@ -16,7 +16,7 @@ public sealed class ConjurerConjureButton : TownOfUsRoleButton<ConjurerRole>
     public override string Name => "Conjure";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
     public override Color TextOutlineColor => Palette.ImpostorRed;
-    public override float Cooldown => 0.01f;
+    public override float Cooldown => OptionGroupSingleton<ConjurerRoleOptions>.Instance.ConjureCooldown;
     public override float EffectDuration => OptionGroupSingleton<ConjurerRoleOptions>.Instance.ConjureDuration;
     public override bool HasEffect => true;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.ConjurerConjureButton;
@@ -198,6 +198,6 @@ public sealed class ConjurerConjureButton : TownOfUsRoleButton<ConjurerRole>
     
     public override void OnEffectEnd()
     {
-        Timer = OptionGroupSingleton<ConjurerRoleOptions>.Instance.ConjureCooldown;
+        Timer = Cooldown;
     }
 }

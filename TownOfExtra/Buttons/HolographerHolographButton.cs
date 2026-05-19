@@ -18,7 +18,7 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
     public override string Name => "Holograph";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
     public override Color TextOutlineColor => Palette.ImpostorRed;
-    public override float Cooldown => 0.01f;
+    public override float Cooldown => OptionGroupSingleton<HolographerRoleOptions>.Instance.HolographCooldown;
     public override float EffectDuration => OptionGroupSingleton<HolographerRoleOptions>.Instance.HologramDuration;
     public override bool HasEffect => true;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.Placeholder;
@@ -220,9 +220,9 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
             _preview = null;
         }
     }
-    
+
     public override void OnEffectEnd()
     {
-        Timer = OptionGroupSingleton<HolographerRoleOptions>.Instance.HolographCooldown;
+        Timer = Cooldown;
     }
 }

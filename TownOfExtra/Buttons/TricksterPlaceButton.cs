@@ -17,11 +17,17 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
     public override string Name => "Place Body";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
     public override Color TextOutlineColor => TownOfExtraColours.TricksterRoleColour;
-    public override float Cooldown => BodyPlaced ? 0.01f : OptionGroupSingleton<TricksterRoleOptions>.Instance.PlaceCooldown;
+    public override float Cooldown => OptionGroupSingleton<TricksterRoleOptions>.Instance.PlaceCooldown;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.TricksterPlaceButton;
     public static bool BodyPlaced;
     
     public static TricksterPlaceButton Instance;
+    
+    public override void ClickHandler()
+    {
+        if (!CanClick()) return;
+        OnClick();
+    }
     
     public override bool CanUse()
     {
@@ -33,7 +39,8 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
         if (BodyPlaced)
         {
             BodyPlaced = false;
-            Timer = OptionGroupSingleton<TricksterRoleOptions>.Instance.PlaceCooldown;
+            
+            Timer = Cooldown;
     
             if (TricksterRole.SpawnedBodies.Count > 0)
             {
@@ -45,6 +52,7 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
             }
             return;
         }
+        
         BodyPlaced = true;
 
         var colourName = Palette.GetColorName(TricksterRole.SampledColourId);
@@ -119,5 +127,10 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
         }
 
         return null;
+    }
+    
+    public override void OnEffectEnd()
+    {
+        Timer = Cooldown;
     }
 }
