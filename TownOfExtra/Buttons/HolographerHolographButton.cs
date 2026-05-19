@@ -47,19 +47,37 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
         menu.transform.FindChild("PhoneUI").GetChild(1).GetComponent<SpriteRenderer>().material =
             PlayerControl.LocalPlayer.cosmetics.currentBodySprite.BodySprite.material;
 
-        menu.Begin(
-            plr => plr.Data.IsDead,
-            plr =>
-            {
-                menu.ForceClose();
-                _inMenu = false;
-                if (plr != null)
+        if (OptionGroupSingleton<HolographerRoleOptions>.Instance.CanHolograph == CanHolographOptions.Dead)
+        {
+            menu.Begin(
+                plr => plr.Data.IsDead,
+                plr =>
                 {
-                    Coroutines.Start(StartPlacing(plr));
+                    menu.ForceClose();
+                    _inMenu = false;
+                    if (plr != null)
+                    {
+                        Coroutines.Start(StartPlacing(plr));
+                    }
                 }
-            }
-        );
-        
+            );
+        }
+        else
+        {
+            menu.Begin(
+                plr => plr.name != "",
+                plr =>
+                {
+                    menu.ForceClose();
+                    _inMenu = false;
+                    if (plr != null)
+                    {
+                        Coroutines.Start(StartPlacing(plr));
+                    }
+                }
+            );
+        }
+
         foreach (var panel in menu.potentialVictims)
         {
             panel.PlayerIcon.cosmetics.SetPhantomRoleAlpha(1f);
@@ -99,6 +117,13 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
                 if (Input.touchCount == 3)
                 {
                     ExitPlacingMode();
+                    yield break;
+                }
+
+                if (Input.touchCount == 2)
+                {
+                    ExitPlacingMode();
+                    OnClick();
                     yield break;
                 }
 
@@ -142,6 +167,13 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     ExitPlacingMode();
+                    yield break;
+                }
+
+                if (Input.GetMouseButtonDown(1))
+                {
+                    ExitPlacingMode();
+                    OnClick();
                     yield break;
                 }
 

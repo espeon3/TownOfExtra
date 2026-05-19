@@ -14,4 +14,14 @@ public sealed class HolographerRoleOptions : AbstractOptionGroup<HolographerRole
 
     [ModdedNumberOption("Hologram Duration", 2.5f, 120f, 2.5f, MiraNumberSuffixes.Seconds)]
     public float HologramDuration { get; set; } = 15f;
+    
+    [ModdedEnumOption("Can holograph", typeof(CanHolographOptions),
+        ["Everyone", "Dead"])]
+    public CanHolographOptions CanHolograph { get; set; } = CanHolographOptions.Dead;
+}
+
+public enum CanHolographOptions
+{
+    Everyone,
+    Dead
 }

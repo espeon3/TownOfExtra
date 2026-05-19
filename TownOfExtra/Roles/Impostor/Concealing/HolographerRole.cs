@@ -13,11 +13,11 @@ namespace TownOfExtra.Roles.Impostor.Concealing;
 public sealed class HolographerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Holographer";
-    public string RoleDescription => "Create holograms of deceased players!";
+    public string RoleDescription => "Spawn holographic decoys of other players!";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
-    public RoleAlignment RoleAlignment => RoleAlignment.ImpostorSupport;
+    public RoleAlignment RoleAlignment => RoleAlignment.ImpostorConcealing;
     public DoomableType DoomHintType => DoomableType.Trickster;
 
     public string GetAdvancedDescription()
@@ -27,7 +27,8 @@ public sealed class HolographerRole : ImpostorRole, ITownOfUsRole, IWikiDiscover
             $"<b>{TownOfUsColors.Vigilante.ToTextColor()}Controls:</color></b>\n" +
             "<b>PC | Mobile [Touches]</b>\n" +
             "LMB | 1 = Drop\n" +
-            "ESC | 3 = Cancel\n\n" +
+            "RMB | 2 = Change Target\n" +
+            "ESC | 3 = Cancel" +
             MiscUtils.AppendOptionsText(GetType());
     }
 
