@@ -1,7 +1,7 @@
 ﻿using MiraAPI.GameOptions;
 using MiraAPI.GameOptions.Attributes;
 using MiraAPI.Utilities;
-using TownOfExtra.Roles.Neutral.Outlier;
+using TownOfExtra.Roles.Neutral.Evil;
 
 namespace TownOfExtra.Options.Roles;
 

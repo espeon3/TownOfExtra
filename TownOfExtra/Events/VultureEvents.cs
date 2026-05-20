@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using TownOfExtra.Roles.Neutral.Outlier;
+using TownOfExtra.Roles.Neutral.Evil;
 using MiraAPI.Events;
 using MiraAPI.Events.Vanilla.Gameplay;
 using MiraAPI.GameEnd;

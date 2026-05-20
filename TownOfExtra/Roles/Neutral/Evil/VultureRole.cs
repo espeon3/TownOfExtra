@@ -13,7 +13,7 @@ using TownOfUs.Roles.Neutral;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Roles.Neutral.Outlier;
+namespace TownOfExtra.Roles.Neutral.Evil;
 
 public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
@@ -22,7 +22,7 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => TownOfExtraColours.VultureRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
-    public RoleAlignment RoleAlignment => RoleAlignment.NeutralOutlier;
+    public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
     public DoomableType DoomHintType => DoomableType.Death;
     public static int DeadBodiesEaten;
 
@@ -50,7 +50,7 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
     public string GetAdvancedDescription()
     {
         return
-            "The Vulture is a Neutral Outlier role that has to eat a specific number of dead bodies to win." +
+            "The Vulture is a Neutral Evil role that has to eat a specific number of dead bodies to win." +
             MiscUtils.AppendOptionsText(GetType());
     }
 

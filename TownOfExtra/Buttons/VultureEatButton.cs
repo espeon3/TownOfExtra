@@ -1,6 +1,6 @@
 ﻿using TownOfExtra.Networking;
 using TownOfExtra.Options.Roles;
-using TownOfExtra.Roles.Neutral.Outlier;
+using TownOfExtra.Roles.Neutral.Evil;
 using MiraAPI.GameOptions;
 using MiraAPI.Keybinds;
 using MiraAPI.Utilities;

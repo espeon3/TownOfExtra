@@ -8,7 +8,7 @@ using Reactor.Networking.Attributes;
 using Reactor.Networking.Rpc;
 using Reactor.Utilities;
 using TownOfExtra.Events.Custom;
-using TownOfExtra.Roles.Neutral.Outlier;
+using TownOfExtra.Roles.Neutral.Evil;
 using TownOfUs;
 using TownOfUs.Assets;
 using TownOfUs.Modules;
