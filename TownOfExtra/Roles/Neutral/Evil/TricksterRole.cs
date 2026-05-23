@@ -8,7 +8,6 @@ using MiraAPI.Roles;
 using TownOfExtra.Options.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
-using TownOfUs.Interfaces;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
 using TownOfUs.Roles.Neutral;
@@ -17,7 +16,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Neutral.Evil;
 
-public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, IUnlovable
+public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Trickster";
     public string RoleDescription => "Spawn fake bodies to trick the crew";
@@ -26,7 +25,6 @@ public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfU
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
     public DoomableType DoomHintType => DoomableType.Death;
-    public bool IsUnlovable => true;
 
     public static int SampledColourId;
     public static List<DeadBody> SpawnedBodies = new List<DeadBody>();
@@ -49,7 +47,7 @@ public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfU
     {
         var stringB = ITownOfUsRole.SetNewTabText(this);
 
-        stringB.Append(TownOfUsPlugin.Culture, $"\n<b>Fakes Reported: {Color.white.ToTextColor()}{FakeBodiesReported}/{OptionGroupSingleton<TricksterRoleOptions>.Instance.ReportsNeeded}</color>");
+        stringB.Append(TownOfUsPlugin.Culture, $"\n<b>Fakes Reported: {FakeBodiesReported}/{OptionGroupSingleton<TricksterRoleOptions>.Instance.ReportsNeeded}</color>");
 
         return stringB;
     }

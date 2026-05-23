@@ -1,14 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using MiraAPI.Events;
 using MiraAPI.Events.Vanilla.Gameplay;
 using MiraAPI.Events.Vanilla.Meeting;
-using MiraAPI.GameOptions;
 using MiraAPI.Utilities;
 using Reactor.Utilities;
 using TownOfExtra.Buttons;
 using TownOfExtra.Networking;
-using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Neutral.Evil;
 using TownOfUs.Utilities;
 using UnityEngine;
@@ -23,10 +20,12 @@ public class TricksterEvents
         if (e.Reporter.Data.IsDead) return;
         if (e.Target == null || e.Body == null) return;
 
-        TricksterRole.SpawnedBodies.RemoveAll(b => b == null);
-        bool isFake = TricksterRole.SpawnedBodies.Any(b =>
-            b.ParentId == e.Target.PlayerId
-        );
+        bool isFake = false;
+        foreach (var body in TricksterRole.SpawnedBodies)
+        {
+            if (body == e.Body) isFake = true;
+            else isFake = false;
+        }
 
         if (isFake)
         {
@@ -41,15 +40,7 @@ public class TricksterEvents
                     Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterRoleIcon.LoadAsset());
                 othernotif.AdjustNotification();
                 
-                if (e.Target != null)
-                {
-                    var body = Object.FindObjectsOfType<DeadBody>().FirstOrDefault(b => b.ParentId == e.Target.PlayerId);
-                    if (body != null)
-                    {
-                        body.Reported = false;
-                    }
-                }
-                
+                e.Body.Reported = false;
                 return;
             }
 
@@ -68,15 +59,7 @@ public class TricksterEvents
                             Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterRoleIcon.LoadAsset());
                         othernotif.AdjustNotification();
                         
-                        if (e.Target != null)
-                        {
-                            var body = Object.FindObjectsOfType<DeadBody>().FirstOrDefault(b => b.ParentId == e.Target.PlayerId);
-                            if (body != null)
-                            {
-                                body.Reported = false;
-                            }
-                        }
-                        
+                        e.Body.Reported = false;
                         return;
                     }
                 }
@@ -89,7 +72,7 @@ public class TricksterEvents
             notif.AdjustNotification();
             
             TricksterRpcs.RpcNotifyTrickster(PlayerControl.LocalPlayer);
-            BodyManager.ClearFakeBodies(e.Target);
+            TricksterRpcs.RpcDestroyFakeBodies(PlayerControl.LocalPlayer);
         }
     }
 
@@ -109,24 +92,5 @@ public class TricksterEvents
         TricksterRole.SpawnedBodies = new List<DeadBody>();
         TricksterRole.SampledColourId = 0;
         TricksterRole.HasSampledColour = false;
-    }
-}
-
-public static class BodyManager
-{
-    public static void ClearFakeBodies(NetworkedPlayerInfo target)
-    {
-        if (target.Object == null) return;
-        
-        var bodies = TricksterRole.SpawnedBodies
-            .Where(b => b != null && b.ParentId == target.PlayerId)
-            .ToList();
-        foreach (var body in bodies)
-        {
-            TricksterRpcs.RpcDestroyFakeBodies(target.Object, body.ParentId);
-        }
-
-        TricksterPlaceButton.Instance.Timer = OptionGroupSingleton<TricksterRoleOptions>.Instance.PlaceCooldown;
-        TricksterPlaceButton.BodyPlaced = false;
     }
 }

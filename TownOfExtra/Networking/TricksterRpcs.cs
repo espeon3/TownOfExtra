@@ -68,16 +68,12 @@ public class TricksterRpcs
     }
     
     [MethodRpc((uint)TownOfExtraRpcs.DestroyFakeBodies)]
-    public static void RpcDestroyFakeBodies(PlayerControl sender, byte playerId)
+    public static void RpcDestroyFakeBodies(PlayerControl sender)
     {
-        foreach (var body in Object.FindObjectsOfType<DeadBody>())
+        foreach (var body in TricksterRole.SpawnedBodies)
         {
-            if (body.ParentId == playerId)
-            {
-                TricksterRole.SpawnedBodies.Remove(body);
-                Object.Destroy(body.gameObject);
-                return;
-            }
+            TricksterRole.SpawnedBodies.Remove(body);
+            Object.Destroy(body.gameObject);
         }
     }
 }

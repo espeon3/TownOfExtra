@@ -17,7 +17,7 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
     public override string Name => "Place Body";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
     public override Color TextOutlineColor => TownOfExtraColours.TricksterRoleColour;
-    public override float Cooldown => OptionGroupSingleton<TricksterRoleOptions>.Instance.PlaceCooldown;
+    public override float Cooldown => BodyPlaced ? 0.01f : OptionGroupSingleton<TricksterRoleOptions>.Instance.PlaceCooldown;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.TricksterPlaceButton;
     public static bool BodyPlaced;
     
@@ -47,7 +47,7 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
                 var oldest = TricksterRole.SpawnedBodies[0];
                 if (oldest != null)
                 {
-                    TricksterRpcs.RpcDestroyFakeBodies(GetTrickster(), oldest.ParentId);
+                    TricksterRpcs.RpcDestroyFakeBodies(GetTrickster());
                 }
             }
             return;
@@ -65,7 +65,15 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
 
         PlayerControl trickster = GetTrickster();
         if (trickster == null) return;
-        TricksterRpcs.RpcPlaceFakeBody(trickster, (byte)TricksterRole.SampledColourId, trickster.PlayerId);
+        
+        PlayerControl target = null;
+        foreach (var p in PlayerControl.AllPlayerControls)
+        {
+            if (p.cosmetics.ColorId == TricksterRole.SampledColourId) target = p;
+        }
+
+        if (target == null) return;
+        TricksterRpcs.RpcPlaceFakeBody(trickster, (byte)TricksterRole.SampledColourId, target.PlayerId);
     }
 
     protected override void FixedUpdate(PlayerControl playerControl)
@@ -127,10 +135,5 @@ public sealed class TricksterPlaceButton : TownOfUsRoleButton<TricksterRole>
         }
 
         return null;
-    }
-    
-    public override void OnEffectEnd()
-    {
-        Timer = Cooldown;
     }
 }
