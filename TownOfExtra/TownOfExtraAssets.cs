@@ -53,6 +53,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.HolographerRoleIcon.png");
     public static LoadableAsset<Sprite> DreamCasterRoleIcon =>
         new LoadableResourceAsset("TownOfExtra.Resources.DreamCasterRoleIcon.png");
+    public static LoadableAsset<Sprite> PoltergeistRoleIcon =>
+        new LoadableResourceAsset("TownOfExtra.Resources.PoltergeistRoleIcon.png");
     
     
     
@@ -86,6 +88,10 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.ConjurerConjureButton.png");
     public static LoadableAsset<Sprite> HolographerHolographButton =>
         new LoadableResourceAsset("TownOfExtra.Resources.HolographerHolographButton.png");
+    public static LoadableAsset<Sprite> PoltergeistPossessButton =>
+        new LoadableResourceAsset("TownOfExtra.Resources.PoltergeistPossessButton.png");
+    public static LoadableAsset<Sprite> PoltergeistScareButton =>
+        new LoadableResourceAsset("TownOfExtra.Resources.PoltergeistScareButton.png");
     
     
     
@@ -99,4 +105,7 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset("TownOfExtra.Resources.SquashedDeadBodySprite.png");
     public static LoadableAsset<Sprite> SquashedDeadBodySpriteVisor =>
         new LoadableResourceAsset("TownOfExtra.Resources.SquashedDeadBodySpriteVisor.png");
+    
+    public static LoadableAsset<Sprite> TownOfExtraIcon =>
+        new LoadableResourceAsset("TownOfExtra.Resources.TownOfExtraIcon.png");
 }

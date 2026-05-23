@@ -35,4 +35,5 @@ public class TownOfExtraAbilityEvent : MiraEvent
 public enum AbilityType
 {
     VultureEatBody,
+    PoltergeistPossessPlayer,
 }

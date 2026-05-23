@@ -38,12 +38,14 @@ public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
         
         Logger = Log;
         
-        TouLocale.TouLocalization.TryAdd(SupportedLangs.English, null);
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToPoisoned", "Poisoned");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToCannibalised", "Cannibalised");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToShattered", "Shattered");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToTerminated", "Terminated");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToUnbound", "Unbound");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToCrushed", "Crushed");
+
+        TerminologyPatches.RegisterToExTerms();
+        TerminologyIconRegistry.RegisterIcons();
     }
 }

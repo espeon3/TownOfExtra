@@ -18,9 +18,12 @@ public static class NegativeEffects
         Remover<ErasedModifier>(),
         Remover<PoisonedModifier>(),
         Remover<SwitchedModifier>(),
-        // lucid dreams
+        // dream caster
         Remover<LucidDreamingModifier>(),
         Remover<WaitingOnLcdModifier>(),
+        // poltergeist
+        Remover<ScaredModifier>(),
+        Remover<PossessedModifier>(),
     ];
 
     public static void CleanseAll(PlayerControl player)

@@ -241,10 +241,17 @@
 
         "\n\n\r<size=105%>New Roles:</size>",
         "\n- A new Impostor Power role has been added: Dream Caster",
+        "\n- A new Neutral Outlier role has been added: Poltergeist",
 
         "\n\n\r<size=105%>New Icons:</size>",
-        "\n- New icons have been added for: Conjurer, Eraser & Chief",
+        "\n- New Role Icons have been added for: Conjurer, Eraser, Chief, Vulture",
+        "\n- New Modifier Icons have been added for: Heavy Workload",
+        "\n- New Button Icons have been added for: Chain",
 
+        "\n\n\r<size=105%>Bugfixes:</size>",
+        "\n- Fixed trickster's name showing on the body screen when a real body is reported",
+        "\n- Fixed vinculator's chain menu being openable while already open",
+        
         "\n\n\r<size=105%>Changes:</size>",
         "\n- Tou: Mira's cleric role can now cleanse ToEx's bad effects"
       ]

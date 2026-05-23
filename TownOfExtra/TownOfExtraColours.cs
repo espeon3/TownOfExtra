@@ -11,27 +11,21 @@ public class TownOfExtraColours
     public static bool UseBasic { get; set; } =
         LocalSettingsTabSingleton<TownOfUsLocalRoleSettings>.Instance.UseCrewmateTeamColorToggle.Value;
     
-    
-    
     public static Color ChiefRoleColour => UseBasic ? Palette.CrewmateBlue : new Color32(0, 118, 1, 255);
+    public static Color PoltergeistRoleColour => new Color32(122, 186, 168, 255);
     
+    public static Color PoisonColour => new Color32(46, 82, 53, 255);
+    public static Color FreezeColour => new Color32(0, 200, 255, 255);
+    public static Color CannibalColour => new Color32(180, 90, 50, 255);
     
+    public static Color SwitcherRoleColour => new Color32(255, 239, 168, 255);
+    public static Color TricksterRoleColour => new Color32(128, 0, 155, 255);
+    public static Color VultureRoleColour => new Color32(79, 24, 0, 255);
     
-    public static Color PoisonColour => new Color(46/255f, 82/255f, 53/255f);
-    public static Color FreezeColour => new Color(0/255f, 200/255f, 255/255f);
-    public static Color CannibalColour => new Color(180/255f, 90/255f, 50/255f);
+    public static Color PossessedColour => new Color32(255, 235, 171, 255);
     
-    
-    
-    public static Color SwitcherRoleColour => new Color(255/255f, 239/255f, 168/255f);
-    public static Color TricksterRoleColour => new Color(128 / 255f, 0 / 255f, 155 / 255f);
-    public static Color VultureRoleColour => new Color(79 /255f, 24 /255f, 0 /255f);
-    
-    
-    
-    public static Color HeavyWorkloadModifierColour => new Color(216 / 255f, 108 / 255f, 2 / 255f);
-    public static Color FragileModifierColour => new Color(71 / 255f, 102 / 255f, 125 / 255f);
-
+    public static Color HeavyWorkloadModifierColour => new Color32(216, 108, 2, 255);
+    public static Color FragileModifierColour => new Color32(71, 102, 125, 255);
 
 
     public static Color GetRoleColour(string name)
@@ -47,6 +41,7 @@ public class TownOfExtraColours
 
         return roleColour;
     }
+    
     
     public static Color GetTownOfExtraRoleColour(string name)
     {

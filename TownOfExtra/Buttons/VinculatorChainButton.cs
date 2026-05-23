@@ -24,11 +24,12 @@ public sealed class VinculatorChainButton : TownOfUsRoleButton<VinculatorRole>
     public int ExtraUses { get; set; }
     public override bool ZeroIsInfinite => true;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.VinculatorChainButton;
+    private bool _inMenu;
 
     public override bool CanUse()
     {
         bool zeroUses = UsesLeft <= 0 && MaxUses != 0;
-        return Timer <= 0 && !zeroUses;
+        return Timer <= 0 && !zeroUses && !_inMenu;
     }
     
     public override void ClickHandler()
@@ -39,6 +40,10 @@ public sealed class VinculatorChainButton : TownOfUsRoleButton<VinculatorRole>
 
     protected override void OnClick()
     {
+        if (_inMenu) return;
+        
+        _inMenu = true;
+
         var player1Menu = CustomPlayerMenu.Create();
         player1Menu.transform.FindChild("PhoneUI").GetChild(0).GetComponent<SpriteRenderer>().material =
             PlayerControl.LocalPlayer.cosmetics.currentBodySprite.BodySprite.material;
@@ -50,9 +55,10 @@ public sealed class VinculatorChainButton : TownOfUsRoleButton<VinculatorRole>
             plr =>
             {
                 player1Menu.ForceClose();
-
+                
                 if (plr == null)
                 {
+                    _inMenu = false;
                     return;
                 }
 
@@ -67,6 +73,7 @@ public sealed class VinculatorChainButton : TownOfUsRoleButton<VinculatorRole>
                     plr2 =>
                     {
                         player2Menu.Close();
+                        _inMenu = false;
                         if (plr2 == null)
                         {
                             return;
