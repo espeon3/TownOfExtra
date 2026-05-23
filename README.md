@@ -28,9 +28,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-eraser"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/EraserRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-vinculator"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/VinculatorRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-conjurer"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/ConjurerRoleIcon.png" /></a>
-
-  [<a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-dream-caster"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/DreamCasterRoleIcon.png" /></a>]: #
-
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-dream-caster"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/DreamCasterRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#crewmate-power"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/CrewPower.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-chief"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/ChiefRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-evil"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NeutEvil.png" /></a>
@@ -38,9 +36,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-vulture"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/VultureRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-outlier"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NeutOutlier.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-switcher"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/SwitcherRoleIcon.png" /></a>
-
-  [<a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-poltergeist"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/PoltergeistRoleIcon.png" /></a>]: #
-
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-poltergeist"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/PoltergeistRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#crew-modifiers"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/CrewMods.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-heavy-workload"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/HeavyWorkloadModifierIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-routine"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/RoutineModifierIcon.png" /></a>
