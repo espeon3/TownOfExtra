@@ -33,7 +33,7 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
             return;
         }
         ImportantTextTask orCreateTask = PlayerTask.GetOrCreateTask<ImportantTextTask>(playerControl);
-        orCreateTask.Text = $"{TownOfExtraColours.VultureRoleColour.ToTextColor()}Eat {OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded} dead bodies to win!</color>\n{TownOfExtraColours.VultureRoleColour.ToTextColor()}Optional Tasks:</color>";
+        orCreateTask.Text = $"{TownOfExtraColours.VultureRoleColour.ToTextColor()}Eat {OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded} dead bod{((int)OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded != 1 ? "ies" : "y")} to win!</color>\n{TownOfExtraColours.VultureRoleColour.ToTextColor()}Optional Tasks:</color>";
         orCreateTask.name = "NeutralRoleText";
     }
     
@@ -42,7 +42,7 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
     {
         var stringB = ITownOfUsRole.SetNewTabText(this);
 
-        stringB.Append(TownOfUsPlugin.Culture, $"\n<b>Bodies Eaten: {Color.white.ToTextColor()}{DeadBodiesEaten}/{OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded}</color>");
+        stringB.Append(TownOfUsPlugin.Culture, $"\n<b>Bodies Eaten: {DeadBodiesEaten}/{OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded}</color>");
 
         return stringB;
     }
