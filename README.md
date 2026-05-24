@@ -56,11 +56,11 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 
 # Contributions & Credits
 
-[MiraAPI](https://github.com/All-Of-Us-Mods/MiraAPI) - Mod framework & api\
-[Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - Mod framework, api, inspiration & some assets\
-[Reactor](https://github.com/NuclearPowered/Reactor) - Dependency for the mod\
-[BepInEx](https://github.com/BepInEx) - For hooking game functions
-[[Divani Mods](https://github.com/DivaniNL/TownOfUsMiraDivaniModsAddOn)/[Divani](https://github.com/DivaniNL)] - Code for making cleric's cleansing work on TouEx roles
+- [MiraAPI](https://github.com/All-Of-Us-Mods/MiraAPI) - Mod framework & api
+- [Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - Mod framework, api, inspiration & some assets
+- [Reactor](https://github.com/NuclearPowered/Reactor) - Dependency for the mod
+- [BepInEx](https://github.com/BepInEx) - For hooking game functions
+- [Divani Mods](https://github.com/DivaniNL/TownOfUsMiraDivaniModsAddOn)/[Divani](https://github.com/DivaniNL) - Code for making cleric's cleansing work on TouEx roles
 
 # Asset Credits
 - [@AtonyGit](https://github.com/AtonyGit)/[Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - All assets that are not specified below
