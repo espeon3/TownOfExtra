@@ -8,6 +8,8 @@ namespace TownOfExtra;
 
 public class TownOfExtraColours
 {
+    public static Color CreditsColour => new Color32(240, 70, 118, 255);
+    
     public static bool UseBasic { get; set; } =
         LocalSettingsTabSingleton<TownOfUsLocalRoleSettings>.Instance.UseCrewmateTeamColorToggle.Value;
     
