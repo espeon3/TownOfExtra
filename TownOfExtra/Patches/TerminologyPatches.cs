@@ -30,9 +30,10 @@ internal static class TerminologyIconRegistry
     {
         Register(new ScaredIcon());
         Register(new PossessedIcon());
-        Register(new PendingEraseIcon());
+        Register(new ErasedIcon());
         Register(new PendingSwitchIcon());
         Register(new TaggedIcon());
+        Register(new RecruitedIcon());
     }
 
     internal static void AppendIcons(ref string result, PlayerControl row)
@@ -43,7 +44,7 @@ internal static class TerminologyIconRegistry
         foreach (var icon in Icons)
         {
             if (!icon.ShouldShow(local, row)) continue;
-            var chunk = icon.RichChunk;
+            var chunk = $" {icon.RichChunk}";
             if (!string.IsNullOrEmpty(chunk) && !result.Contains(chunk)) result += chunk;
         }
     }
@@ -66,29 +67,31 @@ internal static class TerminologyIconRegistry
 
 internal sealed class ScaredIcon : ITerminologyIcon
 {
-    public string RichChunk => $" {TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}⌇</color>";
-    public bool ShouldShow(PlayerControl local, PlayerControl row) => row.HasModifier<ScaredModifier>() && (local.GetTownOfUsRole() is PoltergeistRole || local.Data.IsDead);
+    public string RichChunk => $"{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}⌇</color>";
+    public bool ShouldShow(PlayerControl local, PlayerControl row) =>
+        row.HasModifier<ScaredModifier>() &&
+        (local.GetTownOfUsRole() is PoltergeistRole || local.Data.IsDead);
 }
 
 internal sealed class PossessedIcon : ITerminologyIcon
 {
-    public string RichChunk => $" {TownOfExtraColours.PossessedColour.ToTextColor()}유</color>";
+    public string RichChunk => $"{TownOfExtraColours.PossessedColour.ToTextColor()}유</color>";
     public bool ShouldShow(PlayerControl local, PlayerControl row) =>
         row.HasModifier<PossessedModifier>() &&
         (local.GetTownOfUsRole() is PoltergeistRole || local.Data.IsDead);
 }
 
-internal sealed class PendingEraseIcon : ITerminologyIcon
+internal sealed class ErasedIcon : ITerminologyIcon
 {
-    public string RichChunk => $" {Palette.ImpostorRed.ToTextColor()}▧</color>";
+    public string RichChunk => $"{Palette.ImpostorRed.ToTextColor()}▧</color>";
     public bool ShouldShow(PlayerControl local, PlayerControl row) =>
-        row.HasModifier<ErasedModifier>() &&
+        (row.HasModifier<PendingEraseModifier>() || (row.HasModifier<ErasedModifier>() && row.GetTownOfUsRole() is CrewmateRole)) &&
         (local.GetTownOfUsRole() is EraserRole || local.Data.IsDead);
 }
 
 internal sealed class PendingSwitchIcon : ITerminologyIcon
 {
-    public string RichChunk => $" {TownOfExtraColours.SwitcherRoleColour.ToTextColor()}⇆</color>";
+    public string RichChunk => $"{TownOfExtraColours.SwitcherRoleColour.ToTextColor()}⇆</color>";
     public bool ShouldShow(PlayerControl local, PlayerControl row) =>
         row.HasModifier<SwitchedModifier>() &&
         (local.GetTownOfUsRole() is SwitcherRole || local.Data.IsDead);
@@ -96,7 +99,7 @@ internal sealed class PendingSwitchIcon : ITerminologyIcon
 
 internal sealed class TaggedIcon : ITerminologyIcon
 {
-    public string RichChunk => $" {Palette.ImpostorRed.ToTextColor()}▣</color>";
+    public string RichChunk => $"{Palette.ImpostorRed.ToTextColor()}▣</color>";
     public bool ShouldShow(PlayerControl local, PlayerControl row) =>
         TaggerRole.MarkedPlayers.Contains(row) &&
         (local.GetTownOfUsRole() is TaggerRole || local.Data.IsDead);
@@ -104,7 +107,7 @@ internal sealed class TaggedIcon : ITerminologyIcon
 
 internal sealed class RecruitedIcon : ITerminologyIcon
 {
-    public string RichChunk => $" {TownOfExtraColours.ChiefRoleColour.ToTextColor()}❖</color>";
+    public string RichChunk => $"{TownOfExtraColours.ChiefRoleColour.ToTextColor()}❖</color>";
     public bool ShouldShow(PlayerControl local, PlayerControl row) =>
         ChiefRole.Recruits.Contains(row) &&
         (local.GetTownOfUsRole() is ChiefRole || local.Data.IsDead);
@@ -160,7 +163,7 @@ public static class TerminologyPatches
             "These symbols are the custom symbols from Town of Extra. " +
             $"• Scared players are marked with <b>{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}⌇</color></b>\n" +
             $"• Possessed players are marked with <b>{TownOfExtraColours.PossessedColour.ToTextColor()}유</color></b>\n" +
-            $"• Pending erases are marked with <b>{Palette.ImpostorRed.ToTextColor()}▧</color></b>\n" +
+            $"• Erases & pending erases are marked with <b>{Palette.ImpostorRed.ToTextColor()}▧</color></b>\n" +
             $"• Pending switches are marked with <b>{TownOfExtraColours.SwitcherRoleColour.ToTextColor()}⇆</color></b>\n" +
             $"• Tagged players are marked with <b>{TownOfExtraColours.SwitcherRoleColour.ToTextColor()}▣</color></b>\n" +
             $"• Recruited players are marked with <b>{TownOfExtraColours.ChiefRoleColour.ToTextColor()}❖</color></b>\n"

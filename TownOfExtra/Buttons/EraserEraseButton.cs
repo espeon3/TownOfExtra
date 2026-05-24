@@ -38,16 +38,16 @@ public sealed class EraserEraseButton : TownOfUsKillRoleButton<EraserRole, Playe
         if (!OptionGroupSingleton<LoversOptions>.Instance.LoversKillEachOther && PlayerControl.LocalPlayer.IsLover())
         {
             return PlayerControl.LocalPlayer.GetClosestLivingPlayer(includePostors, Distance, false,
-                x => !x.IsLover() && !x.HasModifier<ErasedModifier>());
+                x => !x.IsLover() && !x.HasModifier<PendingEraseModifier>());
         }
 
-        return PlayerControl.LocalPlayer.GetClosestLivingPlayer(includePostors, Distance, predicate:x => !x.HasModifier<ErasedModifier>());
+        return PlayerControl.LocalPlayer.GetClosestLivingPlayer(includePostors, Distance, predicate:x => !x.HasModifier<PendingEraseModifier>());
     }
 
     protected override void OnClick()
     {
         if (Target == null) return;
         
-        Target.RpcAddModifier<ErasedModifier>();
+        Target.RpcAddModifier<PendingEraseModifier>();
     }
 }

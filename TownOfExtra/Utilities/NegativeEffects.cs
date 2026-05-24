@@ -15,7 +15,7 @@ public static class NegativeEffects
     private static readonly List<Action<PlayerControl>> Removers =
     [
         // general
-        Remover<ErasedModifier>(),
+        Remover<PendingEraseModifier>(),
         Remover<PoisonedModifier>(),
         Remover<SwitchedModifier>(),
         // dream caster

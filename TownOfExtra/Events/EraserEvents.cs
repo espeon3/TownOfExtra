@@ -16,10 +16,12 @@ public class EraserEvents
         
         foreach (var p in PlayerControl.AllPlayerControls)
         {
-            if (p.HasModifier<ErasedModifier>() && !p.Data.IsDead && !p.Data.Disconnected)
+            if (p.HasModifier<PendingEraseModifier>() && !p.Data.IsDead && !p.Data.Disconnected)
             {
                 p.RpcSetRole(RoleTypes.Crewmate);
                 EraserRpcs.RpcNotifyErased(p);
+                p.RpcRemoveModifier<PendingEraseModifier>();
+                p.RpcAddModifier<ErasedModifier>();
             }
         }
     }
