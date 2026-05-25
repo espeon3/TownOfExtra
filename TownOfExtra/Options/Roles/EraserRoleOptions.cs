@@ -13,4 +13,6 @@ public sealed class EraserRoleOptions : AbstractOptionGroup<EraserRole>
     public float EraseCooldown { get; set; } = 40f;
     [ModdedNumberOption("Erase Uses", 0f, 30f, zeroInfinity:true)]
     public float EraseUses { get; set; } = 3f;
+    /*[ModdedToggleOption("Cleric can unerase")]
+    public bool CanUnerase { get; set; } = true;*/
 }

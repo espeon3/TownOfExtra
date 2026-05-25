@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AmongUs.GameOptions;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
 using TownOfUs.Extensions;
@@ -18,6 +19,7 @@ public sealed class EraserRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable,
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorPower;
     public DoomableType DoomHintType => DoomableType.Trickster;
+    public static Dictionary<PlayerControl, RoleTypes> ErasedPlayerRoles = new Dictionary<PlayerControl, RoleTypes>();
     
     public string GetAdvancedDescription()
     {

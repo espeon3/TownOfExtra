@@ -85,7 +85,7 @@ internal sealed class ErasedIcon : ITerminologyIcon
 {
     public string RichChunk => $"{Palette.ImpostorRed.ToTextColor()}▧</color>";
     public bool ShouldShow(PlayerControl local, PlayerControl row) =>
-        (row.HasModifier<PendingEraseModifier>() || (row.HasModifier<ErasedModifier>() && row.GetTownOfUsRole() is CrewmateRole)) &&
+        row.HasModifier<PendingEraseModifier>() &&
         (local.GetTownOfUsRole() is EraserRole || local.Data.IsDead);
 }
 
@@ -163,7 +163,7 @@ public static class TerminologyPatches
             "These symbols are the custom symbols from Town of Extra. " +
             $"• Scared players are marked with <b>{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}⌇</color></b>\n" +
             $"• Possessed players are marked with <b>{TownOfExtraColours.PossessedColour.ToTextColor()}유</color></b>\n" +
-            $"• Pending/finished erases are marked with <b>{Palette.ImpostorRed.ToTextColor()}▧</color></b>\n" +
+            $"• Pending erases are marked with <b>{Palette.ImpostorRed.ToTextColor()}▧</color></b>\n" +
             $"• Pending switches are marked with <b>{TownOfExtraColours.SwitcherRoleColour.ToTextColor()}⇆</color></b>\n" +
             $"• Tagged players are marked with <b>{Palette.ImpostorRed.ToTextColor()}▣</color></b>\n" +
             $"• Recruited players are marked with <b>{TownOfExtraColours.ChiefRoleColour.ToTextColor()}❖</color></b>\n"

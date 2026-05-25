@@ -263,21 +263,20 @@
       ]
     },
     {
-      "Date": "2026-05-24T09:27:00Z",
+      "Date": "2026-05-25T20:10:00Z",
       "Number": "21",
-      "ShortTitle": "TownOfExtra v1.2.1",
-      "Title": "TownOfExtra v1.2.1",
-      "SubTitle": "",
+      "ShortTitle": "TownOfExtra v1.2.0 [HF1]",
+      "Title": "TownOfExtra v1.2.0",
+      "SubTitle": "Hotfix #1",
       "Text": [
-        "\r<b>TownOfExtra has updated to v1.2.1</b>",
+        "\r<b>TownOfExtra has updated to 1.2.0 [HF1]</b>",
         "\n\nThank you for playing the mod!",
         "\n\n★ <link=https://discord.gg/y2GN5Q4fzb>Join Discord</link> ★ <link=https://github.com/Mehzxzz/TownOfExtra/wiki>Role/Modifier Info</link> ★",
-
+        
         "\n\n\r<size=105%>Bugfixes:</size>",
         "\n- Fixed poltergeist's possess button sometimes not ending the game when it should.",
         "\n- Fixed eraser not working for non host",
-        "\n- Fixed gambler sometimes giving all effects and crashing servers",
-        "\n- "
+        "\n- Fixed gambler sometimes giving all effects and crashing servers"
       ]
     }
   ]
