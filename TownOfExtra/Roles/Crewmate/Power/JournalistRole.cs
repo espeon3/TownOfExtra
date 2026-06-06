@@ -22,7 +22,7 @@ public sealed class JournalistRole : CrewmateRole, ITownOfUsRole, IWikiDiscovera
     public string GetAdvancedDescription()
     {
         return
-            "The Journalist is a Crewmate Power role who successes role that can recruit players, converting them into sheriffs, aswell as being able to shoot players with a limited amount of shots, killing and revealing their roles." +
+            "The Journalist is a Crewmate Power role who can interview players, giving them an ingame chat until the next meeting starts. The journalist is anonymous to the interviewee." +
             MiscUtils.AppendOptionsText(GetType());
     }
     
