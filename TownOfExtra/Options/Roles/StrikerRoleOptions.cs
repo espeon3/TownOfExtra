@@ -14,7 +14,7 @@ public sealed class StrikerRoleOptions : AbstractOptionGroup<StrikerRole>
     public float LocateUses { get; set; } = 5;
     [ModdedNumberOption("# of Locate uses per meeting", 1, 5)]
     public float LocatesPerMeeting { get; set; } = 1;
-    [ModdedNumberOption("# of Locate uses per game", 2, 8)]
+    [ModdedNumberOption("# of roles shown on Locate", 2, 8)]
     public float LocateRoleAmount { get; set; } = 5;
     
     [ModdedNumberOption("Strike Cooldown", 0f, 120f, 2.5f, MiraNumberSuffixes.Seconds)]
@@ -33,6 +33,51 @@ public sealed class StrikerRoleOptions : AbstractOptionGroup<StrikerRole>
     [ModdedEnumOption("Intro Blurb", typeof(StrikerIntroBlurb),
         ["Normal", "Nerd candy's special blurb"])]
     public StrikerIntroBlurb IntroBlurb { get; set; } = StrikerIntroBlurb.Normal;
+
+    [ModdedToggleOption("Share Assassin Strike Settings")]
+    public bool ShareAssassinSettings { get; set; } = false;
+
+    public ModdedToggleOption StrikerGuessCrewmate { get; } =
+        new("Striker Can Guess \"Crewmate\"", false)
+        {
+            Visible = () => !OptionGroupSingleton<StrikerRoleOptions>.Instance.ShareAssassinSettings
+        };
+
+    public ModdedToggleOption StrikerGuessInvest { get; } =
+        new("Striker Can Guess Crew Investigative Roles", false)
+        {
+            Visible = () => !OptionGroupSingleton<StrikerRoleOptions>.Instance.ShareAssassinSettings
+        };
+
+    public ModdedToggleOption StrikerGuessNeutralBenign { get; } =
+        new("Striker Can Guess Neutral Benign Roles", true)
+        {
+            Visible = () => !OptionGroupSingleton<StrikerRoleOptions>.Instance.ShareAssassinSettings
+        };
+
+    public ModdedToggleOption StrikerGuessNeutralEvil { get; } =
+        new("Striker Can Guess Neutral Evil Roles", true)
+        {
+            Visible = () => !OptionGroupSingleton<StrikerRoleOptions>.Instance.ShareAssassinSettings
+        };
+
+    public ModdedToggleOption StrikerGuessNeutralKilling { get; } =
+        new("Striker Can Guess Neutral Killing Roles", true)
+        {
+            Visible = () => !OptionGroupSingleton<StrikerRoleOptions>.Instance.ShareAssassinSettings
+        };
+
+    public ModdedToggleOption StrikerGuessNeutralOutlier { get; } =
+        new("Striker Can Guess Neutral Outlier Roles", true)
+        {
+            Visible = () => !OptionGroupSingleton<StrikerRoleOptions>.Instance.ShareAssassinSettings
+        };
+
+    public ModdedToggleOption StrikerGuessImpostors { get; } =
+        new("Striker Can Guess Impostor Roles", true)
+        {
+            Visible = () => !OptionGroupSingleton<StrikerRoleOptions>.Instance.ShareAssassinSettings
+        };
 }
 
 public enum StrikerIntroBlurb

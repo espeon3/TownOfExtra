@@ -103,7 +103,7 @@ public sealed class StrikerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable
     public void OnClick(PlayerVoteArea voteArea, MeetingHud meeting)
     {
         var target = GameData.Instance.GetPlayerById(voteArea.TargetPlayerId).Object;
-        
+
         if (UsesLeft > 0)
         {
             if (UsesThisRound < OptionGroupSingleton<StrikerRoleOptions>.Instance.LocatesPerMeeting)
@@ -113,16 +113,21 @@ public sealed class StrikerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable
                     UsesLeft--;
                     UsesThisRound++;
 
-                    var allRoles = MiscUtils.AllRegisteredRoles.Where(
-                        x => !x.IsImpostor() && 
-                        x.GetType() != target.Data.Role.GetType()
+                    var allRoles = MiscUtils.GetPotentialRoles().Where(x => !x.IsImpostor() &&
+                                                                            x.Role != target.Data.Role.Role
                     );
-                    var selectedRoles = allRoles.OrderBy(_ => Guid.NewGuid()).Take((int)OptionGroupSingleton<StrikerRoleOptions>.Instance.LocateRoleAmount - 1).ToList();
+
+                    var selectedRoles = allRoles
+                        .OrderBy(_ => Guid.NewGuid())
+                        .Take((int)OptionGroupSingleton<StrikerRoleOptions>.Instance.LocateRoleAmount - 1)
+                        .ToList();
+
                     selectedRoles.Add(target.Data.Role);
                     selectedRoles = selectedRoles.OrderBy(_ => Guid.NewGuid()).ToList();
 
                     var title = $"{Palette.ImpostorRed.ToTextColor()}Locate Result</color>";
-                    var roleListText = string.Join(", ", selectedRoles.Select(role => MiscUtils.GetHyperlinkText(role)));
+                    var roleListText =
+                        string.Join(", ", selectedRoles.Select(role => MiscUtils.GetHyperlinkText(role)));
                     var msg = $"{target.Data.PlayerName} is one of the following roles:\n{roleListText}";
                     Messages.Add(target, msg);
                     MiscUtils.AddFakeChat(Player.Data, title, msg, false, true);

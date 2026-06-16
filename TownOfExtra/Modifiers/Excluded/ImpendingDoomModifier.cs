@@ -8,7 +8,7 @@ using TownOfExtra.Options.Roles;
 using TownOfUs.Networking;
 using UnityEngine;
 
-namespace TownOfExtra.Modifiers;
+namespace TownOfExtra.Modifiers.Excluded;
 
 public sealed class ImpendingDoomModifierv(PlayerControl initiator, bool selfKill) : TimedModifier
 {

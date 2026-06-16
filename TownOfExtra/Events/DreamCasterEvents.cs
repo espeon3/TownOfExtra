@@ -6,6 +6,7 @@ using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Utilities;
 using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
 using TownOfUs.Utilities;
 using UnityEngine;

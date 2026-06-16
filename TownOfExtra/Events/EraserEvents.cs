@@ -3,6 +3,7 @@ using MiraAPI.Events;
 using MiraAPI.Events.Vanilla.Gameplay;
 using MiraAPI.Modifiers;
 using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Networking;
 using TownOfExtra.Roles.Impostor.Power;
 using TownOfUs.Modifiers.Crewmate;

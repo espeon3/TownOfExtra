@@ -2,7 +2,7 @@
 using MiraAPI.Keybinds;
 using MiraAPI.Modifiers;
 using MiraAPI.Utilities.Assets;
-using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Crewmate.Power;
 using TownOfUs.Buttons;

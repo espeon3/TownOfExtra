@@ -5,7 +5,7 @@ using MiraAPI.GameOptions;
 using MiraAPI.Hud;
 using MiraAPI.Modifiers;
 using TownOfExtra.Buttons;
-using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Impostor.Power;
 using TownOfUs.Networking;

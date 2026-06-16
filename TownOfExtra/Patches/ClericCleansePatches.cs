@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using HarmonyLib;
 using MiraAPI.Modifiers;
 using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfUs.Buttons.Crewmate;
 
 namespace TownOfExtra.Patches;

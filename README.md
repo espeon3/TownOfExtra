@@ -62,15 +62,16 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 - [Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - Mod framework, api, inspiration & some assets
 - [Reactor](https://github.com/NuclearPowered/Reactor) - Dependency for the mod
 - [BepInEx](https://github.com/BepInEx) - For hooking game functions
-- [Divani Mods](https://github.com/DivaniNL/TownOfUsMiraDivaniModsAddOn)/[Divani](https://github.com/DivaniNL) - Code for making cleric's cleansing work on TouEx roles
+- [Divani Mods](https://github.com/DivaniNL/TownOfUsMiraDivaniModsAddOn)/[Divani](https://github.com/DivaniNL) - Code for making cleric's cleansing work on ToEx roles
 
 # Asset Credits
 - [@AtonyGit](https://github.com/AtonyGit)/[Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - All assets that are not specified below
 - @az0th_19 (discord) - Vinculator | Empower, Chain [Role/Button Icons]
 - @aasteriisken (discord) - Freezer, Switcher, Dream Caster, Eraser, Conjurer, Vulture, Journalist | Heavy Workload | Scare, Possess, Cast, Interview [Role/Modifier/Button Icons]
-- @mystic_haze2 (discord) - Freeze, Conjure [Buttons]
+- @mystic_haze2 (discord) - Freeze, Conjure | Trickster [Buttons/Role Icons]
 - @jaydoeswitchcraft (discord) - Gambler, Signal Jammer, Holographer, Chief | Soulless | Locate [Role/Modifier/Button Icons]
 - @superkiller500(NerdCandy) (discord) - Striker | Strike [Role/Button Icons]
+- @maybe_xinav (discord) - Mark [Button Icons]
 - **You will probably never see these, unless I leave one used by accident, but these placeholder icons were made by @aasteriisken (discord)** - Generic Protect, Generic Info, Generic Attack, Generic Misc
 
 -----------------------

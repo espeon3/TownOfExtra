@@ -5,7 +5,7 @@ using MiraAPI.Utilities.Assets;
 using TownOfExtra.Options.Roles;
 using UnityEngine;
 
-namespace TownOfExtra.Modifiers;
+namespace TownOfExtra.Modifiers.Excluded;
 
 public class SignalJammedModifier : TimedModifier
 {

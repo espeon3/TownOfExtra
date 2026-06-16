@@ -6,7 +6,7 @@ using TownOfUs;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Modifiers;
+namespace TownOfExtra.Modifiers.Excluded;
 
 public class LinkedModifier(PlayerControl with) : BaseModifier
 {

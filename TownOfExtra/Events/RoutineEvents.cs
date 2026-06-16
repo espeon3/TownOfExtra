@@ -1,7 +1,7 @@
 ﻿using MiraAPI.Events;
 using MiraAPI.Events.Vanilla.Player;
 using MiraAPI.Modifiers;
-using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Modifiers.Game.Crewmate.Passive;
 
 namespace TownOfExtra.Events;

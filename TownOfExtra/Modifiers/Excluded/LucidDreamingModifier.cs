@@ -5,7 +5,7 @@ using TownOfExtra.Events;
 using TownOfExtra.Options.Roles;
 using UnityEngine;
 
-namespace TownOfExtra.Modifiers;
+namespace TownOfExtra.Modifiers.Excluded;
 
 public class LucidDreamingModifier : BaseModifier
 {

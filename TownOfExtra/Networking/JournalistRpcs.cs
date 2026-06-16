@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using MiraAPI.Modifiers;
 using Reactor.Networking.Attributes;
-using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Roles.Crewmate.Power;
 using TownOfUs.Utilities;
 

@@ -97,16 +97,9 @@ public static class TownOfExtraAssets
     // --- Misc ---
     
     public static LoadableAsset<Sprite> SpeedBoostModifierIcon =>
-        new LoadableResourceAsset($"{CrewModMiscPath}.SpeedBoostModifierIcon.png");
+        new LoadableResourceAsset($"{CrewMiscPath}.SpeedBoostModifierIcon.png");
     
     // --- Chat ---
-
-    public static LoadableAsset<Sprite> JournalistChatIdle =>
-        new LoadableResourceAsset($"{CrewMiscPath}.JournalistChatIdle.png");
-    public static LoadableAsset<Sprite> JournalistChatHover =>
-        new LoadableResourceAsset($"{CrewMiscPath}.JournalistChatHover.png");
-    public static LoadableAsset<Sprite> JournalistChatOpen =>
-        new LoadableResourceAsset($"{CrewMiscPath}.JournalistChatOpen.png");
     
     
     
@@ -147,6 +140,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{ImpRoleIconPath}.FreezerRoleIcon.png", 356f);
     public static LoadableAsset<Sprite> GamblerRoleIcon =>
         new LoadableResourceAsset($"{ImpRoleIconPath}.GamblerRoleIcon.png", 200f);
+    public static LoadableAsset<Sprite> SquidRoleIcon =>
+        new LoadableResourceAsset($"{ImpRoleIconPath}.SquidRoleIcon.png", 200f);
 
     // --- Modifiers ---
 
@@ -156,6 +151,9 @@ public static class TownOfExtraAssets
 
     // --- Buttons ---
 
+    public static LoadableAsset<Sprite> TaggerMarkButton =>
+        new LoadableResourceAsset($"{ImpButtonPath}.TaggerMarkButton.png", 200f);
+    
     public static LoadableAsset<Sprite> HolographerHolographButton =>
         new LoadableResourceAsset($"{ImpButtonPath}.HolographerHolographButton.png");
     public static LoadableAsset<Sprite> SignalJammerJamButton =>
@@ -166,8 +164,6 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{ImpButtonPath}.StrikerLocateButton.png", 683f);
     public static LoadableAsset<Sprite> StrikerStrikeButton =>
         new LoadableResourceAsset($"{ImpButtonPath}.StrikerStrikeButton.png");
-    public static LoadableAsset<Sprite> TaggerMarkButton =>
-        new LoadableResourceAsset($"{ImpButtonPath}.TaggerMarkButton.png");
     public static LoadableAsset<Sprite> ConjurerConjureButton =>
         new LoadableResourceAsset($"{ImpButtonPath}.ConjurerConjureButton.png");
     public static LoadableAsset<Sprite> DreamCasterCastButton =>
@@ -204,7 +200,7 @@ public static class TownOfExtraAssets
     public static LoadableAsset<Sprite> PoltergeistRoleIcon =>
         new LoadableResourceAsset($"{NeutRoleIconPath}.PoltergeistRoleIcon.png", 200f);
     public static LoadableAsset<Sprite> TricksterRoleIcon =>
-        new LoadableResourceAsset($"{NeutRoleIconPath}.TricksterRoleIcon.png");
+        new LoadableResourceAsset($"{NeutRoleIconPath}.TricksterRoleIcon.png", 200f);
     public static LoadableAsset<Sprite> VultureRoleIcon =>
         new LoadableResourceAsset($"{NeutRoleIconPath}.VultureRoleIcon.png", 200f);
 

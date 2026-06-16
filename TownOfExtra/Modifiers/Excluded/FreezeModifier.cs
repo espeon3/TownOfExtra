@@ -1,4 +1,5 @@
-﻿using MiraAPI.GameOptions;
+﻿using System.Collections;
+using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Modifiers.Types;
 using MiraAPI.Utilities;
@@ -8,11 +9,11 @@ using TownOfExtra.Options.Roles;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Modifiers;
+namespace TownOfExtra.Modifiers.Excluded;
 
-public class ImpostorFreezeModifier : TimedModifier
+public class FreezeModifier : TimedModifier
 {
-    public override string ModifierName => "Freeze Active";
+    public override string ModifierName => "Frozen";
     public override bool HideOnUi => false;
     public override float Duration => OptionGroupSingleton<FreezerRoleOptions>.Instance.FreezeDuration;
     public override bool AutoStart => true;
@@ -21,32 +22,43 @@ public class ImpostorFreezeModifier : TimedModifier
 
     public override string GetDescription()
     {
-        return $"Players are frozen for {TimeRemaining:F1}s!";
+        return $"You are frozen for {TimeRemaining:F1}s!";
     }
 
     public override void OnActivate()
     {
         if (!Player.AmOwner) return;
+        Player.moveable = false;
+        Player.MyPhysics.body.velocity = Vector2.zero;
+        Player.NetTransform.Halt();
+        Coroutines.Start(ResetInput());
         
         Coroutines.Start(MiscUtils.CoFlash(TownOfExtraColours.FreezeColour, Duration));
         var notif = Helpers.CreateAndShowNotification(
-            $"Players have been {TownOfExtraColours.FreezeColour.ToTextColor()}frozen</color>!",
+            $"You have been {TownOfExtraColours.FreezeColour.ToTextColor()}frozen</color>!",
             Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.FreezerFreezeButton.LoadAsset());
         notif.AdjustNotification();
     }
-    
+
+    private IEnumerator ResetInput()
+    {
+        yield return null;
+        Input.ResetInputAxes();
+    }
+
     public override void OnDeactivate()
     {
         if (!Player.AmOwner) return;
+        Player.moveable = true;
         var notif = Helpers.CreateAndShowNotification(
-            $"Players have been {TownOfExtraColours.FreezeColour.ToTextColor()}unfrozen</color>!",
+            $"You have been {TownOfExtraColours.FreezeColour.ToTextColor()}unfrozen</color>!",
             Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.FreezerFreezeButton.LoadAsset());
         notif.AdjustNotification();
     }
-    
+
     public override void OnDeath(DeathReason reason)
     {
         if (!Player.AmOwner) return;
-        Player.RpcRemoveModifier<ImpostorFreezeModifier>();
+        Player.RpcRemoveModifier<FreezeModifier>();
     }
 }

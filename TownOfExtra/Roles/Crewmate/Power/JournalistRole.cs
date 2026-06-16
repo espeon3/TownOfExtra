@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Il2CppInterop.Runtime.Attributes;
+using MiraAPI.Modifiers;
 using MiraAPI.Roles;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
@@ -51,11 +54,11 @@ public sealed class JournalistRole : CrewmateRole, ITownOfUsRole, IWikiDiscovera
             return;
         }
 
+        if (ModifierUtils.GetActiveModifiers<InterviewModifier>().FirstOrDefault() == null)
+        {
+            return;
+        }
+
         HudManager.Instance.Chat.SetVisible(true);
-        var buttonArray = new []
-            { TownOfExtraAssets.JournalistChatIdle.LoadAsset(), TownOfExtraAssets.JournalistChatHover.LoadAsset(), TownOfExtraAssets.JournalistChatOpen.LoadAsset()};
-        HudManager.Instance.Chat.chatButton.transform.Find("Inactive").GetComponent<SpriteRenderer>().sprite = buttonArray[0];
-        HudManager.Instance.Chat.chatButton.transform.Find("Active").GetComponent<SpriteRenderer>().sprite = buttonArray[1];
-        HudManager.Instance.Chat.chatButton.transform.Find("Selected").GetComponent<SpriteRenderer>().sprite = buttonArray[2];
     }
 }

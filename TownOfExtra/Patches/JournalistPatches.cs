@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
-using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Networking;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Crewmate.Power;
