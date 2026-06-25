@@ -2,8 +2,7 @@
 using MiraAPI.Keybinds;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Options.Roles;
-using TownOfExtra.Roles.Impostor.Concealing;
-using TownOfUs.Assets;
+using TownOfExtra.Roles.Neutral.Killing;
 using TownOfUs.Buttons;
 using TownOfUs.Networking;
 using TownOfUs.Options;
@@ -19,9 +18,9 @@ public sealed class CannibalEatButton : TownOfUsKillRoleButton<CannibalRole, Pla
 {
     public override string Name => "Eat";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
-    public override Color TextOutlineColor => Palette.ImpostorRed;
+    public override Color TextOutlineColor => TownOfExtraColours.CannibalRoleColour;
     public override float Cooldown => OptionGroupSingleton<CannibalRoleOptions>.Instance.KillCooldown;
-    public override LoadableAsset<Sprite> Sprite => TouAssets.KillSprite;
+    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.CannibalEatButton;
 
     public void SetDiseasedTimer(float multiplier)
     {

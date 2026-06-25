@@ -10,19 +10,48 @@ namespace TownOfExtra.Networking;
 public static class GlobalRpcs
 {
     [MethodRpc((uint)TownOfExtraRpcs.SendNotification)]
-    public static void RpcSendNotification(this PlayerControl p, string msg, string spriteName, int? resizeThingySize = null, Color? flashColour = null)
+    public static void RpcSendNotification(this PlayerControl p, string msg, string spriteName, string spriteType, int ppu = 100, Color flashColour = default)
     {
-        if (PlayerControl.LocalPlayer != p || p == null) return;
+        if (p == null ||
+            PlayerControl.LocalPlayer != p ||
+            msg == null ||
+            spriteName == null ||
+            spriteType == null
+           ) return;
 
-        if (flashColour != null)
+        if (flashColour != default)
         {
-            Coroutines.Start(MiscUtils.CoFlash((Color)flashColour));
+            Coroutines.Start(MiscUtils.CoFlash(flashColour));
         }
-        
-        var sprite =
-            resizeThingySize == null ?
-            new LoadableResourceAsset($"TownOfExtra.Resources.{spriteName}.png") :
-            new LoadableResourceAsset($"TownOfExtra.Resources.{spriteName}.png", (float)resizeThingySize);
+
+        var path = spriteType switch
+        {
+            "CrewRoleIcon" => TownOfExtraAssets.CrewRoleIconPath,
+            "CrewButton" => TownOfExtraAssets.CrewButtonPath,
+            "CrewMisc" => TownOfExtraAssets.CrewMiscPath,
+            "ImpRoleIcon" => TownOfExtraAssets.ImpRoleIconPath,
+            "ImpButton" => TownOfExtraAssets.ImpButtonPath,
+            "ImpMisc" => TownOfExtraAssets.ImpMiscPath,
+            "NeutRoleIcon" => TownOfExtraAssets.NeutRoleIconPath,
+            "NeutButton" => TownOfExtraAssets.NeutButtonPath,
+            "NeutMisc" => TownOfExtraAssets.NeutMiscPath,
+            "CrewModIcon" => TownOfExtraAssets.CrewModModIconPath,
+            "CrewModButton" => TownOfExtraAssets.CrewModButtonPath,
+            "CrewModMisc" => TownOfExtraAssets.CrewModMiscPath,
+            "ImpModIcon" => TownOfExtraAssets.ImpModModIconPath,
+            "ImpModButton" => TownOfExtraAssets.ImpModButtonPath,
+            "ImpModMisc" => TownOfExtraAssets.ImpModMiscPath,
+            "NeutModIcon" => TownOfExtraAssets.NeutModModIconPath,
+            "NeutModButton" => TownOfExtraAssets.NeutModButtonPath,
+            "NeutModMisc" => TownOfExtraAssets.NeutModMiscPath,
+            "UniModIcon" => TownOfExtraAssets.UniModModIconPath,
+            "UniModButton" => TownOfExtraAssets.UniModButtonPath,
+            "UniModMisc" => TownOfExtraAssets.UniModMiscPath,
+            "Misc" => TownOfExtraAssets.MiscPath,
+            _ => "TownOfExtra.Resources"
+        };
+
+        var sprite = new LoadableResourceAsset($"{path}.{spriteName}.png", ppu);
 
         var notif = Helpers.CreateAndShowNotification(
             msg,

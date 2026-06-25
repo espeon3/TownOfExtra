@@ -17,7 +17,9 @@ public static class SjStartMeetingPatch
         {
             __instance.RpcSendNotification(
                 $"Your meeting signals are {Palette.ImpostorRed.ToTextColor()}jammed</color>!",
-                "SignalJammerJamButton",
+                "SignalJammerRoleIcon",
+                "ImpRoleIcon",
+                200,
                 flashColour: Palette.ImpostorRed
             );
             
@@ -36,7 +38,9 @@ public static class SjReportDeadBodyPatch
         {
             __instance.RpcSendNotification(
                 $"Your meeting signals are {Palette.ImpostorRed.ToTextColor()}jammed</color>!",
-                "SignalJammerJamButton",
+                "SignalJammerRoleIcon",
+                "ImpRoleIcon",
+                200,
                 flashColour: Palette.ImpostorRed
             );
 

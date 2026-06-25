@@ -84,6 +84,10 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{CrewModModIconPath}.HeavyWorkloadModifierIcon.png", 200f);
     public static LoadableAsset<Sprite> RoutineModifierIcon =>
         new LoadableResourceAsset($"{CrewModModIconPath}.RoutineModifierIcon.png");
+    public static LoadableAsset<Sprite> ObservantModifierIcon =>
+        new LoadableResourceAsset($"{CrewModModIconPath}.ObservantModifierIcon.png", 200f);
+    public static LoadableAsset<Sprite> ClumsyModifierIcon =>
+        new LoadableResourceAsset($"{CrewModModIconPath}.ClumsyModifierIcon.png", 200f);
 
     // --- Buttons ---
 
@@ -110,8 +114,6 @@ public static class TownOfExtraAssets
     // --- Role Icons ---
 
     // Concealing
-    public static LoadableAsset<Sprite> CannibalRoleIcon =>
-        new LoadableResourceAsset($"{ImpRoleIconPath}.CannibalRoleIcon.png");
     public static LoadableAsset<Sprite> HolographerRoleIcon =>
         new LoadableResourceAsset($"{ImpRoleIconPath}.HolographerRoleIcon.png", 200f);
     public static LoadableAsset<Sprite> SignalJammerRoleIcon =>
@@ -140,8 +142,6 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{ImpRoleIconPath}.FreezerRoleIcon.png", 356f);
     public static LoadableAsset<Sprite> GamblerRoleIcon =>
         new LoadableResourceAsset($"{ImpRoleIconPath}.GamblerRoleIcon.png", 200f);
-    public static LoadableAsset<Sprite> SquidRoleIcon =>
-        new LoadableResourceAsset($"{ImpRoleIconPath}.SquidRoleIcon.png", 200f);
 
     // --- Modifiers ---
 
@@ -187,6 +187,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{ImpMiscPath}.SquashedDeadBodySprite.png");
     public static LoadableAsset<Sprite> SquashedDeadBodySpriteVisor =>
         new LoadableResourceAsset($"{ImpMiscPath}.SquashedDeadBodySpriteVisor.png");
+    public static LoadableAsset<Sprite> EmergencyConsoleBroken =>
+        new LoadableResourceAsset($"{ImpMiscPath}.EmergencyConsoleBroken.png");
 
 
 
@@ -207,6 +209,14 @@ public static class TownOfExtraAssets
     // Outlier
     public static LoadableAsset<Sprite> SwitcherRoleIcon =>
         new LoadableResourceAsset($"{NeutRoleIconPath}.SwitcherRoleIcon.png", 356f);
+    
+    // Killing
+    public static LoadableAsset<Sprite> SquidRoleIcon =>
+        new LoadableResourceAsset($"{NeutRoleIconPath}.SquidRoleIcon.png", 200f);
+    public static LoadableAsset<Sprite> ShadowWalkerRoleIcon =>
+        new LoadableResourceAsset($"{NeutRoleIconPath}.ShadowWalkerRoleIcon.png", 200f);
+    public static LoadableAsset<Sprite> CannibalRoleIcon =>
+        new LoadableResourceAsset($"{NeutRoleIconPath}.CannibalRoleIcon.png");
 
     // --- Buttons ---
 
@@ -222,6 +232,19 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutButtonPath}.PoltergeistPossessButton.png");
     public static LoadableAsset<Sprite> PoltergeistScareButton =>
         new LoadableResourceAsset($"{NeutButtonPath}.PoltergeistScareButton.png");
+    public static LoadableAsset<Sprite> CannibalEatButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.CannibalEatButton.png");
+    public static LoadableAsset<Sprite> ShadowWalkerKillButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.ShadowWalkerKillButton.png");
+    public static LoadableAsset<Sprite> ShadowWalkerEnshroudButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.ShadowWalkerEnshroudButton.png");
+    public static LoadableAsset<Sprite> SquidKillButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.SquidKillButton.png");
+    
+    // --- Misc ---
+    
+    public static LoadableAsset<Sprite> SquidInkPuddle =>
+        new LoadableResourceAsset($"{NeutMiscPath}.SquidInkPuddle.png");
 
 
 
@@ -234,6 +257,8 @@ public static class TownOfExtraAssets
     // Passive
     public static LoadableAsset<Sprite> SoullessModifierIcon =>
         new LoadableResourceAsset($"{UniModModIconPath}.SoullessModifierIcon.png", 200f);
+    public static LoadableAsset<Sprite> ApoliticalModifierIcon =>
+        new LoadableResourceAsset($"{UniModModIconPath}.ApoliticalModifierIcon.png", 200f);
 
 
 

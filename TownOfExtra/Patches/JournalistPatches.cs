@@ -10,7 +10,6 @@ using TownOfUs.Utilities;
 
 namespace TownOfExtra.Patches;
 
-[HarmonyPatch]
 public static class JournalistChatPatches
 {
     [HarmonyPatch(typeof(ChatController), nameof(ChatController.SendChat))]

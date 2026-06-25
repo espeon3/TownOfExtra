@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
@@ -8,19 +10,20 @@ using TownOfUs.Assets;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
+using TownOfUs.Roles.Neutral;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Roles.Impostor.Concealing;
+namespace TownOfExtra.Roles.Neutral.Killing;
 
-public sealed class CannibalRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class CannibalRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Cannibal";
     public string RoleDescription => "Leave no traces of the crew!";
     public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => Palette.ImpostorRed;
-    public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
-    public RoleAlignment RoleAlignment => RoleAlignment.ImpostorConcealing;
+    public Color RoleColor => TownOfExtraColours.CannibalRoleColour;
+    public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
+    public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
     public DoomableType DoomHintType => DoomableType.Death;
     
     public static List<byte> EatenPlayers = new List<byte>();
@@ -29,13 +32,12 @@ public sealed class CannibalRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverabl
     public string GetAdvancedDescription()
     {
         return
-            "The Cannibal is an Impostor Concealing role that leaves no dead bodies when killing." +
+            "The Cannibal is a Neutral Killing role that leaves no dead bodies when killing." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
-        UseVanillaKillButton = false,
         MaxRoleCount = 1,
         Icon = TownOfExtraAssets.CannibalRoleIcon
     };
@@ -52,12 +54,20 @@ public sealed class CannibalRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverabl
         }
     }
     
-    public static void SendRevivedMessage()
+    public bool WinConditionMet()
     {
-        Coroutines.Start(MiscUtils.CoFlash(TownOfUsColors.Medic));
-        var notif = Helpers.CreateAndShowNotification(
-            $"You have been {TownOfUsColors.Medic.ToTextColor()}revived</color> as the {TownOfExtraColours.CannibalColour.ToTextColor()}cannibal</color> has {Palette.ImpostorRed.ToTextColor()}died</color>!",
-            Color.white, new Vector3(0f, 1f, -20f), spr: TouCrewAssets.MedicSprite.LoadAsset());
-        notif.AdjustNotification();
+        var cannibalCount = CustomRoleUtils.GetActiveRolesOfType<CannibalRole>().Count(x => !x.Player.HasDied());
+
+        if (MiscUtils.KillersAliveCount > cannibalCount)
+        {
+            return false;
+        }
+
+        return cannibalCount >= Helpers.GetAlivePlayers().Count - cannibalCount;
+    }
+
+    public override bool DidWin(GameOverReason gameOverReason)
+    {
+        return WinConditionMet();
     }
 }

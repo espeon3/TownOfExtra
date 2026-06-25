@@ -39,6 +39,7 @@ public sealed class SwitcherSwitchButton : TownOfUsKillRoleButton<SwitcherRole, 
         PlayerControl.LocalPlayer.RpcSendNotification(
             $"Your role will be {TownOfExtraColours.SwitcherRoleColour.ToTextColor()}switched</color> with {Target.name} after the next meeting!",
             "SwitcherRoleIcon",
+            "NeutRoleIcon",
             356,
             TownOfExtraColours.SwitcherRoleColour
         );

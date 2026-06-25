@@ -2,10 +2,9 @@
 using MiraAPI.Events.Vanilla.Gameplay;
 using MiraAPI.Events.Vanilla.Meeting;
 using MiraAPI.GameOptions;
-using MiraAPI.Utilities;
 using TownOfExtra.Networking;
 using TownOfExtra.Options.Roles;
-using TownOfExtra.Roles.Impostor.Concealing;
+using TownOfExtra.Roles.Neutral.Killing;
 using TownOfUs.Utilities;
 
 namespace TownOfExtra.Events;

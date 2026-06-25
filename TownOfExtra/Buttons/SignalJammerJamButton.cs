@@ -2,13 +2,10 @@
 using MiraAPI.Keybinds;
 using MiraAPI.Modifiers;
 using MiraAPI.Utilities.Assets;
-using TownOfExtra.Modifiers;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Impostor.Concealing;
 using TownOfUs.Buttons;
-using TownOfUs.Roles.Crewmate;
-using TownOfUs.Roles.Neutral;
 using UnityEngine;
 
 namespace TownOfExtra.Buttons;
@@ -27,8 +24,7 @@ public sealed class SignalJammerJamButton : TownOfUsRoleButton<SignalJammerRole>
         OverrideName("Jamming Signals...");
         foreach (var player in PlayerControl.AllPlayerControls)
         {
-            if (player.Data.IsDead || player.Data.Role is HaunterRole or SpectreRole) continue;
-
+            if (player.Data.Disconnected) continue;
             player.RpcAddModifier<SignalJammedModifier>();
         }
     }

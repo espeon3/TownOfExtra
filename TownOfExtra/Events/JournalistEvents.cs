@@ -23,7 +23,8 @@ public class JournalistEvents
         {
             p.RpcSendNotification(
                 $"You are being {TownOfExtraColours.JournalistRoleColour.ToTextColor()}interviewed</color> by the {TownOfExtraColours.JournalistRoleColour.ToTextColor()}journalist</color>, talk to them in the chat!",
-                "InfoPh",
+                "JournalistInterviewButton",
+                "CrewButton",
                 flashColour: TownOfExtraColours.JournalistRoleColour
             );
         }

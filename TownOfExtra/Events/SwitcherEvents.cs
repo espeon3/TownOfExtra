@@ -31,6 +31,7 @@ public class SwitcherEvents
                         switcher.RpcSendNotification(
                             $"Your {TownOfExtraColours.SwitcherRoleColour.ToTextColor()}switcher</color> target is no longer alive!",
                             "SwitcherRoleIcon",
+                            "NeutRoleIcon",
                             356,
                             TownOfExtraColours.SwitcherRoleColour
                         );
@@ -45,6 +46,7 @@ public class SwitcherEvents
                         switcher.RpcSendNotification(
                             $"You or your {TownOfExtraColours.SwitcherRoleColour.ToTextColor()}switcher</color> target's role was erased!",
                             "SwitcherRoleIcon",
+                            "NeutRoleIcon",
                             356,
                             TownOfExtraColours.SwitcherRoleColour
                         );
@@ -63,12 +65,14 @@ public class SwitcherEvents
                 p.RpcSendNotification(
                     $"Your role has been switched with the {TownOfExtraColours.SwitcherRoleColour.ToTextColor()}switcher</color>!",
                     "SwitcherRoleIcon",
+                    "NeutRoleIcon",
                     356,
                     TownOfExtraColours.SwitcherRoleColour
                 );
                 switcher.RpcSendNotification(
                     $"You have {TownOfExtraColours.SwitcherRoleColour.ToTextColor()}switched</color> your role with {p.name}!",
                     "SwitcherRoleIcon",
+                    "NeutRoleIcon",
                     356,
                     TownOfExtraColours.SwitcherRoleColour
                 );

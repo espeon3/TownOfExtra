@@ -18,6 +18,7 @@ namespace TownOfExtra.Events
         public static void AfterMurderEventHandler(AfterMurderEvent e)
         {
             if (!AmongUsClient.Instance.AmHost) return;
+            if (MeetingHud.Instance) return;
             
             var options = OptionGroupSingleton<GamblerRoleOptions>.Instance;
             var killer = e.Source;
@@ -62,7 +63,8 @@ namespace TownOfExtra.Events
                         GlobalRpcs.RpcSendNotification(
                             e.Source,
                             $"{victim.name} was the {TownOfUsColors.Celebrity.ToTextColor()}Celebrity</color>, so your self report has been canceled",
-                            "GamblerRoleIcon"
+                            "GamblerRoleIcon",
+                            "ImpRoleIcon"
                         );
                     }
                     else
@@ -95,7 +97,8 @@ namespace TownOfExtra.Events
                     GlobalRpcs.RpcSendNotification(
                         e.Source, 
                         msg, 
-                        "GamblerRoleIcon"
+                        "GamblerRoleIcon",
+                        "ImpRoleIcon"
                     )
                 ));
             }

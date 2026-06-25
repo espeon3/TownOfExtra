@@ -36,6 +36,7 @@ public class TricksterRpcs
 
             p.RpcSendNotification($"One of your {ttc}fake bodies</color> has been found! {ttc}{reports}/{reportsNeeded}</color>",
                 "TricksterRoleIcon",
+                "NeutRoleIcon",
                 200,
                 TownOfExtraColours.TricksterRoleColour
             );

@@ -19,4 +19,6 @@ public sealed class ChiefRoleOptions : AbstractOptionGroup<ChiefRole>
     public float ShootCooldown { get; set; } = 30f;
     [ModdedNumberOption("Max Shoot Uses", 0f, 30f, zeroInfinity:true)]
     public float ShootUses { get; set; } = 3f;
+    [ModdedToggleOption("Spread egotism")]
+    public bool SpreadEgotism { get; set; } = false;
 }

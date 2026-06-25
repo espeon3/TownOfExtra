@@ -48,6 +48,7 @@ public class EraserEvents
                 p.RpcSendNotification(
                     $"Your role has been erased by the {Palette.ImpostorRed.ToTextColor()}eraser</color>!",
                     "EraserRoleIcon",
+                    "ImpRoleIcon",
                     200,
                     Palette.ImpostorRed
                 );

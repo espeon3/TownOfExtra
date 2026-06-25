@@ -29,4 +29,23 @@ public sealed class UniversalModifierOptions : AbstractOptionGroup
         {
             Visible = () => OptionGroupSingleton<UniversalModifierOptions>.Instance.SoullessAmount > 0
         };
+    
+    /*----------------------
+           APOLITICAL
+    ----------------------*/
+
+    [ModdedNumberOption("Apolitical Amount", 0, 5)]
+    public float ApoliticalAmount { get; set; } = 0;
+
+    public ModdedNumberOption ApoliticalChance { get; } =
+        new("Apolitical Chance", 50f, 0f, 100f, 10f, MiraNumberSuffixes.Percent)
+        {
+            Visible = () => OptionGroupSingleton<UniversalModifierOptions>.Instance.ApoliticalAmount > 0
+        };
+    
+    public ModdedNumberOption ApoliticalCdIncrease { get; } =
+        new("Cooldown increase per vote", 3f, 1f, 10f, 1f, MiraNumberSuffixes.None)
+        {
+            Visible = () => OptionGroupSingleton<UniversalModifierOptions>.Instance.ApoliticalAmount > 0
+        };
 }

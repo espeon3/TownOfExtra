@@ -20,10 +20,7 @@ public class SoullessModifier : TouGameModifier, IWikiDiscoverable, IColoredModi
     public Color ModifierColor => TownOfUsColors.SoulCollector;
     public override Color FreeplayFileColor => TownOfUsColors.SoulCollector;
 
-    public override string GetDescription()
-    {
-        return "Your soul is harvested on death.";
-    }
+    public override string GetDescription() => IntroInfo;
 
     public string GetAdvancedDescription()
     {

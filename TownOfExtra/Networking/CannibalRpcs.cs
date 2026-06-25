@@ -1,6 +1,5 @@
 ﻿using Reactor.Networking.Attributes;
 using TownOfExtra.Events;
-using TownOfExtra.Roles.Impostor.Concealing;
 using TownOfUs;
 using TownOfUs.Modules;
 
@@ -12,7 +11,11 @@ public class CannibalRpcs
     public static void RpcNotifyCannibalDead(NetworkedPlayerInfo player)
     {
         if (PlayerControl.LocalPlayer.PlayerId != player.PlayerId) return;
-        CannibalRole.SendRevivedMessage();
+        PlayerControl.LocalPlayer.RpcSendNotification(
+            $"You have been {TownOfUsColors.Medic.ToTextColor()}revived</color> as the {TownOfExtraColours.CannibalRoleColour.ToTextColor()}cannibal</color> has {Palette.ImpostorRed.ToTextColor()}died</color>!",
+            "CannibalRoleIcon",
+            "NeutRoleIcon"
+        );
     }
     
     [MethodRpc((uint)TownOfExtraRpcs.ReviveCannibalVictims)]
@@ -27,7 +30,7 @@ public class CannibalRpcs
             revived: p,
             position: p.transform.position,
             roleWhenAlive: p.GetRoleWhenAlive(),
-            flashColor: TownOfUsColors.Medic,
+            flashColor: TownOfExtraColours.CannibalRoleColour,
             revivedOwnerNotificationText: null,
             reviverOwnerNotificationText: null);
     }

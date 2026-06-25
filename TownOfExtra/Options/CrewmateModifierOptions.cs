@@ -102,4 +102,23 @@ public sealed class CrewmateModifierOptions : AbstractOptionGroup
         {
             Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.ObservantAmount > 0
         };
+    
+    /*----------------------
+            CLUMSY
+   ----------------------*/
+
+    [ModdedNumberOption("Clumsy Amount", 0, 5)]
+    public float ClumsyAmount { get; set; } = 0;
+
+    public ModdedNumberOption ClumsyChance { get; } =
+        new("Clumsy Chance", 50f, 0f, 100f, 10f, MiraNumberSuffixes.Percent)
+        {
+            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.ClumsyAmount > 0
+        };
+    
+    public ModdedNumberOption ClumsySabotageChance { get; } =
+        new("Sabotage Chance", 70, 10f, 100f, 10f, MiraNumberSuffixes.Percent)
+        {
+            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.ClumsyAmount > 0
+        };
 }

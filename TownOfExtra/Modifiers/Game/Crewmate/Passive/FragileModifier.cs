@@ -16,7 +16,7 @@ public class FragileModifier : TouGameModifier, IWikiDiscoverable, IColoredModif
 {
     public override string ModifierName => "Fragile";
     public override ModifierFaction FactionType => ModifierFaction.CrewmatePassive;
-    public override string IntroInfo => "You die if interacted too much";
+    public override string IntroInfo => "You could die when interacted with";
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.FragileModifierIcon;
     public Color ModifierColor => TownOfExtraColours.FragileModifierColour;
     public override Color FreeplayFileColor => TownOfExtraColours.FragileModifierColour;

@@ -30,6 +30,7 @@ public sealed class ImpendingDoomModifierv(PlayerControl initiator, bool selfKil
         Player.RpcSendNotification(
             $"You have been locked on to by a {Palette.ImpostorRed.ToTextColor()}striker</color>! Your doom is inevitable.",
             "StrikerStrikeButton",
+            "ImpButton",
             flashColour: Palette.ImpostorRed);
     }
 

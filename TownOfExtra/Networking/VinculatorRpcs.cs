@@ -22,6 +22,7 @@ public class VinculatorRpcs
             p.RpcSendNotification(
                 $"You have {TownOfUsColors.Impostor.ToTextColor()}empowered</color> your teammates!",
                 "VinculatorEmpowerButton",
+                "ImpButton",
                 flashColour: Palette.ImpostorRed
             );
             
@@ -33,6 +34,7 @@ public class VinculatorRpcs
             p.RpcSendNotification(
                 $"You have been {TownOfUsColors.Impostor.ToTextColor()}empowered</color> by the {TownOfUsColors.Impostor.ToTextColor()}vinculator</color>, your cooldowns have been cleared!",
                 "VinculatorEmpowerButton",
+                "ImpButton",
                 flashColour: Palette.ImpostorRed
             );
             

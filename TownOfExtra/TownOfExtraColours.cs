@@ -18,16 +18,21 @@ public class TownOfExtraColours
     
     public static Color PoisonColour => new Color32(46, 82, 53, 255);
     public static Color FreezeColour => new Color32(0, 200, 255, 255);
-    public static Color CannibalColour => new Color32(180, 90, 50, 255);
     
     public static Color SwitcherRoleColour => new Color32(255, 239, 168, 255);
     public static Color TricksterRoleColour => new Color32(128, 0, 155, 255);
     public static Color VultureRoleColour => new Color32(79, 24, 0, 255);
+    public static Color CannibalRoleColour => new Color32(146, 43, 5, 255);
+    public static Color SquidRoleColour => new Color32(146, 84, 197, 255);
+    public static Color ShadowWalkerRoleColour => new Color32(1, 1, 35, 255);
     
     public static Color PossessedColour => new Color32(255, 235, 171, 255);
     
     public static Color HeavyWorkloadModifierColour => new Color32(216, 108, 2, 255);
     public static Color FragileModifierColour => new Color32(71, 102, 125, 255);
+    public static Color ApoliticalModifierColour => new Color32(159, 184, 113, 255);
+    public static Color ObservantModifierColour => new Color32(62, 222, 105, 255);
+    public static Color ClumsyModifierColour => new Color32(111, 255, 211, 255);
 
 
     public static Color GetRoleColour(string name)

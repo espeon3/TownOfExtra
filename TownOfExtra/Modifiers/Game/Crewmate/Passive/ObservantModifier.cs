@@ -11,30 +11,30 @@ using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Game.Crewmate.Passive;
 
-public class RoutineModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier
+public class ObservantModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier
 {
-    public override string ModifierName => "Routine";
+    public override string ModifierName => "Observant";
     public override ModifierFaction FactionType => ModifierFaction.CrewmatePassive;
-    public override string IntroInfo => "You gain speed boosts from tasks!";
-    public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.RoutineModifierIcon;
-    public Color ModifierColor => Palette.CrewmateBlue;
-    public override Color FreeplayFileColor => Palette.CrewmateBlue;
+    public override string IntroInfo => "Get more info when meeting deaths happen";
+    public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.ObservantModifierIcon;
+    public Color ModifierColor => TownOfExtraColours.ObservantModifierColour;
+    public override Color FreeplayFileColor => TownOfExtraColours.ObservantModifierColour;
 
     public override string GetDescription() => IntroInfo;
 
     public string GetAdvancedDescription()
     {
-        return "When you complete a task, you gain a small speed boost temporarily.";
+        return "When a player gets guessed or killed within a meeting due to anything, you will be notified of the exact reason.";
     }
 
     public override int GetAmountPerGame()
     {
-        return (int)OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineAmount;
+        return (int)OptionGroupSingleton<CrewmateModifierOptions>.Instance.ObservantAmount;
     }
 
     public override int GetAssignmentChance()
     {
-        return OptionGroupSingleton<CrewmateModifierOptions>.Instance.RoutineChance;
+        return OptionGroupSingleton<CrewmateModifierOptions>.Instance.ObservantChance;
     }
 
     public override bool IsModifierValidOn(RoleBehaviour role)

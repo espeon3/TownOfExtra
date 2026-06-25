@@ -2,6 +2,7 @@
 using MiraAPI.GameOptions.Attributes;
 using MiraAPI.Utilities;
 using TownOfExtra.Roles.Impostor.Concealing;
+using TownOfExtra.Roles.Neutral.Killing;
 
 namespace TownOfExtra.Options.Roles;
 

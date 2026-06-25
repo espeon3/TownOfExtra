@@ -15,7 +15,7 @@ public class HeavyWorkloadModifier : TouGameModifier, IWikiDiscoverable, IColore
 {
     public override string ModifierName => "Heavy Workload";
     public override ModifierFaction FactionType => ModifierFaction.CrewmatePassive;
-    public override string IntroInfo => "You have extra tasks to finish.";
+    public override string IntroInfo => "You have extra tasks to finish";
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.HeavyWorkloadModifierIcon;
     public Color ModifierColor => TownOfExtraColours.HeavyWorkloadModifierColour;
     public override Color FreeplayFileColor => TownOfExtraColours.HeavyWorkloadModifierColour;
@@ -24,10 +24,7 @@ public class HeavyWorkloadModifier : TouGameModifier, IWikiDiscoverable, IColore
     public static float ExtraLongTasks => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadExtraLongTasks.Value;
     public static float ExtraShortTasks => OptionGroupSingleton<CrewmateModifierOptions>.Instance.HeavyWorkloadExtraShortTasks.Value;
 
-    public override string GetDescription()
-    {
-        return "You have an increased amount of tasks!";
-    }
+    public override string GetDescription() => IntroInfo;
 
     public string GetAdvancedDescription()
     {
