@@ -38,14 +38,23 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-poltergeist-v120"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/PoltergeistRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-killing"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NeutKilling.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-cannibal-v100"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/CannibalRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-squid-v122"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/SquidRoleIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-shadow-walker-v122"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/ShadowWalkerRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#neutral-outlier"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NeutOutlier.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Roles#-switcher-v104"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/SwitcherRoleIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#crew-modifiers"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/CrewMods.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-heavy-workload"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/HeavyWorkloadModifierIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-routine"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/RoutineModifierIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-fragile"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/FragileModifierIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-clumsy"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/ClumsyModifierIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-observant"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/ObservantModifierIcon.png" /></a>
+ <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#impostor-modifiers"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpMods.png" /></a>
+ <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-shockwave"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/ShockwaveModifierIcon.png" /></a>
+ <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-rebirth"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/RebirthModifierIcon.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#universal-modifiers"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/UniMods.png" /></a>
   <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-soulless"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/SoullessModifierIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-apolitical"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/ApoliticalModifierIcon.png" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/wiki/Modifiers#-mute"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/MuteModifierIcon.png" /></a>
 </p>
 
 -----------------------
@@ -66,13 +75,12 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 - [Divani Mods](https://github.com/DivaniNL/TownOfUsMiraDivaniModsAddOn)/[Divani](https://github.com/DivaniNL) - Code for making cleric's cleansing work on TouEx roles
 
 # Asset Credits
-- [@AtonyGit](https://github.com/AtonyGit)/[Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - All assets that are not specified below (used/edited)
+- [@AtonyGit](https://github.com/AtonyGit)/[Town Of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) - All assets that are not specified below
 - @az0th_19 (discord) - Vinculator | Empower, Chain [Role/Button Icons]
 - @aasteriisken (discord) - Freezer, Switcher, Dream Caster, Eraser, Conjurer, Vulture, Journalist | Heavy Workload | Scare, Possess, Cast, Interview [Role/Modifier/Button Icons]
-- @mystic_haze2 (discord) - Freeze, Conjure [Buttons]
+- @mystic_haze2 (discord) - Trickster, Shadow Walker, Squid | Observant, Clumsy, Apolitical | Freeze, Conjure, Enshroud [Role/Modifier/Button Icons]
 - @jaydoeswitchcraft (discord) - Gambler, Signal Jammer, Holographer, Chief | Soulless | Locate [Role/Modifier/Button Icons]
 - @superkiller500(NerdCandy) (discord) - Striker | Strike [Role/Button Icons]
-- **You will probably never see these, unless I leave one used by accident, but these placeholder icons were made by @aasteriisken (discord)** - Generic Protect, Generic Info, Generic Attack, Generic Misc
 
 -----------------------
 
@@ -82,7 +90,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 
 | Game Version             | Mod Version | Tou: Mira Version | Download Link                                                         |
 |--------------------------|-------------|-------------------|-----------------------------------------------------------------------|
-| 17.3 (2026.3.31)         | 1.2.1       | 1.6.2             | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.2.1) |
+| 17.3 (2026.3.31)         | 1.2.2       | 1.6.2+            | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.2.2) |
 
 -----------------------
 
