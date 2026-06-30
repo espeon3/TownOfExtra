@@ -14,17 +14,19 @@ public class TownOfExtraColours
     
     public static Color ChiefRoleColour => UseBasicCrew ? Palette.CrewmateBlue : new Color32(0, 118, 1, 255);
     public static Color JournalistRoleColour => UseBasicCrew ? Palette.CrewmateBlue : new Color32(218, 213, 197, 255);
-    public static Color PoltergeistRoleColour => new Color32(122, 186, 168, 255);
+    public static Color CommanderRoleColour => UseBasicCrew ? Palette.CrewmateBlue : new Color32(240, 148, 117, 255);
     
     public static Color PoisonColour => new Color32(46, 82, 53, 255);
     public static Color FreezeColour => new Color32(0, 200, 255, 255);
     
-    public static Color SwitcherRoleColour => new Color32(255, 239, 168, 255);
+    public static Color ShifterRoleColour => new Color32(153, 153, 153, 255);
     public static Color TricksterRoleColour => new Color32(128, 0, 155, 255);
+    public static Color PoltergeistRoleColour => new Color32(122, 186, 168, 255);
     public static Color VultureRoleColour => new Color32(79, 24, 0, 255);
     public static Color CannibalRoleColour => new Color32(146, 43, 5, 255);
     public static Color SquidRoleColour => new Color32(146, 84, 197, 255);
     public static Color ShadowWalkerRoleColour => new Color32(1, 1, 35, 255);
+    public static Color BarbarianRoleColour => new Color32(190, 189, 173, 255);
     
     public static Color PossessedColour => new Color32(255, 235, 171, 255);
     

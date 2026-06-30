@@ -74,6 +74,10 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{CrewRoleIconPath}.ChiefRoleIcon.png", 200);
     public static LoadableAsset<Sprite> JournalistRoleIcon =>
         new LoadableResourceAsset($"{CrewRoleIconPath}.JournalistRoleIcon.png", 200);
+    
+    // Killing
+    public static LoadableAsset<Sprite> CommanderRoleIcon =>
+        new LoadableResourceAsset($"{CrewRoleIconPath}.CommanderRoleIcon.png", 200);
 
     // --- Modifiers ---
 
@@ -217,8 +221,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutRoleIconPath}.VultureRoleIcon.png", 200);
 
     // Outlier
-    public static LoadableAsset<Sprite> SwitcherRoleIcon =>
-        new LoadableResourceAsset($"{NeutRoleIconPath}.SwitcherRoleIcon.png", 356);
+    public static LoadableAsset<Sprite> ShifterRoleIcon =>
+        new LoadableResourceAsset($"{NeutRoleIconPath}.ShifterRoleIcon.png");
     
     // Killing
     public static LoadableAsset<Sprite> SquidRoleIcon =>
@@ -227,6 +231,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutRoleIconPath}.ShadowWalkerRoleIcon.png", 200);
     public static LoadableAsset<Sprite> CannibalRoleIcon =>
         new LoadableResourceAsset($"{NeutRoleIconPath}.CannibalRoleIcon.png");
+    public static LoadableAsset<Sprite> BarbarianRoleIcon =>
+        new LoadableResourceAsset($"{NeutRoleIconPath}.BarbarianRoleIcon.png", 200);
 
     // --- Buttons ---
 
@@ -234,8 +240,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutButtonPath}.TricksterSampleButton.png");
     public static LoadableAsset<Sprite> TricksterPlaceButton =>
         new LoadableResourceAsset($"{NeutButtonPath}.TricksterPlaceButton.png");
-    public static LoadableAsset<Sprite> SwitcherSwitchButton =>
-        new LoadableResourceAsset($"{NeutButtonPath}.SwitcherSwitchButton.png");
+    public static LoadableAsset<Sprite> ShifterShiftButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.ShifterShiftButton.png", 400);
     public static LoadableAsset<Sprite> VultureEatButton =>
         new LoadableResourceAsset($"{NeutButtonPath}.VultureEatButton.png");
     public static LoadableAsset<Sprite> PoltergeistPossessButton =>
@@ -252,6 +258,10 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutButtonPath}.SquidKillButton.png");
     public static LoadableAsset<Sprite> SquidSpillButton =>
         new LoadableResourceAsset($"{NeutMiscPath}.SquidInkPuddle.png", 225);
+    public static LoadableAsset<Sprite> BarbarianTargetButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.BarbarianTargetButton.png", 200);
+    public static LoadableAsset<Sprite> BarbarianAttackButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.BarbarianAttackButton.png");
     
     // --- Misc ---
     

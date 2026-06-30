@@ -12,12 +12,14 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Neutral.Outlier;
 
-public sealed class SwitcherRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class ShifterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, IUnguessable
 {
-    public string RoleName => "Switcher";
-    public string RoleDescription => "Switch roles with another player!";
+    public string RoleName => "Shifter";
+    public string RoleDescription => "Shift roles with another player!";
     public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => TownOfExtraColours.SwitcherRoleColour;
+    public bool IsGuessable => false;
+    public RoleBehaviour AppearAs => RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<ShifterRole>());
+    public Color RoleColor => TownOfExtraColours.ShifterRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralOutlier;
     public DoomableType DoomHintType => DoomableType.Trickster;
@@ -29,22 +31,22 @@ public sealed class SwitcherRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUs
             return;
         }
         ImportantTextTask orCreateTask = PlayerTask.GetOrCreateTask<ImportantTextTask>(playerControl);
-        orCreateTask.Text = $"{TownOfExtraColours.SwitcherRoleColour.ToTextColor()}Switch your role with another player!</color>\n{TownOfExtraColours.SwitcherRoleColour.ToTextColor()}Optional Tasks:</color>";
+        orCreateTask.Text = $"{TownOfExtraColours.ShifterRoleColour.ToTextColor()}Shift your role with another player!</color>\n{TownOfExtraColours.ShifterRoleColour.ToTextColor()}Optional Tasks:</color>";
         orCreateTask.name = "NeutralRoleText";
     }
 
     public string GetAdvancedDescription()
     {
         return
-            "The Switcher is a Neutral Outlier role that can switch their role with another player, applying after the next meeting." +
+            "The Shifter is a Neutral Outlier role that can switch their role with another player, applying after the next meeting.\n" +
+            "<b>This role is unguessable!</b>" +
             MiscUtils.AppendOptionsText(GetType());
     }
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
         MaxRoleCount = 1,
-        TasksCountForProgress = false,
-        Icon = TownOfExtraAssets.SwitcherRoleIcon,
+        Icon = TownOfExtraAssets.ShifterRoleIcon,
         GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>()
     };
     
@@ -55,7 +57,7 @@ public sealed class SwitcherRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUs
         {
             return new List<CustomButtonWikiDescription>
             {
-                new("Switch", "Switch your role with another player.", TownOfExtraAssets.SwitcherSwitchButton)
+                new("Shift", "Shift your role with another player.", TownOfExtraAssets.ShifterShiftButton)
             };
         }
     }

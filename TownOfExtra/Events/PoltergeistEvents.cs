@@ -8,7 +8,7 @@ using MiraAPI.Modifiers;
 using MiraAPI.Roles;
 using Reactor.Utilities;
 using TownOfExtra.Events.Custom;
-using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Neutral.Evil;
 using TownOfUs.GameOver;

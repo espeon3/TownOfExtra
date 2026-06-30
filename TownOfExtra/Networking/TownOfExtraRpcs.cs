@@ -16,5 +16,7 @@ public enum TownOfExtraRpcs : uint
     HolographerSyncFakePlayer = 511,
     SendJournalistChat = 512,
     SquidSpillInk = 513,
-    RebirthSendPopup = 514,
+    SquidDestroyInk = 514,
+    RebirthSendPopup = 515,
+    BarbNotifyTargetDeath = 516,
 }

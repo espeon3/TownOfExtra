@@ -1,6 +1,6 @@
 ﻿using MiraAPI.Modifiers;
 
-namespace TownOfExtra.Modifiers;
+namespace TownOfExtra.Modifiers.Excluded;
 
 public class ScaredModifier : BaseModifier
 {

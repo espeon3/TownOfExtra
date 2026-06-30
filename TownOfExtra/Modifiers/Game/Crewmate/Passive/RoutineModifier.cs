@@ -1,5 +1,6 @@
 ﻿using MiraAPI.GameOptions;
 using MiraAPI.Utilities.Assets;
+using TownOfExtra.Modules;
 using TownOfExtra.Options;
 using TownOfUs.Interfaces;
 using TownOfUs.Modifiers.Game;
@@ -11,7 +12,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Game.Crewmate.Passive;
 
-public class RoutineModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier
+public class RoutineModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier, IUnguessableModifier
 {
     public override string ModifierName => "Routine";
     public override ModifierFaction FactionType => ModifierFaction.CrewmatePassive;
@@ -19,6 +20,7 @@ public class RoutineModifier : TouGameModifier, IWikiDiscoverable, IColoredModif
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.RoutineModifierIcon;
     public Color ModifierColor => Palette.CrewmateBlue;
     public override Color FreeplayFileColor => Palette.CrewmateBlue;
+    public bool IsGuessable => false;
 
     public override string GetDescription() => IntroInfo;
 

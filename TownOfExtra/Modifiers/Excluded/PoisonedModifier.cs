@@ -9,7 +9,7 @@ using TownOfUs.Networking;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Modifiers;
+namespace TownOfExtra.Modifiers.Excluded;
 
 public sealed class PoisonedModifier(PlayerControl poisoner) : TimedModifier
 {

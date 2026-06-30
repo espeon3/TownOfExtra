@@ -19,14 +19,10 @@ public static class VisionPatch
         var p = player.Object;
         var result = __result;
         
-        if (p.HasModifier<SlippedModifier>())
-        {
-            result *= OptionGroupSingleton<SquidRoleOptions>.Instance.VisionDebuffMultiplier;
-        }
-        if (p.HasModifier<ShockwavedModifier>())
-        {
-            result *= OptionGroupSingleton<ImpostorModifierOptions>.Instance.ShockwaveVisionDebuffMultiplier.Value;
-        }
+        if (p.HasModifier<SlippedModifier>()) result *= OptionGroupSingleton<SquidRoleOptions>.Instance.VisionDebuffMultiplier;
+        if (p.HasModifier<ShockwavedModifier>()) result *= OptionGroupSingleton<ImpostorModifierOptions>.Instance.ShockwaveVisionDebuffMultiplier.Value;
+        if (p.HasModifier<ScaredDebuffsModifier>()) result *= OptionGroupSingleton<PoltergeistRoleOptions>.Instance.ScaredVisDebuffMulti;
+        if (p.HasModifier<PossessedDebuffsModifier>()) result *= OptionGroupSingleton<PoltergeistRoleOptions>.Instance.PossessedVisDebuffMulti;
 
         __result = result;
     }

@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using AmongUs.GameOptions;
-using TownOfExtra.Options.Roles;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
-using TownOfUs;
+using MiraAPI.Utilities;
+using TownOfExtra.Options.Roles;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
@@ -14,18 +14,17 @@ using TownOfUs.Roles.Neutral;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Roles.Neutral.Evil;
+namespace TownOfExtra.Roles.Neutral.Killing;
 
-public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class BarbarianRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
-    public string RoleName => "Vulture";
-    public string RoleDescription => "Eat the bodies of dead crewmates!";
+    public string RoleName => "Barbarian";
+    public string RoleDescription => "Charge up attacks to kill players";
     public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => TownOfExtraColours.VultureRoleColour;
+    public Color RoleColor => TownOfExtraColours.BarbarianRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
-    public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
-    public DoomableType DoomHintType => DoomableType.Death;
-    public static int DeadBodiesEaten;
+    public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
+    public DoomableType DoomHintType => DoomableType.Relentless;
 
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {
@@ -34,34 +33,25 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
             return;
         }
         ImportantTextTask orCreateTask = PlayerTask.GetOrCreateTask<ImportantTextTask>(playerControl);
-        orCreateTask.Text = $"{TownOfExtraColours.VultureRoleColour.ToTextColor()}Eat {OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded} dead bod{((int)OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded != 1 ? "ies" : "y")} to win!</color>\n{TownOfExtraColours.VultureRoleColour.ToTextColor()}Fake Tasks:</color>";
+        orCreateTask.Text = $"{TownOfExtraColours.BarbarianRoleColour.ToTextColor()}Be the last killer alive, at all costs.</color>\n{TownOfExtraColours.BarbarianRoleColour.ToTextColor()}Fake Tasks:</color>";
         orCreateTask.name = "NeutralRoleText";
-    }
-    
-    [HideFromIl2Cpp]
-    public StringBuilder SetTabText()
-    {
-        var stringB = ITownOfUsRole.SetNewTabText(this);
-
-        stringB.Append(TownOfUsPlugin.Culture, $"\n<b>Bodies Eaten: {DeadBodiesEaten}/{OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded}</color>");
-
-        return stringB;
     }
     
     public string GetAdvancedDescription()
     {
         return
-            "The Vulture is a Neutral Evil role that has to eat a specific number of dead bodies to win." +
+            "The Barbarian is a Neutral Killing role who can charge up attacks, letting them kill as many players as they have attacks with no kill cooldown." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
+        Icon = TownOfExtraAssets.BarbarianRoleIcon,
         MaxRoleCount = 1,
-        Icon = TownOfExtraAssets.VultureRoleIcon,
+        CanUseVent = OptionGroupSingleton<BarbarianRoleOptions>.Instance.CanVent,
         GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>()
     };
-
+    
     [HideFromIl2Cpp]
     public List<CustomButtonWikiDescription> Abilities
     {
@@ -69,19 +59,21 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
         {
             return new List<CustomButtonWikiDescription>
             {
-                new("Eat", "Eat a dead body.", TownOfExtraAssets.VultureEatButton)
+                new("Target", "Select a player to target, if they are killed, you gain an attack charge.", TownOfExtraAssets.BarbarianTargetButton)
             };
         }
     }
     
     public bool WinConditionMet()
     {
-        if (Player.HasDied())
+        var barbarianAmount = CustomRoleUtils.GetActiveRolesOfType<BarbarianRole>().Count(x => !x.Player.HasDied());
+
+        if (MiscUtils.KillersAliveCount > barbarianAmount)
         {
             return false;
         }
 
-        return DeadBodiesEaten >= OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded;
+        return barbarianAmount >= Helpers.GetAlivePlayers().Count - barbarianAmount;
     }
 
     public override bool DidWin(GameOverReason gameOverReason)

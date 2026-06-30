@@ -2,7 +2,7 @@
 using MiraAPI.Keybinds;
 using MiraAPI.Modifiers;
 using MiraAPI.Utilities.Assets;
-using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Impostor.Power;
 using TownOfUs.Buttons;
@@ -15,7 +15,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class EraserEraseButton : TownOfUsKillRoleButton<EraserRole, PlayerControl>, IKillButton
+public sealed class EraserEraseButton : TownOfUsRoleButton<EraserRole, PlayerControl>
 {
     public override string Name => "Erase";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;

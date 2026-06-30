@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class TricksterSampleButton : TownOfUsKillRoleButton<TricksterRole, PlayerControl>, IKillButton
+public sealed class TricksterSampleButton : TownOfUsRoleButton<TricksterRole, PlayerControl>
 {
     public override string Name => "Sample";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;

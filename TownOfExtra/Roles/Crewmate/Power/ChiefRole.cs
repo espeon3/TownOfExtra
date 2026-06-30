@@ -15,7 +15,7 @@ namespace TownOfExtra.Roles.Crewmate.Power;
 public sealed class ChiefRole : CrewmateRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Chief";
-    public string RoleDescription => "Recruit players and shoot <color=#FF0000>evildoers</color>";
+    public string RoleDescription => $"Recruit players and shoot {Palette.ImpostorRed.ToTextColor()}evildoers</color>";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => TownOfExtraColours.ChiefRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Crewmate;

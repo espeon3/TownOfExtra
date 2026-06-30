@@ -6,7 +6,7 @@ using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
-using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
@@ -35,7 +35,7 @@ public sealed class PoltergeistRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownO
             return;
         }
         ImportantTextTask orCreateTask = PlayerTask.GetOrCreateTask<ImportantTextTask>(playerControl);
-        orCreateTask.Text = $"{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}Possess {OptionGroupSingleton<PoltergeistRoleOptions>.Instance.WinPossesses} player{((int)OptionGroupSingleton<PoltergeistRoleOptions>.Instance.WinPossesses != 1 ? "s" : "")} to win!</color>\n{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}Optional Tasks:</color>";
+        orCreateTask.Text = $"{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}Possess {OptionGroupSingleton<PoltergeistRoleOptions>.Instance.WinPossesses} player{((int)OptionGroupSingleton<PoltergeistRoleOptions>.Instance.WinPossesses != 1 ? "s" : "")} to win!</color>\n{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}Fake Tasks:</color>";
         orCreateTask.name = "NeutralRoleText";
     }
     
@@ -77,14 +77,13 @@ public sealed class PoltergeistRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownO
     public string GetAdvancedDescription()
     {
         return
-            "The Poltergeist is a Neutral Outlier role that can scare players, making their soul vulnerable to be possessed." +
+            "The Poltergeist is a Neutral Outlier role that can scare players, making their soul vulnerable to be possessed. Being scared gives you permanently slightly lower vision, and being possessed gives you much lower vision & slightly lower speed, even if the poltergeist dies." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
         MaxRoleCount = 1,
-        TasksCountForProgress = false,
         Icon = TownOfExtraAssets.PoltergeistRoleIcon,
         GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>()
     };
@@ -124,5 +123,16 @@ public sealed class PoltergeistRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownO
     public override bool DidWin(GameOverReason gameOverReason)
     {
         return WinConditionMet();
+    }
+    
+    public override bool CanUse(IUsable usable)
+    {
+        if (!GameManager.Instance.LogicUsables.CanUse(usable, Player))
+        {
+            return false;
+        }
+
+        var console = usable.TryCast<Console>()!;
+        return console == null || console.AllowImpostor;
     }
 }

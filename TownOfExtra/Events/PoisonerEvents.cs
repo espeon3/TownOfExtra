@@ -1,7 +1,7 @@
 ﻿using MiraAPI.Events;
 using MiraAPI.Events.Vanilla.Meeting;
 using MiraAPI.Modifiers;
-using TownOfExtra.Modifiers;
+using TownOfExtra.Modifiers.Excluded;
 
 namespace TownOfExtra.Events;
 

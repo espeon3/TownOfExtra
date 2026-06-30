@@ -94,10 +94,10 @@ internal sealed class ErasedIcon : ITerminologyIcon
 
 internal sealed class PendingSwitchIcon : ITerminologyIcon
 {
-    public string RichChunk => $"{TownOfExtraColours.SwitcherRoleColour.ToTextColor()}⇆</color>";
+    public string RichChunk => $"{TownOfExtraColours.ShifterRoleColour.ToTextColor()}⇆</color>";
     public bool ShouldShow(PlayerControl local, PlayerControl row) =>
-        row.HasModifier<SwitchedModifier>() &&
-        (local.GetTownOfUsRole() is SwitcherRole || local.Data.IsDead);
+        row.HasModifier<ShiftedModifier>() &&
+        (local.GetTownOfUsRole() is ShifterRole || local.Data.IsDead);
 }
 
 internal sealed class TaggedIcon : ITerminologyIcon
@@ -175,7 +175,7 @@ public static class TerminologyPatches
             $"• Scared players are marked with <b>{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}⌇</color></b>\n" +
             $"• Possessed players are marked with <b>{TownOfExtraColours.PossessedColour.ToTextColor()}유</color></b>\n" +
             $"• Erased players are marked with <b>{Palette.ImpostorRed.ToTextColor()}▧</color></b>\n" +
-            $"• Pending switches are marked with <b>{TownOfExtraColours.SwitcherRoleColour.ToTextColor()}⇆</color></b>\n" +
+            $"• Pending switches are marked with <b>{TownOfExtraColours.ShifterRoleColour.ToTextColor()}⇆</color></b>\n" +
             $"• Tagged players are marked with <b>{Palette.ImpostorRed.ToTextColor()}▣</color></b>\n" +
             $"• Recruited players are marked with <b>{TownOfExtraColours.ChiefRoleColour.ToTextColor()}❖</color></b>\n" +
             $"• Players waiting for/in interviews are marked with <b>{TownOfExtraColours.JournalistRoleColour.ToTextColor()}</color>ⓘ</b>\n"
