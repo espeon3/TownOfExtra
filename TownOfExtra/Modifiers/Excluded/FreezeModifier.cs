@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
-using MiraAPI.Modifiers.Types;
 using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
 using Reactor.Utilities;
 using TownOfExtra.Options.Roles;
+using TownOfUs.Modifiers;
 using TownOfUs.Utilities;
 using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Excluded;
 
-public class FreezeModifier : TimedModifier
+public class FreezeModifier : BaseRevealModifier
 {
     public override string ModifierName => "Frozen";
     public override bool HideOnUi => false;
@@ -45,15 +45,27 @@ public class FreezeModifier : TimedModifier
         yield return null;
         Input.ResetInputAxes();
     }
-
+    
     public override void OnDeactivate()
     {
+        ExtraNameText = "";
         if (!Player.AmOwner) return;
         Player.moveable = true;
         var notif = Helpers.CreateAndShowNotification(
             $"You have been {TownOfExtraColours.FreezeColour.ToTextColor()}unfrozen</color>!",
             Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.FreezerFreezeButton.LoadAsset());
         notif.AdjustNotification();
+    }
+    
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        
+        if (MeetingHud.Instance) return;
+
+        ExtraNameText = TimerActive 
+            ? $"<br><size=70%>{Palette.CrewmateBlue.ToTextColor()}Frozen: {TimeRemaining:F1}s</color></size>"
+            : "";
     }
 
     public override void OnDeath(DeathReason reason)

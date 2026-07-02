@@ -348,8 +348,10 @@
         "\n\n\r<size=105%>Additions:</size>",
         "\n- Added options for cannibal, squid & shadow walker to be able to vent",
         "\n- Poltergeist now applies permanent debuffs to scared & possessed players",
+        "\n- Added new status effect timers below player names when they have some status effects",
         "\n\n\r<size=105%>Changes:</size>",
         "\n- Switcher has been renamed & rebranded under the name Shifter (to fit with other popular mods)",
+        "\n- The Fragile modifier has been renamed to Brittle",
         "\n\n\r<size=105%>Bugfixes:</size>",
         "\n- Fixed rebirth breaking on death",
         "\n- Fixed the death messages for striker having missing strings (again)",
@@ -363,6 +365,7 @@
         "\n- Routine is no longer a guessable modifier",
         "\n- Fixed most role buttons being treated as kill buttons, therefore triggering things like mirrorcaster",
         "\n- Fixed shifter slightly bugging when trying to shift with their current target again",
+        "\n- Fixed striker killing someone after they already die during impending doom",
         "\n- "
       ]
     }

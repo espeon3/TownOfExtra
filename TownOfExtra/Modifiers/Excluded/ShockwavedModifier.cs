@@ -1,16 +1,16 @@
 ﻿using BepInEx.Unity.IL2CPP.Utils.Collections;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
-using MiraAPI.Modifiers.Types;
 using MiraAPI.Utilities.Assets;
 using Reactor.Utilities;
 using TownOfExtra.Networking;
 using TownOfExtra.Options;
+using TownOfUs.Modifiers;
 using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Excluded;
 
-public class ShockwavedModifier : TimedModifier
+public class ShockwavedModifier : BaseRevealModifier
 {
     public override string ModifierName => "Shockwaved";
     public override bool HideOnUi => false;
@@ -47,8 +47,20 @@ public class ShockwavedModifier : TimedModifier
 
     public override void OnDeactivate()
     {
+        ExtraNameText = "";
         if (!Player.AmOwner) return;
         Player.MyPhysics.Speed = NormalSpeed;
+    }
+    
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        
+        if (MeetingHud.Instance) return;
+
+        ExtraNameText = TimerActive 
+            ? $"<br><size=70%>{TownOfExtraColours.ShockwaveModifierColour.ToTextColor()}Shockwaved: {TimeRemaining:F1}s</color></size>"
+            : "";
     }
 
     public override void OnDeath(DeathReason reason)

@@ -17,7 +17,7 @@ namespace TownOfExtra.Networking;
 
 public class TricksterRpcs
 {
-    [MethodRpc((uint)TownOfExtraRpcs.NotifyTrickster)]
+    [MethodRpc((uint)TownOfExtraRpcs.TricksterNotifyOfReport)]
     public static void RpcNotifyTrickster(PlayerControl sender)
     {
         PlayerControl p = PlayerControl.LocalPlayer;
@@ -57,7 +57,7 @@ public class TricksterRpcs
         }
     }
 
-    [MethodRpc((uint)TownOfExtraRpcs.PlaceFakeBody)]
+    [MethodRpc((uint)TownOfExtraRpcs.TricksterPlaceFakeBody)]
     public static void RpcPlaceFakeBody(PlayerControl sender, byte colorId, byte parentId)
     {
         var body = TricksterPlaceButton.CreateDeadBody(sender.transform.position, colorId, parentId, sender);
@@ -67,7 +67,7 @@ public class TricksterRpcs
         }
     }
     
-    [MethodRpc((uint)TownOfExtraRpcs.DestroyFakeBodies)]
+    [MethodRpc((uint)TownOfExtraRpcs.TricksterDestroyFakeBodies)]
     public static void RpcDestroyFakeBodies(PlayerControl sender)
     {
         foreach (var body in TricksterRole.SpawnedBodies)

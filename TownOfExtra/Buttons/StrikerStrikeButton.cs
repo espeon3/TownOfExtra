@@ -61,7 +61,7 @@ public sealed class StrikerStrikeButton : TownOfUsRoleButton<StrikerRole>
                 {
                     var realRole = plr.Data.Role;
                     var cachedMod = plr.GetModifiers<BaseModifier>().FirstOrDefault(x => x is ICachedRole) as ICachedRole;
-
+                
                     var pickVictim = role.Role == realRole.Role;
                     if (cachedMod != null)
                     {
@@ -78,12 +78,14 @@ public sealed class StrikerStrikeButton : TownOfUsRoleButton<StrikerRole>
                                 break;
                         }
                     }
-
+                
                     var victim = pickVictim ? plr : p;
-                    victim.RpcAddModifier<ImpendingDoomModifierv>(victim, victim == p);
-
+                    victim.RpcAddModifier<ImpendingDoomModifier>(p, victim == p);
+                
                     EffectActive = true;
                     Timer = EffectDuration;
+                
+                    shapeMenu.Close();
                 });
             }
         );

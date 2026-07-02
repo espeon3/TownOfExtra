@@ -8,7 +8,7 @@ using TownOfExtra.Networking;
 
 namespace TownOfExtra.Events;
 
-public static class FragileEvents
+public static class BrittleEvents
 {
     [RegisterEvent]
     public static void MiraButtonClickEventHandler(MiraButtonClickEvent e)
@@ -26,18 +26,18 @@ public static class FragileEvents
             return;
         }
 
-        FragileRpcs.RpcTriggerFragileModifier(target);
+        BrittleRpcs.RpcTriggerBrittleModifier(target);
     }
 
     [RegisterEvent]
     public static void KillButtonClickEventHandler(BeforeMurderEvent e)
     {
-        FragileRpcs.RpcTriggerFragileModifier(e.Target);
+        BrittleRpcs.RpcTriggerBrittleModifier(e.Target);
     }
 
     [RegisterEvent]
     public static void GameEndEventHandler(GameEndEvent e)
     {
-        FragileModifier.Interactions = new Dictionary<PlayerControl, int>();
+        BrittleModifier.Interactions = new Dictionary<PlayerControl, int>();
     }
 }

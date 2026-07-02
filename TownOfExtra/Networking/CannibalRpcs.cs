@@ -7,7 +7,7 @@ namespace TownOfExtra.Networking;
 
 public class CannibalRpcs
 {
-    [MethodRpc((uint)TownOfExtraRpcs.NotifyCannibalDead)]
+    [MethodRpc((uint)TownOfExtraRpcs.CannibalNotifyDead)]
     public static void RpcNotifyCannibalDead(NetworkedPlayerInfo player)
     {
         if (PlayerControl.LocalPlayer.PlayerId != player.PlayerId) return;
@@ -18,7 +18,7 @@ public class CannibalRpcs
         );
     }
     
-    [MethodRpc((uint)TownOfExtraRpcs.ReviveCannibalVictims)]
+    [MethodRpc((uint)TownOfExtraRpcs.CannibalReviveVictims)]
     public static void RpcReviveCannibalVictims(PlayerControl p)
     {
         if (p == null) return;

@@ -73,21 +73,21 @@ public sealed class CrewmateModifierOptions : AbstractOptionGroup
         };
     
     /*----------------------
-             FRAGILE
+             BRITTLE
     ----------------------*/
 
-    [ModdedNumberOption("Fragile Amount", 0, 5)]
-    public float FragileAmount { get; set; } = 0;
+    [ModdedNumberOption("Brittle Amount", 0, 5)]
+    public float BrittleAmount { get; set; } = 0;
 
-    public ModdedNumberOption FragileChance { get; } =
-        new("Fragile Chance", 30f, 0f, 100f, 10f, MiraNumberSuffixes.Percent)
+    public ModdedNumberOption BrittleChance { get; } =
+        new("Brittle Chance", 30f, 0f, 100f, 10f, MiraNumberSuffixes.Percent)
         {
-            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.FragileAmount > 0
+            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.BrittleAmount > 0
         };
-    public ModdedNumberOption FragileMaxInteractions { get; } =
+    public ModdedNumberOption BrittleMaxInteractions { get; } =
         new("Max Interactions", 5f, 1f, 20f, 1f, MiraNumberSuffixes.None)
         {
-            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.FragileAmount > 0
+            Visible = () => OptionGroupSingleton<CrewmateModifierOptions>.Instance.BrittleAmount > 0
         };
     
     /*----------------------

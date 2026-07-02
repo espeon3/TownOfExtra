@@ -1,17 +1,17 @@
 ﻿using BepInEx.Unity.IL2CPP.Utils.Collections;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
-using MiraAPI.Modifiers.Types;
 using MiraAPI.Utilities.Assets;
 using Reactor.Utilities;
 using TownOfExtra.Networking;
 using TownOfExtra.Options.Roles;
 using TownOfUs;
+using TownOfUs.Modifiers;
 using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Excluded;
 
-public class SlippedModifier : TimedModifier
+public class SlippedModifier : BaseRevealModifier
 {
     public override string ModifierName => "Slipped";
     public override bool HideOnUi => false;
@@ -49,6 +49,7 @@ public class SlippedModifier : TimedModifier
 
     public override void OnDeactivate()
     {
+        ExtraNameText = "";
         if (!Player.AmOwner) return;
         
         Coroutines.Start(
@@ -63,6 +64,17 @@ public class SlippedModifier : TimedModifier
         );
         
         Player.MyPhysics.Speed = NormalSpeed;
+    }
+    
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        
+        if (MeetingHud.Instance) return;
+
+        ExtraNameText = TimerActive 
+            ? $"<br><size=70%>{TownOfExtraColours.SquidRoleColour.ToTextColor()}Slipped: {TimeRemaining:F1}s</color></size>"
+            : "";
     }
 
     public override void OnDeath(DeathReason reason)

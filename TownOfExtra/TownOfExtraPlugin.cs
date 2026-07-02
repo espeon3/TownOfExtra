@@ -44,8 +44,9 @@ public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToTerminated", "Terminated");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToUnbound", "Unbound");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToCrushed", "Crushed");
-        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToCrushed", "Struck");
-        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToCrushed", "Miscalculated");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToStruck", "Struck");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToMiscalculated", "Miscalculated");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToSlain", "Slain");
 
         TerminologyPatches.RegisterToExTerms();
         TerminologyIconRegistry.RegisterIcons();

@@ -31,7 +31,7 @@ public class TownOfExtraColours
     public static Color PossessedColour => new Color32(255, 235, 171, 255);
     
     public static Color HeavyWorkloadModifierColour => new Color32(216, 108, 2, 255);
-    public static Color FragileModifierColour => new Color32(71, 102, 125, 255);
+    public static Color BrittleModifierColour => new Color32(71, 102, 125, 255);
     public static Color ApoliticalModifierColour => new Color32(159, 184, 113, 255);
     public static Color ObservantModifierColour => new Color32(62, 222, 105, 255);
     public static Color ClumsyModifierColour => new Color32(111, 255, 211, 255);

@@ -6,7 +6,7 @@ namespace TownOfExtra.Networking;
 
 public class BarbarianRpcs
 {
-    [MethodRpc((uint)TownOfExtraRpcs.BarbNotifyTargetDeath)]
+    [MethodRpc((uint)TownOfExtraRpcs.BarbarianNotifyTargetDeath)]
     public static void RpcNotifyBarbOfTargetDeath(PlayerControl player, string targetName)
     {
         if (PlayerControl.LocalPlayer != player) return;

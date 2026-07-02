@@ -35,11 +35,13 @@ public sealed class DisperseButton : TownOfUsButton
         var radius = OptionGroupSingleton<ImpostorModifierOptions>.Instance.ShockwaveRadius.Value;
         var shockwavedPlayers =
             Helpers.GetClosestPlayers(PlayerControl.LocalPlayer, radius * ShipStatus.Instance.MaxLightRadius);
+        shockwavedPlayers.RemoveAll(p => p.Data.IsDead || p.Data.Disconnected);
 
         foreach (var player in shockwavedPlayers)
         {
             player.RpcAddModifier<ShockwavedModifier>();
         }
+
         
         PlayerControl.LocalPlayer.RpcSendNotification(
             $"You have {TownOfExtraColours.ShockwaveModifierColour.ToTextColor()}shockwaved</color> {shockwavedPlayers.Count} nearby players!",

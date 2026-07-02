@@ -82,8 +82,8 @@ public static class TownOfExtraAssets
     // --- Modifiers ---
 
     // Passive
-    public static LoadableAsset<Sprite> FragileModifierIcon =>
-        new LoadableResourceAsset($"{CrewModModIconPath}.FragileModifierIcon.png");
+    public static LoadableAsset<Sprite> BrittleModifierIcon =>
+        new LoadableResourceAsset($"{CrewModModIconPath}.BrittleModifierIcon.png");
     public static LoadableAsset<Sprite> HeavyWorkloadModifierIcon =>
         new LoadableResourceAsset($"{CrewModModIconPath}.HeavyWorkloadModifierIcon.png", 200);
     public static LoadableAsset<Sprite> RoutineModifierIcon =>

@@ -7,9 +7,9 @@
         <Description>An addon to Town of Us: Mira including extra roles and features!</Description>
         <Authors>Mehzxzz</Authors>
 
-        <AuProfile>C:\Users\REDACTED\AppData\Roaming\dev.allofus.starlight\profiles\town-of-extra-dev-1778529331446</AuProfile>
-
         <GenerateDependencyFile>false</GenerateDependencyFile>
+
+        <PathMap>$(MSBuildProjectDirectory)=/TownOfExtra</PathMap>
     </PropertyGroup>
 
     <ItemGroup>
@@ -27,7 +27,16 @@
         <EmbeddedResource Include="Resources\**\*" />
     </ItemGroup>
 
-    <Target Name="CopyToPlugins" AfterTargets="Build">
+    <Target Name="CopyToPlugins" AfterTargets="Build" Condition="'$(AuProfile)' != ''">
         <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(AuProfile)\BepInEx\plugins" />
+    </Target>
+
+    <Target Name="WarnMissingAuProfile" AfterTargets="Build" Condition="'$(AuProfile)' == ''">
+        <Warning Text="Missing AuProfile. If you are building from source, create a file named $(MSBuildProjectName).csproj.user file with your bepinex plugins path in this directory." />
+        <Warning Text="&lt;Project&gt;" />
+        <Warning Text="    &lt;PropertyGroup&gt;" />
+        <Warning Text="        &lt;AuProfile&gt;Path to your plugins folder&lt;/AuProfile&gt;" />
+        <Warning Text="    &lt;/PropertyGroup&gt;" />
+        <Warning Text="&lt;/Project&gt;" />
     </Target>
 </Project>

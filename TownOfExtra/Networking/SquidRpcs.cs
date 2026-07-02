@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using MiraAPI.Events;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
@@ -12,6 +13,7 @@ using Object = UnityEngine.Object;
 
 namespace TownOfExtra.Networking;
 
+[SuppressMessage("ReSharper", "LoopVariableIsNeverChangedInsideLoop")]
 public class SquidRpcs
 {
     [MethodRpc((uint)TownOfExtraRpcs.SquidSpillInk)]
@@ -22,7 +24,7 @@ public class SquidRpcs
 
     private static IEnumerator SpillInk(PlayerControl sender, float x, float y)
     {
-        var ink = new GameObject();
+        var ink = new GameObject($"SquidInkPuddle_{sender.Data.PlayerName}");
         ink.transform.position = new Vector3(x, y, y / 1000f + 1f);
 
         var renderer = ink.AddComponent<SpriteRenderer>();
@@ -34,7 +36,7 @@ public class SquidRpcs
         Object.Destroy(ink, duration);
 
         var p = PlayerControl.LocalPlayer;
-        // ReSharper disable once LoopVariableIsNeverChangedInsideLoop
+        
         while (ink != null)
         {
             if (!p.Data.IsDead && !p.inVent)
@@ -44,10 +46,10 @@ public class SquidRpcs
                     if (p == sender && !OptionGroupSingleton<SquidRoleOptions>.Instance.InkAffectsSquid)
                         yield break;
 
-                    Object.Destroy(ink);
                     p.RpcAddModifier<SlippedModifier>();
                     var toexAbilityEvent = new TownOfExtraAbilityEvent(AbilityType.SquidInkDestroyed, sender, p);
                     MiraEventManager.InvokeEvent(toexAbilityEvent);
+                    RpcDestroyInk(sender);
                     yield break;
                 }
             }
@@ -57,5 +59,12 @@ public class SquidRpcs
 
         var thatOtherToexAbilityEvent = new TownOfExtraAbilityEvent(AbilityType.SquidInkDestroyed, sender);
         MiraEventManager.InvokeEvent(thatOtherToexAbilityEvent);
+    }
+    
+    [MethodRpc((uint)TownOfExtraRpcs.SquidDestroyInk)]
+    public static void RpcDestroyInk(PlayerControl sender)
+    {
+        var ink = GameObject.Find($"SquidInkPuddle_{sender.Data.PlayerName}");
+        if (ink != null) Object.Destroy(ink);
     }
 }
