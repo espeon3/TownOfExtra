@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AmongUs.GameOptions;
 using Il2CppInterop.Runtime.Attributes;
+using MiraAPI.GameOptions;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
+using TownOfExtra.Options.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
@@ -48,7 +51,9 @@ public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
-        Icon = TownOfExtraAssets.SquidRoleIcon
+        Icon = TownOfExtraAssets.SquidRoleIcon,
+        CanUseVent = OptionGroupSingleton<SquidRoleOptions>.Instance.CanVent,
+        GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>()
     };
     
     [HideFromIl2Cpp]
@@ -58,7 +63,7 @@ public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
         {
             return new List<CustomButtonWikiDescription>
             {
-                new("Enshroud", "Become invisible with a speed boost for X seconds, with the duration decreasing after each kill.", TownOfExtraAssets.MiscPh)
+                new("Spill", "Spill ink on the ground, causing 3 debuffs to the next player who walks in it.", TownOfExtraAssets.SquidSpillButton)
             };
         }
     }
@@ -78,5 +83,16 @@ public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
     public override bool DidWin(GameOverReason gameOverReason)
     {
         return WinConditionMet();
+    }
+    
+    public override bool CanUse(IUsable usable)
+    {
+        if (!GameManager.Instance.LogicUsables.CanUse(usable, Player))
+        {
+            return false;
+        }
+
+        var console = usable.TryCast<Console>()!;
+        return console == null || console.AllowImpostor;
     }
 }

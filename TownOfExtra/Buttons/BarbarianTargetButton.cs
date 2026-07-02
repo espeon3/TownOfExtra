@@ -25,7 +25,7 @@ public sealed class BarbarianTargetButton : TownOfUsRoleButton<BarbarianRole, Pl
     {
         if (Target == null) return;
 
-        Target.RpcAddModifier<BarbTargetModifier>();
+        Target.RpcAddModifier<BarbarianTargetModifier>();
     }
 
     public override PlayerControl GetTarget()

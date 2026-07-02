@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class ChiefRecruitButton : TownOfUsKillRoleButton<ChiefRole, PlayerControl>, IKillButton
+public sealed class ChiefRecruitButton : TownOfUsRoleButton<ChiefRole, PlayerControl>
 {
     public override string Name => "Recruit";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;

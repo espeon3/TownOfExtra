@@ -21,4 +21,5 @@ public enum TownOfExtraRpcs : uint
     SquidDestroyInk = 514,
     RebirthSendPopup = 515,
     BarbarianNotifyTargetDeath = 516,
+    CommanderIncreaseAvengeUses = 517,
 }

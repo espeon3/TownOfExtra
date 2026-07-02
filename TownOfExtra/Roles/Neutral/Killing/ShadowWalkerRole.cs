@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using AmongUs.GameOptions;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
@@ -60,7 +61,9 @@ public sealed class ShadowWalkerRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITown
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
-        Icon = TownOfExtraAssets.ShadowWalkerRoleIcon
+        Icon = TownOfExtraAssets.ShadowWalkerRoleIcon,
+        CanUseVent = OptionGroupSingleton<ShadowWalkerRoleOptions>.Instance.CanVent,
+        GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>()
     };
     
     [HideFromIl2Cpp]
@@ -90,5 +93,16 @@ public sealed class ShadowWalkerRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITown
     public override bool DidWin(GameOverReason gameOverReason)
     {
         return WinConditionMet();
+    }
+    
+    public override bool CanUse(IUsable usable)
+    {
+        if (!GameManager.Instance.LogicUsables.CanUse(usable, Player))
+        {
+            return false;
+        }
+
+        var console = usable.TryCast<Console>()!;
+        return console == null || console.AllowImpostor;
     }
 }

@@ -13,15 +13,13 @@ public class BarbarianEvents
     public static void OnTargetDeath(AfterMurderEvent e)
     {
         if (e.Source.Data.Role is BarbarianRole) return;
-        if (!e.Target.HasModifier<BarbTargetModifier>()) return;
-        
-        e.Target.RpcRemoveModifier<BarbTargetModifier>();
+        if (!e.Target.HasModifier<BarbarianTargetModifier>()) return;
         
         foreach (var p in PlayerControl.AllPlayerControls)
         {
             if (p.Data.Role is not BarbarianRole) continue;
             
-            BarbarianRpcs.RpcNotifyBarbOfTargetDeath(p, e.Target.Data.PlayerName);
+            BarbarianRpcs.RpcNotifyBarbarianOfTargetDeath(p, e.Target.Data.PlayerName);
         }
     }
 }

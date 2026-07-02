@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class DreamCasterCastButton : TownOfUsKillRoleButton<DreamCasterRole, PlayerControl>, IKillButton
+public sealed class DreamCasterCastButton : TownOfUsRoleButton<DreamCasterRole, PlayerControl>
 {
     public override string Name => "Lucid Dream";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;

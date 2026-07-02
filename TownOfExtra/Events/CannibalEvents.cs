@@ -2,6 +2,7 @@
 using MiraAPI.Events.Vanilla.Gameplay;
 using MiraAPI.Events.Vanilla.Meeting;
 using MiraAPI.GameOptions;
+using TownOfExtra.Buttons;
 using TownOfExtra.Networking;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Neutral.Killing;
@@ -58,5 +59,12 @@ public class CannibalEvents
     {
         if (CannibalRole.CannibalId == null) return null;
         return GameData.Instance.GetPlayerById(CannibalRole.CannibalId.Value)?.Object;
+    }
+
+    [RegisterEvent]
+    public static void OnGameStart(IntroEndEvent e)
+    {
+        CannibalRole.EatenPlayers.Clear();
+        CannibalEatButton.CdIncrease = 0;
     }
 }

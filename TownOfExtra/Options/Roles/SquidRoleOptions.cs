@@ -28,4 +28,7 @@ public class SquidRoleOptions : AbstractOptionGroup<SquidRole>
     
     [ModdedNumberOption("Debuff Durations", 2.5f, 240f, 2.5f, MiraNumberSuffixes.Seconds)]
     public float DebuffDurations { get; set; } = 20f;
+    
+    [ModdedToggleOption("Can Vent")]
+    public bool CanVent  { get; set; } = true;
 }

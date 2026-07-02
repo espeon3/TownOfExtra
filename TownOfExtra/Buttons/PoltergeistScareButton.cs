@@ -12,18 +12,13 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class PoltergeistScareButton : TownOfUsKillRoleButton<PoltergeistRole, PlayerControl>, IKillButton, IDiseaseableButton
+public sealed class PoltergeistScareButton : TownOfUsRoleButton<PoltergeistRole, PlayerControl>
 {
     public override string Name => "Scare";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
     public override Color TextOutlineColor => TownOfExtraColours.PoltergeistRoleColour;
     public override float Cooldown => OptionGroupSingleton<PoltergeistRoleOptions>.Instance.ScareCooldown;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.PoltergeistScareButton;
-
-    public void SetDiseasedTimer(float multiplier)
-    {
-        SetTimer(Cooldown * multiplier);
-    }
 
     public override PlayerControl GetTarget()
     {

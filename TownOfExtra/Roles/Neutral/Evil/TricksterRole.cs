@@ -38,7 +38,7 @@ public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfU
             return;
         }
         ImportantTextTask orCreateTask = PlayerTask.GetOrCreateTask<ImportantTextTask>(playerControl);
-        orCreateTask.Text = $"{TownOfExtraColours.TricksterRoleColour.ToTextColor()}Get {OptionGroupSingleton<TricksterRoleOptions>.Instance.ReportsNeeded} of your fake bodies reported!</color>\n{TownOfExtraColours.TricksterRoleColour.ToTextColor()}Optional Tasks:</color>";
+        orCreateTask.Text = $"{TownOfExtraColours.TricksterRoleColour.ToTextColor()}Get {OptionGroupSingleton<TricksterRoleOptions>.Instance.ReportsNeeded} of your fake bodies reported!</color>\n{TownOfExtraColours.TricksterRoleColour.ToTextColor()}Fake Tasks:</color>";
         orCreateTask.name = "NeutralRoleText";
     }
     
@@ -92,5 +92,16 @@ public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfU
     public override bool DidWin(GameOverReason gameOverReason)
     {
         return WinConditionMet();
+    }
+    
+    public override bool CanUse(IUsable usable)
+    {
+        if (!GameManager.Instance.LogicUsables.CanUse(usable, Player))
+        {
+            return false;
+        }
+
+        var console = usable.TryCast<Console>()!;
+        return console == null || console.AllowImpostor;
     }
 }

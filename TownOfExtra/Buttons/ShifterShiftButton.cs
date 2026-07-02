@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class ShifterShiftButton : TownOfUsKillRoleButton<ShifterRole, PlayerControl>, IKillButton
+public sealed class ShifterShiftButton : TownOfUsRoleButton<ShifterRole, PlayerControl>
 {
     public override string Name => "Shift";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
@@ -22,20 +22,32 @@ public sealed class ShifterShiftButton : TownOfUsKillRoleButton<ShifterRole, Pla
 
     public override PlayerControl GetTarget()
     {
-        return PlayerControl.LocalPlayer.GetClosestLivingPlayer(true, Distance,
-            predicate: x => x.HasModifier<ShiftedModifier>());
+        return PlayerControl.LocalPlayer.GetClosestLivingPlayer(true, Distance);
     }
 
     protected override void OnClick()
     {
         if (Target == null) return;
 
-        Target.RpcAddModifier<ShiftedModifier>();
-        PlayerControl.LocalPlayer.RpcSendNotification(
-            $"Your role will be {TownOfExtraColours.ShifterRoleColour.ToTextColor()}shifted</color> with {Target.name} after the next meeting!",
-            "ShifterRoleIcon",
-            "NeutRoleIcon",
-            flashColour: TownOfExtraColours.ShifterRoleColour
-        );
+        if (!Target.HasModifier<ShiftedModifier>())
+        {
+            Target.RpcAddModifier<ShiftedModifier>();
+            PlayerControl.LocalPlayer.RpcSendNotification(
+                $"Your role will be {TownOfExtraColours.ShifterRoleColour.ToTextColor()}shifted</color> with {Target.name} after the next meeting!",
+                "ShifterRoleIcon",
+                "NeutRoleIcon",
+                flashColour: TownOfExtraColours.ShifterRoleColour
+            );
+        }
+        else
+        {
+            Target.RpcRemoveModifier<ShiftedModifier>();
+            PlayerControl.LocalPlayer.RpcSendNotification(
+                $"Your role will no longer be {TownOfExtraColours.ShifterRoleColour.ToTextColor()}shifted</color> with {Target.name} after the next meeting.",
+                "ShifterRoleIcon",
+                "NeutRoleIcon",
+                flashColour: TownOfExtraColours.ShifterRoleColour
+            );
+        }
     }
 }

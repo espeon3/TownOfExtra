@@ -26,4 +26,7 @@ public sealed class ShadowWalkerRoleOptions : AbstractOptionGroup<ShadowWalkerRo
     public float CdIncreasePerEnshroudedKill { get; set; } = 3f;
     [ModdedNumberOption("Enshroud Speed Multiplier", 1f, 5f, 0.25f, MiraNumberSuffixes.Multiplier, "0.00")]
     public float EnshroudSpeedMultiplier { get; set; } = 1.5f;
+    
+    [ModdedToggleOption("Can Vent")]
+    public bool CanVent  { get; set; } = true;
 }

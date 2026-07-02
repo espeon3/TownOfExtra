@@ -14,18 +14,13 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class PoltergeistPossessedButton : TownOfUsKillRoleButton<PoltergeistRole, PlayerControl>, IKillButton, IDiseaseableButton
+public sealed class PoltergeistPossessedButton : TownOfUsKillRoleButton<PoltergeistRole, PlayerControl>, IKillButton
 {
     public override string Name => "Possess";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
     public override Color TextOutlineColor => TownOfExtraColours.PoltergeistRoleColour;
     public override float Cooldown => OptionGroupSingleton<PoltergeistRoleOptions>.Instance.PossessCooldown;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.PoltergeistPossessButton;
-
-    public void SetDiseasedTimer(float multiplier)
-    {
-        SetTimer(Cooldown * multiplier);
-    }
 
     public override PlayerControl GetTarget()
     {

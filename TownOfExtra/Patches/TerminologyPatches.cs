@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using HarmonyLib;
 using MiraAPI.Modifiers;
-using TownOfExtra.Modifiers;
 using TownOfExtra.Modifiers.Excluded;
+using TownOfExtra.Roles.Crewmate.Killing;
 using TownOfExtra.Roles.Crewmate.Power;
 using TownOfExtra.Roles.Impostor.Killing;
 using TownOfExtra.Roles.Impostor.Power;
 using TownOfExtra.Roles.Neutral.Evil;
+using TownOfExtra.Roles.Neutral.Killing;
 using TownOfExtra.Roles.Neutral.Outlier;
 using TownOfUs.Modules.Localization;
 using TownOfUs.Modules.Wiki;
@@ -37,6 +38,8 @@ internal static class TerminologyIconRegistry
         Register(new TaggedIcon());
         Register(new RecruitedIcon());
         Register(new InterviewingIcon());
+        Register(new BrawlerIcon());
+        Register(new BarbarianTargetIcon());
     }
 
     internal static void AppendIcons(ref string result, PlayerControl row)
@@ -124,6 +127,22 @@ internal sealed class InterviewingIcon : ITerminologyIcon
         (local.GetTownOfUsRole() is JournalistRole || local.Data.IsDead);
 }
 
+internal sealed class BrawlerIcon : ITerminologyIcon
+{
+    public string RichChunk => $"{TownOfExtraColours.CommanderRoleColour.ToTextColor()}⌘</color>";
+    public bool ShouldShow(PlayerControl local, PlayerControl row) =>
+        row.HasModifier<BrawlerModifier>() &&
+        (local.GetTownOfUsRole() is CommanderRole || local.Data.IsDead);
+}
+
+internal sealed class BarbarianTargetIcon : ITerminologyIcon
+{
+    public string RichChunk => $"{TownOfExtraColours.BarbarianRoleColour.ToTextColor()}⌘</color>";
+    public bool ShouldShow(PlayerControl local, PlayerControl row) =>
+        row.HasModifier<BarbarianTargetModifier>() &&
+        (local.GetTownOfUsRole() is BarbarianRole || local.Data.IsDead);
+}
+
 [HarmonyPatch(typeof(PlayerRoleTextExtensions), nameof(PlayerRoleTextExtensions.UpdateTargetSymbols), new[] { typeof(string), typeof(PlayerControl), typeof(bool) })]
 public static class TerminologySymbolPatch
 {
@@ -172,13 +191,15 @@ public static class TerminologyPatches
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("ToExTermsTitle", "ToEx Symbols");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("ToExTermsDesc",
             "These symbols are the custom symbols from Town of Extra. " +
-            $"• Scared players are marked with <b>{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}⌇</color></b>\n" +
+            $"• Scared players are marked with <b>{TownOfExtraColours.PoltergeistRoleColour.ToTextColor()}유</color></b>\n" +
             $"• Possessed players are marked with <b>{TownOfExtraColours.PossessedColour.ToTextColor()}유</color></b>\n" +
             $"• Erased players are marked with <b>{Palette.ImpostorRed.ToTextColor()}▧</color></b>\n" +
             $"• Pending switches are marked with <b>{TownOfExtraColours.ShifterRoleColour.ToTextColor()}⇆</color></b>\n" +
             $"• Tagged players are marked with <b>{Palette.ImpostorRed.ToTextColor()}▣</color></b>\n" +
             $"• Recruited players are marked with <b>{TownOfExtraColours.ChiefRoleColour.ToTextColor()}❖</color></b>\n" +
-            $"• Players waiting for/in interviews are marked with <b>{TownOfExtraColours.JournalistRoleColour.ToTextColor()}</color>ⓘ</b>\n"
+            $"• Players waiting for/in interviews are marked with <b>{TownOfExtraColours.JournalistRoleColour.ToTextColor()}</color>ⓘ</b>\n" +
+            $"• Brawlers are marked with <b>{TownOfExtraColours.CommanderRoleColour.ToTextColor()}⌘</color></b>\n" +
+            $"• Barbarian targets are marked with <b>{TownOfExtraColours.BarbarianRoleColour.ToTextColor()}⌘</color></b>"
         );
     }
 }

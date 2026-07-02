@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AmongUs.GameOptions;
 using Il2CppInterop.Runtime.Attributes;
+using MiraAPI.GameOptions;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
-using Reactor.Utilities;
-using TownOfUs;
+using TownOfExtra.Options.Roles;
 using TownOfUs.Assets;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
@@ -39,7 +40,9 @@ public sealed class CannibalRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUs
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
         MaxRoleCount = 1,
-        Icon = TownOfExtraAssets.CannibalRoleIcon
+        Icon = TownOfExtraAssets.CannibalRoleIcon,
+        CanUseVent = OptionGroupSingleton<CannibalRoleOptions>.Instance.CanVent,
+        GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>()
     };
     
     [HideFromIl2Cpp]
@@ -69,5 +72,16 @@ public sealed class CannibalRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUs
     public override bool DidWin(GameOverReason gameOverReason)
     {
         return WinConditionMet();
+    }
+    
+    public override bool CanUse(IUsable usable)
+    {
+        if (!GameManager.Instance.LogicUsables.CanUse(usable, Player))
+        {
+            return false;
+        }
+
+        var console = usable.TryCast<Console>()!;
+        return console == null || console.AllowImpostor;
     }
 }

@@ -19,9 +19,11 @@ public sealed class CannibalEatButton : TownOfUsKillRoleButton<CannibalRole, Pla
     public override string Name => "Eat";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
     public override Color TextOutlineColor => TownOfExtraColours.CannibalRoleColour;
-    public override float Cooldown => OptionGroupSingleton<CannibalRoleOptions>.Instance.KillCooldown;
+    public override float Cooldown => OptionGroupSingleton<CannibalRoleOptions>.Instance.IncreaseKcdOnKillOrNot ? OptionGroupSingleton<CannibalRoleOptions>.Instance.KillCooldown + CdIncrease : OptionGroupSingleton<CannibalRoleOptions>.Instance.KillCooldown;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.CannibalEatButton;
 
+    public static float CdIncrease;
+    
     public void SetDiseasedTimer(float multiplier)
     {
         SetTimer(Cooldown * multiplier);
@@ -52,6 +54,11 @@ public sealed class CannibalEatButton : TownOfUsKillRoleButton<CannibalRole, Pla
         if (Target == null) return;
         
         CannibalRole.EatenPlayers.Add(Target.PlayerId);
+        
+        if (OptionGroupSingleton<CannibalRoleOptions>.Instance.IncreaseKcdOnKillOrNot)
+        {
+            CdIncrease += OptionGroupSingleton<CannibalRoleOptions>.Instance.CdIncreaseOnKill.Value;
+        }
         
         PlayerControl.LocalPlayer.RpcSpecialMurder(
             Target,

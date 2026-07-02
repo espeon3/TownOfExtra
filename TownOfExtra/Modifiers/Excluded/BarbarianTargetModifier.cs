@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Excluded;
 
-public class BarbTargetModifier : TimedModifier
+public class BarbarianTargetModifier : TimedModifier
 {
     public override string ModifierName => "Barbarian's Target";
     public override bool HideOnUi => true;

@@ -362,11 +362,12 @@
         "\n- Fixed squid bugging out some role button's cooldowns",
         "\n- Fixed some neutrals not being able to get ghost roles",
         "\n- Finally fixed neutrals being able to do tasks, when they shouldn't (ty @divaninl [discord]/divani mods for the code)",
-        "\n- Routine is no longer a guessable modifier",
+        "\n- Fixed routine being a guessable modifier",
         "\n- Fixed most role buttons being treated as kill buttons, therefore triggering things like mirrorcaster",
         "\n- Fixed shifter slightly bugging when trying to shift with their current target again",
         "\n- Fixed striker killing someone after they already die during impending doom",
-        "\n- "
+        "\n- Fixed chief showing shot player's roles & recruits between rounds",
+        "\n- Fixed chief showing shot player's roles when the kill failed due to a shield"
       ]
     }
   ]

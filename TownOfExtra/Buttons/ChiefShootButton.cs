@@ -39,41 +39,10 @@ public sealed class ChiefShootButton : TownOfUsKillRoleButton<ChiefRole, PlayerC
     protected override void OnClick()
     {
         if (Target == null) return;
-        if (Target.HasModifier<FirstDeadShield>() || Target.HasModifier<BaseShieldModifier>())
-        {
-            if (MaxUses > 0) IncreaseUses();
-            return;
-        }
-
-        string c = TownOfUsColors.Crewmate.ToTextColor();
-        
-        if (Target.IsCrewmate())
-        {
-            Coroutines.Start(MiscUtils.CoFlash(TownOfUsColors.Crewmate));
-        }
-        else if (Target.IsNeutral())
-        {
-            Coroutines.Start(MiscUtils.CoFlash(TownOfUsColors.Neutral));
-            c = TownOfUsColors.Neutral.ToTextColor();
-        }
-        else if (Target.IsImpostor())
-        {
-            Coroutines.Start(MiscUtils.CoFlash(TownOfUsColors.Impostor));
-            c = TownOfUsColors.Impostor.ToTextColor();
-        }
 
         PlayerControl.LocalPlayer.RpcSpecialMurder(
             Target,
             causeOfDeath: "Terminated"
         );
-        
-        if (Target.HasModifier<BaseShieldModifier>()) return;
-        
-        var notif = Helpers.CreateAndShowNotification(
-            $"{c}You have shot {Target.Data.PlayerName} and their role was {TownOfExtraColours.GetRoleColour(Target.GetRoleWhenAlive().NiceName).ToTextColor()}{Target.GetRoleWhenAlive().NiceName}{c}!",
-            Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.ChiefRoleIcon.LoadAsset());
-        notif.AdjustNotification();
-
-        ChiefRole.ShotPlayers.Add(Target);
     }
 }

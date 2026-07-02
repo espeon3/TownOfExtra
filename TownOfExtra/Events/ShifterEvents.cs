@@ -2,7 +2,6 @@
 using MiraAPI.Events.Vanilla.Gameplay;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
-using TownOfExtra.Modifiers;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Networking;
 using TownOfExtra.Roles.Neutral.Outlier;

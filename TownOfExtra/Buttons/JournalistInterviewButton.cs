@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class JournalistInterviewButton : TownOfUsKillRoleButton<JournalistRole, PlayerControl>, IKillButton
+public sealed class JournalistInterviewButton : TownOfUsRoleButton<JournalistRole, PlayerControl>
 {
     public override string Name => "Interview";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
