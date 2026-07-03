@@ -26,8 +26,8 @@ public class CommanderEvents
                 var clr = TownOfExtraColours.CommanderRoleColour.ToTextColor();
                 p.RpcSendNotification(
                     $"One of your {clr}brawlers</color>, {t.Data.PlayerName}, has been killed. You can now {clr}avenge them</color>!",
-                    "PhAttack", //todo: update this
-                    "Misc", //todo: update this
+                    "CommanderAvengeButton",
+                    "CrewButton",
                     flashColour: TownOfExtraColours.CommanderRoleColour
                 );
             }

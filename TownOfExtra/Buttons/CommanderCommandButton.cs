@@ -18,7 +18,7 @@ public sealed class CommanderCommandButton : TownOfUsRoleButton<CommanderRole, P
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
     public override Color TextOutlineColor => TownOfExtraColours.CommanderRoleColour;
     public override float Cooldown => OptionGroupSingleton<CommanderRoleOptions>.Instance.CommandCooldown;
-    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.MiscPh;
+    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.CommanderCommandButton;
     public override int MaxUses => (int)OptionGroupSingleton<CommanderRoleOptions>.Instance.CommandUses;
 
     public override PlayerControl GetTarget()

@@ -19,7 +19,7 @@ public sealed class CommanderAvengeButton : TownOfUsKillRoleButton<CommanderRole
     public override float Cooldown => 0f;
     public override bool ZeroIsInfinite => false;
     public override int MaxUses => 0;
-    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.AttackPh;
+    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.CommanderAvengeButton;
 
     protected override void OnClick()
     {

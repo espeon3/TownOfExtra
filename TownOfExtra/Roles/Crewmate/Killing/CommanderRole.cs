@@ -39,7 +39,8 @@ public sealed class CommanderRole : CrewmateRole, ITownOfUsRole, IWikiDiscoverab
         {
             return new List<CustomButtonWikiDescription>
             {
-                new("Avenge", "Kill a player. You will not be told if they are a crewmate or a killer.", TownOfExtraAssets.AttackPh),
+                new("Command", "Turn a player into a brawler. If they die, you will gain an attack charge.", TownOfExtraAssets.CommanderCommandButton),
+                new("Avenge", "Kill a player. You will not be told if they are a crewmate or a killer.", TownOfExtraAssets.CommanderAvengeButton),
             };
         }
     }

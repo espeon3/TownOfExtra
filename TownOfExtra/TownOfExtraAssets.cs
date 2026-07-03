@@ -11,7 +11,7 @@ public static class TownOfExtraAssets
 
     // ---- Crewmate Paths ----
     public static string CrewRoleIconPath => UseBasicCrew ? "TownOfExtra.Resources.BasicCrew.RoleIcons" : "TownOfExtra.Resources.Crew.RoleIcons";
-    public static string CrewButtonPath => UseBasicCrew ? "TownOfExtra.Resources.BasicCrew.Buttons" : "TownOfExtra.Resources.Crew.Buttons";
+    public static string CrewButtonPath => "TownOfExtra.Resources.Crew.Buttons";
     public static string CrewMiscPath => UseBasicCrew ? "TownOfExtra.Resources.BasicCrew.Misc" : "TownOfExtra.Resources.Crew.Misc";
 
     // ---- Impostor Paths ----
@@ -107,6 +107,10 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{CrewButtonPath}.ChiefShootButton.png");
     public static LoadableAsset<Sprite> JournalistInterviewButton =>
         new LoadableResourceAsset($"{CrewButtonPath}.JournalistInterviewButton.png");
+    public static LoadableAsset<Sprite> CommanderCommandButton =>
+        new LoadableResourceAsset($"{CrewButtonPath}.CommanderCommandButton.png", 200);
+    public static LoadableAsset<Sprite> CommanderAvengeButton =>
+        new LoadableResourceAsset($"{CrewButtonPath}.CommanderAvengeButton.png");
     
     // Modifiers
     
@@ -217,6 +221,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{ImpMiscPath}.EmergencyConsoleBroken.png");
     public static LoadableAsset<Sprite> PoisonedModifierIcon =>
         new LoadableResourceAsset($"{ImpMiscPath}.PoisonedModifierIcon.png");
+    public static LoadableAsset<Sprite> ObstructedButtonOverlay =>
+        new LoadableResourceAsset($"{ImpMiscPath}.ObstructedButtonOverlay.png");
 
 
 

@@ -22,4 +22,6 @@ public enum TownOfExtraRpcs : uint
     RebirthSendPopup = 515,
     BarbarianNotifyTargetDeath = 516,
     CommanderIncreaseAvengeUses = 517,
+    ObstructorTriggerObstruct = 518,
+    
 }

@@ -9,9 +9,9 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Impostor.Support;
 
-public sealed class ObstructorRoleerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class ObstructorRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
-    public string RoleName => "Obstructr";
+    public string RoleName => "Obstructor";
     public string RoleDescription => "Obstruct the crew's abilities";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => Palette.ImpostorRed;
@@ -22,7 +22,7 @@ public sealed class ObstructorRoleerRole : ImpostorRole, ITownOfUsRole, IWikiDis
     public string GetAdvancedDescription()
     {
         return
-            "The Obstructor is an Impostor Support role that can obstruct a player, causing their ability buttons to be disabled next time they try and use them." +
+            "The Obstructor is an Impostor Support role that can obstruct a player, disabling all buttons, sabotage consoles & tasks, as well as the map & admin table, the next time they try to use any." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
@@ -38,7 +38,7 @@ public sealed class ObstructorRoleerRole : ImpostorRole, ITownOfUsRole, IWikiDis
         {
             return new List<CustomButtonWikiDescription>
             {
-                new("Obstruct", "Obstruct a player, causing their ability buttons to be disabled next time they try and use them.", TownOfExtraAssets.ObstructorObstructButton)
+                new("Obstruct", "Obstruct a player, disabling all buttons, sabotage consoles & tasks, as well as the map & admin table, the next time they try to use any.", TownOfExtraAssets.ObstructorObstructButton)
             };
         }
     }
