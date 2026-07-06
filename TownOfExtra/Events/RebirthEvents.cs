@@ -22,7 +22,7 @@ public class RebirthEvents
         List<PlayerControl> deadImps = new List<PlayerControl>();
         foreach (var p in PlayerControl.AllPlayerControls)
         {
-            if (p.IsImpostor() && p.Data.IsDead && !Exclusions.Contains(p)) deadImps.Add(p);
+            if (p.IsImpostor() && p.Data.IsDead && !Exclusions.Contains(p) && p != PlayerControl.LocalPlayer) deadImps.Add(p);
         }
 
         PlayerControl chosen = deadImps.FirstOrDefault();
