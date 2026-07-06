@@ -77,7 +77,7 @@ public sealed class PoltergeistRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownO
     public string GetAdvancedDescription()
     {
         return
-            "The Poltergeist is a Neutral Outlier role that can scare players, making their soul vulnerable to be possessed. Being scared gives you permanently slightly lower vision, and being possessed gives you much lower vision & slightly lower speed, even if the poltergeist dies." +
+            "The Poltergeist is a Neutral Evil role that can scare players, making their soul vulnerable to be possessed. Being scared gives you permanently slightly lower vision, and being possessed gives you much lower vision & slightly lower speed, even if the poltergeist dies." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
