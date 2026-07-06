@@ -373,6 +373,23 @@
         "\n- Fixed chief showing shot player's roles when the kill failed due to a shield",
         "\n- Shifter now obtains crewpostor, egotist & imitator properly"
       ]
+    },
+    {
+      "Date": "2026-07-03T11:50:00Z",
+      "Number": "124",
+      "ShortTitle": "TownOfExtra v1.2.4",
+      "Title": "TownOfExtra v1.2.4",
+      "SubTitle": "",
+      "Text": [
+        "\r<b>TownOfExtra has updated to v1.2.4</b>",
+        "\n\nThank you for playing the mod!",
+        "\n\n★ <link=https://discord.gg/y2GN5Q4fzb>Join Discord</link> ★ <link=https://github.com/Mehzxzz/TownOfExtra/wiki>Role/Modifier Info</link> ★",
+        "\n\n\r<size=105%>Bugfixes:</size>",
+        "\n- Fixed chief spamming shoot notifications",
+        "\n- Fixed chief showing shoot notifications on themself",
+        "\n- Fixed chief showing shoot flashes to all players",
+        "\n- Fixed rebirth being offered their own role when they die"
+      ]
     }
   ]
 }

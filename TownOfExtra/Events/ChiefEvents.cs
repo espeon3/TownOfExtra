@@ -1,7 +1,6 @@
 using MiraAPI.Events;
 using MiraAPI.Events.Vanilla.Gameplay;
 using Reactor.Utilities;
-using TownOfExtra.Networking;
 using TownOfExtra.Networking.Global;
 using TownOfExtra.Roles.Crewmate.Power;
 using TownOfUs;
@@ -23,6 +22,8 @@ public class ChiefEvents
     public static void AfterKillEventHandler(AfterMurderEvent e)
     {
         if (e.Source.Data.Role is not ChiefRole) return;
+        if (e.Source == e.Target) return;
+        if (PlayerControl.LocalPlayer != e.Source) return;
 
         var t = e.Target;
         var p = e.Source;
