@@ -21,7 +21,7 @@ public sealed class EmbrittlementRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITow
     public string RoleName => "Embrittlement";
     public string RoleDescription => "Make players Brittle.";
     public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => TownOfExtraColours.EmbrittlementRoleColour;
+    public Color RoleColor => Pallette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorSupport;
     public DoomableType DoomHintType => DoomableType.Relentless;
