@@ -16,7 +16,7 @@ public class EmbrittlementBrittleModifier : TimedModifier
 {
     public override string ModifierName => "Brittle";
     public override bool HideOnUi => true;
-    public override float Duration => OptionGroupSingleton<EmbrittlementRoleOptions>.Instance.BrittleDuration;
+    public override float Duration => OptionGroupSingleton<ImpostorModifierOptions>.Instance.BrittleDuration;
     public override bool AutoStart => true;
     public override bool RemoveOnComplete => true;
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.BrittleModifierIcon;
