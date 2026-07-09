@@ -67,4 +67,9 @@ public sealed class PoisonedModifier(PlayerControl poisoner) : TimedModifier
         if (!Player.AmOwner) return;
         Player.RpcRemoveModifier<PoisonedModifier>();
     }
+
+    public override void OnMeetingStart()
+    {
+        poisoner.RpcSpecialMurder(Player, true, true, true, false, false, false, false, false, "Poisoned");
+    }
 }

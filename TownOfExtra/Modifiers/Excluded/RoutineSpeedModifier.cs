@@ -54,4 +54,9 @@ public class RoutineSpeedModifier : TimedModifier
         if (!Player.AmOwner) return;
         Player.RpcRemoveModifier<RoutineSpeedModifier>();
     }
+
+    public override void OnMeetingStart()
+    {
+        Player.RemoveModifier(this);
+    }
 }

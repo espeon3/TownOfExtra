@@ -169,6 +169,8 @@ public static class TownOfExtraAssets
     // Utility
     public static LoadableAsset<Sprite> ShockwaveModifierIcon =>
         new LoadableResourceAsset($"{ImpModModIconPath}.ShockwaveModifierIcon.png");
+    public static LoadableAsset<Sprite> EmbrittlementModifierIcon =>
+        new LoadableResourceAsset($"{ImpModModIconPath}.EmbrittlementModifierIcon.png", 200);
     
     // Passive
     public static LoadableAsset<Sprite> RebirthModifierIcon =>

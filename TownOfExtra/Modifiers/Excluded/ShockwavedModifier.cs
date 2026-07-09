@@ -69,4 +69,9 @@ public class ShockwavedModifier : BaseRevealModifier
         if (!Player.AmOwner) return;
         Player.RpcRemoveModifier<ShockwavedModifier>();
     }
+
+    public override void OnMeetingStart()
+    {
+        Player.RemoveModifier(this);
+    }
 }

@@ -73,4 +73,17 @@ public sealed class ImpostorModifierOptions : AbstractOptionGroup
         {
             Visible = () => OptionGroupSingleton<ImpostorModifierOptions>.Instance.RebirthAmount > 0
         };
+    
+    /*----------------------
+         EMBRITTLEMENT
+    ----------------------*/
+
+    [ModdedNumberOption("Embrittlement Amount", 0, 5)]
+    public float EmbrittlementAmount { get; set; } = 0;
+
+    public ModdedNumberOption EmbrittlementChance { get; } =
+        new("Embrittlement Chance", 50f, 0f, 100f, 10f, MiraNumberSuffixes.Percent)
+        {
+            Visible = () => OptionGroupSingleton<ImpostorModifierOptions>.Instance.RebirthAmount > 0
+        };
 }

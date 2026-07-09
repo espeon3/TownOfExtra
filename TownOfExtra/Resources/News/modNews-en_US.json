@@ -391,7 +391,8 @@
         "\n- Fixed chief showing shoot notifications on themself",
         "\n- Fixed chief showing shoot flashes to all players",
         "\n- Fixed rebirth being offered their own role when they die",
-        "\n- Fixed rebirth not showing the dead teammate's role name when accepting or denying a rebirth"
+        "\n- Fixed rebirth not showing the dead teammate's role name when accepting or denying a rebirth",
+        "\n- Fixed some timed effects not being removed upon meeting start"
       ]
     }
   ]

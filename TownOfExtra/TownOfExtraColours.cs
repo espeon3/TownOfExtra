@@ -38,6 +38,7 @@ public class TownOfExtraColours
     public static Color ShockwaveModifierColour => new Color32(213, 167, 136, 255);
     public static Color MuteModifierColour => new Color32(96, 47, 94, 255);
     public static Color PanicShieldModifierColour => new Color32(116, 206, 84, 255);
+    public static Color EmbrittlementModifierColour => new Color32(169, 198, 205, 255);
 
 
     public static Color GetRoleColour(string name)
