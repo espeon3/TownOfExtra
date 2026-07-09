@@ -10,16 +10,16 @@ using TownOfUs.Roles.Neutral;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Modifiers.Game.Crewmate.Passive;
+namespace Townofextra.Modifiers.Excluded
 
-public class BrittleModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier
+public class EmbrittlementBrittlwModifier : TimedModifier
 {
     public override string ModifierName => "Brittle";
-    public override ModifierFaction FactionType => ModifierFaction.CrewmatePassive;
-    public override string IntroInfo => $"You die when when interacted with {OptionGroupSingleton<CrewmateModifierOptions>.Instance.BrittleMaxInteractions.Value} times";
+    public override bool HideOnUi => true;
+    public override float Duration => OptionGroupSingleton<EmbrittlementRoleOptions>.Instance.BrittleDuration;
+    public override bool AutoStart => true;
+    public override bool RemoveOnComplete => true;
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.BrittleModifierIcon;
-    public Color ModifierColor => TownOfExtraColours.BrittleModifierColour;
-    public override Color FreeplayFileColor => TownOfExtraColours.BrittleModifierColour;
 
     public static Dictionary<PlayerControl, int> Interactions = new Dictionary<PlayerControl, int>();
 
