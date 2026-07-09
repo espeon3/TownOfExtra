@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Neutral.Evil;
 
-public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Vulture";
     public string RoleDescription => "Eat the bodies of dead crewmates!";
@@ -25,6 +25,9 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
     public DoomableType DoomHintType => DoomableType.Death;
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<AltruistRole>());
+
     public static int DeadBodiesEaten;
 
     public override void SpawnTaskHeader(PlayerControl playerControl)
