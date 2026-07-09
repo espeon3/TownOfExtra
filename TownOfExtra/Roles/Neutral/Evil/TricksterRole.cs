@@ -19,7 +19,7 @@ namespace TownOfExtra.Roles.Neutral.Evil;
 public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Trickster";
-    public string RoleDescription => "Spawn fake bodies to trick the crew";
+    public string RoleDescription => "create fake bodies to fool everyone!";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => TownOfExtraColours.TricksterRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
@@ -57,7 +57,7 @@ public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfU
     public string GetAdvancedDescription()
     {
         return
-            "The Trickster is a Neutral Evil role that wins by tricking enough players into reporting fake bodies. They can sample a player and create a fake dead body of them, and when reported, will give the trickster +1 report." +
+            "The Trickster is a Neutral Evil role that wins by tricking enough players into reporting fake bodies. They can sample a player and create a fake dead body of them, and when reported, will put the Trickster one step closer to winning." +
             MiscUtils.AppendOptionsText(GetType());
     }
 

@@ -22,7 +22,7 @@ public sealed class CommanderRole : CrewmateRole, ITownOfUsRole, IWikiDiscoverab
     public string GetAdvancedDescription()
     {
         return
-            "The Commander is a Crewmate Killing role who can command players into becoming brawlers. Once a brawler dies, the Commander gains a kill charge to try and avenge the killers." +
+            "The Commander is a Crewmate Killing role who can command players into becoming brawlers. Once a brawler dies, the Commander gains a kill charge to avenge their brawlers." +
             MiscUtils.AppendOptionsText(GetType());
     }
     

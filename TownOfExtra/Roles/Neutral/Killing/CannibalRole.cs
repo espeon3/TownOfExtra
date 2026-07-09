@@ -33,7 +33,7 @@ public sealed class CannibalRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUs
     public string GetAdvancedDescription()
     {
         return
-            "The Cannibal is a Neutral Killing role that leaves no dead bodies when killing." +
+            "The Cannibal is a Neutral Killing role that leaves no dead bodies when killing as it devours the player whole." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
