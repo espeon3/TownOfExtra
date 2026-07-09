@@ -24,7 +24,7 @@ public sealed class EmbrittlementRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITow
     public Color RoleColor => Pallette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorSupport;
-    public DoomableType DoomHintType => DoomableType.Relentless;
+    public DoomableType DoomHintType => DoomableType.Trickster;
 
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {
