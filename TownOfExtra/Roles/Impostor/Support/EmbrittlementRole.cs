@@ -66,32 +66,3 @@ public sealed class EmbrittlementRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITow
             };
         }
     }
-    
-    public bool WinConditionMet()
-    {
-        var barbarianAmount = CustomRoleUtils.GetActiveRolesOfType<BarbarianRole>().Count(x => !x.Player.HasDied());
-
-        if (MiscUtils.KillersAliveCount > barbarianAmount)
-        {
-            return false;
-        }
-
-        return barbarianAmount >= Helpers.GetAlivePlayers().Count - barbarianAmount;
-    }
-
-    public override bool DidWin(GameOverReason gameOverReason)
-    {
-        return WinConditionMet();
-    }
-    
-    public override bool CanUse(IUsable usable)
-    {
-        if (!GameManager.Instance.LogicUsables.CanUse(usable, Player))
-        {
-            return false;
-        }
-
-        var console = usable.TryCast<Console>()!;
-        return console == null || console.AllowImpostor;
-    }
-}
