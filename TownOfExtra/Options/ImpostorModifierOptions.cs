@@ -90,5 +90,7 @@ public sealed class ImpostorModifierOptions : AbstractOptionGroup
     public float BrittleCooldown { get; set; } = 30f;
     [ModdedNumberOption("Brittle Duration", 2.5f, 240f, 2.5f, MiraNumberSuffixes.Seconds)]
     public float BrittleDuration { get; set; } = 45f;
+  public ModdedNumberOption BrittleUses { get; } =
+        new("Brittle Uses", 1f, 1f, 5f, 1f, MiraNumberSuffixes.None)
 }
 }
