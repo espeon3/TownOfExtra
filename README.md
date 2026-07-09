@@ -1,5 +1,5 @@
 > [!NOTE]
-> This repo is an extension for an extension mod (Town of Extra) for [Town of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) that adds new roles and modifiers.\
+> This repo is an experimental version of Town of Extra, an extension mod for [Town of Us: Mira](https://github.com/AU-Avengers/TOU-Mira) that adds new roles and modifiers.\
 > This mod requires Town of Us: Mira to be installed and is NOT for console versions of Among Us.
  
 <div align="center">
