@@ -12,14 +12,14 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class EmbrittlementBrittleButton : TownOfUsRoleButton<BarbarianRole, PlayerControl>
+public sealed class EmbrittlementBrittleButton : TownOfUsRoleButton<EmbrittlementRole, PlayerControl>
 {
     public override string Name => "Brittle";
     public override BaseKeybind Keybind => Keybinds.SecondaryAction;
     public override Color TextOutlineColor => Pallette.ImpostorRed;
     public override float Cooldown => OptionGroupSingleton<EmbrittlementRoleOptions>.Instance.BrittleCooldown;
     public override float EffectDuration => OptionGroupSingleton<EmbrittlementRoleOptions>.Instance.BrittleDuration;
-    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.EmbrittlementBrittleButton;
+    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.Phmisc.png;
     
     protected override void OnClick()
     {
