@@ -17,6 +17,7 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 <p align="center">
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpKilling.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/PoisonerRoleIcon.png" /></a>
+<imgwidth="10%" src="https://github.com/espeon3/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/KnifeThrowerRoleIcon.png" / ></a>
   <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/TaggerRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/StrikerRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpSupport.png" /></a>
