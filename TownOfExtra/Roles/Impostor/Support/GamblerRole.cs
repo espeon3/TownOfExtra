@@ -14,7 +14,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Impostor.Support;
 
-public sealed class GamblerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class GamblerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Gambler";
     public string RoleDescription => "Kill players for random effects";
@@ -23,6 +23,8 @@ public sealed class GamblerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorSupport;
     public DoomableType DoomHintType => DoomableType.Trickster;
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<ClericRole>());
 
     public string GetAdvancedDescription()
     {

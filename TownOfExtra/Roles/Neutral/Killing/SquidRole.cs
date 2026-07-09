@@ -17,7 +17,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Neutral.Killing;
 
-public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Squid";
     public string RoleDescription => "Spill ink to slip up players";
@@ -26,6 +26,8 @@ public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
     public DoomableType DoomHintType => DoomableType.Relentless;
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<ClericRole>());
 
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {

@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Impostor.Killing;
 
-public sealed class PoisonerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class PoisonerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Poisoner";
     public string RoleDescription => "Infect the ship with a deadly poison!";
@@ -18,6 +18,8 @@ public sealed class PoisonerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverabl
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorKilling;
     public DoomableType DoomHintType => DoomableType.Fearmonger;
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<ClericRole>());
 
     public string GetAdvancedDescription()
     {
