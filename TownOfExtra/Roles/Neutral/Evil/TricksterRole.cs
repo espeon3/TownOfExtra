@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Neutral.Evil;
 
-public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Trickster";
     public string RoleDescription => "Spawn fake bodies to trick the crew";
@@ -25,6 +25,8 @@ public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfU
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
     public DoomableType DoomHintType => DoomableType.Death;
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<AltruistRole>());
 
     public static int SampledColourId;
     public static List<DeadBody> SpawnedBodies = new List<DeadBody>();
