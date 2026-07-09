@@ -4,7 +4,7 @@ using MiraAPI.Modifiers;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
-using TownOfExtra.Roles.Impostor.Utility;
+using TownOfExtra.Modifiers.Game.Impostor.Utility;
 using TownOfUs.Buttons;
 using TownOfUs.Options.Modifiers.Alliance;
 using TownOfUs.Utilities;
