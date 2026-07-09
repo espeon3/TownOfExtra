@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Impostor.Support;
 
-public sealed class EmbrittlementRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
+public sealed class EmbrittlementRole(IntPtr cppPtr) : ImpostorRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Embrittlement";
     public string RoleDescription => "Make players Brittle.";
