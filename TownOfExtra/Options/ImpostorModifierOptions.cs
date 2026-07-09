@@ -73,4 +73,22 @@ public sealed class ImpostorModifierOptions : AbstractOptionGroup
         {
             Visible = () => OptionGroupSingleton<ImpostorModifierOptions>.Instance.RebirthAmount > 0
         };
+
+      /*----------------------
+             EMBRITTLEMENT
+         ----------------------*/
+
+  [ModdedNumberOption("Embrittlement Amount", 0, 5)]
+    public float EmbrittlementAmount { get; set; } = 0;
+
+    public ModdedNumberOption EmbrittlementChance { get; } =
+        new("Embrittlement Chance", 50f, 0f, 100f, 10f, MiraNumberSuffixes.Percent)
+        {
+            Visible = () => OptionGroupSingleton<ImpostorModifierOptions>.Instance.EmbrittlementAmount > 0
+
+    [ModdedNumberOption("Brittle Cooldown", 2.5f, 240f, 2.5f, MiraNumberSuffixes.Seconds)]
+    public float BrittleCooldown { get; set; } = 30f;
+    [ModdedNumberOption("Brittle Duration", 2.5f, 240f, 2.5f, MiraNumberSuffixes.Seconds)]
+    public float BrittleDuration { get; set; } = 45f;
+}
 }
