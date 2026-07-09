@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Townofextra.Modifiers.Excluded
 
-public class EmbrittlementBrittlwModifier : TimedModifier
+public class EmbrittlementBrittleModifier : TimedModifier
 {
     public override string ModifierName => "Brittle";
     public override bool HideOnUi => true;
