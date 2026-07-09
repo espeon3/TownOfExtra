@@ -1,0 +1,26 @@
+name: Mobile DLL Builder
+
+on:
+  workflow_dispatch: # Allows you to trigger this manually
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x' # Change to match your project version if needed
+
+    - name: Build Project
+      run: dotnet build --configuration Release
+
+    - name: Upload DLL Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Compiled-DLL
+        path: '**/bin/Release/**/*.dll'
+
