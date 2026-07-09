@@ -1,9 +1,14 @@
 using System.Collections.Generic;
+using AmongUs.GameOptions;
 using Il2CppInterop.Runtime.Attributes;
+using MiraAPI.GameOptions;
 using MiraAPI.Roles;
+using TownOfExtra.Options.Roles;
 using TownOfUs.Extensions;
+using TownOfUs.Interfaces;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
+using TownOfUs.Roles.Crewmate;
 using TownOfUs.Utilities;
 using UnityEngine;
 
@@ -11,13 +16,14 @@ namespace TownOfExtra.Roles.Impostor.Killing;
 
 public sealed class SerialKillerRole: ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant, IUnlovable
 {
-    public string Rolename => "Serial Killer";
+    public string RoleName => "Serial Killer";
     public string RoleDescription => "Unleash your bloodlust on others!";
     public string RoleLongDescription => RoleDescription;
-    public color RoleColor => palette.ImpostorRed;
+    public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public DoomableType DoomHintType => DoomableType.Fearmonger;
-    public bool IsUnlovable = true;
+    public RoleAlignment RoleAlignment => RoleAlignment.ImpostorKilling;
+    public bool IsUnlovable => true;
     public RoleBehaviour CrewVariant => RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<SheriffRole>());
 
 public string GetAdvancedDescription()
@@ -28,7 +34,7 @@ public string GetAdvancedDescription()
 
 }
 
-public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(This)
+public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
 {
     Icon = TownOfExtraAssets.KnifeThrowerRoleIcon,
     CanUseVent = OptionGroupSingleton<SerialKillerRoleOptions>.Instance.CanVent
