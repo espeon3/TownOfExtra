@@ -30,7 +30,8 @@ public string GetAdvancedDescription()
 
 public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(This)
 {
-    Icon = TownOfExtraAssets.KnifeThrowerRoleIcon
+    Icon = TownOfExtraAssets.KnifeThrowerRoleIcon,
+    CanUseVent = OptionGroupSingleton<SerialKillerRoleOptions>.Instance.CanVent
 };
 }
 
