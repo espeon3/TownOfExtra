@@ -31,6 +31,6 @@ public string GetAdvancedDescription()
 public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(This)
 {
     Icon = TownOfExtraAssets.KnifeThrowerRoleIcon
-}
+};
 }
 
