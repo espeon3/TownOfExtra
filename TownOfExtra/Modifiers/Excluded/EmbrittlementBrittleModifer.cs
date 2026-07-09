@@ -10,7 +10,7 @@ using TownOfUs.Roles.Neutral;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace Townofextra.Modifiers.Excluded
+namespace TownOfExtra.Modifiers.Excluded
 
 public class EmbrittlementBrittleModifier : TimedModifier
 {
