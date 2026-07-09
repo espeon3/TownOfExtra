@@ -19,6 +19,7 @@ public sealed class EmbrittlementBrittleButton : TownOfUsRoleButton<Embrittlemen
     public override Color TextOutlineColor => Pallette.ImpostorRed;
     public override float Cooldown => OptionGroupSingleton<ImpostorModifierOptions>.Instance.BrittleCooldown;
     public override float EffectDuration => OptionGroupSingleton<ImpostorModifierOptions>.Instance.BrittleDuration;
+    public override int MaxUses => OptionGroupSingleton<ImpostorModifierOptions>.Instance.BrittleUses;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.PhMisc;
 
     protected override void OnClick()
