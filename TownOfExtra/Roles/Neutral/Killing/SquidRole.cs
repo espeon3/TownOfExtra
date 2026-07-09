@@ -17,15 +17,17 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Neutral.Killing;
 
-public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Squid";
-    public string RoleDescription => "Spill ink to slip up players";
+    public string RoleDescription => "Spill ink to slow down players";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => TownOfExtraColours.SquidRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
     public DoomableType DoomHintType => DoomableType.Relentless;
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<ClericRole>());
 
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {
@@ -41,7 +43,7 @@ public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
     public string GetAdvancedDescription()
     {
         return
-            "The Squid is a Neutral Killing role who can spill ink on the ground, causing 3 debuffs to players who walk in them.\n\n" +
+            "The Squid is a Neutral Killing role who can spill ink on the ground, causing the following debuffs to players who walk in them.\n\n" +
             $"<size=105%><b>{TownOfUsColors.Vigilante.ToTextColor()}Debuffs:</color></b></size>\n" +
             "> Reduced vision\n" +
             "> Slower speed\n" +
@@ -70,14 +72,14 @@ public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
     
     public bool WinConditionMet()
     {
-        var shadowWalkerAmount = CustomRoleUtils.GetActiveRolesOfType<ShadowWalkerRole>().Count(x => !x.Player.HasDied());
+        var squidAmount = CustomRoleUtils.GetActiveRolesOfType<SquidRole>().Count(x => !x.Player.HasDied());
 
-        if (MiscUtils.KillersAliveCount > shadowWalkerAmount)
+        if (MiscUtils.KillersAliveCount > squidAmount)
         {
             return false;
         }
 
-        return shadowWalkerAmount >= Helpers.GetAlivePlayers().Count - shadowWalkerAmount;
+        return squidAmount >= Helpers.GetAlivePlayers().Count - squidAmount;
     }
 
     public override bool DidWin(GameOverReason gameOverReason)

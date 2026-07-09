@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Neutral.Killing;
 
-public sealed class BarbarianRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class BarbarianRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Barbarian";
     public string RoleDescription => "Charge up attacks to kill players";
@@ -25,6 +25,8 @@ public sealed class BarbarianRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfU
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
     public DoomableType DoomHintType => DoomableType.Relentless;
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<CommanderRole>());
 
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {

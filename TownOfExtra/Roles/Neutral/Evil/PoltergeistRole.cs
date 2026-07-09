@@ -21,7 +21,7 @@ namespace TownOfExtra.Roles.Neutral.Evil;
 public sealed class PoltergeistRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Poltergeist";
-    public string RoleDescription => "Scare the players to victory!";
+    public string RoleDescription => "Use their fear of the abnormal against them!";
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => TownOfExtraColours.PoltergeistRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;

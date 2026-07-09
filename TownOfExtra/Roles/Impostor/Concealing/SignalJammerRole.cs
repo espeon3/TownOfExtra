@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Impostor.Concealing;
 
-public sealed class SignalJammerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class SignalJammerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Signal Jammer";
     public string RoleDescription => "Jam signals to block communication";
@@ -18,6 +18,8 @@ public sealed class SignalJammerRole : ImpostorRole, ITownOfUsRole, IWikiDiscove
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorConcealing;
     public DoomableType DoomHintType => DoomableType.Default;
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<SpyRole>());
 
     public string GetAdvancedDescription()
     {

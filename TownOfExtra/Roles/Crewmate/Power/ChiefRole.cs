@@ -28,7 +28,7 @@ public sealed class ChiefRole : CrewmateRole, ITownOfUsRole, IWikiDiscoverable, 
     public string GetAdvancedDescription()
     {
         return
-            "The Chief is a Crewmate Power role who successes role that can recruit players, converting them into sheriffs, aswell as being able to shoot players with a limited amount of shots, killing and revealing their roles." +
+            "The Chief is a Crewmate Power role who successes players , converting them into loyal sheriffs, aswell as being able to shoot players with a limited amount of shots, killing and revealing their roles.\nWhen they are an Egotist, they will also fuel their recruits with egotism and make them a fellow Egotist." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
