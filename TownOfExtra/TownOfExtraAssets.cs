@@ -25,6 +25,8 @@ public static class TownOfExtraAssets
     public static string NeutMiscPath => "TownOfExtra.Resources.Neut.Misc";
 
     // ---- Modifier Paths ----
+    public static string MiscModModIconPath => "TownOfExtra.Resources.Modifiers.Misc.ModifierIcons";
+    
     public static string CrewModModIconPath => "TownOfExtra.Resources.Modifiers.Crew.ModifierIcons";
     public static string CrewModButtonPath => "TownOfExtra.Resources.Modifiers.Crew.Buttons";
     public static string CrewModMiscPath => "TownOfExtra.Resources.Modifiers.Crew.Misc";
@@ -175,6 +177,10 @@ public static class TownOfExtraAssets
     // Passive
     public static LoadableAsset<Sprite> RebirthModifierIcon =>
         new LoadableResourceAsset($"{ImpModModIconPath}.RebirthModifierIcon.png");
+    public static LoadableAsset<Sprite> BloodlustModifierIcon =>
+        new LoadableResourceAsset($"{ImpModModIconPath}.BloodlustModifierIcon.png");
+    public static LoadableAsset<Sprite> ScourgeModifierIcon =>
+        new LoadableResourceAsset($"{MiscModModIconPath}.ScourgeRoleIcon.png");
     
     // Buttons
     public static LoadableAsset<Sprite> ShockwaveShockwaveButton =>
