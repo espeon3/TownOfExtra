@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Impostor.Support;
 
-public sealed class EmbrittlementRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class EmbrittlementRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
     public string RoleName => "Embrittlement";
     public string RoleDescription => "Make players Brittle.";
@@ -25,6 +25,9 @@ public sealed class EmbrittlementRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITow
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorSupport;
     public DoomableType DoomHintType => DoomableType.Trickster;
+
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<HunterRole>());
 
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {
