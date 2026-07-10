@@ -60,14 +60,14 @@ public sealed class MurdererRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUs
 
     public bool WinConditionMet()
     {
-        var cannibalCount = CustomRoleUtils.GetActiveRolesOfType<MurdererRole>().Count(x => !x.Player.HasDied());
+        var murdererCount = CustomRoleUtils.GetActiveRolesOfType<MurdererRole>().Count(x => !x.Player.HasDied());
 
         if (MiscUtils.KillersAliveCount > murdererCount)
         {
             return false;
         }
 
-        return cannibalCount >= Helpers.GetAlivePlayers().Count - murdererCount;
+        return murdererCount >= Helpers.GetAlivePlayers().Count - murdererCount;
     }
 
     public override bool DidWin(GameOverReason gameOverReason)
