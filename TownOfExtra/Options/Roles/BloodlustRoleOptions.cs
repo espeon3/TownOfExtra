@@ -10,7 +10,7 @@ public sealed class BloodlustRoleOptions : AbstractOptionGroup<BloodlustRole>
     public override string GroupName => "Bloodlust";
 
     [ModdedNumberOption("Kill Cooldown Reduction", 2.5f, 240f, 2.5f, MiraNumberSuffixes.Seconds)]
-    public float LowerKillCooldown { get; set; } = 10f;
+    public float LowerKillCooldown { get; set; } = 7.5f;
 
     [ModdedToggleOption("Can Vent")]
     public bool CanVent { get; set; } = false;
