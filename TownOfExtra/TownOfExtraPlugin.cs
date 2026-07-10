@@ -53,6 +53,10 @@ public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToPunished", "Punished");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToMassacred", "Massacred");
 
+        TouLocale.TouLocalization[SupportedLangs.English]
+                ["TouRoleClericCleanseWikiDescription"] =
+            "Remove all negative effects on a player. (Douse, Hack, Infect, Blackmail, Blind, Flash, Hypnosis, Poisoned, Pending Shift, Doom, Lucid Dreaming, Pending Lucid Dream, Scared, Possessed, Pending Erase, Pending Embrittlement, Slipped, Shockwaved)";
+
         TerminologyPatches.RegisterToExTerms();
         TerminologyIconRegistry.RegisterIcons();
         

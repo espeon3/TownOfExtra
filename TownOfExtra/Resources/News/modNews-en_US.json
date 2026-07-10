@@ -390,6 +390,7 @@
         "\n\n\r<size=105%>Additions:</size>",
         "\n- Added support for Achievements API! (optional, if you want to be able to unlock them, <link=https://github.com/am-clonec/Achievements-API/releases/tag/latest>download achievements api here</link>",
         "\n- Added an option for shifter to shift modifiers with the target",
+        "\n- Added more cleansable effects to cleric",
         "\n\n\r<size=105%>Changes:</size>",
         "\n- Updated some wiki entries <link=https://github.com/Mehzxzz/TownOfExtra/pull/12>(#12)</link>",
         "\n\n\r<size=105%>Bugfixes:</size>",
