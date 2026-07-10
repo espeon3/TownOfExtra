@@ -7,6 +7,7 @@ using MiraAPI.GameOptions;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
 using TownOfExtra.Options.Roles;
+using TownOfUs.Roles.Crewmate.Killing;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;

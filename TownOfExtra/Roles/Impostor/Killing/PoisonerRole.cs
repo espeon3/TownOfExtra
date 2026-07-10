@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using Il2CppInterop.Runtime.Attributes;
+using AmongUs.GameOptions;
 using MiraAPI.Roles;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
+using TownOfUs.Roles.Crewmate;
 using TownOfUs.Utilities;
 using UnityEngine;
 
