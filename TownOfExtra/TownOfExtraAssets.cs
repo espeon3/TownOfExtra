@@ -259,6 +259,7 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutRoleIconPath}.SquidRoleIcon.png", 200);
     public static LoadableAsset<Sprite> ShadowWalkerRoleIcon =>
         new LoadableResourceAsset($"{NeutRoleIconPath}.ShadowWalkerRoleIcon.png", 200);
+    public static LoadableAsset<Sprite>MurdererRoleIcon => new LoadableResourceAsset($"{NeutRoleIconPath}.Neutral.png");
     public static LoadableAsset<Sprite> CannibalRoleIcon =>
         new LoadableResourceAsset($"{NeutRoleIconPath}.CannibalRoleIcon.png");
     public static LoadableAsset<Sprite> BarbarianRoleIcon =>
