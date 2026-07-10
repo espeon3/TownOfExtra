@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using HarmonyLib;
 using MiraAPI.Modifiers;
-using TownOfExtra.Modifiers;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfUs.Buttons.Crewmate;
 
@@ -29,6 +28,14 @@ public static class ClericCleansePatches
         Remover<PossessedModifier>(),
         // eraser
         Remover<PendingEraseModifier>(),
+        // shifter
+        Remover<WaitingOnShiftModifier>(),
+        // brittle
+        Remover<WaitingOnBrittleModifier>(),
+        // squid
+        Remover<SlippedModifier>(),
+        // shockwaved
+        Remover<ShockwavedModifier>()
     ];
 
     public static void CleanseAll(PlayerControl p)

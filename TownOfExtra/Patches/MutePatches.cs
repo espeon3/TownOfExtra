@@ -2,7 +2,6 @@
 using HarmonyLib;
 using MiraAPI.Modifiers;
 using TownOfExtra.Modifiers.Game.Universal.Passive;
-using TownOfExtra.Networking;
 using TownOfExtra.Networking.Global;
 using UnityEngine;
 
