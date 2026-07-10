@@ -18,7 +18,7 @@ public sealed class MurdererMurderButton : TownOfUsKillRoleButton<MurdererRole, 
     public override string Name => "Murder";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
     public override Color TextOutlineColor => Palette.ImpostorRed;
-    public override float Cooldown => OptionGroupSingleton<MurdererRoleOptions>.Instance.KillCooldown;
+    public override float Cooldown => OptionGroupSingleton<MurdererRoleOptions>.Instance.MurderCooldown;
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.PhAttack;
 
     public void SetDiseasedTimer(float multiplier)
