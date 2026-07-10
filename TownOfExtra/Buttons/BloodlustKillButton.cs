@@ -30,7 +30,7 @@ public sealed class BloodlustKillButton : TownOfUsKillRoleButton<BloodlustRole, 
     {
         if (Target == null) return;
 
-        PlayerControl.LocalPlayer.RpcSpecialMurder(Target, MeetingCheck.OutsideMeeting);
+        PlayerControl.LocalPlayer.RpcSpecialMurder(Target, MeetingCheck.OutsideMeeting, causeOfDeath: "Massacred");
     }
 
     public override PlayerControl GetTarget()

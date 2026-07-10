@@ -51,11 +51,12 @@ public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToMiscalculated", "Miscalculated");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToSlain", "Slain");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToPunished", "Punished");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToMassacred", "Massacred");
 
         TerminologyPatches.RegisterToExTerms();
         TerminologyIconRegistry.RegisterIcons();
         
-        if (ModCompat.IsLoaded(ModCompat.AApiId, out var aapi))
+        if (ModCompat.IsLoaded(ModCompat.AApiId, out _))
         {
             Logger.LogInfo("AchievementsAPI found, achievements will be available!");
         }
