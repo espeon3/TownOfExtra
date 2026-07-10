@@ -13,13 +13,13 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class SerialKillerKillButton : TownOfUsKillRoleButton<SerialKillerRole, PlayerControl>, IDiseaseableButton, IKillButton
+public sealed class BloodlustKillButton : TownOfUsKillRoleButton<BloodlustRole, PlayerControl>, IDiseaseableButton, IKillButton
 {
     public override string Name => "Kill";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
     public override Color TextOutlineColor => Palette.ImpostorRed;
-    public override float Cooldown => Cooldown - OptionGroupSingleton<SerialKillerRoleOptions>.Instance.LowerKillCooldown;
-    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.PhAttack;
+    public override float Cooldown => GameOptionsManager.Instance.normalGameHostOptions.KillCooldown - OptionGroupSingleton<BloodlustRoleOptions>.Instance.LowerKillCooldown;
+    public override LoadableAsset<Sprite> Sprite => TouAssets.KillSprite;
 
     public void SetDiseasedTimer(float multiplier)
     {

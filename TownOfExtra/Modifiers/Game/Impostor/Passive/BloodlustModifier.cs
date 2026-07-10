@@ -16,7 +16,7 @@ public class BloodlustModifier : TouGameModifier, IWikiDiscoverable, IColoredMod
     public override string ModifierName => "Bloodlust";
     public override ModifierFaction FactionType => ModifierFaction.ImpostorPassive;
     public override string IntroInfo => "You have a lower kcd, at a cost";
-    public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.BloodlustModifierIcon;
+    public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.BloodlustRoleIcon;
     public Color ModifierColor => Palette.ImpostorRed;
     public override Color FreeplayFileColor => Palette.ImpostorRed;
 

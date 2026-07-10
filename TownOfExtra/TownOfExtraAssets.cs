@@ -149,6 +149,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{ImpRoleIconPath}.StrikerRoleIcon.png");
     public static LoadableAsset<Sprite> TaggerRoleIcon =>
         new LoadableResourceAsset($"{ImpRoleIconPath}.TaggerRoleIcon.png");
+    public static LoadableAsset<Sprite> BloodlustRoleIcon =>
+        new LoadableResourceAsset($"{ImpRoleIconPath}.BloodlustRoleIcon.png");
 
     // Power
     public static LoadableAsset<Sprite> ConjurerRoleIcon =>
@@ -179,8 +181,6 @@ public static class TownOfExtraAssets
     // Passive
     public static LoadableAsset<Sprite> RebirthModifierIcon =>
         new LoadableResourceAsset($"{ImpModModIconPath}.RebirthModifierIcon.png");
-    public static LoadableAsset<Sprite> BloodlustModifierIcon =>
-        new LoadableResourceAsset($"{ImpModModIconPath}.BloodlustModifierIcon.png");
     public static LoadableAsset<Sprite> ScourgeModifierIcon =>
         new LoadableResourceAsset($"{MiscModModIconPath}.ScourgeRoleIcon.png");
     
