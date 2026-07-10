@@ -27,7 +27,7 @@ public class ShifterEvents
 
         foreach (var p in PlayerControl.AllPlayerControls)
         {
-            if (p.HasModifier<ShiftedModifier>())
+            if (p.HasModifier<WaitingOnShiftModifier>())
             {
                 if (shifter == null || p == null || p.Data.IsDead || shifter.Data.IsDead)
                 {
@@ -66,7 +66,8 @@ public class ShifterEvents
                 else shifter.RpcChangeRole(RoleId.Get<ImitatorRole>());
 
                 p.RpcRemoveModifier<ImitatorCacheModifier>();
-                p.RpcRemoveModifier<ShiftedModifier>();
+                p.RpcRemoveModifier<WaitingOnShiftModifier>();
+                p.AddModifier<PreviouslyShiftedModifier>();
                 p.RpcChangeRole(RoleId.Get<ShifterRole>());
 
                 if (OptionGroupSingleton<ShifterRoleOptions>.Instance.ShiftModifiers)

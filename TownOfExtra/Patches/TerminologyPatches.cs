@@ -99,7 +99,7 @@ internal sealed class PendingSwitchIcon : ITerminologyIcon
 {
     public string RichChunk => $"{TownOfExtraColours.ShifterRoleColour.ToTextColor()}⇆</color>";
     public bool ShouldShow(PlayerControl local, PlayerControl row) =>
-        row.HasModifier<ShiftedModifier>() &&
+        row.HasModifier<WaitingOnShiftModifier>() &&
         (local.GetTownOfUsRole() is ShifterRole || local.Data.IsDead);
 }
 

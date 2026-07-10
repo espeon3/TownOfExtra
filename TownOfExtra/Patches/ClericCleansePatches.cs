@@ -19,7 +19,7 @@ public static class ClericCleansePatches
     [
         // general
         Remover<PoisonedModifier>(),
-        Remover<ShiftedModifier>(),
+        Remover<WaitingOnShiftModifier>(),
         Remover<ImpendingDoomModifier>(),
         // dream caster
         Remover<LucidDreamingModifier>(),
