@@ -143,6 +143,8 @@ public static class TownOfExtraAssets
     // Killing
     public static LoadableAsset<Sprite> PoisonerRoleIcon =>
         new LoadableResourceAsset($"{ImpRoleIconPath}.PoisonerRoleIcon.png");
+    public static LoadableAsset<Sprite> KnifeThrowerRoleIcon =
+        new LoadableResourceAsset($"{ImpRoleIconPath}.KnifeThrowerRoleIcon.png");
     public static LoadableAsset<Sprite> StrikerRoleIcon =>
         new LoadableResourceAsset($"{ImpRoleIconPath}.StrikerRoleIcon.png");
     public static LoadableAsset<Sprite> TaggerRoleIcon =>
