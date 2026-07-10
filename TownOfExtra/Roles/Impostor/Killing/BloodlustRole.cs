@@ -33,5 +33,6 @@ public sealed class BloodlustRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverab
         Icon = TownOfExtraAssets.BloodlustRoleIcon,
         CanUseVent = OptionGroupSingleton<BloodlustRoleOptions>.Instance.CanVent,
         CanUseSabotage =  OptionGroupSingleton<BloodlustRoleOptions>.Instance.CanSabotage,
+        UseVanillaKillButton = false
     };
 }
