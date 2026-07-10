@@ -26,7 +26,9 @@ public sealed class MurdererRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUs
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
     public DoomableType DoomHintType => DoomableType.Death;
-// Todo: Add Crew Variant
+    public RoleBehaviour CrewVariant =>
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<SheriffRole>());
+
     public static List<byte> KilledPlayers = new List<byte>();
     public static byte? MurdererId = null;
 
