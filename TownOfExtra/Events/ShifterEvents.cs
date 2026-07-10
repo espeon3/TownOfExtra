@@ -3,11 +3,11 @@ using MiraAPI.Events.Vanilla.Gameplay;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
 using TownOfExtra.Modifiers.Excluded;
-using TownOfExtra.Networking;
 using TownOfExtra.Networking.Global;
 using TownOfExtra.Roles.Neutral.Outlier;
 using TownOfUs.Modifiers.Crewmate;
 using TownOfUs.Modifiers.Game.Alliance;
+using TownOfUs.Roles.Crewmate;
 using TownOfUs.Utilities;
 
 namespace TownOfExtra.Events;
@@ -56,11 +56,15 @@ public class ShifterEvents
 
                 var pRole = p.Data.Role.Role;
 
+                if (!p.HasModifier<ImitatorCacheModifier>()) {
+                    shifter.RpcSetRole(pRole, true);
+                } 
+                else {
+                    shifter.RpcChangeRole(RoleId.Get<ImitatorRole>());
+                }
                 p.RpcRemoveModifier<ImitatorCacheModifier>();
                 p.RpcRemoveModifier<ShiftedModifier>();
                 p.RpcChangeRole(RoleId.Get<ShifterRole>());
-                shifter.RpcSetRole(pRole, true);
-                shifter.RpcAddModifier<ImitatorCacheModifier>();
 
                 if (p.HasModifier<EgotistModifier>())
                 {

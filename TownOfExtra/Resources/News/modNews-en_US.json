@@ -400,7 +400,7 @@
         "\n- Fixed some timed effects not being removed upon meeting start",
         "\n- Fixed rebirth not showing the dead teammate's role name when accepting or denying a rebirth",
         "\n- Fixed squid having shadow walker's win condition <link=https://github.com/Mehzxzz/TownOfExtra/pull/12>(#12)</link>",
-        "\n- "
+        "\n- Fixed imitator shifting with shifter properly"
       ]
     }
   ]
