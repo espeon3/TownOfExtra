@@ -53,7 +53,7 @@ public sealed class MurdererRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUs
         {
             return new List<CustomButtonWikiDescription>
             {
-                new("Murder", "Kill a player.", TouAssets.KillSprite)
+                new("Murder", "Kill a player.", TownOfExtraAssets.PhAttack)
             };
         }
     }
