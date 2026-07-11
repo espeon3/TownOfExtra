@@ -25,7 +25,7 @@ public class SignalJammerPatches
                     flashColour: Palette.ImpostorRed
                 );
 
-                AApi.AwardAchievement(AApi.GetInstance()?.MeetingWhileJammed);
+                PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.SignalJammerMeetingWhileJammed);
 
                 return false;
             }
@@ -49,7 +49,7 @@ public class SignalJammerPatches
                     flashColour: Palette.ImpostorRed
                 );
 
-                AApi.AwardAchievement(AApi.GetInstance()?.MeetingWhileJammed);
+                PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.SignalJammerMeetingWhileJammed);
 
                 if (target != null)
                 {

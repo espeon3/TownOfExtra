@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using TownOfExtra.Achievements;
+using TownOfExtra.Networking.Global;
 
 namespace TownOfExtra.Patches;
 [HarmonyPatch]
@@ -10,6 +11,6 @@ public class MainMenuPatches
     [HarmonyPostfix]
     public static void OnMainMenuAwakePostfix(MainMenuManager __instance)
     {
-        AApi.AwardAchievement(AApi.GetInstance()?.LaunchGame);
+        PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.LaunchGame);
     }
 }

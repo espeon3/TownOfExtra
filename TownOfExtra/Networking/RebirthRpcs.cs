@@ -35,7 +35,7 @@ public static class RebirthRpcs
                     "ImpModIcon"
                 );
 
-                AApi.AwardAchievement(AApi.GetInstance()?.UseRebirth);
+                PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.RebirthUse);
             }
             else
             {

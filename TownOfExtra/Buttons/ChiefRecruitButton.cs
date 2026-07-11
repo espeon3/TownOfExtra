@@ -173,7 +173,7 @@ public sealed class ChiefRecruitButton : TownOfUsRoleButton<ChiefRole, PlayerCon
             "CrewButton"
         );
         
-        AApi.AwardAchievement(AApi.GetInstance()?.UseChiefRecruit);
+        PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.ChiefUseRecruit);
 
         ChiefRole.Recruits.Add(Recruit);
         Recruit = null;

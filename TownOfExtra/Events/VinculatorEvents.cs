@@ -4,8 +4,10 @@ using MiraAPI.Events.Vanilla.Meeting;
 using MiraAPI.GameOptions;
 using MiraAPI.Hud;
 using MiraAPI.Modifiers;
+using TownOfExtra.Achievements;
 using TownOfExtra.Buttons;
 using TownOfExtra.Modifiers.Excluded;
+using TownOfExtra.Networking.Global;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Impostor.Power;
 using TownOfUs.Networking;
@@ -83,6 +85,13 @@ public class VinculatorEvents
             if (player.HasModifier<LinkedModifier>())
             {
                 player.RpcSpecialMurder(player, ignoreShield:true, createDeadBody:false, causeOfDeath:"Unbound");
+                foreach (var p in PlayerControl.AllPlayerControls)
+                {
+                    if (p.Data.Role is VinculatorRole)
+                    {
+                        p.RpcAwardAchievement(AApi.GetInstance()?.VinculatorLinkedVotedOut);
+                    }
+                }
             }
         }
     }
