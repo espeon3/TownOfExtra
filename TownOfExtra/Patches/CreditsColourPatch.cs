@@ -13,7 +13,7 @@ public static class PerfectCommsCreditsColorPatch
     {
         if (string.IsNullOrEmpty(__result)) return;
 
-        var coloredLabel = $"{TownOfExtraColours.CreditsColour.ToTextColor()}<noparse>{Label}</noparse></color>";
+        var coloredLabel = $"{TownOfExtraColours.GlobalModColour.ToTextColor()}<noparse>{Label}</noparse></color>";
         var updated = Regex.Replace(
             __result,
             $"<color=#[0-9A-Fa-f]{{3,8}}><noparse>{Regex.Escape(Label)}</noparse></color>",

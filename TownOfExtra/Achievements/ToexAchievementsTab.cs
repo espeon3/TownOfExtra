@@ -8,7 +8,7 @@ public class ToexAchievementsTab : AchievementsTab
     public override string Name => "Town of Extra";
     public override bool IsSelectable => true;
 
-    public override Color GetTabColor() => TownOfExtraColours.CreditsColour;
+    public override Color GetTabColor() => TownOfExtraColours.GlobalModColour;
     public override Sprite GetIcon() => TownOfExtraAssets.TownOfExtraIcon.LoadAsset();
     
     // ------------------------------
