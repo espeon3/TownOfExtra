@@ -2,7 +2,7 @@
 using MiraAPI.Modifiers;
 using Reactor.Networking.Attributes;
 using TownOfExtra.Modifiers.Excluded;
-using TownOfExtra.Roles.Crewmate.Power;
+using TownOfExtra.Roles.Crewmate.Investigative;
 using TownOfUs.Utilities;
 
 namespace TownOfExtra.Networking;

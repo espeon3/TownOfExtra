@@ -4,7 +4,7 @@ using MiraAPI.Modifiers;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Networking;
 using TownOfExtra.Options.Roles;
-using TownOfExtra.Roles.Crewmate.Power;
+using TownOfExtra.Roles.Crewmate.Investigative;
 using TownOfUs.Modifiers.Impostor;
 using TownOfUs.Utilities;
 

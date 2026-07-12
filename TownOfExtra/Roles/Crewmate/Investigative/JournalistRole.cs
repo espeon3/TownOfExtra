@@ -10,7 +10,7 @@ using TownOfUs.Roles;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Roles.Crewmate.Power;
+namespace TownOfExtra.Roles.Crewmate.Investigative;
 
 public sealed class JournalistRole : CrewmateRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
@@ -19,13 +19,13 @@ public sealed class JournalistRole : CrewmateRole, ITownOfUsRole, IWikiDiscovera
     public string RoleLongDescription => RoleDescription;
     public Color RoleColor => TownOfExtraColours.JournalistRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Crewmate;
-    public RoleAlignment RoleAlignment => RoleAlignment.CrewmatePower;
+    public RoleAlignment RoleAlignment => RoleAlignment.CrewmateInvestigative;
     public DoomableType DoomHintType => DoomableType.Insight;
     
     public string GetAdvancedDescription()
     {
         return
-            "The Journalist is a Crewmate Power role who can interview players, giving them an ingame chat until the next meeting starts. The journalist is anonymous to the interviewee." +
+            "The Journalist is a Crewmate Investigative role who can interview players, giving them an ingame chat until the next meeting starts. The journalist is anonymous to the interviewee." +
             MiscUtils.AppendOptionsText(GetType());
     }
     

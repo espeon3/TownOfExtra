@@ -4,7 +4,7 @@ using MiraAPI.Modifiers;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
-using TownOfExtra.Roles.Crewmate.Power;
+using TownOfExtra.Roles.Crewmate.Investigative;
 using TownOfUs.Buttons;
 using TownOfUs.Utilities;
 using UnityEngine;
