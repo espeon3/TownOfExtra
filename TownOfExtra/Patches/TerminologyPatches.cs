@@ -4,6 +4,7 @@ using MiraAPI.Modifiers;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Roles.Crewmate.Killing;
 using TownOfExtra.Roles.Crewmate.Power;
+using TownOfExtra.Roles.Crewmate.Investigative;
 using TownOfExtra.Roles.Impostor.Killing;
 using TownOfExtra.Roles.Impostor.Power;
 using TownOfExtra.Roles.Neutral.Evil;
