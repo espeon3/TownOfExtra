@@ -99,6 +99,11 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 |--------------------------|-------------|-------------------|-----------------------------------------------------------------------|
 | 17.3 (2026.3.31)         | 1.2.3       | 1.6.2+            | [Download](https://github.com/Mehzxzz/TownOfExtra/releases/tag/1.2.2) |
 
+**Version Numbers:**
+First digit: Major update or recode.
+Second digit: Medium size/importance updates, large ish content updates, or just reaching the 10th third digit.
+Third digit: Minor content updates & bugfixes. Most updates fall into this category, with a few roles, modifiers and bugfixes.
+
 -----------------------
 
 # Installation
