@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using HarmonyLib;
 using MiraAPI.Modifiers;
-using TownOfExtra.Achievements;
+//todo: using TownOfExtra.Achievements;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Networking.Global;
 using UnityEngine;
@@ -25,7 +25,7 @@ public class SignalJammerPatches
                     flashColour: Palette.ImpostorRed
                 );
 
-                PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.SignalJammerMeetingWhileJammed);
+                //todo: PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.SignalJammerMeetingWhileJammed);
 
                 return false;
             }
@@ -49,7 +49,7 @@ public class SignalJammerPatches
                     flashColour: Palette.ImpostorRed
                 );
 
-                PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.SignalJammerMeetingWhileJammed);
+                //todo: PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.SignalJammerMeetingWhileJammed);
 
                 if (target != null)
                 {

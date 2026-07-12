@@ -5,8 +5,7 @@ using MiraAPI.GameOptions;
 using MiraAPI.Keybinds;
 using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
-using TownOfExtra.Achievements;
-using TownOfExtra.Networking.Global;
+//todo: using TownOfExtra.Achievements;
 using TownOfUs.Buttons;
 using UnityEngine;
 
@@ -31,6 +30,6 @@ public sealed class VultureEatButton : TownOfUsRoleButton<VultureRole, DeadBody>
         if (p == null || Target == null) return;
         
         VultureRpcs.RpcCleanBody(p, Target.ParentId);
-        PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.VultureEatBody);
+        //todo: PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.VultureEatBody);
     }
 }

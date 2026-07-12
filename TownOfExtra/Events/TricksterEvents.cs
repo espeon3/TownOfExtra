@@ -4,10 +4,9 @@ using MiraAPI.Events.Vanilla.Gameplay;
 using MiraAPI.Events.Vanilla.Meeting;
 using MiraAPI.Utilities;
 using Reactor.Utilities;
-using TownOfExtra.Achievements;
+//todo: using TownOfExtra.Achievements;
 using TownOfExtra.Buttons;
 using TownOfExtra.Networking;
-using TownOfExtra.Networking.Global;
 using TownOfExtra.Roles.Neutral.Evil;
 using TownOfUs.Utilities;
 using UnityEngine;
@@ -73,7 +72,7 @@ public class TricksterEvents
                 Color.white, new Vector3(0f, 1f, -20f), spr: TownOfExtraAssets.TricksterRoleIcon.LoadAsset());
             notif.AdjustNotification();
 
-            PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.TricksterBodyReported);
+            //todo: PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.TricksterBodyReported);
             
             TricksterRpcs.RpcNotifyTrickster(PlayerControl.LocalPlayer);
             TricksterRpcs.RpcDestroyFakeBodies(PlayerControl.LocalPlayer);

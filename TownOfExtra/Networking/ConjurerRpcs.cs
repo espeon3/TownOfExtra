@@ -4,8 +4,7 @@ using MiraAPI.GameOptions;
 using Reactor.Networking.Attributes;
 using Reactor.Utilities;
 using Reactor.Utilities.Attributes;
-using TownOfExtra.Achievements;
-using TownOfExtra.Networking.Global;
+//todo: using TownOfExtra.Achievements;
 using TownOfExtra.Options.Roles;
 using TownOfUs.Networking;
 using TownOfUs.Utilities;
@@ -53,7 +52,7 @@ public static class ConjurerRpcs
                 if (Vector2.Distance(p.transform.position, pos) < 0.5f)
                 { 
                     sender.RpcSpecialMurder(p, true, true, teleportMurderer: false, showKillAnim: false, createDeadBody: false, causeOfDeath: "Crushed");
-                    sender.RpcAwardAchievement(AApi.GetInstance()?.ConjurerDropRockOnPlayer);
+                    //todo: sender.RpcAwardAchievement(AApi.GetInstance()?.ConjurerDropRockOnPlayer);
                     
                     var body = new GameObject();
                     body.AddComponent<SquashedBody>();

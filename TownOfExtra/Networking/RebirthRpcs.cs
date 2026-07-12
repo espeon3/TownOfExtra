@@ -1,5 +1,5 @@
 ﻿using Reactor.Networking.Attributes;
-using TownOfExtra.Achievements;
+//todo: using TownOfExtra.Achievements;
 using TownOfExtra.Modifiers.Game.Impostor.Passive;
 using TownOfExtra.Modules;
 using TownOfExtra.Networking.Global;
@@ -35,7 +35,7 @@ public static class RebirthRpcs
                     "ImpModIcon"
                 );
 
-                PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.RebirthUse);
+                //todo: PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.RebirthUse);
             }
             else
             {

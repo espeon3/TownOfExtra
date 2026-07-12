@@ -3,7 +3,7 @@ using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
 using Reactor.Networking.Attributes;
 using Reactor.Utilities;
-using TownOfExtra.Achievements;
+//todo: using TownOfExtra.Achievements;
 using TownOfUs.Utilities;
 using UnityEngine;
 
@@ -66,7 +66,7 @@ public static class GlobalRpcs
     {
         if (PlayerControl.LocalPlayer != p) return;
         
-        AApi.AwardAchievement(achievement);
+        //todo: AApi.AwardAchievement(achievement);
     }
     
     [MethodRpc((uint)TownOfExtraRpcs.IncrementAchievement)]
@@ -74,6 +74,6 @@ public static class GlobalRpcs
     {
         if (PlayerControl.LocalPlayer != p) return;
         
-        AApi.IncrementAchievement(achievement, increment);
+        //todo: AApi.IncrementAchievement(achievement, increment);
     }
 }

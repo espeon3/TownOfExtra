@@ -3,8 +3,7 @@ using MiraAPI.Keybinds;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
 using MiraAPI.Utilities.Assets;
-using TownOfExtra.Achievements;
-using TownOfExtra.Networking;
+//todo: using TownOfExtra.Achievements;
 using TownOfExtra.Networking.Global;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Crewmate.Power;
@@ -173,7 +172,7 @@ public sealed class ChiefRecruitButton : TownOfUsRoleButton<ChiefRole, PlayerCon
             "CrewButton"
         );
         
-        PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.ChiefUseRecruit);
+        //todo: PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.ChiefUseRecruit);
 
         ChiefRole.Recruits.Add(Recruit);
         Recruit = null;

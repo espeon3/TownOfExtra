@@ -4,10 +4,9 @@ using MiraAPI.Events.Vanilla.Meeting;
 using MiraAPI.GameOptions;
 using MiraAPI.Hud;
 using MiraAPI.Modifiers;
-using TownOfExtra.Achievements;
+//todo: using TownOfExtra.Achievements;
 using TownOfExtra.Buttons;
 using TownOfExtra.Modifiers.Excluded;
-using TownOfExtra.Networking.Global;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Impostor.Power;
 using TownOfUs.Networking;
@@ -89,7 +88,7 @@ public class VinculatorEvents
                 {
                     if (p.Data.Role is VinculatorRole)
                     {
-                        p.RpcAwardAchievement(AApi.GetInstance()?.VinculatorLinkedVotedOut);
+                        //todo: p.RpcAwardAchievement(AApi.GetInstance()?.VinculatorLinkedVotedOut);
                     }
                 }
             }

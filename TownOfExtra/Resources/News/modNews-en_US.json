@@ -375,7 +375,7 @@
       ]
     },
     {
-      "Date": "2026-07-03T11:50:00Z",
+      "Date": "2026-07-12T00:05:00Z",
       "Number": "124",
       "ShortTitle": "TownOfExtra v1.2.4",
       "Title": "TownOfExtra v1.2.4",
@@ -389,7 +389,6 @@
         "\n\n\r<size=105%>New Modifiers:</size>",
         "\n- A new Impostor Utility modifier has been added: Embrittlement",
         "\n\n\r<size=105%>Additions:</size>",
-        "\n- Added support for Achievements API! (optional, if you want to be able to unlock them, <link=https://github.com/am-clonec/Achievements-API/releases/tag/latest>download achievements api here</link>",
         "\n- Added an option for shifter to shift modifiers with the target",
         "\n- Added more cleansable effects to cleric",
         "\n\n\r<size=105%>Changes:</size>",
