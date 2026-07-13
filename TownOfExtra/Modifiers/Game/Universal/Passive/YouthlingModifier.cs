@@ -1,8 +1,10 @@
 ﻿using MiraAPI.GameOptions;
+using MiraAPI.Modifiers;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Options;
 using TownOfUs.Interfaces;
 using TownOfUs.Modifiers.Game;
+using TownOfUs.Modifiers.Game.Universal;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles.Crewmate;
 using TownOfUs.Roles.Neutral;
@@ -19,6 +21,7 @@ public class YouthlingModifier : TouGameModifier, IWikiDiscoverable, IColoredMod
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.YouthlingModifierIcon;
     public Color ModifierColor => TownOfExtraColours.YouthlingModifierColour;
     public override Color FreeplayFileColor => TownOfExtraColours.YouthlingModifierColour;
+    public override bool PreventsOtherModifiers => true;
 
     public override string GetDescription()
     {
