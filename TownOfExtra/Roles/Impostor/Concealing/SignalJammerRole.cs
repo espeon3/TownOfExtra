@@ -2,6 +2,7 @@
 using AmongUs.GameOptions;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
+using TownOfExtra.Modules;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
@@ -19,7 +20,7 @@ public sealed class SignalJammerRole : ImpostorRole, ITownOfUsRole, IWikiDiscove
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorConcealing;
-    public DoomableType DoomHintType => DoomableType.Default;
+    public DoomableType DoomHintType => DoomableType.Protective;
     public RoleBehaviour CrewVariant =>
         RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<SpyRole>());
 

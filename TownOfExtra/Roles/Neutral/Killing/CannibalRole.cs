@@ -6,6 +6,7 @@ using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
+using TownOfExtra.Modules;
 using TownOfExtra.Options.Roles;
 using TownOfUs.Assets;
 using TownOfUs.Extensions;
@@ -25,7 +26,7 @@ public sealed class CannibalRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUs
     public Color RoleColor => TownOfExtraColours.CannibalRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
-    public DoomableType DoomHintType => DoomableType.Death;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExFearmonger;
     
     public static List<byte> EatenPlayers = new List<byte>();
     public static byte? CannibalId = null;

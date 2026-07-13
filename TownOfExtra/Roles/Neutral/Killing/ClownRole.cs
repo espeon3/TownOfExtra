@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using AmongUs.GameOptions;
-using TownOfExtra.Options.Roles;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
+using MiraAPI.Utilities;
 using TownOfExtra.Modules;
-using TownOfUs;
+using TownOfExtra.Options.Roles;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
@@ -16,21 +16,19 @@ using TownOfUs.Roles.Neutral;
 using TownOfUs.Utilities;
 using UnityEngine;
 
-namespace TownOfExtra.Roles.Neutral.Evil;
+namespace TownOfExtra.Roles.Neutral.Killing;
 
-public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
+public sealed class ClownRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, ICrewVariant
 {
-    public string RoleName => "Vulture";
-    public string RoleDescription => "Eat the bodies of dead crewmates!";
+    public string RoleName => "Clown";
+    public string RoleDescription => "Clown around with your jack-in-the-boxes";
     public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => TownOfExtraColours.VultureRoleColour;
+    public Color RoleColor => TownOfExtraColours.ClownRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
-    public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
-    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExDeath;
+    public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExTrickster;
     public RoleBehaviour CrewVariant =>
-        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<AltruistRole>());
-
-    public static int DeadBodiesEaten;
+        RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<PlumberRole>());
 
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {
@@ -39,34 +37,24 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
             return;
         }
         ImportantTextTask orCreateTask = PlayerTask.GetOrCreateTask<ImportantTextTask>(playerControl);
-        orCreateTask.Text = $"{TownOfExtraColours.VultureRoleColour.ToTextColor()}Eat {OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded} dead bod{((int)OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded != 1 ? "ies" : "y")} to win!</color>\n{TownOfExtraColours.VultureRoleColour.ToTextColor()}Fake Tasks:</color>";
+        orCreateTask.Text = $"{TownOfExtraColours.ClownRoleColour.ToTextColor()}Be the last killer alive, at all costs.</color>\n{TownOfExtraColours.ClownRoleColour.ToTextColor()}Fake Tasks:</color>";
         orCreateTask.name = "NeutralRoleText";
-    }
-    
-    [HideFromIl2Cpp]
-    public StringBuilder SetTabText()
-    {
-        var stringB = ITownOfUsRole.SetNewTabText(this);
-
-        stringB.Append(TownOfUsPlugin.Culture, $"\n<b>Bodies Eaten: {DeadBodiesEaten}/{OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded}</color>");
-
-        return stringB;
     }
     
     public string GetAdvancedDescription()
     {
         return
-            "The Vulture is a Neutral Evil role that has to eat a specific number of dead bodies to win." +
+            "The Clown is a Neutral Killing role which can place 3 jack-in-the-boxes which when placed, act as 3 linked vents, only usable by the Clown." +
             MiscUtils.AppendOptionsText(GetType());
     }
 
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
-        MaxRoleCount = 1,
-        Icon = TownOfExtraAssets.VultureRoleIcon,
+        Icon = TownOfExtraAssets.ClownRoleIcon,
+        CanUseVent = OptionGroupSingleton<SquidRoleOptions>.Instance.CanVent,
         GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>()
     };
-
+    
     [HideFromIl2Cpp]
     public List<CustomButtonWikiDescription> Abilities
     {
@@ -74,19 +62,21 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
         {
             return new List<CustomButtonWikiDescription>
             {
-                new("Eat", "Eat a dead body.", TownOfExtraAssets.VultureEatButton)
+                new("Place", "Place a jack-in-the-box.", TownOfExtraAssets.ClownPlaceButton)
             };
         }
     }
     
     public bool WinConditionMet()
     {
-        if (Player.HasDied())
+        var clownAmount = CustomRoleUtils.GetActiveRolesOfType<ClownRole>().Count(x => !x.Player.HasDied());
+
+        if (MiscUtils.KillersAliveCount > clownAmount)
         {
             return false;
         }
 
-        return DeadBodiesEaten >= OptionGroupSingleton<VultureRoleOptions>.Instance.EatenBodiesNeeded;
+        return clownAmount >= Helpers.GetAlivePlayers().Count - clownAmount;
     }
 
     public override bool DidWin(GameOverReason gameOverReason)

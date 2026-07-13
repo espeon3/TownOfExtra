@@ -5,6 +5,7 @@ using AmongUs.GameOptions;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
+using TownOfExtra.Modules;
 using TownOfExtra.Options.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
@@ -25,7 +26,7 @@ public sealed class TricksterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfU
     public Color RoleColor => TownOfExtraColours.TricksterRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
-    public DoomableType DoomHintType => DoomableType.Death;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExDeath;
     public RoleBehaviour CrewVariant =>
         RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<AltruistRole>());
 

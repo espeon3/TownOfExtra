@@ -1,5 +1,6 @@
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
+using TownOfExtra.Modules;
 using TownOfExtra.Options.Roles;
 using TownOfUs.Extensions;
 using TownOfUs.Interfaces;
@@ -18,7 +19,7 @@ public sealed class BloodlustRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverab
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorKilling;
-    public DoomableType DoomHintType => DoomableType.Fearmonger;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExFearmonger;
     public bool IsUnlovable => true;
 
     public string GetAdvancedDescription()

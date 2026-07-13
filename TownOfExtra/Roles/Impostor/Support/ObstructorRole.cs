@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
+using TownOfExtra.Modules;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
@@ -17,7 +18,7 @@ public sealed class ObstructorRole : ImpostorRole, ITownOfUsRole, IWikiDiscovera
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorSupport;
-    public DoomableType DoomHintType => DoomableType.Default;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExFearmonger;
 
     public string GetAdvancedDescription()
     {

@@ -2,6 +2,7 @@
 using System.Text;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
+using TownOfExtra.Modules;
 using TownOfUs;
 using TownOfUs.Extensions;
 using TownOfUs.Modules;
@@ -20,7 +21,7 @@ public sealed class ChiefRole : CrewmateRole, ITouCrewRole, IWikiDiscoverable, I
     public Color RoleColor => TownOfExtraColours.ChiefRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Crewmate;
     public RoleAlignment RoleAlignment => RoleAlignment.CrewmatePower;
-    public DoomableType DoomHintType => DoomableType.Hunter;
+    public DoomableType DoomHintType => DoomableType.Relentless;
     public bool IsPowerCrew => false;
 
     public static List<PlayerControl> Recruits = new List<PlayerControl>();

@@ -7,6 +7,7 @@ using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
+using TownOfExtra.Modules;
 using TownOfExtra.Options.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
@@ -26,7 +27,7 @@ public sealed class ShadowWalkerRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITown
     public Color RoleColor => TownOfExtraColours.ShadowWalkerRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
-    public DoomableType DoomHintType => DoomableType.Fearmonger;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExFearmonger;
 
     public static int CdIncrease = 0;
     public static bool Enshrouded = false;

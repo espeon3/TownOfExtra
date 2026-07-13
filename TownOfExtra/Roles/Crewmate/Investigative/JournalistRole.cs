@@ -4,6 +4,7 @@ using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
 using TownOfExtra.Modifiers.Excluded;
+using TownOfExtra.Modules;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
