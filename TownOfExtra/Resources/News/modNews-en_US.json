@@ -386,6 +386,7 @@
         "\n\n★ <link=https://discord.gg/y2GN5Q4fzb>Join Discord</link> ★ <link=https://toex.freehosting.dev/docs>Role/Modifier Info</link> ★",
         "\n\n\r<size=105%>New Roles:</size>",
         "\n- A new Impostor Killing role has been added: Bloodlust (idea: <link=https://github.com/Mehzxzz/TownOfExtra/pull/14>#14</link>)",
+        "\n- A new Neutral Killing role has been added: Clown",
         "\n\n\r<size=105%>New Modifiers:</size>",
         "\n- A new Impostor Utility modifier has been added: Embrittlement",
         "\n- A new Universal Passive modifier has been added: Youthling",
@@ -406,7 +407,8 @@
         "\n- Fixed imitator shifting with shifter properly",
         "\n- Fixed shifter being able to shift into the same target multiple times, therefore letting them expose impostors to the crew",
         "\n- Cleric's cleanse button now shows all toex effects in the wiki",
-        "\n- Fixed chief not being counted as a powerful crew (game still ends when powerful crew continue is on)"
+        "\n- Fixed chief not being counted as a powerful crew (game still ends when powerful crew continue is on)",
+        "\n- Fixed cannibal's kill button having the same logic as an impostor's"
       ]
     }
   ]

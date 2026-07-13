@@ -30,6 +30,8 @@ public sealed class ClownRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
     public RoleBehaviour CrewVariant =>
         RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<PlumberRole>());
 
+    [HideFromIl2Cpp] public List<Vent> Vents { get; set; } = [];
+    
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {
         if (playerControl != PlayerControl.LocalPlayer)
@@ -51,7 +53,7 @@ public sealed class ClownRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
     public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
     {
         Icon = TownOfExtraAssets.ClownRoleIcon,
-        CanUseVent = OptionGroupSingleton<SquidRoleOptions>.Instance.CanVent,
+        CanUseVent = true,
         GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>()
     };
     

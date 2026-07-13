@@ -304,7 +304,7 @@ public static class TownOfExtraAssets
     public static LoadableAsset<Sprite> SquidInkPuddle =>
         new LoadableResourceAsset($"{NeutMiscPath}.SquidInkPuddle.png", 230);
     public static LoadableAsset<Sprite> ClownJackInTheBox =>
-        new LoadableResourceAsset($"{NeutMiscPath}.ClownJackInTheBox.png");
+        new LoadableResourceAsset($"{NeutMiscPath}.ClownJackInTheBox.png", 200);
 
 
 
