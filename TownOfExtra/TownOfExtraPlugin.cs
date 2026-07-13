@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using AchievementsAPI;
+//todo: using AchievementsAPI;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
@@ -11,7 +11,6 @@ using Reactor;
 using Reactor.Networking;
 using Reactor.Networking.Attributes;
 using Reactor.Utilities;
-using TownOfExtra.Modules;
 using TownOfExtra.Patches;
 using TownOfUs.Modules.Localization;
 
@@ -60,13 +59,14 @@ public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
         TerminologyPatches.RegisterToExTerms();
         TerminologyIconRegistry.RegisterIcons();
         
-        if (ModCompat.IsLoaded(ModCompat.AApiId, out _))
+        //todo: this
+        /*if (ModCompat.IsLoaded(ModCompat.AApiId, out _))
         {
             Logger.LogInfo("AchievementsAPI found, achievements will be available!");
         }
         else
         {
             Logger.LogWarning("Failed to find AchievementsAPI, achievements will not be available.");
-        }
+        }*/
     }
 }

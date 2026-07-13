@@ -24,13 +24,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Reference Include="AchievementsAPI">
-            <HintPath>..\References\AchievementsAPI.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
         <EmbeddedResource Include="Resources\**\*" />
     </ItemGroup>
 

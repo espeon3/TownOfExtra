@@ -1,4 +1,4 @@
-﻿using AchievementsAPI.API;
+﻿//todo: using AchievementsAPI.API;
 using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
 using Reactor.Networking.Attributes;
@@ -61,19 +61,19 @@ public static class GlobalRpcs
         notif.AdjustNotification();
     }
 
-    [MethodRpc((uint)TownOfExtraRpcs.AwardAchievement)]
+    /*[MethodRpc((uint)TownOfExtraRpcs.AwardAchievement)]
     public static void RpcAwardAchievement(this PlayerControl p, BaseAchievement achievement)
     {
         if (PlayerControl.LocalPlayer != p) return;
         
         //todo: AApi.AwardAchievement(achievement);
-    }
+    }*/
     
-    [MethodRpc((uint)TownOfExtraRpcs.IncrementAchievement)]
+    /*[MethodRpc((uint)TownOfExtraRpcs.IncrementAchievement)]
     public static void RpcIncrementAchievement(this PlayerControl p, CountAchievement achievement, int increment)
     {
         if (PlayerControl.LocalPlayer != p) return;
         
         //todo: AApi.IncrementAchievement(achievement, increment);
-    }
+    }*/
 }
