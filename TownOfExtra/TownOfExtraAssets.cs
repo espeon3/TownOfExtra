@@ -298,6 +298,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutButtonPath}.BarbarianAttackButton.png");
     public static LoadableAsset<Sprite> ClownPlaceButton =>
         new LoadableResourceAsset($"{NeutButtonPath}.ClownPlaceButton.png");
+    public static LoadableAsset<Sprite> ClownKillButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.ClownKillButton.png");
     
     // --- Misc ---
     

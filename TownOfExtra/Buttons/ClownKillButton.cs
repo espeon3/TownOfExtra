@@ -12,13 +12,13 @@ using UnityEngine;
 
 namespace TownOfExtra.Buttons;
 
-public sealed class SquidKillButton : TownOfUsKillRoleButton<SquidRole, PlayerControl>, IDiseaseableButton, IKillButton
+public sealed class ClownKillButton : TownOfUsKillRoleButton<ClownRole, PlayerControl>, IDiseaseableButton, IKillButton
 {
     public override string Name => "Kill";
     public override BaseKeybind Keybind => Keybinds.PrimaryAction;
-    public override Color TextOutlineColor => TownOfExtraColours.SquidRoleColour;
-    public override float Cooldown => OptionGroupSingleton<SquidRoleOptions>.Instance.KillCooldown;
-    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.SquidKillButton;
+    public override Color TextOutlineColor => TownOfExtraColours.ClownRoleColour;
+    public override float Cooldown => OptionGroupSingleton<ClownRoleOptions>.Instance.KillCooldown;
+    public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.ClownKillButton;
 
     public void SetDiseasedTimer(float multiplier)
     {
