@@ -94,6 +94,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{CrewModModIconPath}.ObservantModifierIcon.png", 200);
     public static LoadableAsset<Sprite> ClumsyModifierIcon =>
         new LoadableResourceAsset($"{CrewModModIconPath}.ClumsyModifierIcon.png", 200);
+    public static LoadableAsset<Sprite> RelentlessModifierIcon =>
+        new LoadableResourceAsset($"{CrewModModIconPath}.RelentlessModifierIcon.png", 200);
     
     // Passive
     public static LoadableAsset<Sprite> PanicShieldModifierIcon =>
@@ -263,6 +265,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutRoleIconPath}.CannibalRoleIcon.png");
     public static LoadableAsset<Sprite> BarbarianRoleIcon =>
         new LoadableResourceAsset($"{NeutRoleIconPath}.BarbarianRoleIcon.png", 200);
+    public static LoadableAsset<Sprite> ClownRoleIcon =>
+        new LoadableResourceAsset($"{NeutRoleIconPath}.ClownRoleIcon.png", 200);
 
     // --- Buttons ---
 
@@ -292,11 +296,15 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutButtonPath}.BarbarianTargetButton.png", 200);
     public static LoadableAsset<Sprite> BarbarianAttackButton =>
         new LoadableResourceAsset($"{NeutButtonPath}.BarbarianAttackButton.png");
+    public static LoadableAsset<Sprite> ClownPlaceButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.ClownPlaceButton.png");
     
     // --- Misc ---
     
     public static LoadableAsset<Sprite> SquidInkPuddle =>
         new LoadableResourceAsset($"{NeutMiscPath}.SquidInkPuddle.png", 230);
+    public static LoadableAsset<Sprite> ClownJackInTheBox =>
+        new LoadableResourceAsset($"{NeutMiscPath}.ClownJackInTheBox.png");
 
 
 
@@ -313,6 +321,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{UniModModIconPath}.ApoliticalModifierIcon.png", 200);
     public static LoadableAsset<Sprite> MuteModifierIcon =>
         new LoadableResourceAsset($"{UniModModIconPath}.MuteModifierIcon.png", 200);
+    public static LoadableAsset<Sprite> YouthlingModifierIcon =>
+        new LoadableResourceAsset($"{UniModModIconPath}.YouthlingModifierIcon.png", 200);
 
 
 
