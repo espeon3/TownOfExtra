@@ -411,6 +411,23 @@
         "\n- Fixed chief not being counted as a powerful crew (game still ends when powerful crew continue is on)",
         "\n- Fixed cannibal's kill button having the same logic as an impostor's"
       ]
+    },
+    {
+      "Date": "2026-07-14T16:00:00Z",
+      "Number": "1241",
+      "ShortTitle": "TownOfExtra v1.2.4.1",
+      "Title": "TownOfExtra v1.2.4.1",
+      "SubTitle": "",
+      "Text": [
+        "\r<b>TownOfExtra has updated to v1.2.4.1</b>",
+        "\n\nThank you for playing the mod!",
+        "\n\n★ <link=https://discord.gg/y2GN5Q4fzb>Join Discord</link> ★ <link=https://toex.freehosting.dev/docs>Role/Modifier Info</link> ★",
+        "\n\n\r<size=125%>This is a quick hotfix. Read above for v1.2.4.1 changelog.</size>",
+        "\n\n\r<size=105%>Changes:</size>",
+        "\n- Removed conjurer's crushed dead body",
+        "\n\n\r<size=105%>Bugfixes:</size>",
+        "\n- Fixed universal modifiers being guessable"
+      ]
     }
   ]
 }
