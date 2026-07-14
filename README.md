@@ -60,13 +60,13 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
   <a href="https://toex.freehosting.dev/docs#/item/ee86e0c55621"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/ShockwaveModifierIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs#/item/b27418776be0"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/RebirthModifierIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs#/item/5ddb0ae66211"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/EmbrittlementModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NonCrewMods.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/c81cf4a56ca8"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/NonCrew/ModifierIcons/ScourgeRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/UniMods.png" /></a>
   <a href="https://toex.freehosting.dev/docs#/item/441003f55bd2"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/SoullessModifierIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs#/item/eba9cdfeb389"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/ApoliticalModifierIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs#/item/39998647dc3d"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/MuteModifierIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs#/item/7dd3620af59a"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/YouthlingModifierIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NonCrewMods.png" /></a>
-  <a href="https://toex.freehosting.dev/docs#/item/c81cf4a56ca8"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/NonCrew/ModifierIcons/ScourgeRoleIcon.png" /></a>
 </p>
 
 -----------------------
