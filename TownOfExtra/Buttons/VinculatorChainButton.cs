@@ -28,6 +28,8 @@ public sealed class VinculatorChainButton : TownOfUsRoleButton<VinculatorRole>
 
     public override bool CanUse()
     {
+        base.CanUse();
+        
         bool zeroUses = UsesLeft <= 0 && MaxUses != 0;
         return Timer <= 0 && !zeroUses && !_inMenu;
     }
