@@ -16,52 +16,57 @@ A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod
 
 <p align="center">
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpKilling.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/PoisonerRoleIcon.png" /></a>
-<a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/KnifeThrowerRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/TaggerRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/StrikerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/a6bb39fa224c"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/PoisonerRoleIcon.png" /></a>
+<a href="https://toex.freehosting.dev/docs#/item/94652b42ecab"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/TaggerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/ca2529a3b358"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/StrikerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/dd58e9638408"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/BloodlustRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpSupport.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/FreezerRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/GamblerRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/ObstructorRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/ece7c1cbecc8"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/FreezerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/7962d69c63b7"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/GamblerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/cb041f9b6b95"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/ObstructorRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpConcealing.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/SignalJammerRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/HolographerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/fe82300dfa6b"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/SignalJammerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/e4cc93c6c7ae"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/HolographerRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpPower.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/EraserRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/VinculatorRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/ConjurerRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/DreamCasterRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/6b66455ad565"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/EraserRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/4374efe78e22"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/VinculatorRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/3f9cbabbb1cd"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/ConjurerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/bf71472892ae"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Imp/RoleIcons/DreamCasterRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/CrewKilling.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Crew/RoleIcons/CommanderRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/381e0f13843c"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Crew/RoleIcons/CommanderRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/CrewPower.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Crew/RoleIcons/ChiefRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Crew/RoleIcons/JournalistRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/eb08506dfa13"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Crew/RoleIcons/ChiefRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/556349f8da18"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Crew/RoleIcons/JournalistRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NeutEvil.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/TricksterRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/VultureRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/PoltergeistRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/a970d0912c8f"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/TricksterRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/848ece302c8e"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/VultureRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/97ecf5bb9658"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/PoltergeistRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NeutKilling.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/BarbarianRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/CannibalRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/SquidRoleIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/ShadowWalkerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/69aaf8a77abe"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/BarbarianRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/081ffc055fe5"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/CannibalRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/ee3331f1b0a1"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/SquidRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/6a3f6a158450"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/ShadowWalkerRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/04aef1100b83"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/ClownRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NeutOutlier.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/ShifterRoleIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/c627230ca4e6"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Neut/RoleIcons/ShifterRoleIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/CrewMods.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/HeavyWorkloadModifierIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/RoutineModifierIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/BrittleModifierIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/ClumsyModifierIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/ObservantModifierIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/PanicShieldModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/4f7ebe0548c3"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/HeavyWorkloadModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/86e61794ebf2"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/RoutineModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/a9796d7f17fd"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/BrittleModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/eaee1a193bd2"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/ClumsyModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/b9f87891a735"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/ObservantModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/75a4a2076662"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Crew/ModifierIcons/PanicShieldModifierIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/ImpMods.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/ShockwaveModifierIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/RebirthModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/ee86e0c55621"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/ShockwaveModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/b27418776be0"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/RebirthModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/5ddb0ae66211"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Imp/ModifierIcons/EmbrittlementModifierIcon.png" /></a>
   <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/UniMods.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/SoullessModifierIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/ApoliticalModifierIcon.png" /></a>
-  <a href="https://toex.freehosting.dev/docs"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/MuteModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/441003f55bd2"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/SoullessModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/eba9cdfeb389"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/ApoliticalModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/39998647dc3d"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/MuteModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/7dd3620af59a"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/Uni/ModifierIcons/YouthlingModifierIcon.png" /></a>
+  <a href="https://toex.freehosting.dev/docs"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Headers/NonCrewMods.png" /></a>
+  <a href="https://toex.freehosting.dev/docs#/item/c81cf4a56ca8"><img width="10%" src="https://github.com/Mehzxzz/TownOfExtra/blob/master/TownOfExtra/Resources/Modifiers/NonCrew/ModifierIcons/ScourgeRoleIcon.png" /></a>
 </p>
 
 -----------------------
