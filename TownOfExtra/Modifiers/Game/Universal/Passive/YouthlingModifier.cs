@@ -1,5 +1,6 @@
 ﻿using MiraAPI.GameOptions;
 using MiraAPI.Utilities.Assets;
+using TownOfExtra.Modules;
 using TownOfExtra.Options;
 using TownOfUs.Interfaces;
 using TownOfUs.Modifiers.Game;
@@ -11,7 +12,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Game.Universal.Passive;
 
-public class YouthlingModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier, IVisualAppearance
+public class YouthlingModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier, IVisualAppearance, IUnguessableModifier
 {
     public override string ModifierName => "Youthling";
     public override ModifierFaction FactionType => ModifierFaction.UniversalPassive;
@@ -20,6 +21,7 @@ public class YouthlingModifier : TouGameModifier, IWikiDiscoverable, IColoredMod
     public Color ModifierColor => TownOfExtraColours.YouthlingModifierColour;
     public override Color FreeplayFileColor => TownOfExtraColours.YouthlingModifierColour;
     public override bool PreventsOtherModifiers => true;
+    public bool IsGuessable => false;
 
     public override string GetDescription()
     {
