@@ -42,6 +42,10 @@ public static class TownOfExtraAssets
     public static string UniModModIconPath => "TownOfExtra.Resources.Modifiers.Uni.ModifierIcons";
     public static string UniModButtonPath => "TownOfExtra.Resources.Modifiers.Uni.Buttons";
     public static string UniModMiscPath => "TownOfExtra.Resources.Modifiers.Uni.Misc";
+    
+    public static string NonCrewModModIconPath => "TownOfExtra.Resources.Modifiers.NonCrew.ModifierIcons";
+    public static string NonCrewModButtonPath => "TownOfExtra.Resources.Modifiers.NonCrew.Buttons";
+    public static string NonCrewModMiscPath => "TownOfExtra.Resources.Modifiers.NonCrew.Misc";
 
     // ---- General Misc Path ----
     public static string MiscPath => "TownOfExtra.Resources.Misc";
@@ -183,8 +187,6 @@ public static class TownOfExtraAssets
     // Passive
     public static LoadableAsset<Sprite> RebirthModifierIcon =>
         new LoadableResourceAsset($"{ImpModModIconPath}.RebirthModifierIcon.png");
-    public static LoadableAsset<Sprite> ScourgeModifierIcon =>
-        new LoadableResourceAsset($"{MiscModModIconPath}.ScourgeRoleIcon.png");
     
     // Buttons
     public static LoadableAsset<Sprite> ShockwaveShockwaveButton =>
@@ -325,7 +327,19 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{UniModModIconPath}.MuteModifierIcon.png", 200);
     public static LoadableAsset<Sprite> YouthlingModifierIcon =>
         new LoadableResourceAsset($"{UniModModIconPath}.YouthlingModifierIcon.png", 200);
+    
+    
+    
+    // ===============================================================
+    //                         NON CREW
+    // ===============================================================
 
+    // --- Modifiers ---
+
+    // Passive
+    public static LoadableAsset<Sprite> ScourgeModifierIcon =>
+        new LoadableResourceAsset($"{NonCrewModModIconPath}.ScourgeRoleIcon.png");
+    
 
 
     // ===============================================================

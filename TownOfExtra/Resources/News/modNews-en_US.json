@@ -390,6 +390,7 @@
         "\n\n\r<size=105%>New Modifiers:</size>",
         "\n- A new Impostor Utility modifier has been added: Embrittlement",
         "\n- A new Universal Passive modifier has been added: Youthling",
+        "\n- A new Non Crew Passive modifier has been added: Scourge",
         "\n\n\r<size=105%>Additions:</size>",
         "\n- Added an option for shifter to shift modifiers with the target",
         "\n- Added more cleansable effects to cleric",

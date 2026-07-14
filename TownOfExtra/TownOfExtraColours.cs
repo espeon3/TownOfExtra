@@ -41,6 +41,7 @@ public class TownOfExtraColours
     public static Color PanicShieldModifierColour => new Color32(116, 206, 84, 255);
     public static Color EmbrittlementModifierColour => new Color32(169, 198, 205, 255);
     public static Color YouthlingModifierColour => new Color32(219, 181, 123, 255);
+    public static Color ScourgeModifierColour => new Color32(126, 112, 143, 255);
     public static Color RelentlessModifierColour => new Color32(126, 83, 83, 255);
 
 
