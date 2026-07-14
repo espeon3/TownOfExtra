@@ -51,10 +51,10 @@ public static class ConjurerRpcs
                 
                 if (Vector2.Distance(p.transform.position, pos) < 0.5f)
                 { 
-                    sender.RpcSpecialMurder(p, true, true, teleportMurderer: false, showKillAnim: false, createDeadBody: false, causeOfDeath: "Crushed");
+                    sender.RpcSpecialMurder(p, true, true, teleportMurderer: false, showKillAnim: false, createDeadBody: true, causeOfDeath: "Crushed");
                     //todo: sender.RpcAwardAchievement(AApi.GetInstance()?.ConjurerDropRockOnPlayer);
                     
-                    var body = new GameObject();
+                    /*var body = new GameObject();
                     body.AddComponent<SquashedBody>();
                     var sRenderer = body.AddComponent<SpriteRenderer>();
                     sRenderer.sprite = TownOfExtraAssets.SquashedDeadBodySprite.LoadAsset();
@@ -68,7 +68,7 @@ public static class ConjurerRpcs
                     visor.transform.SetParent(body.transform);
                     visor.transform.localPosition = Vector3.zero;
                     var osRenderer = visor.AddComponent<SpriteRenderer>();
-                    osRenderer.sprite = TownOfExtraAssets.SquashedDeadBodySpriteVisor.LoadAsset();
+                    osRenderer.sprite = TownOfExtraAssets.SquashedDeadBodySpriteVisor.LoadAsset();*/
                     
                     break;
                 }
