@@ -413,7 +413,7 @@
       ]
     },
     {
-      "Date": "2026-07-14T16:00:00Z",
+      "Date": "2026-07-14T16:10:00Z",
       "Number": "1241",
       "ShortTitle": "TownOfExtra v1.2.4.1",
       "Title": "TownOfExtra v1.2.4.1",
@@ -426,7 +426,8 @@
         "\n\n\r<size=105%>Changes:</size>",
         "\n- Removed conjurer's crushed dead body",
         "\n\n\r<size=105%>Bugfixes:</size>",
-        "\n- Fixed universal modifiers being guessable"
+        "\n- Fixed universal modifiers being guessable",
+        "\n- Fixed vinculator being able to use abilities mid meeting"
       ]
     }
   ]
