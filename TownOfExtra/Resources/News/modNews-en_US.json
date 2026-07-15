@@ -429,6 +429,20 @@
         "\n- Fixed universal modifiers being guessable",
         "\n- Fixed vinculator being able to use abilities mid meeting"
       ]
+    },
+    {
+      "Date": "2026-07-14T16:10:00Z",
+      "Number": "125",
+      "ShortTitle": "TownOfExtra v1.2.5",
+      "Title": "TownOfExtra v1.2.5",
+      "SubTitle": "",
+      "Text": [
+        "\r<b>TownOfExtra has updated to v1.2.5</b>",
+        "\n\nThank you for playing the mod!",
+        "\n\n★ <link=https://discord.gg/y2GN5Q4fzb>Join Discord</link> ★ <link=https://toex.freehosting.dev/docs>Role/Modifier Info</link> ★",
+        "\n\n\r<size=105%>Additions:</size>",
+        "\n- Added an update checker"
+      ]
     }
   ]
 }
