@@ -18,12 +18,12 @@ using Random = UnityEngine.Random;
 
 namespace TownOfExtra.Modules;
 
-public sealed class FakePlayer : IDisposable
+public sealed class CustomLocFakePlayer : IDisposable
 {
     private const string DefaultPetName = "EmptyPet(Clone)";
     private const string NameTextObjName = "NameText_TMP";
     private const string ColorBindTextName = "ColorblindName_TMP";
-    public static readonly List<FakePlayer> FakePlayers = [];
+    public static readonly List<CustomLocFakePlayer> FakePlayers = [];
     private readonly CosmeticsLayer _cosmeticsLayer;
 
     private readonly PlayerCosmicInfo _cosmicInfo;
@@ -34,7 +34,7 @@ public sealed class FakePlayer : IDisposable
     private GameObject _colorBindTextObj;
     private TextMeshPro _nameTextMaster;
 
-    public FakePlayer(PlayerControl player, Vector3 vector)
+    public CustomLocFakePlayer(PlayerControl player, Vector3 vector)
     {
         var playerOutfit = player.Data.DefaultOutfit;
 

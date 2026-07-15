@@ -14,15 +14,15 @@ public class HolographerRpcs
     public static void RpcSpawnFakePlayer(PlayerControl target, float x, float y, float z)
     {
         var vector = new Vector3(x, y, x);
-        var fakePlayer = new FakePlayer(target, vector);
+        var fakePlayer = new CustomLocFakePlayer(target, vector);
         Coroutines.Start(DestroyFakePlayer(fakePlayer));
     }
     
-    private static IEnumerator DestroyFakePlayer(FakePlayer fakePlayer)
+    private static IEnumerator DestroyFakePlayer(CustomLocFakePlayer customLocFakePlayer)
     {
         float duration = OptionGroupSingleton<HolographerRoleOptions>.Instance.HologramDuration;
         yield return new WaitForSeconds(duration);
 
-        if (fakePlayer != null) fakePlayer.Destroy();
+        if (customLocFakePlayer != null) customLocFakePlayer.Destroy();
     }
 }

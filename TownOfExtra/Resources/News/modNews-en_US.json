@@ -441,7 +441,9 @@
         "\n\nThank you for playing the mod!",
         "\n\n★ <link=https://discord.gg/y2GN5Q4fzb>Join Discord</link> ★ <link=https://toex.freehosting.dev/docs>Role/Modifier Info</link> ★",
         "\n\n\r<size=105%>Additions:</size>",
-        "\n- Added an update checker"
+        "\n- Added an update checker",
+        "\n\n\r<size=105%>Bugfixes:</size>",
+        "\n- Fixed soulless breaking in some scenarios"
       ]
     }
   ]
