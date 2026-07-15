@@ -2,6 +2,7 @@
 using MiraAPI.Hud;
 using MiraAPI.Keybinds;
 using MiraAPI.Modifiers;
+using MiraAPI.Networking;
 using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Modifiers.Excluded;
@@ -28,6 +29,8 @@ public sealed class VinculatorChainButton : TownOfUsRoleButton<VinculatorRole>
 
     public override bool CanUse()
     {
+        if (MeetingHud.Instance) return false;
+        
         bool zeroUses = UsesLeft <= 0 && MaxUses != 0;
         return Timer <= 0 && !zeroUses && !_inMenu;
     }

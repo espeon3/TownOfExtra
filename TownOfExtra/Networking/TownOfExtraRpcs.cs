@@ -2,7 +2,9 @@
 
 public enum TownOfExtraRpcs : uint
 {
-    SendNotification = 509,
+    SendNotification = 400,
+    AwardAchievement = 401,
+    IncrementAchievement = 402,
     
     
     TricksterNotifyOfReport = 500,
@@ -14,14 +16,13 @@ public enum TownOfExtraRpcs : uint
     VinculatorEmpowerTeam = 506,
     VultureCleanBody = 507,
     VultureChangeToAmne = 508,
-    ConjurerPlaceRock = 510,
-    ConjurerAwardSplatAchievement = 511,
-    HolographerSyncFakePlayer = 512,
-    SendJournalistChat = 513,
-    SquidSpillInk = 514,
-    SquidDestroyInk = 515,
-    RebirthSendPopup = 516,
-    BarbarianNotifyTargetDeath = 517,
-    CommanderIncreaseAvengeUses = 518,
-    ObstructorTriggerObstruct = 519,
+    ConjurerPlaceRock = 509,
+    HolographerSyncFakePlayer = 510,
+    SendJournalistChat = 511,
+    SquidSpillInk = 512,
+    SquidDestroyInk = 513,
+    RebirthSendPopup = 514,
+    BarbarianNotifyTargetDeath = 515,
+    CommanderIncreaseAvengeUses = 516,
+    ObstructorTriggerObstruct = 517,
 }

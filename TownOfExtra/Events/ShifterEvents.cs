@@ -1,13 +1,18 @@
-﻿using MiraAPI.Events;
+﻿using System.Linq;
+using MiraAPI.Events;
 using MiraAPI.Events.Vanilla.Gameplay;
+using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
+//todo: using TownOfExtra.Achievements;
 using TownOfExtra.Modifiers.Excluded;
-using TownOfExtra.Networking;
 using TownOfExtra.Networking.Global;
+using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Neutral.Outlier;
 using TownOfUs.Modifiers.Crewmate;
+using TownOfUs.Modifiers.Game;
 using TownOfUs.Modifiers.Game.Alliance;
+using TownOfUs.Roles.Crewmate;
 using TownOfUs.Utilities;
 
 namespace TownOfExtra.Events;
@@ -18,12 +23,12 @@ public class ShifterEvents
     public static void RoundStartEventHandler(RoundStartEvent e)
     {
         if (!AmongUsClient.Instance.AmHost) return;
-        
+
         var shifter = GetShifter();
 
         foreach (var p in PlayerControl.AllPlayerControls)
         {
-            if (p.HasModifier<ShiftedModifier>())
+            if (p.HasModifier<WaitingOnShiftModifier>())
             {
                 if (shifter == null || p == null || p.Data.IsDead || shifter.Data.IsDead)
                 {
@@ -39,7 +44,9 @@ public class ShifterEvents
 
                     return;
                 }
-                if (shifter.HasModifier<ErasedModifier>() || shifter.HasModifier<PendingEraseModifier>() || p.HasModifier<ErasedModifier>() || p.HasModifier<PendingEraseModifier>())
+
+                if (shifter.HasModifier<ErasedModifier>() || shifter.HasModifier<PendingEraseModifier>() ||
+                    p.HasModifier<ErasedModifier>() || p.HasModifier<PendingEraseModifier>())
                 {
                     if (shifter != null)
                     {
@@ -56,21 +63,36 @@ public class ShifterEvents
 
                 var pRole = p.Data.Role.Role;
 
-                p.RpcRemoveModifier<ImitatorCacheModifier>();
-                p.RpcRemoveModifier<ShiftedModifier>();
-                p.RpcChangeRole(RoleId.Get<ShifterRole>());
-                shifter.RpcSetRole(pRole, true);
-                shifter.RpcAddModifier<ImitatorCacheModifier>();
+                if (!p.HasModifier<ImitatorCacheModifier>()) shifter.RpcSetRole(pRole, true);
+                else shifter.RpcChangeRole(RoleId.Get<ImitatorRole>());
 
-                if (p.HasModifier<EgotistModifier>())
+                p.RpcRemoveModifier<ImitatorCacheModifier>();
+                p.RpcRemoveModifier<WaitingOnShiftModifier>();
+                p.AddModifier<PreviouslyShiftedModifier>();
+                p.RpcChangeRole(RoleId.Get<ShifterRole>());
+
+                if (OptionGroupSingleton<ShifterRoleOptions>.Instance.ShiftModifiers)
                 {
-                    p.RpcRemoveModifier<EgotistModifier>();
-                    shifter.RpcAddModifier<EgotistModifier>();
-                }
-                if (p.HasModifier<CrewpostorModifier>())
-                {
-                    p.RpcRemoveModifier<CrewpostorModifier>();
-                    shifter.RpcAddModifier<CrewpostorModifier>();
+                    var pGameMods = p.GetModifiers<TouGameModifier>().ToList();
+                    var shifterGameMods = shifter.GetModifiers<TouGameModifier>().ToList();
+                    var pAllianceMods = p.GetModifiers<AllianceGameModifier>().ToList();
+                    var shifterAllianceMods = shifter.GetModifiers<AllianceGameModifier>().ToList();
+
+                    PlayerControl pLover = p.TryGetModifier<LoverModifier>(out var plvr) ? plvr.OtherLover : null;
+                    PlayerControl shifterLover = shifter.TryGetModifier<LoverModifier>(out var slvr) ? slvr.OtherLover : null;
+
+                    foreach (var mod in pGameMods) p.RpcRemoveModifier(mod.GetType());
+                    foreach (var mod in shifterGameMods) shifter.RpcRemoveModifier(mod.GetType());
+                    foreach (var mod in pAllianceMods) p.RpcRemoveModifier(mod.GetType());
+                    foreach (var mod in shifterAllianceMods) shifter.RpcRemoveModifier(mod.GetType());
+
+                    foreach (var mod in pGameMods) shifter.RpcAddModifier(mod.GetType());
+                    foreach (var mod in shifterGameMods) p.RpcAddModifier(mod.GetType());
+                    foreach (var mod in pAllianceMods.Where(m => m is not LoverModifier)) shifter.RpcAddModifier(mod.GetType());
+                    foreach (var mod in shifterAllianceMods.Where(m => m is not LoverModifier)) p.RpcAddModifier(mod.GetType());
+
+                    if (pAllianceMods.Any(m => m is LoverModifier)) Loverify(newLover: shifter, otherLover: pLover);
+                    if (shifterAllianceMods.Any(m => m is LoverModifier))  Loverify(newLover: p, otherLover: shifterLover);
                 }
 
                 p.RpcSendNotification(
@@ -79,12 +101,15 @@ public class ShifterEvents
                     "NeutRoleIcon",
                     flashColour: TownOfExtraColours.ShifterRoleColour
                 );
+                //todo: p.RpcAwardAchievement(AApi.GetInstance()?.ShifterBeShiftedWith);
+                
                 shifter.RpcSendNotification(
                     $"You have {TownOfExtraColours.ShifterRoleColour.ToTextColor()}shifted</color> your role with {p.name}!",
                     "ShifterRoleIcon",
                     "NeutRoleIcon",
                     flashColour: TownOfExtraColours.ShifterRoleColour
                 );
+                //todo: shifter.RpcAwardAchievement(AApi.GetInstance()?.ShifterShiftWithSomeone);
             }
         }
     }
@@ -100,5 +125,18 @@ public class ShifterEvents
         }
 
         return null;
+    }
+    
+    private static void Loverify(PlayerControl newLover, PlayerControl otherLover)
+    {
+        var loverMod = newLover.AddModifier<LoverModifier>();
+        if (loverMod == null) return;
+
+        loverMod.OtherLover = otherLover;
+
+        otherLover.TryGetModifier<LoverModifier>(out var otherLoverMod);
+        if (otherLoverMod == null) return;
+        
+        otherLoverMod.OtherLover = newLover;
     }
 }

@@ -4,6 +4,7 @@ using MiraAPI.Modifiers;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Roles.Crewmate.Killing;
 using TownOfExtra.Roles.Crewmate.Power;
+using TownOfExtra.Roles.Crewmate.Investigative;
 using TownOfExtra.Roles.Impostor.Killing;
 using TownOfExtra.Roles.Impostor.Power;
 using TownOfExtra.Roles.Neutral.Evil;
@@ -99,7 +100,7 @@ internal sealed class PendingSwitchIcon : ITerminologyIcon
 {
     public string RichChunk => $"{TownOfExtraColours.ShifterRoleColour.ToTextColor()}⇆</color>";
     public bool ShouldShow(PlayerControl local, PlayerControl row) =>
-        row.HasModifier<ShiftedModifier>() &&
+        row.HasModifier<WaitingOnShiftModifier>() &&
         (local.GetTownOfUsRole() is ShifterRole || local.Data.IsDead);
 }
 

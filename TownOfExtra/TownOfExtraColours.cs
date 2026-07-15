@@ -8,7 +8,7 @@ namespace TownOfExtra;
 
 public class TownOfExtraColours
 {
-    public static Color CreditsColour => new Color32(240, 70, 118, 255);
+    public static Color GlobalModColour => new Color32(240, 70, 118, 255);
     
     public static bool UseBasicCrew { get; set; } = LocalSettingsTabSingleton<TownOfUsLocalRoleSettings>.Instance.UseCrewmateTeamColorToggle.Value;
     
@@ -27,6 +27,7 @@ public class TownOfExtraColours
     public static Color SquidRoleColour => new Color32(146, 84, 197, 255);
     public static Color ShadowWalkerRoleColour => new Color32(1, 1, 35, 255);
     public static Color BarbarianRoleColour => new Color32(190, 189, 173, 255);
+    public static Color ClownRoleColour => new Color32(252, 67, 212, 255);
     
     public static Color PossessedColour => new Color32(255, 235, 171, 255);
     
@@ -38,6 +39,10 @@ public class TownOfExtraColours
     public static Color ShockwaveModifierColour => new Color32(213, 167, 136, 255);
     public static Color MuteModifierColour => new Color32(96, 47, 94, 255);
     public static Color PanicShieldModifierColour => new Color32(116, 206, 84, 255);
+    public static Color EmbrittlementModifierColour => new Color32(169, 198, 205, 255);
+    public static Color YouthlingModifierColour => new Color32(219, 181, 123, 255);
+    public static Color ScourgeModifierColour => new Color32(126, 112, 143, 255);
+    public static Color RelentlessModifierColour => new Color32(126, 83, 83, 255);
 
 
     public static Color GetRoleColour(string name)

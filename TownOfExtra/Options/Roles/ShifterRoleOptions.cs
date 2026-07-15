@@ -12,13 +12,6 @@ public sealed class ShifterRoleOptions : AbstractOptionGroup<ShifterRole>
     [ModdedNumberOption("Shift Cooldown", 5f, 240f, 2.5f, MiraNumberSuffixes.Seconds)]
     public float ShiftCooldown { get; set; } = 20f;
     
-    [ModdedEnumOption("Shift Method (NOT IMPLEMENTED YET, WILL BE IN FULL RELEASE)", typeof(ShifterShiftMethod),
-        ["Next Round", "Timer"])]
-    public ShifterShiftMethod ShiftMethod { get; set; } = ShifterShiftMethod.NextRound;
-}
-
-public enum ShifterShiftMethod
-{
-    NextRound,
-    Timer,
+    [ModdedToggleOption("Shift Modifiers")]
+    public bool ShiftModifiers { get; set; } = true;
 }

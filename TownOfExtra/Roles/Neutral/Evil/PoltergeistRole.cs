@@ -7,6 +7,7 @@ using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
 using TownOfExtra.Modifiers.Excluded;
+using TownOfExtra.Modules;
 using TownOfExtra.Options.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
@@ -26,7 +27,7 @@ public sealed class PoltergeistRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownO
     public Color RoleColor => TownOfExtraColours.PoltergeistRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
-    public DoomableType DoomHintType => DoomableType.Trickster;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExHunter;
     
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {

@@ -28,6 +28,8 @@ public sealed class VinculatorEmpowerButton : TownOfUsRoleButton<VinculatorRole>
     
     public override bool CanUse()
     {
+        if (MeetingHud.Instance) return false;
+        
         int imps = 0;
         foreach (var player in PlayerControl.AllPlayerControls)
         {

@@ -1,5 +1,6 @@
 ﻿using MiraAPI.GameOptions;
 using MiraAPI.Utilities.Assets;
+using TownOfExtra.Modules;
 using TownOfExtra.Options;
 using TownOfUs;
 using TownOfUs.Interfaces;
@@ -11,7 +12,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Game.Universal.Passive;
 
-public class SoullessModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier
+public class SoullessModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier, IUnguessableModifier
 {
     public override string ModifierName => "Soulless";
     public override ModifierFaction FactionType => ModifierFaction.UniversalPassive;
@@ -19,6 +20,7 @@ public class SoullessModifier : TouGameModifier, IWikiDiscoverable, IColoredModi
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.SoullessModifierIcon;
     public Color ModifierColor => TownOfUsColors.SoulCollector;
     public override Color FreeplayFileColor => TownOfUsColors.SoulCollector;
+    public bool IsGuessable => false;
 
     public override string GetDescription() => IntroInfo;
 

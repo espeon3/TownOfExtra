@@ -4,6 +4,7 @@ using AmongUs.GameOptions;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
 using TownOfUs.Extensions;
+using TownOfUs.Interfaces;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
 using TownOfUs.Roles.Neutral;
@@ -12,17 +13,18 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Neutral.Outlier;
 
-public sealed class ShifterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, IUnguessable
+public sealed class ShifterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable, IUnguessable, IUnlovable
 {
     public string RoleName => "Shifter";
     public string RoleDescription => "Shift roles with another player!";
     public string RoleLongDescription => RoleDescription;
     public bool IsGuessable => false;
+    public bool IsUnlovable => true;
     public RoleBehaviour AppearAs => RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<ShifterRole>());
     public Color RoleColor => TownOfExtraColours.ShifterRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralOutlier;
-    public DoomableType DoomHintType => DoomableType.Trickster;
+    public DoomableType DoomHintType => DoomableType.Default;
     
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {

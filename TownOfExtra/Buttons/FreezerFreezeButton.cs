@@ -2,7 +2,7 @@
 using MiraAPI.Keybinds;
 using MiraAPI.Modifiers;
 using MiraAPI.Utilities.Assets;
-using TownOfExtra.Achievements;
+//todo: using TownOfExtra.Achievements;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Impostor.Support;
@@ -26,7 +26,7 @@ public sealed class FreezerFreezeButton : TownOfUsRoleButton<FreezerRole>
     {
         OverrideName("Freeze Active");
         
-        AApi.AwardAchievement(AApi.GetInstance()?.UseFreezeAbility);
+        //todo: PlayerControl.LocalPlayer.RpcAwardAchievement(AApi.GetInstance()?.FreezerUseAbility);
         
         foreach (var player in PlayerControl.AllPlayerControls)
         {

@@ -6,11 +6,13 @@ using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
+using TownOfExtra.Modules;
 using TownOfExtra.Options.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
 using TownOfUs.Roles;
+using TownOfUs.Roles.Crewmate;
 using TownOfUs.Roles.Neutral;
 using TownOfUs.Utilities;
 using UnityEngine;
@@ -25,7 +27,7 @@ public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
     public Color RoleColor => TownOfExtraColours.SquidRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
-    public DoomableType DoomHintType => DoomableType.Relentless;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExTrickster;
     public RoleBehaviour CrewVariant =>
         RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<ClericRole>());
 
@@ -72,14 +74,14 @@ public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
     
     public bool WinConditionMet()
     {
-        var SquidAmount = CustomRoleUtils.GetActiveRolesOfType<SquidRole>().Count(x => !x.Player.HasDied());
+        var squidAmount = CustomRoleUtils.GetActiveRolesOfType<SquidRole>().Count(x => !x.Player.HasDied());
 
-        if (MiscUtils.KillersAliveCount > SquidAmount)
+        if (MiscUtils.KillersAliveCount > squidAmount)
         {
             return false;
         }
 
-        return SquidAmount >= Helpers.GetAlivePlayers().Count - SquidAmount;
+        return squidAmount >= Helpers.GetAlivePlayers().Count - squidAmount;
     }
 
     public override bool DidWin(GameOverReason gameOverReason)

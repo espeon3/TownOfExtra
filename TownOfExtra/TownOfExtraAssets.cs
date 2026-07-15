@@ -25,6 +25,8 @@ public static class TownOfExtraAssets
     public static string NeutMiscPath => "TownOfExtra.Resources.Neut.Misc";
 
     // ---- Modifier Paths ----
+    public static string MiscModModIconPath => "TownOfExtra.Resources.Modifiers.Misc.ModifierIcons";
+    
     public static string CrewModModIconPath => "TownOfExtra.Resources.Modifiers.Crew.ModifierIcons";
     public static string CrewModButtonPath => "TownOfExtra.Resources.Modifiers.Crew.Buttons";
     public static string CrewModMiscPath => "TownOfExtra.Resources.Modifiers.Crew.Misc";
@@ -40,6 +42,10 @@ public static class TownOfExtraAssets
     public static string UniModModIconPath => "TownOfExtra.Resources.Modifiers.Uni.ModifierIcons";
     public static string UniModButtonPath => "TownOfExtra.Resources.Modifiers.Uni.Buttons";
     public static string UniModMiscPath => "TownOfExtra.Resources.Modifiers.Uni.Misc";
+    
+    public static string NonCrewModModIconPath => "TownOfExtra.Resources.Modifiers.NonCrew.ModifierIcons";
+    public static string NonCrewModButtonPath => "TownOfExtra.Resources.Modifiers.NonCrew.Buttons";
+    public static string NonCrewModMiscPath => "TownOfExtra.Resources.Modifiers.NonCrew.Misc";
 
     // ---- General Misc Path ----
     public static string MiscPath => "TownOfExtra.Resources.Misc";
@@ -92,6 +98,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{CrewModModIconPath}.ObservantModifierIcon.png", 200);
     public static LoadableAsset<Sprite> ClumsyModifierIcon =>
         new LoadableResourceAsset($"{CrewModModIconPath}.ClumsyModifierIcon.png", 200);
+    public static LoadableAsset<Sprite> RelentlessModifierIcon =>
+        new LoadableResourceAsset($"{CrewModModIconPath}.RelentlessModifierIcon.png", 200);
     
     // Passive
     public static LoadableAsset<Sprite> PanicShieldModifierIcon =>
@@ -141,10 +149,14 @@ public static class TownOfExtraAssets
     // Killing
     public static LoadableAsset<Sprite> PoisonerRoleIcon =>
         new LoadableResourceAsset($"{ImpRoleIconPath}.PoisonerRoleIcon.png");
+    public static LoadableAsset<Sprite> KnifeThrowerRoleIcon =
+        new LoadableResourceAsset($"{ImpRoleIconPath}.KnifeThrowerRoleIcon.png");
     public static LoadableAsset<Sprite> StrikerRoleIcon =>
         new LoadableResourceAsset($"{ImpRoleIconPath}.StrikerRoleIcon.png");
     public static LoadableAsset<Sprite> TaggerRoleIcon =>
         new LoadableResourceAsset($"{ImpRoleIconPath}.TaggerRoleIcon.png");
+    public static LoadableAsset<Sprite> BloodlustRoleIcon =>
+        new LoadableResourceAsset($"{ImpRoleIconPath}.BloodlustRoleIcon.png");
 
     // Power
     public static LoadableAsset<Sprite> ConjurerRoleIcon =>
@@ -169,6 +181,8 @@ public static class TownOfExtraAssets
     // Utility
     public static LoadableAsset<Sprite> ShockwaveModifierIcon =>
         new LoadableResourceAsset($"{ImpModModIconPath}.ShockwaveModifierIcon.png");
+    public static LoadableAsset<Sprite> EmbrittlementModifierIcon =>
+        new LoadableResourceAsset($"{ImpModModIconPath}.EmbrittlementModifierIcon.png", 200);
     
     // Passive
     public static LoadableAsset<Sprite> RebirthModifierIcon =>
@@ -253,6 +267,8 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutRoleIconPath}.CannibalRoleIcon.png");
     public static LoadableAsset<Sprite> BarbarianRoleIcon =>
         new LoadableResourceAsset($"{NeutRoleIconPath}.BarbarianRoleIcon.png", 200);
+    public static LoadableAsset<Sprite> ClownRoleIcon =>
+        new LoadableResourceAsset($"{NeutRoleIconPath}.ClownRoleIcon.png", 200);
 
     // --- Buttons ---
 
@@ -282,11 +298,17 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{NeutButtonPath}.BarbarianTargetButton.png", 200);
     public static LoadableAsset<Sprite> BarbarianAttackButton =>
         new LoadableResourceAsset($"{NeutButtonPath}.BarbarianAttackButton.png");
+    public static LoadableAsset<Sprite> ClownPlaceButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.ClownPlaceButton.png");
+    public static LoadableAsset<Sprite> ClownKillButton =>
+        new LoadableResourceAsset($"{NeutButtonPath}.ClownKillButton.png");
     
     // --- Misc ---
     
     public static LoadableAsset<Sprite> SquidInkPuddle =>
         new LoadableResourceAsset($"{NeutMiscPath}.SquidInkPuddle.png", 230);
+    public static LoadableAsset<Sprite> ClownJackInTheBox =>
+        new LoadableResourceAsset($"{NeutMiscPath}.ClownJackInTheBox.png", 200);
 
 
 
@@ -303,7 +325,21 @@ public static class TownOfExtraAssets
         new LoadableResourceAsset($"{UniModModIconPath}.ApoliticalModifierIcon.png", 200);
     public static LoadableAsset<Sprite> MuteModifierIcon =>
         new LoadableResourceAsset($"{UniModModIconPath}.MuteModifierIcon.png", 200);
+    public static LoadableAsset<Sprite> YouthlingModifierIcon =>
+        new LoadableResourceAsset($"{UniModModIconPath}.YouthlingModifierIcon.png", 200);
+    
+    
+    
+    // ===============================================================
+    //                         NON CREW
+    // ===============================================================
 
+    // --- Modifiers ---
+
+    // Passive
+    public static LoadableAsset<Sprite> ScourgeModifierIcon =>
+        new LoadableResourceAsset($"{NonCrewModModIconPath}.ScourgeRoleIcon.png");
+    
 
 
     // ===============================================================

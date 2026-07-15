@@ -34,4 +34,23 @@ public class AApi
         achievement.Unlock();
         TownOfExtraPlugin.Logger.LogInfo($"Achievement {achievement.Name} awarded");
     }
+    
+    public static void IncrementAchievement(CountAchievement? achievement, int increment)
+    {
+        if (achievement == null) return;
+
+        TownOfExtraPlugin.Logger.LogWarning($"Attempting to increment achievement {achievement.Name} by {increment}");
+        
+        if (!ModCompat.IsLoaded(ModCompat.AApiId, out _))
+        {
+            TownOfExtraPlugin.Logger.LogWarning("Achievements API not found, achievement will not be incremented");
+            return;
+        }
+
+        var tab = GetInstance();
+        if (tab == null) return;
+        
+        achievement.Increment(increment);
+        TownOfExtraPlugin.Logger.LogInfo($"Achievement {achievement.Name} incremented by {increment}");
+    }
 }

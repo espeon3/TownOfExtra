@@ -2,6 +2,7 @@
 using System.Linq;
 using Il2CppInterop.Runtime;
 using MiraAPI.GameOptions;
+using MiraAPI.Modifiers;
 using MiraAPI.Modifiers.Types;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Networking;
@@ -50,6 +51,11 @@ public class SignalJammedModifier : TimedModifier
                 flashColour: Palette.ImpostorRed
             );
         }
+    }
+
+    public override void OnMeetingStart()
+    {
+        Player.RemoveModifier(this);
     }
 
     /*var emergencyBtn = GameObject.Find("EmergencyConsole");

@@ -61,4 +61,9 @@ public class ImpostorFreezeModifier : BaseRevealModifier
         if (!Player.AmOwner) return;
         Player.RpcRemoveModifier<ImpostorFreezeModifier>();
     }
+
+    public override void OnMeetingStart()
+    {
+        Player.RemoveModifier(this);
+    }
 }

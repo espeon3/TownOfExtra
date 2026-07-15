@@ -83,4 +83,9 @@ public class SlippedModifier : BaseRevealModifier
         if (!Player.AmOwner) return;
         Player.RpcRemoveModifier<SlippedModifier>();
     }
+
+    public override void OnMeetingStart()
+    {
+        Player.RemoveModifier(this);
+    }
 }
