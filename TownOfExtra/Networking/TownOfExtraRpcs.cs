@@ -5,13 +5,11 @@ public enum TownOfExtraRpcs : uint
     SendNotification = 400,
     AwardAchievement = 401,
     IncrementAchievement = 402,
-    
-    
     TricksterNotifyOfReport = 500,
     TricksterPlaceFakeBody = 501,
     TricksterDestroyFakeBodies = 502,
-    CannibalNotifyDead = 503,
-    CannibalReviveVictims = 504,
+    CannibalSwallow = 503,
+    CannibalRelease = 504,
     BrittleTriggerModifier = 505,
     VinculatorEmpowerTeam = 506,
     VultureCleanBody = 507,
@@ -25,4 +23,5 @@ public enum TownOfExtraRpcs : uint
     BarbarianNotifyTargetDeath = 515,
     CommanderIncreaseAvengeUses = 516,
     ObstructorTriggerObstruct = 517,
+    CannibalDigest = 518,
 }

@@ -1,38 +1,40 @@
 ﻿using Reactor.Networking.Attributes;
-using TownOfExtra.Events;
-using TownOfExtra.Networking.Global;
-using TownOfUs;
-using TownOfUs.Modules;
+using Reactor.Networking.Rpc;
+using TownOfExtra.Modules;
+using TownOfUs.Utilities;
 
 namespace TownOfExtra.Networking;
 
 public class CannibalRpcs
 {
-    [MethodRpc((uint)TownOfExtraRpcs.CannibalNotifyDead)]
-    public static void RpcNotifyCannibalDead(NetworkedPlayerInfo player)
+    [MethodRpc((uint)TownOfExtraRpcs.CannibalSwallow, LocalHandling = RpcLocalHandling.Before)]
+    public static void RpcCannibalSwallow(PlayerControl Cannibal, byte victimId)
     {
-        if (PlayerControl.LocalPlayer.PlayerId != player.PlayerId) return;
-        PlayerControl.LocalPlayer.RpcSendNotification(
-            $"You have been {TownOfUsColors.Medic.ToTextColor()}revived</color> as the {TownOfExtraColours.CannibalRoleColour.ToTextColor()}cannibal</color> has {Palette.ImpostorRed.ToTextColor()}died</color>!",
-            "CannibalRoleIcon",
-            "NeutRoleIcon"
-        );
+        if (Cannibal == null) return;
+
+        var victim = MiscUtils.PlayerById(victimId);
+        if (victim == null || victim.HasDied()) return;
+
+        CannibalSystem.SwallowPlayer(Cannibal.PlayerId, victimId);
+        if (victim.AmOwner)
+        {
+            CannibalSystem.ShowSwallowedNotification();
+        }
     }
-    
-    [MethodRpc((uint)TownOfExtraRpcs.CannibalReviveVictims)]
-    public static void RpcReviveCannibalVictims(PlayerControl p)
+
+    [MethodRpc((uint)TownOfExtraRpcs.CannibalDigest, LocalHandling = RpcLocalHandling.Before)]
+    public static void RpcCannibalDigest(PlayerControl Cannibal)
     {
-        if (p == null) return;
+        if (Cannibal == null) return;
 
-        PlayerControl cannibal = CannibalEvents.GetCannibal();
+        CannibalSystem.DigestAll(Cannibal.PlayerId);
+    }
 
-        ReviveUtilities.RevivePlayer(
-            reviver: cannibal,
-            revived: p,
-            position: p.transform.position,
-            roleWhenAlive: p.GetRoleWhenAlive(),
-            flashColor: TownOfExtraColours.CannibalRoleColour,
-            revivedOwnerNotificationText: null,
-            reviverOwnerNotificationText: null);
+    [MethodRpc((uint)TownOfExtraRpcs.CannibalRelease, LocalHandling = RpcLocalHandling.Before)]
+    public static void RpcCannibalRelease(PlayerControl Cannibal)
+    {
+        if (Cannibal == null) return;
+
+        CannibalSystem.ReleaseAll(Cannibal.PlayerId);
     }
 }

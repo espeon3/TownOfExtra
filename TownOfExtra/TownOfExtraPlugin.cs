@@ -24,7 +24,7 @@ namespace TownOfExtra;
 [ReactorModFlags(ModFlags.RequireOnAllClients)]
 public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
 {
-    private Harmony Harmony { get; } = new(TownOfExtraPluginInfo.Id);
+    public static Harmony Harmony { get; } = new(TownOfExtraPluginInfo.Id);
 
     public string OptionsTitleText => "Town Of Extra";
     public ConfigFile GetConfigFile() => Config;
