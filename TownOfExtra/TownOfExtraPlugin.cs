@@ -20,11 +20,12 @@ namespace TownOfExtra;
 [BepInProcess("Among Us.exe")]
 [BepInDependency(ReactorPlugin.Id)]
 [BepInDependency(MiraApiPlugin.Id)]
+[BepInDependency("com.edgetel.perfectcomms", BepInDependency.DependencyFlags.SoftDependency)]
 //[BepInDependency(AchievementsAPIPlugin.Id, BepInDependency.DependencyFlags.SoftDependency)]
 [ReactorModFlags(ModFlags.RequireOnAllClients)]
 public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
 {
-    private Harmony Harmony { get; } = new(TownOfExtraPluginInfo.Id);
+    public static Harmony Harmony { get; } = new(TownOfExtraPluginInfo.Id);
 
     public string OptionsTitleText => "Town Of Extra";
     public ConfigFile GetConfigFile() => Config;
