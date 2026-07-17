@@ -348,4 +348,7 @@ public static class TownOfExtraAssets
 
     public static LoadableAsset<Sprite> TownOfExtraIcon =>
         new LoadableResourceAsset($"{MiscPath}.TownOfExtraIcon.png", 250);
+    public static LoadableAsset<AudioClip> CannibalSwallowSound { get; } = new LoadableAudioResourceAsset($"{NeutMiscPath}.CannibalSwallowSound.wav");
+
 }
+    

@@ -46,7 +46,7 @@ public sealed class ShadowWalkerRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITown
     public string GetAdvancedDescription()
     {
         return
-            $"The Shadow Walker is a Neutral Killing role that gains invisibility for {OptionGroupSingleton<ShadowWalkerRoleOptions>.Instance.InvisDurOnKill} second{((int)OptionGroupSingleton<ShadowWalkerRoleOptions>.Instance.InvisDurOnKill != 1 ? "s" : "")} invisibility after kills. Additionally, the Shadow Walker can Enshroud to become invisible with a speed boost, but each kill while enshrouded increases your permanent kill cooldown." +
+            $"The Shadow Walker is a Neutral Killing role that gains invisibility for {OptionGroupSingleton<ShadowWalkerRoleOptions>.Instance.InvisDurOnKill} second{((int)OptionGroupSingleton<ShadowWalkerRoleOptions>.Instance.InvisDurOnKill != 1 ? "s" : "")} after killing. Additionally, the Shadow Walker can Enshroud to become invisible with a speed boost, but each kill while enshrouded increases your permanent kill cooldown." +
             MiscUtils.AppendOptionsText(GetType());
     }
     
