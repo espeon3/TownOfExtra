@@ -4,13 +4,18 @@
  
 <div align="center">
   <a href="https://toex.freehosting.dev/"><img src="https://github.com/Mehzxzz/TownOfExtra/blob/master/Resources/Banners/TownOfExtraBanner.png" alt="Town of Extra"/></a>
-  <p>Town Of Extra</p>
 </div>
 <br/>
 
-A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod that adds new roles & modifiers to [Town of Us: Mira](https://github.com/AU-Avengers/TOU-Mira).\
-[**Join the Discord (Support, sneak peeks and more!)**](https://discord.gg/y2GN5Q4fzb)\
-[**View the update checklist & wiki here!**](https://toex.freehosting.dev/docs)
+<p align="center">
+  <a href="https://github.com/Mehzxzz/TownOfExtra/releases/latest"><img src="https://img.shields.io/github/v/release/Mehzxzz/TownOfExtra?label=Update&logo=github" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/releases/latest"><img src="https://img.shields.io/github/downloads/Mehzxzz/TownOfExtra/total?label=Downloads&logo=abdownloadmanager&logoColor=white" /></a>
+  <a href="https://discord.gg/y2GN5Q4fzb"><img src="https://img.shields.io/discord/1504393219344040059?label=Discord&logo=discord&logoColor=white&color=5865F2" /></a>
+  <a href="https://github.com/Mehzxzz/TownOfExtra/blob/master/LICENSE.txt"><img src="https://img.shields.io/github/license/Mehzxzz/TownOfExtra?label=License&logo=pinboard" /></a>
+  <a href="https://toex.freehosting.dev"><img src="https://img.shields.io/badge/Website-toex.freehosting.dev-blue?logo=googlechrome&logoColor=white" /></a>
+</p>
+
+A client-side [Among Us](https://store.steampowered.com/app/945360/Among_Us) mod that adds new roles & modifiers to [Town of Us: Mira](https://github.com/AU-Avengers/TOU-Mira).
 
 -----------------------
 
