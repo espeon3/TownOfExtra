@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using AchievementsAPI;
+//todo: using AchievementsAPI;
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
@@ -11,7 +11,6 @@ using Reactor;
 using Reactor.Networking;
 using Reactor.Networking.Attributes;
 using Reactor.Utilities;
-using TownOfExtra.Modules;
 using TownOfExtra.Patches;
 using TownOfUs.Modules.Localization;
 
@@ -21,11 +20,12 @@ namespace TownOfExtra;
 [BepInProcess("Among Us.exe")]
 [BepInDependency(ReactorPlugin.Id)]
 [BepInDependency(MiraApiPlugin.Id)]
-[BepInDependency(AchievementsAPIPlugin.Id, BepInDependency.DependencyFlags.SoftDependency)]
+[BepInDependency("com.edgetel.perfectcomms", BepInDependency.DependencyFlags.SoftDependency)]
+//[BepInDependency(AchievementsAPIPlugin.Id, BepInDependency.DependencyFlags.SoftDependency)]
 [ReactorModFlags(ModFlags.RequireOnAllClients)]
 public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
 {
-    private Harmony Harmony { get; } = new(TownOfExtraPluginInfo.Id);
+    public static Harmony Harmony { get; } = new(TownOfExtraPluginInfo.Id);
 
     public string OptionsTitleText => "Town Of Extra";
     public ConfigFile GetConfigFile() => Config;
@@ -40,6 +40,27 @@ public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
         ModNewsFetcher.CheckForNews();
         
         Logger = Log;
+
+        ApplyTouLocaleEdits();
+        TerminologyPatches.RegisterToExTerms();
+        TerminologyIconRegistry.RegisterIcons();
+        
+        //todo: this
+        /*if (ModCompat.IsLoaded(ModCompat.AApiId, out _))
+        {
+            Logger.LogInfo("AchievementsAPI found, achievements will be available!");
+        }
+        else
+        {
+            Logger.LogWarning("Failed to find AchievementsAPI, achievements will not be available.");
+        }*/
+    }
+
+    public static void ApplyTouLocaleEdits()
+    {
+        // ------------------------
+        // Death Messages
+        // ------------------------
         
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToPoisoned", "Poisoned");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToCannibalised", "Cannibalised");
@@ -51,17 +72,28 @@ public class TownOfExtraPlugin : BasePlugin, IMiraPlugin
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToMiscalculated", "Miscalculated");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToSlain", "Slain");
         TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToPunished", "Punished");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("DiedToMassacred", "Massacred");
 
-        TerminologyPatches.RegisterToExTerms();
-        TerminologyIconRegistry.RegisterIcons();
+        // ------------------------
+        // Wiki Edits
+        // ------------------------
         
-        if (ModCompat.IsLoaded(ModCompat.AApiId, out var aapi))
-        {
-            Logger.LogInfo("AchievementsAPI found, achievements will be available!");
-        }
-        else
-        {
-            Logger.LogWarning("Failed to find AchievementsAPI, achievements will not be available.");
-        }
+        TouLocale.TouLocalization[SupportedLangs.English]
+                ["TouRoleClericCleanseWikiDescription"] =
+            "Remove all negative effects on a player. (Douse, Hack, Infect, Blackmail, Blind, Flash, Hypnosis, Poisoned, Pending Shift, Doom, Lucid Dreaming, Pending Lucid Dream, Scared, Possessed, Pending Erase, Pending Embrittlement, Slipped, Shockwaved)";
+        
+        // ------------------------
+        // Doomsayer Hints
+        // ------------------------
+        
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("TouRoleDoomsayerRoleHint101", "You observe that %player% is not from this town");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("TouRoleDoomsayerRoleHint102", "You observe that %player% has an altered perception of reality");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("TouRoleDoomsayerRoleHint103", "You observe that %player% has an insight for private information");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("TouRoleDoomsayerRoleHint104", "You observe that %player% has an unusual obsession with dead bodies");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("TouRoleDoomsayerRoleHint105", "You observe that %player% is well-trained in hunting down prey");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("TouRoleDoomsayerRoleHint106", "You observe that %player% spreads fear amongst the group");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("TouRoleDoomsayerRoleHint107", "You observe that %player% hides to guard themselves or others");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("TouRoleDoomsayerRoleHint108", "You observe that %player% has a trick up their sleeve");
+        TouLocale.TouLocalization[SupportedLangs.English].TryAdd("TouRoleDoomsayerRoleHint109", "You observe that %player% is capable of performing relentless attacks");
     }
 }

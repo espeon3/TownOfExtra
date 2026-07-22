@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
+using TownOfExtra.Modules;
 using TownOfUs;
 using TownOfUs.Assets;
 using TownOfUs.Extensions;
@@ -21,7 +22,7 @@ public sealed class TaggerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable,
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorKilling;
-    public DoomableType DoomHintType => DoomableType.Relentless;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExRelentless;
 
     public static List<PlayerControl> MarkedPlayers = new List<PlayerControl>();
 

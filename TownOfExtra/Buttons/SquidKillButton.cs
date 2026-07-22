@@ -4,7 +4,6 @@ using MiraAPI.Networking;
 using MiraAPI.Utilities.Assets;
 using TownOfExtra.Options.Roles;
 using TownOfExtra.Roles.Neutral.Killing;
-using TownOfUs.Assets;
 using TownOfUs.Buttons;
 using TownOfUs.Networking;
 using TownOfUs.Options.Modifiers.Alliance;

@@ -7,6 +7,7 @@ using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
+using TownOfExtra.Modules;
 using TownOfExtra.Options.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
@@ -26,7 +27,7 @@ public sealed class ShadowWalkerRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITown
     public Color RoleColor => TownOfExtraColours.ShadowWalkerRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
-    public DoomableType DoomHintType => DoomableType.Fearmonger;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExFearmonger;
 
     public static int CdIncrease = 0;
     public static bool Enshrouded = false;
@@ -45,7 +46,7 @@ public sealed class ShadowWalkerRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITown
     public string GetAdvancedDescription()
     {
         return
-            $"The Shadow Walker is a Neutral Killing role that gains invisibility for {OptionGroupSingleton<ShadowWalkerRoleOptions>.Instance.InvisDurOnKill} second{((int)OptionGroupSingleton<ShadowWalkerRoleOptions>.Instance.InvisDurOnKill != 1 ? "s" : "")} invisibility after kills. Additionally, the Shadow Walker can Enshroud to become invisible with a speed boost, but each kill while enshrouded increases your permanent kill cooldown." +
+            $"The Shadow Walker is a Neutral Killing role that gains invisibility for {OptionGroupSingleton<ShadowWalkerRoleOptions>.Instance.InvisDurOnKill} second{((int)OptionGroupSingleton<ShadowWalkerRoleOptions>.Instance.InvisDurOnKill != 1 ? "s" : "")} after killing. Additionally, the Shadow Walker can Enshroud to become invisible with a speed boost, but each kill while enshrouded increases your permanent kill cooldown." +
             MiscUtils.AppendOptionsText(GetType());
     }
     

@@ -4,6 +4,7 @@ using MiraAPI.Events.Vanilla.Gameplay;
 using MiraAPI.GameOptions;
 using MiraAPI.Modifiers;
 using MiraAPI.Roles;
+//todo: using TownOfExtra.Achievements;
 using TownOfExtra.Modifiers.Excluded;
 using TownOfExtra.Networking.Global;
 using TownOfExtra.Options.Roles;
@@ -100,12 +101,15 @@ public class ShifterEvents
                     "NeutRoleIcon",
                     flashColour: TownOfExtraColours.ShifterRoleColour
                 );
+                //todo: p.RpcAwardAchievement(AApi.GetInstance()?.ShifterBeShiftedWith);
+                
                 shifter.RpcSendNotification(
                     $"You have {TownOfExtraColours.ShifterRoleColour.ToTextColor()}shifted</color> your role with {p.name}!",
                     "ShifterRoleIcon",
                     "NeutRoleIcon",
                     flashColour: TownOfExtraColours.ShifterRoleColour
                 );
+                //todo: shifter.RpcAwardAchievement(AApi.GetInstance()?.ShifterShiftWithSomeone);
             }
         }
     }

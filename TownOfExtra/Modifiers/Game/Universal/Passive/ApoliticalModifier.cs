@@ -1,5 +1,6 @@
 ﻿using MiraAPI.GameOptions;
 using MiraAPI.Utilities.Assets;
+using TownOfExtra.Modules;
 using TownOfExtra.Options;
 using TownOfUs.Interfaces;
 using TownOfUs.Modifiers.Game;
@@ -10,7 +11,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Game.Universal.Passive;
 
-public class ApoliticalModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier
+public class ApoliticalModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier, IUnguessableModifier
 {
     public override string ModifierName => "Apolitical";
     public override ModifierFaction FactionType => ModifierFaction.UniversalPassive;
@@ -18,6 +19,7 @@ public class ApoliticalModifier : TouGameModifier, IWikiDiscoverable, IColoredMo
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.ApoliticalModifierIcon;
     public Color ModifierColor => TownOfExtraColours.ApoliticalModifierColour;
     public override Color FreeplayFileColor => TownOfExtraColours.ApoliticalModifierColour;
+    public bool IsGuessable => false;
 
     public static int CdIncrease = 0;
 

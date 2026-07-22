@@ -24,7 +24,7 @@ public sealed class ShifterRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
     public Color RoleColor => TownOfExtraColours.ShifterRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralOutlier;
-    public DoomableType DoomHintType => DoomableType.Trickster;
+    public DoomableType DoomHintType => DoomableType.Default;
     
     public override void SpawnTaskHeader(PlayerControl playerControl)
     {

@@ -1,6 +1,8 @@
 ﻿using MiraAPI.GameOptions;
 using MiraAPI.Utilities.Assets;
+using TownOfExtra.Modules;
 using TownOfExtra.Options;
+using TownOfUs.Extensions;
 using TownOfUs.Interfaces;
 using TownOfUs.Modifiers.Game;
 using TownOfUs.Modules.Wiki;
@@ -10,7 +12,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Modifiers.Game.Universal.Passive;
 
-public class MuteModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier
+public class MuteModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier, IUnguessableModifier
 {
     public override string ModifierName => "Mute";
     public override ModifierFaction FactionType => ModifierFaction.UniversalPassive;
@@ -18,6 +20,7 @@ public class MuteModifier : TouGameModifier, IWikiDiscoverable, IColoredModifier
     public override LoadableAsset<Sprite> ModifierIcon => TownOfExtraAssets.MuteModifierIcon;
     public Color ModifierColor => TownOfExtraColours.MuteModifierColour;
     public override Color FreeplayFileColor => TownOfExtraColours.MuteModifierColour;
+    public bool IsGuessable => false;
 
     public override string GetDescription() => IntroInfo;
 

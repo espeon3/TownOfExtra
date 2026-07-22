@@ -6,6 +6,7 @@ using TownOfExtra.Options.Roles;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
+using TownOfExtra.Modules;
 using TownOfUs;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
@@ -25,7 +26,7 @@ public sealed class VultureRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsR
     public Color RoleColor => TownOfExtraColours.VultureRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralEvil;
-    public DoomableType DoomHintType => DoomableType.Death;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExDeath;
     public RoleBehaviour CrewVariant =>
         RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<AltruistRole>());
 

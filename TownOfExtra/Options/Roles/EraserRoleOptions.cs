@@ -13,7 +13,7 @@ public sealed class EraserRoleOptions : AbstractOptionGroup<EraserRole>
     public float EraseCooldown { get; set; } = 40f;
     [ModdedNumberOption("Erase Uses", 0f, 30f, zeroInfinity:true)]
     public float EraseUses { get; set; } = 3f;
-    [ModdedToggleOption("Can be assasin?")]
+    [ModdedToggleOption("Can be assassin?")]
     public bool CanBeAssassin { get; set; } = true;
     
     [ModdedEnumOption("Erased neutral's roles", typeof(ErasedNeutralRole),

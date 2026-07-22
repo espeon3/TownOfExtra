@@ -24,7 +24,7 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
     public override LoadableAsset<Sprite> Sprite => TownOfExtraAssets.HolographerHolographButton;
 
     private bool _placing;
-    private FakePlayer _preview;
+    private CustomLocFakePlayer _preview;
     private bool _inMenu;
     
     public override void ClickHandler()
@@ -205,7 +205,7 @@ public sealed class HolographerHolographButton : TownOfUsRoleButton<HolographerR
         
         loc.z = 0f;
 
-        _preview = new FakePlayer(target, loc);
+        _preview = new CustomLocFakePlayer(target, loc);
         _preview.opacity = 0.5f;
     }
 

@@ -1,87 +1,184 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using AmongUs.GameOptions;
+﻿using AmongUs.GameOptions;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
+using MiraAPI.Hud;
+using MiraAPI.Patches.Stubs;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
-using TownOfExtra.Options.Roles;
+using Reactor.Networking.Attributes;
+using Reactor.Networking.Rpc;
 using TownOfUs.Assets;
 using TownOfUs.Extensions;
+using TownOfUs.Modules.Localization;
 using TownOfUs.Modules.Wiki;
-using TownOfUs.Roles;
+using TownOfUs.Modules;
 using TownOfUs.Roles.Neutral;
+using TownOfUs.Roles;
 using TownOfUs.Utilities;
+using TownOfUs.Buttons;
+using TownOfUs;
+using TownOfExtra.Buttons;
 using UnityEngine;
+using System;
+using TownOfExtra.Options.Roles;
+using System.Collections.Generic;
+using TownOfExtra.Modules;
+using MiraAPI.LocalSettings;
+using TownOfExtra.Networking;
 
 namespace TownOfExtra.Roles.Neutral.Killing;
 
 public sealed class CannibalRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRole, IWikiDiscoverable, IDoomable
 {
-    public string RoleName => "Cannibal";
-    public string RoleDescription => "Leave no traces of the crew!";
-    public string RoleLongDescription => RoleDescription;
-    public Color RoleColor => TownOfExtraColours.CannibalRoleColour;
-    public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
-    public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
-    public DoomableType DoomHintType => DoomableType.Death;
-    
-    public static List<byte> EatenPlayers = new List<byte>();
-    public static byte? CannibalId = null;
+    public DoomableType DoomHintType => DoomableType.Fearmonger;
+    public string LocaleKey => "Cannibal";
+    public string RoleName => TouLocale.Get($"ExtensionRole{LocaleKey}", "Cannibal");
+    public string RoleDescription => TouLocale.GetParsed($"ExtensionRole{LocaleKey}IntroBlurb");
+    public string RoleLongDescription => TouLocale.GetParsed($"ExtensionRole{LocaleKey}TabDescription");
 
     public string GetAdvancedDescription()
     {
-        return
-            "The Cannibal is a Neutral Killing role that leaves no dead bodies when killing as it devours the player whole." +
-            MiscUtils.AppendOptionsText(GetType());
+        return TouLocale.GetParsed($"ExtensionRole{LocaleKey}WikiDescription") +
+               MiscUtils.AppendOptionsText(GetType());
     }
 
-    public CustomRoleConfiguration Configuration => new CustomRoleConfiguration(this)
-    {
-        MaxRoleCount = 1,
-        Icon = TownOfExtraAssets.CannibalRoleIcon,
-        CanUseVent = OptionGroupSingleton<CannibalRoleOptions>.Instance.CanVent,
-        GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>()
-    };
-    
     [HideFromIl2Cpp]
-    public List<CustomButtonWikiDescription> Abilities
+    public List<CustomButtonWikiDescription> Abilities =>
+    [
+        new(
+            "Eat",
+                "Swallow a nearby player. They are hidden and trapped in your stomach until the next meeting (digested) or until you die (released).",
+            TownOfExtraAssets.CannibalEatButton)
+    ];
+
+    public Color RoleColor => TownOfExtraColours.CannibalRoleColour;
+    public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
+    public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
+
+    public bool HasImpostorVision => true;
+
+    public CustomRoleConfiguration Configuration => new(this)
     {
-        get
-        {
-            return new List<CustomButtonWikiDescription>
-            {
-                new("Eat", "Kill a player with no dead body left behind.", TouAssets.KillSprite)
-            };
-        }
-    }
-    
+        CanUseVent = OptionGroupSingleton<CannibalRoleOptions>.Instance.CanVent,
+        Icon = TownOfExtraAssets.CannibalRoleIcon,
+        IntroSound = TouAudio.PhantomIntroSound,
+        GhostRole = (RoleTypes)RoleId.Get<NeutralGhostRole>(),
+        OptionsScreenshot = TouBanners.NeutralRoleBanner,
+    };
+
+    [HideFromIl2Cpp]
     public bool WinConditionMet()
     {
-        var cannibalCount = CustomRoleUtils.GetActiveRolesOfType<CannibalRole>().Count(x => !x.Player.HasDied());
+        if (Player.HasDied()) return false;
 
-        if (MiscUtils.KillersAliveCount > cannibalCount)
+        var aliveOthers = 0;
+        var threateningOthers = 0;
+
+        foreach (var player in PlayerControl.AllPlayerControls)
         {
-            return false;
+            if (player == null || player.Data == null || player.HasDied()) continue;
+            if (player.PlayerId == Player.PlayerId) continue;
+            if (CannibalSystem.IsSwallowed(player.PlayerId)) continue;
+
+            aliveOthers++;
+            if (CanPlayerThreatenCannibal(player)) threateningOthers++;
         }
 
-        return cannibalCount >= Helpers.GetAlivePlayers().Count - cannibalCount;
+        if (aliveOthers == 0) return true;
+
+        if (aliveOthers == 1 && threateningOthers == 0) return true;
+
+        return false;
+    }
+	
+    [HideFromIl2Cpp]
+    private static bool CanPlayerThreatenCannibal(PlayerControl player)
+    {
+        var role = player.Data?.Role;
+        if (role == null) return false;
+
+        if (role.IsImpostor) return true;
+
+        if (role is ITownOfUsRole touRole)
+        {
+            return touRole.RoleAlignment switch
+            {
+                RoleAlignment.CrewmateKilling => true,
+                RoleAlignment.CrewmatePower => true,
+                RoleAlignment.NeutralKilling => true,
+
+                RoleAlignment.CrewmateProtective => false,
+                RoleAlignment.CrewmateInvestigative => false,
+                RoleAlignment.CrewmateSupport => false,
+                RoleAlignment.NeutralBenign => false,
+                RoleAlignment.NeutralEvil => false,
+                _ => true
+            };
+        }
+
+        if (role.CanUseKillButton) return true;
+
+        return false;
+    }
+
+    public void OffsetButtons()
+    {
+        var canVent = OptionGroupSingleton<CannibalRoleOptions>.Instance.CanVent || LocalSettingsTabSingleton<TownOfUsLocalSettings>.Instance.OffsetButtonsToggle.Value;
+        var swallow = MiraAPI.Hud.CustomButtonSingleton<CannibalEatButton>.Instance;
+        Reactor.Utilities.Coroutines.Start(MiscUtils.CoMoveButtonIndex(swallow, !canVent));
+    }
+
+    public override void Initialize(PlayerControl player)
+    {
+        RoleBehaviourStubs.Initialize(this, player);
+
+        if (player.AmOwner)
+        {
+            OffsetButtons();
+            HudManager.Instance.ImpostorVentButton.graphic.sprite = TouAssets.VentSprite.LoadAsset();
+            HudManager.Instance.ImpostorVentButton.buttonLabelText.SetOutlineColor(RoleColor);
+        }
+    }
+
+    public override void Deinitialize(PlayerControl targetPlayer)
+    {
+        CannibalSystem.ReleaseAll(targetPlayer.PlayerId);
+        CannibalSystem.ClearForCannibal(targetPlayer.PlayerId);
+
+        if (targetPlayer.AmOwner)
+        {
+            HudManager.Instance.ImpostorVentButton.graphic.sprite = TouAssets.VentSprite.LoadAsset();
+            HudManager.Instance.ImpostorVentButton.buttonLabelText.SetOutlineColor(TownOfUsColors.Impostor);
+        }
+
+        RoleBehaviourStubs.Deinitialize(this, targetPlayer);
+    }
+
+    public override void OnDeath(DeathReason reason)
+    {
+        if (Player != null)
+        {
+            var swallowed = CannibalSystem.GetSwallowedByCannibal(Player.PlayerId);
+            if (swallowed.Count > 0)
+            {
+                var releasePosition = Player.GetTruePosition();
+                CannibalSystem.ReleaseAllAtPosition(Player.PlayerId, releasePosition);
+            }
+        }
+
+        RoleBehaviourStubs.OnDeath(this, reason);
+    }
+
+    public override bool CanUse(IUsable usable)
+    {
+        if (!GameManager.Instance.LogicUsables.CanUse(usable, Player)) return false;
+
+        var console = usable.TryCast<Console>()!;
+        return console == null || console.AllowImpostor;
     }
 
     public override bool DidWin(GameOverReason gameOverReason)
     {
         return WinConditionMet();
-    }
-    
-    public override bool CanUse(IUsable usable)
-    {
-        if (!GameManager.Instance.LogicUsables.CanUse(usable, Player))
-        {
-            return false;
-        }
-
-        var console = usable.TryCast<Console>()!;
-        return console == null || console.AllowImpostor;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
+using TownOfExtra.Modules;
 using TownOfUs;
 using TownOfUs.Extensions;
 using TownOfUs.Modules.Wiki;
@@ -18,7 +19,7 @@ public sealed class HolographerRole : ImpostorRole, ITownOfUsRole, IWikiDiscover
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorConcealing;
-    public DoomableType DoomHintType => DoomableType.Trickster;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExTrickster;
 
     public string GetAdvancedDescription()
     {

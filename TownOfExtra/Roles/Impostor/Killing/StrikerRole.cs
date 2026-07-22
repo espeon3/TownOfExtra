@@ -6,6 +6,7 @@ using MiraAPI.GameOptions;
 using MiraAPI.Patches.Stubs;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
+using TownOfExtra.Modules;
 using TownOfExtra.Networking;
 using TownOfExtra.Networking.Global;
 using TownOfExtra.Options.Roles;
@@ -30,7 +31,7 @@ public sealed class StrikerRole : ImpostorRole, ITownOfUsRole, IWikiDiscoverable
     public Color RoleColor => Palette.ImpostorRed;
     public ModdedRoleTeams Team => ModdedRoleTeams.Impostor;
     public RoleAlignment RoleAlignment => RoleAlignment.ImpostorKilling;
-    public DoomableType DoomHintType => DoomableType.Relentless;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExFearmonger;
     public bool IsUnlovable => true;
 
     public string GetAdvancedDescription()

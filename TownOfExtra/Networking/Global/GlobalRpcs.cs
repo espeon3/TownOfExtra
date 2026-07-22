@@ -1,7 +1,9 @@
-﻿using MiraAPI.Utilities;
+﻿//todo: using AchievementsAPI.API;
+using MiraAPI.Utilities;
 using MiraAPI.Utilities.Assets;
 using Reactor.Networking.Attributes;
 using Reactor.Utilities;
+//todo: using TownOfExtra.Achievements;
 using TownOfUs.Utilities;
 using UnityEngine;
 
@@ -58,4 +60,20 @@ public static class GlobalRpcs
             Color.white, new Vector3(0f, 1f, -20f), spr: sprite.LoadAsset());
         notif.AdjustNotification();
     }
+
+    /*[MethodRpc((uint)TownOfExtraRpcs.AwardAchievement)]
+    public static void RpcAwardAchievement(this PlayerControl p, BaseAchievement achievement)
+    {
+        if (PlayerControl.LocalPlayer != p) return;
+        
+        //todo: AApi.AwardAchievement(achievement);
+    }*/
+    
+    /*[MethodRpc((uint)TownOfExtraRpcs.IncrementAchievement)]
+    public static void RpcIncrementAchievement(this PlayerControl p, CountAchievement achievement, int increment)
+    {
+        if (PlayerControl.LocalPlayer != p) return;
+        
+        //todo: AApi.IncrementAchievement(achievement, increment);
+    }*/
 }

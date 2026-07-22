@@ -2,6 +2,7 @@
 using System.Text;
 using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.Roles;
+using TownOfExtra.Modules;
 using TownOfUs;
 using TownOfUs.Extensions;
 using TownOfUs.Modules;
@@ -12,7 +13,7 @@ using UnityEngine;
 
 namespace TownOfExtra.Roles.Crewmate.Power;
 
-public sealed class ChiefRole : CrewmateRole, ITownOfUsRole, IWikiDiscoverable, IDoomable
+public sealed class ChiefRole : CrewmateRole, ITouCrewRole, IWikiDiscoverable, IDoomable
 {
     public string RoleName => "Chief";
     public string RoleDescription => $"Recruit players and shoot {Palette.ImpostorRed.ToTextColor()}evildoers</color>";
@@ -20,8 +21,9 @@ public sealed class ChiefRole : CrewmateRole, ITownOfUsRole, IWikiDiscoverable, 
     public Color RoleColor => TownOfExtraColours.ChiefRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Crewmate;
     public RoleAlignment RoleAlignment => RoleAlignment.CrewmatePower;
-    public DoomableType DoomHintType => DoomableType.Hunter;
-    
+    public DoomableType DoomHintType => DoomableType.Relentless;
+    public bool IsPowerCrew => false;
+
     public static List<PlayerControl> Recruits = new List<PlayerControl>();
     public static List<PlayerControl> ShotPlayers = new List<PlayerControl>();
     

@@ -6,6 +6,7 @@ using Il2CppInterop.Runtime.Attributes;
 using MiraAPI.GameOptions;
 using MiraAPI.Roles;
 using MiraAPI.Utilities;
+using TownOfExtra.Modules;
 using TownOfExtra.Options.Roles;
 using TownOfUs;
 using TownOfUs.Extensions;
@@ -26,7 +27,7 @@ public sealed class SquidRole(IntPtr cppPtr) : NeutralRole(cppPtr), ITownOfUsRol
     public Color RoleColor => TownOfExtraColours.SquidRoleColour;
     public ModdedRoleTeams Team => ModdedRoleTeams.Custom;
     public RoleAlignment RoleAlignment => RoleAlignment.NeutralKilling;
-    public DoomableType DoomHintType => DoomableType.Relentless;
+    public DoomableType DoomHintType => (DoomableType)ToExDoomHints.ToExTrickster;
     public RoleBehaviour CrewVariant =>
         RoleManager.Instance.GetRole((RoleTypes)RoleId.Get<ClericRole>());
 
